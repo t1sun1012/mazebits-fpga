@@ -1,0 +1,349 @@
+{
+  "config": {
+    "channels": 16,
+    "depth": 8
+  },
+  "format": "mazebits-fp32-v1",
+  "model": {
+    "action_order": [
+      "UP",
+      "RIGHT",
+      "DOWN",
+      "LEFT"
+    ],
+    "architecture": "spatial-policy-cnn-v1",
+    "biases": 132,
+    "config": {
+      "channels": 16,
+      "depth": 8
+    },
+    "dense_macs_per_decision": 1063936,
+    "first_layer_padding": "wall channel 1; agent and goal channels 0",
+    "hidden_padding": "zero",
+    "input_channels": [
+      "walls",
+      "agent",
+      "goal"
+    ],
+    "input_shape": [
+      3,
+      8,
+      8
+    ],
+    "parameters": 16756,
+    "readout": "four action-head scores at the one-hot agent cell",
+    "receptive_field": 17,
+    "weights": 16624
+  },
+  "provenance": {
+    "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "environment": {
+      "device": "cpu",
+      "numpy": "2.3.5",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "python": "3.12.14",
+      "torch": "2.9.1+cpu"
+    },
+    "metrics": {
+      "best_epoch": 41,
+      "epochs_completed": 53,
+      "test_status": "reserved; test arrays and episodes not loaded",
+      "training_seconds": 671.9574315999635,
+      "validation_rollout_metrics": {
+        "attempted_actions": 19966,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "by_requested_density": {
+          "0.1": {
+            "attempted_actions": 6332,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "episodes": 1176,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 2,
+              "success": 1174,
+              "timeout": 0
+            },
+            "success_count": 1174,
+            "success_rate": 0.9982993197278912,
+            "successful_mean_path_ratio": 1.0,
+            "successful_mean_steps": 5.385860306643952,
+            "successful_optimal_rate": 1.0,
+            "successful_path_ratio_count": 1174,
+            "successful_zero_step_count": 0
+          },
+          "0.2": {
+            "attempted_actions": 7982,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "episodes": 1440,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 0,
+              "success": 1440,
+              "timeout": 0
+            },
+            "success_count": 1440,
+            "success_rate": 1.0,
+            "successful_mean_path_ratio": 1.0005235042735043,
+            "successful_mean_steps": 5.543055555555555,
+            "successful_optimal_rate": 0.9972222222222222,
+            "successful_path_ratio_count": 1440,
+            "successful_zero_step_count": 0
+          },
+          "0.3": {
+            "attempted_actions": 5652,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "episodes": 984,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 0,
+              "success": 984,
+              "timeout": 0
+            },
+            "success_count": 984,
+            "success_rate": 1.0,
+            "successful_mean_path_ratio": 1.0002540650406504,
+            "successful_mean_steps": 5.7439024390243905,
+            "successful_optimal_rate": 0.9989837398373984,
+            "successful_path_ratio_count": 984,
+            "successful_zero_step_count": 0
+          }
+        },
+        "episodes": 3600,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 2,
+          "success": 3598,
+          "timeout": 0
+        },
+        "success_count": 3598,
+        "success_rate": 0.9994444444444445,
+        "successful_mean_path_ratio": 1.0002790011544875,
+        "successful_mean_steps": 5.546692607003891,
+        "successful_optimal_rate": 0.9986103390772652,
+        "successful_path_ratio_count": 3598,
+        "successful_zero_step_count": 0
+      },
+      "validation_state_metrics": {
+        "optimal_action_accuracy": 0.9992282899813881,
+        "optimal_action_correct": 22012,
+        "optimal_set_loss": 0.0015337831926733286,
+        "states": 22029
+      },
+      "validation_success_target": 0.9,
+      "validation_target_met": true
+    },
+    "model": {
+      "action_order": [
+        "UP",
+        "RIGHT",
+        "DOWN",
+        "LEFT"
+      ],
+      "architecture": "spatial-policy-cnn-v1",
+      "biases": 132,
+      "config": {
+        "channels": 16,
+        "depth": 8
+      },
+      "dense_macs_per_decision": 1063936,
+      "first_layer_padding": "wall channel 1; agent and goal channels 0",
+      "hidden_padding": "zero",
+      "input_channels": [
+        "walls",
+        "agent",
+        "goal"
+      ],
+      "input_shape": [
+        3,
+        8,
+        8
+      ],
+      "parameters": 16756,
+      "readout": "four action-head scores at the one-hot agent cell",
+      "receptive_field": 17,
+      "weights": 16624
+    },
+    "selected_epoch": 41,
+    "source_sha256": {
+      "python/demo.py": "ff95d2d584403dd04b53b8ef599584fb4062ba137d030be100ce9ff47f401e95",
+      "python/mazebits/__init__.py": "91d6bf7bfdc85462aeb5872519670f2301f1d77304eeb58b19edf447681694ee",
+      "python/mazebits/dataset.py": "85411fe9174a695356616593c1f50255e60fe0a0010cca89e7f6417745775e04",
+      "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+      "python/mazebits/evaluation.py": "9d548e4f2c5544219862ef71cb655983f20f706106ab0d5410b2975dae1bb83e",
+      "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+      "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+      "python/mazebits/model.py": "14a17bdca1da0b026727ee2c253c481d2175aa5842a772bf7a72e7eafb34e293",
+      "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+      "python/mazebits/reference.py": "db720e00d61efca9603d7c132289f7b7856a7238bec02bf654215676f6320abc",
+      "python/mazebits/training.py": "2c1c10e09073532662f1cf9586277c49d6130cfe1978f51f315196b1a34dd2c4",
+      "python/prepare_data.py": "6fce1fc88bce27507da1374f1a170de1f0a801a949d15741cf383e76348584c0",
+      "python/tests/test_dataset.py": "771fc634ec8b2b06dc8f9c3843a8659946cffd7d984830b952ed83c634688053",
+      "python/tests/test_encoding.py": "1c5d6c66c4be56a5fc95fe288ff71c694ff5cbabae22fa90c62dfcf493193a12",
+      "python/tests/test_evaluation.py": "66a996789f992fd50629c5d30b3dd8d939a6ecadd67438bf98d3b9559ffe7098",
+      "python/tests/test_maze.py": "976a8a8bbbf574e2dabf1b5415a50b75f4afc6820133ba07eae61d30bf43fe03",
+      "python/tests/test_model.py": "714bd10157bc594b677ab103d85341e12179bfd4e025c40b4a606a9ce0ed9291",
+      "python/tests/test_reference.py": "c5ecae6e5dbf9a17d23ad2fa8ccee081267a70e1ea4e33b2cdcd66b2448055b3",
+      "python/train.py": "e40e47760197819487602b19cd0e640e541e88f5d80979eb8ebbf2cad5911e45",
+      "requirements.txt": "6daf56b27ad56322bf38813f6c1773443f2fcea5b4ef65f57f3a95eabb2dc1f7"
+    },
+    "training_config": {
+      "augment_d4": true,
+      "batch_size": 256,
+      "channels": 16,
+      "depth": 8,
+      "epochs": 60,
+      "learning_rate": 0.001,
+      "loss": "negative log probability mass of all optimal actions",
+      "optimizer": "Adam",
+      "patience": 12,
+      "rollout": "raw argmax, no action mask, stop on goal/blocked/repeated cell/64 actions",
+      "seed": 311,
+      "selection": "highest validation rollout success count; then lowest validation loss",
+      "test_status": "reserved; test arrays and episodes not loaded",
+      "threads": 1,
+      "validation_success_target": 0.9
+    }
+  },
+  "tensors": {
+    "convs.0.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.0.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        3,
+        3,
+        3
+      ]
+    },
+    "convs.1.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.1.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.2.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.2.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.3.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.3.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.4.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.4.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.5.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.5.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.6.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.6.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "convs.7.bias": {
+      "dtype": "float32",
+      "shape": [
+        16
+      ]
+    },
+    "convs.7.weight": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    "head.bias": {
+      "dtype": "float32",
+      "shape": [
+        4
+      ]
+    },
+    "head.weight": {
+      "dtype": "float32",
+      "shape": [
+        4,
+        16,
+        1,
+        1
+      ]
+    }
+  },
+  "weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+}

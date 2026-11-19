@@ -15,7 +15,13 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: requirements.txt
+      - name: Install CPU training dependencies
+        run: python -m pip install -r requirements.txt
       - name: Run maze reference tests
         run: python -m unittest discover -s python/tests -v
+      - name: Load the trained CNN and run an example
+        run: python python/predict.py --maze open
       - name: Run the deterministic reference demo
         run: python python/demo.py --maze detour

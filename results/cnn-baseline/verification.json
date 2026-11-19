@@ -1,0 +1,96 @@
+{
+  "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+  "full_trajectory_match": true,
+  "loss_comparison_tolerance": {
+    "absolute": 1e-07,
+    "relative": 1e-06
+  },
+  "state_metrics_match_exactly": true,
+  "test_status": "reserved; test arrays and episodes not loaded",
+  "training_metrics_match": true,
+  "validation_rollout_metrics": {
+    "attempted_actions": 19966,
+    "blocked_proposal_rate": 0.0,
+    "blocked_proposals": 0,
+    "by_requested_density": {
+      "0.1": {
+        "attempted_actions": 6332,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 1176,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 2,
+          "success": 1174,
+          "timeout": 0
+        },
+        "success_count": 1174,
+        "success_rate": 0.9982993197278912,
+        "successful_mean_path_ratio": 1.0,
+        "successful_mean_steps": 5.385860306643952,
+        "successful_optimal_rate": 1.0,
+        "successful_path_ratio_count": 1174,
+        "successful_zero_step_count": 0
+      },
+      "0.2": {
+        "attempted_actions": 7982,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 1440,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 0,
+          "success": 1440,
+          "timeout": 0
+        },
+        "success_count": 1440,
+        "success_rate": 1.0,
+        "successful_mean_path_ratio": 1.0005235042735043,
+        "successful_mean_steps": 5.543055555555555,
+        "successful_optimal_rate": 0.9972222222222222,
+        "successful_path_ratio_count": 1440,
+        "successful_zero_step_count": 0
+      },
+      "0.3": {
+        "attempted_actions": 5652,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 984,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 0,
+          "success": 984,
+          "timeout": 0
+        },
+        "success_count": 984,
+        "success_rate": 1.0,
+        "successful_mean_path_ratio": 1.0002540650406504,
+        "successful_mean_steps": 5.7439024390243905,
+        "successful_optimal_rate": 0.9989837398373984,
+        "successful_path_ratio_count": 984,
+        "successful_zero_step_count": 0
+      }
+    },
+    "episodes": 3600,
+    "outcomes": {
+      "blocked": 0,
+      "loop": 2,
+      "success": 3598,
+      "timeout": 0
+    },
+    "success_count": 3598,
+    "success_rate": 0.9994444444444445,
+    "successful_mean_path_ratio": 1.0002790011544875,
+    "successful_mean_steps": 5.546692607003891,
+    "successful_optimal_rate": 0.9986103390772652,
+    "successful_path_ratio_count": 3598,
+    "successful_zero_step_count": 0
+  },
+  "validation_state_metrics": {
+    "optimal_action_accuracy": 0.9992282899813881,
+    "optimal_action_correct": 22012,
+    "optimal_set_loss": 0.0015337831926733286,
+    "states": 22029
+  },
+  "weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+}

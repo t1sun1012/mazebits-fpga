@@ -1,0 +1,25 @@
+{
+  "description": "Post-training CLI smoke checks; these did not select the checkpoint.",
+  "examples": {
+    "at-goal": {
+      "attempted_actions": 0,
+      "bfs_distance": 0,
+      "outcome": "success"
+    },
+    "blocked": {
+      "attempted_actions": 3,
+      "bfs_distance": null,
+      "outcome": "loop"
+    },
+    "detour": {
+      "attempted_actions": 21,
+      "bfs_distance": 21,
+      "outcome": "success"
+    },
+    "open": {
+      "attempted_actions": 14,
+      "bfs_distance": 14,
+      "outcome": "success"
+    }
+  }
+}
