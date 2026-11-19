@@ -1,0 +1,36 @@
+# Local Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated datasets and large experiment outputs
+data/
+runs/
+checkpoints/
+local/
+*.pt
+*.pth
+
+# Vivado generated products (commit authored RTL, testbenches, and constraints)
+.Xil/
+*.jou
+*.log
+*.wdb
+*.bit
+*.bin
+*.dcp
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
