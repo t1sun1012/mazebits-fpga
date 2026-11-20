@@ -1,0 +1,63 @@
+{
+  "format": "mazebits-board-test-v1",
+  "milestone": 6,
+  "reported_date": "2026-11-19",
+  "date_timezone": "America/New_York",
+  "evidence_type": "user-reported physical board tests corroborated by supplied monitor photographs",
+  "bitstream": "mazebits_navigation.bit",
+  "bitstream_sha256": "e8645010991193704d6744bd7f47c98850310820ad267b655cdea2e4c269eff4",
+  "tests": [
+    {
+      "name": "open-maze",
+      "status": "pass",
+      "walls_hex": "0000000000000000",
+      "start": 0,
+      "goal": 63,
+      "w8a8": {
+        "outcome": "GOAL",
+        "attempts": 14,
+        "displayed_cycles_hex": "02AF420E",
+        "displayed_cycles_decimal": 45040142,
+        "matches_reference_cycles": true
+      },
+      "w4a4": {
+        "outcome": "GOAL",
+        "attempts": 14,
+        "displayed_cycles_hex": "02AF420E",
+        "displayed_cycles_decimal": 45040142,
+        "matches_reference_cycles": true
+      },
+      "user_report": "Both show GOAL and TRIES 014",
+      "photo": "hardware/open-maze.jpg"
+    },
+    {
+      "name": "detour-precision-comparison",
+      "status": "pass",
+      "walls_hex": "0002020202020202",
+      "start": 0,
+      "goal": 7,
+      "w8a8": {
+        "outcome": "GOAL",
+        "attempts": 21,
+        "displayed_cycles_hex": "0406E315",
+        "displayed_cycles_decimal": 67560213,
+        "matches_reference_cycles": true
+      },
+      "w4a4": {
+        "outcome": "BLOCKED",
+        "attempts": 4,
+        "displayed_cycles_hex": "00C45C04",
+        "displayed_cycles_decimal": 12868612,
+        "matches_reference_cycles": true
+      },
+      "user_report": "Yes: 8-bit GOAL 021, 4-bit BLOCKED 004",
+      "photo": "hardware/detour.jpg"
+    }
+  ],
+  "pending": [
+    "restart and edit-mode cancellation",
+    "start/goal overlap"
+  ],
+  "limitations": "Photographs corroborate monitor output and displayed counters. They do not independently measure elapsed time/clock frequency or verify FPGA memory readback. Restart/cancellation and overlap remain untested physically.",
+  "photo_manifest": "hardware/photos.json"
+}

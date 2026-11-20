@@ -1,6 +1,14 @@
 # Step 6 evidence
 
-The final combined design passes the Python and XSim checks below and routes at 100 MHz with zero DRC violations. The bitstream is generated locally; the Step 6 physical board test remains pending. The [Step 5 board-test report](../editor/board-test.json) records the user's successful earlier test separately.
+The final combined design passes the Python and XSim checks below and routes at 100 MHz with zero DRC violations. The user reported that Step 6 passes both the open-maze board test (GOAL / TRIES 014 on both panels) and the detour test (8-bit GOAL / TRIES 021, 4-bit BLOCKED / TRIES 004); [board-test.json](board-test.json) records that report and the remaining physical checks. The [Step 5 board-test report](../editor/board-test.json) records the user's successful earlier test separately.
+
+## Physical board photographs
+
+![Physical detour comparison](hardware/detour.jpg)
+
+The supplied monitor photographs corroborate both reported outcomes. [The open-maze image](hardware/open-maze.jpg) shows both panels at GOAL / TRIES 014 / CYC HEX 02AF420E. The detour image above shows 8-bit GOAL / TRIES 021 / 0406E315 and 4-bit BLOCKED / TRIES 004 / 00C45C04. Each displayed cycle total equals the attempt count times 3,217,153, matching the reference; these are counter readouts, not an independent timing measurement.
+
+[board-test.json](board-test.json) records the observed values and remaining physical checks. [hardware/photos.json](hardware/photos.json) records metadata removal and pixel equality. The primary JPEG scan data and color profile are preserved; the photographs were not cropped, resized, retouched, or recompressed.
 
 ## Simulation
 

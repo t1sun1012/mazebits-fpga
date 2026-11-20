@@ -6,13 +6,13 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 ## Current status
 
-**Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test; the new Step 6 bitstream awaits its own board test.
+**Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. [The board-test log](results/navigation/board-test.json) separates physical reports from simulation and lists the remaining control checks.
 
 ## Neural maze comparison
 
-![VGA rendering of verified detour final states](results/navigation/detour_demo.png)
+![Physical FPGA detour comparison on the VGA monitor](results/navigation/hardware/detour.jpg)
 
-VGA rendering of verified reference final states for the detour maze. The image comes from the simulated renderer, not a board photograph or full-system CNN capture. Real CNN paths are verified separately against scalar-checked integer references.
+Actual VGA monitor photograph supplied after the physical board test. The 8-bit model reaches the goal in 21 attempts; the 4-bit model stops blocked after 4. The [open-maze photograph](results/navigation/hardware/open-maze.jpg) shows both models succeeding in 14 attempts. Published copies preserve the original image pixels and omit camera location metadata.
 
 Arrows move the editor cursor; center applies an edit. SW1:SW0 selects 00=WALL, 01=START, 10=GOAL, or 11=VIEW. In VIEW, press Center to start or restart both models from the same edited scenario. Returning to an edit mode stops both agents and preserves the map. CPU RESET clears the map.
 
@@ -136,4 +136,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-The next physical check is to program the Step 6 bitstream and run the documented open-maze, detour, restart/cancel, and overlapping-endpoint tests. Each completed implementation milestone is committed and pushed on its own branch.
+The open-maze and detour physical checks passed as reported by the user. Remaining physical control checks are restart/cancel and overlapping endpoints; simulation covers both. Each completed implementation milestone is committed and pushed on its own branch.

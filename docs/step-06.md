@@ -2,7 +2,7 @@
 
 Step 6 connects the frozen W8A8 and W4A4 CNNs to independent navigation controllers and two VGA panels. Both agents receive the same edited scenario when a comparison starts. They choose their own actions afterward. This is the existing BFS-imitation-trained policy; no reinforcement learning, online training, route search, or illegal-action repair runs on the FPGA.
 
-Step 5's physical editor/display test was reported successful by the user on November 19, 2026. The Step 6 bitstream requires its own physical board test; simulation and a successful FPGA build alone do not establish that it has been tested on the board.
+Step 5's physical editor/display test was reported successful by the user on November 19, 2026. The user also reported that Step 6's open-maze and detour physical tests pass: both panels show GOAL / TRIES 014 on the open maze; the detour produces 8-bit GOAL / TRIES 021 and 4-bit BLOCKED / TRIES 004. [The board-test log](../results/navigation/board-test.json) separates these physical reports from simulator results and lists the remaining checks. Supplied monitor photographs corroborate the [open-maze](../results/navigation/hardware/open-maze.jpg) and [detour](../results/navigation/hardware/detour.jpg) outcomes and cycle-counter values.
 
 ## Controls
 

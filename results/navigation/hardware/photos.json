@@ -1,0 +1,51 @@
+{
+  "format": "mazebits-hardware-photo-export-v1",
+  "reported_date": "2026-11-19",
+  "processing": "Metadata-only extraction of original primary JPEG image. EXIF/XMP/IPTC/comments and MPO metadata/secondary image data removed; original encoded image scan data and ICC profile preserved. No crop, resizing, pixel edits, or recompression.",
+  "photos": [
+    {
+      "scenario": "open-maze",
+      "original_filename": "IMG_7177.jpeg",
+      "original_sha256": "250846d320252608751effebc94e962ac1aaeb82bc274e8e8b32359e9825f55d",
+      "published_file": "open-maze.jpg",
+      "published_sha256": "79a4cd039e8bddae57a89673a20004db566460853865e16073170b6de853ea2a",
+      "published_bytes": 3121689,
+      "dimensions": [
+        5712,
+        4284
+      ],
+      "decoded_rgb_sha256": "6b42c193883b215834723578507c232f1287c6b98a4df54a9292aac0707d4228",
+      "pixels_identical": true,
+      "icc_profile_preserved": true,
+      "exif_removed": true,
+      "removed_markers": [
+        "APP1",
+        "APP2",
+        "APP2"
+      ],
+      "extra_mpo_image_bytes_removed": 300431
+    },
+    {
+      "scenario": "detour-precision-comparison",
+      "original_filename": "IMG_7178.jpeg",
+      "original_sha256": "256edd8161379d09681f548a65426624d48650cbf17f98dcd3ad4f9d9f23c591",
+      "published_file": "detour.jpg",
+      "published_sha256": "d554d14eea016c527a1fc9803355b3db49abc4020965d661006a9ecb26316c24",
+      "published_bytes": 2988924,
+      "dimensions": [
+        5712,
+        4284
+      ],
+      "decoded_rgb_sha256": "b6b6a2c39b6c0acca36d3de6887b24cae2896075dda2dc125d1c2aa97515fa6d",
+      "pixels_identical": true,
+      "icc_profile_preserved": true,
+      "exif_removed": true,
+      "removed_markers": [
+        "APP1",
+        "APP2",
+        "APP2"
+      ],
+      "extra_mpo_image_bytes_removed": 324316
+    }
+  ]
+}
