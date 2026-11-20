@@ -1,0 +1,40 @@
+{
+  "format": "mazebits-report-render-v1",
+  "source_evidence_commit": "0bd19baa7dea709d8711b16bfb94b5be9aa4c523",
+  "metrics_sha256": "df27fdf551d0e14ce431cfb758cd1667b63160309f1bc4b91c9fe368aa128415",
+  "generator_sha256": "abca8460f82977dc14b1ea942eab9c2aa11ddc69d4660901d3b0a37321405cdd",
+  "pdf": {
+    "path": "output/pdf/MazeBits_Quantization_Evaluation.pdf",
+    "sha256": "03684a2daa915a822179bf464c9d1ea1cea80df2fa8e7445adb7c06a7f8d81d4",
+    "pages": 5
+  },
+  "markdown": {
+    "path": "docs/quantization-evaluation.md",
+    "sha256": "b5d2d909602637ae9a08f5cf9a3b2c4b22d57a8af7edd651131f5b51faba7dba"
+  },
+  "text_checks": "pass",
+  "visual_review": {
+    "status": "pass",
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "renderer": "Poppler pdftoppm at 100 DPI",
+    "notes": "All final pages visually inspected; final renders are pixel-identical after publication line-ending normalization. No clipping, overlap, broken glyphs, or table overflow.",
+    "rendered_pages_sha256": {
+      "page-1.png": "189b7e924305a8299a4911a8f028cb7309fcbea6c97b592f5b3b0e00d900f6c4",
+      "page-2.png": "edb0c35c8d2a3bac26ef6a6a0da00591de63bf933810573b91036144ef0a6f55",
+      "page-3.png": "88b3bc01a08d684e2e62cc512f3dcd52d1afde7e6ff9e2694f8cd9d6740c6094",
+      "page-4.png": "e16e66e64dc01e4f4dae72e8678e08b249bc2214fb91f7b5e8358a4c083aaa99",
+      "page-5.png": "faa0872371ccdd41bbac21859cac8c657a897cd044bd46b1d65a6baf53125ae2"
+    }
+  },
+  "package_versions": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.21.4"
+  },
+  "source_links_checked": 8
+}

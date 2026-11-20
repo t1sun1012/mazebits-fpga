@@ -12,6 +12,10 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 **Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. Restart, cancellation, and zero-step start/goal overlap also passed as reported by the user. [The board-test log](results/navigation/board-test.json) separates physical evidence from simulation.
 
+## Evaluation report
+
+[Download the five-page PDF](output/pdf/MazeBits_Quantization_Evaluation.pdf) or read the [Markdown report](docs/quantization-evaluation.md). The improved W8A8/W4A4 comparison covers paired navigation outcomes, maze-family and path-distance groups, nominal inference latency, packed storage, routed resources, verification, and physical checks. It uses validation results; reserved test partitions remain unevaluated. [Reproducible report data and charts](results/evaluation/README.md) bind the report to its evidence.
+
 ## Original checkpoint: physical maze comparison
 
 ![Physical FPGA detour comparison on the VGA monitor](results/navigation/hardware/detour.jpg)

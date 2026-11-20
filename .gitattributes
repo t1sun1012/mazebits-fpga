@@ -25,3 +25,5 @@ constraints/reference/Nexys-4-DDR-Master.xdc -text -whitespace
 # Preserve native tool-log formatting while keeping published evidence byte-stable.
 results/navigation-structured/build/*.log text eol=lf -whitespace
 results/navigation-structured/**/elaborate.txt text eol=lf -whitespace
+
+*.pdf binary

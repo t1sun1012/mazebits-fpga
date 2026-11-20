@@ -1,0 +1,775 @@
+{
+  "format": "mazebits-evaluation-report-v1",
+  "scope": "Improved checkpoint; saved software validation, verified RTL cycles, routed FPGA resources, and separately identified user-reported board checks.",
+  "method": "Aggregation only: no training, inference, or reserved final-test access.",
+  "dataset": {
+    "partition": "validation",
+    "layouts": 200,
+    "states": 27084,
+    "episodes": 4800,
+    "reserved_test_evaluated": false,
+    "name": "maze-v2",
+    "distance_groups": [
+      "0-9",
+      "10-19",
+      "20+"
+    ],
+    "family_metadata": "data/maze-v2/val.json",
+    "goals_per_layout": 3,
+    "starts_per_goal": 8
+  },
+  "models": {
+    "w8a8": {
+      "precision": "W8A8",
+      "model_manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+      "optimal_action_correct": 27016,
+      "optimal_action_accuracy": 0.9974892925712597,
+      "float_action_agreement": 0.9909540688229213,
+      "float_action_differences": 245,
+      "rollouts": {
+        "episodes": 4800,
+        "success_count": 4766,
+        "success_rate": 0.9929166666666667,
+        "outcomes": {
+          "success": 4766,
+          "blocked": 0,
+          "loop": 34,
+          "timeout": 0
+        },
+        "attempted_actions": 46861,
+        "successful_path_ratio_count": 4766,
+        "successful_zero_step_count": 0,
+        "successful_optimal_count": 4763,
+        "successful_mean_path_ratio": 1.0001768479107966,
+        "successful_mean_steps": 9.786613512379354,
+        "successful_mean_BFS_steps": 9.784515316827529
+      },
+      "hardware": {
+        "cycles_per_decision": 3217153,
+        "nominal_inference_ms": 32.17153,
+        "packed_parameter_bytes": 17152,
+        "logical_activation_bank_bytes": 2048,
+        "routed_cnn_resources": {
+          "luts": 632,
+          "registers": 347,
+          "ramb36": 8,
+          "ramb18": 2,
+          "bram_36k_equivalents": 9.0,
+          "dsps": 0,
+          "allocated_bram_bits_including_parity_capacity": 331776
+        }
+      }
+    },
+    "w4a4": {
+      "precision": "W4A4",
+      "model_manifest_sha256": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+      "optimal_action_correct": 26419,
+      "optimal_action_accuracy": 0.9754467582336435,
+      "float_action_agreement": 0.9130482941958352,
+      "float_action_differences": 2355,
+      "rollouts": {
+        "episodes": 4800,
+        "success_count": 4050,
+        "success_rate": 0.84375,
+        "outcomes": {
+          "success": 4050,
+          "blocked": 37,
+          "loop": 713,
+          "timeout": 0
+        },
+        "attempted_actions": 39573,
+        "successful_path_ratio_count": 4050,
+        "successful_zero_step_count": 0,
+        "successful_optimal_count": 4009,
+        "successful_mean_path_ratio": 1.0029005040791532,
+        "successful_mean_steps": 8.362469135802469,
+        "successful_mean_BFS_steps": 8.34074074074074
+      },
+      "hardware": {
+        "cycles_per_decision": 3217153,
+        "nominal_inference_ms": 32.17153,
+        "packed_parameter_bytes": 8840,
+        "logical_activation_bank_bytes": 1024,
+        "routed_cnn_resources": {
+          "luts": 524,
+          "registers": 333,
+          "ramb36": 4,
+          "ramb18": 2,
+          "bram_36k_equivalents": 5.0,
+          "dsps": 0,
+          "allocated_bram_bits_including_parity_capacity": 184320
+        }
+      }
+    }
+  },
+  "paired_outcomes": {
+    "episodes": 4800,
+    "both_success": 4040,
+    "only_8bit_success": 726,
+    "only_4bit_success": 10,
+    "both_fail": 24
+  },
+  "paired_successful_paths": {
+    "episodes": 4040,
+    "models": {
+      "w8a8": {
+        "episodes": 4040,
+        "success_count": 4040,
+        "success_rate": 1.0,
+        "outcomes": {
+          "success": 4040,
+          "blocked": 0,
+          "loop": 0,
+          "timeout": 0
+        },
+        "attempted_actions": 33566,
+        "successful_path_ratio_count": 4040,
+        "successful_zero_step_count": 0,
+        "successful_optimal_count": 4040,
+        "successful_mean_path_ratio": 1.0,
+        "successful_mean_steps": 8.308415841584159,
+        "successful_mean_BFS_steps": 8.308415841584159
+      },
+      "w4a4": {
+        "episodes": 4040,
+        "success_count": 4040,
+        "success_rate": 1.0,
+        "outcomes": {
+          "success": 4040,
+          "blocked": 0,
+          "loop": 0,
+          "timeout": 0
+        },
+        "attempted_actions": 33652,
+        "successful_path_ratio_count": 4040,
+        "successful_zero_step_count": 0,
+        "successful_optimal_count": 4000,
+        "successful_mean_path_ratio": 1.0028767429506364,
+        "successful_mean_steps": 8.32970297029703,
+        "successful_mean_BFS_steps": 8.308415841584159
+      }
+    },
+    "w8_shorter": 40,
+    "w4_shorter": 0,
+    "same_length": 4000,
+    "extra_4bit_steps_total": 86
+  },
+  "by_family": {
+    "barrier": {
+      "episodes": 960,
+      "layouts": 40,
+      "paired_outcomes": {
+        "episodes": 960,
+        "both_success": 872,
+        "only_8bit_success": 75,
+        "only_4bit_success": 0,
+        "both_fail": 13
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 960,
+          "success_count": 947,
+          "success_rate": 0.9864583333333333,
+          "outcomes": {
+            "success": 947,
+            "blocked": 0,
+            "loop": 13,
+            "timeout": 0
+          },
+          "attempted_actions": 8036,
+          "successful_path_ratio_count": 947,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 947,
+          "successful_mean_path_ratio": 1.0,
+          "successful_mean_steps": 8.409714889123547,
+          "successful_mean_BFS_steps": 8.409714889123547
+        },
+        "w4a4": {
+          "episodes": 960,
+          "success_count": 872,
+          "success_rate": 0.9083333333333333,
+          "outcomes": {
+            "success": 872,
+            "blocked": 12,
+            "loop": 76,
+            "timeout": 0
+          },
+          "attempted_actions": 7373,
+          "successful_path_ratio_count": 872,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 869,
+          "successful_mean_path_ratio": 1.0017201834862386,
+          "successful_mean_steps": 7.887614678899083,
+          "successful_mean_BFS_steps": 7.8807339449541285
+        }
+      }
+    },
+    "bernoulli": {
+      "episodes": 1920,
+      "layouts": 80,
+      "paired_outcomes": {
+        "episodes": 1920,
+        "both_success": 1841,
+        "only_8bit_success": 77,
+        "only_4bit_success": 1,
+        "both_fail": 1
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 1920,
+          "success_count": 1918,
+          "success_rate": 0.9989583333333333,
+          "outcomes": {
+            "success": 1918,
+            "blocked": 0,
+            "loop": 2,
+            "timeout": 0
+          },
+          "attempted_actions": 14000,
+          "successful_path_ratio_count": 1918,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1915,
+          "successful_mean_path_ratio": 1.0004394458513333,
+          "successful_mean_steps": 7.29509906152242,
+          "successful_mean_BFS_steps": 7.289885297184568
+        },
+        "w4a4": {
+          "episodes": 1920,
+          "success_count": 1842,
+          "success_rate": 0.959375,
+          "outcomes": {
+            "success": 1842,
+            "blocked": 10,
+            "loop": 68,
+            "timeout": 0
+          },
+          "attempted_actions": 13667,
+          "successful_path_ratio_count": 1842,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1825,
+          "successful_mean_path_ratio": 1.0032743872727585,
+          "successful_mean_steps": 7.152008686210641,
+          "successful_mean_BFS_steps": 7.132464712269273
+        }
+      }
+    },
+    "corridor": {
+      "episodes": 1920,
+      "layouts": 80,
+      "paired_outcomes": {
+        "episodes": 1920,
+        "both_success": 1327,
+        "only_8bit_success": 574,
+        "only_4bit_success": 9,
+        "both_fail": 10
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 1920,
+          "success_count": 1901,
+          "success_rate": 0.9901041666666667,
+          "outcomes": {
+            "success": 1901,
+            "blocked": 0,
+            "loop": 19,
+            "timeout": 0
+          },
+          "attempted_actions": 24825,
+          "successful_path_ratio_count": 1901,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1901,
+          "successful_mean_path_ratio": 1.0,
+          "successful_mean_steps": 12.986322987901104,
+          "successful_mean_BFS_steps": 12.986322987901104
+        },
+        "w4a4": {
+          "episodes": 1920,
+          "success_count": 1336,
+          "success_rate": 0.6958333333333333,
+          "outcomes": {
+            "success": 1336,
+            "blocked": 15,
+            "loop": 569,
+            "timeout": 0
+          },
+          "attempted_actions": 18533,
+          "successful_path_ratio_count": 1336,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1315,
+          "successful_mean_path_ratio": 1.0031554043144832,
+          "successful_mean_steps": 10.341317365269461,
+          "successful_mean_BFS_steps": 10.30688622754491
+        }
+      }
+    }
+  },
+  "by_bfs_distance": {
+    "0-9": {
+      "episodes": 2726,
+      "layouts": 200,
+      "paired_outcomes": {
+        "episodes": 2726,
+        "both_success": 2636,
+        "only_8bit_success": 90,
+        "only_4bit_success": 0,
+        "both_fail": 0
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 2726,
+          "success_count": 2726,
+          "success_rate": 1.0,
+          "outcomes": {
+            "success": 2726,
+            "blocked": 0,
+            "loop": 0,
+            "timeout": 0
+          },
+          "attempted_actions": 14121,
+          "successful_path_ratio_count": 2726,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 2726,
+          "successful_mean_path_ratio": 1.0,
+          "successful_mean_steps": 5.1801173881144535,
+          "successful_mean_BFS_steps": 5.1801173881144535
+        },
+        "w4a4": {
+          "episodes": 2726,
+          "success_count": 2636,
+          "success_rate": 0.966984592809978,
+          "outcomes": {
+            "success": 2636,
+            "blocked": 2,
+            "loop": 88,
+            "timeout": 0
+          },
+          "attempted_actions": 14059,
+          "successful_path_ratio_count": 2636,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 2617,
+          "successful_mean_path_ratio": 1.0030379121805526,
+          "successful_mean_steps": 5.164643399089529,
+          "successful_mean_BFS_steps": 5.150227617602428
+        }
+      }
+    },
+    "10-19": {
+      "episodes": 1595,
+      "layouts": 197,
+      "paired_outcomes": {
+        "episodes": 1595,
+        "both_success": 1247,
+        "only_8bit_success": 334,
+        "only_4bit_success": 4,
+        "both_fail": 10
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 1595,
+          "success_count": 1581,
+          "success_rate": 0.9912225705329154,
+          "outcomes": {
+            "success": 1581,
+            "blocked": 0,
+            "loop": 14,
+            "timeout": 0
+          },
+          "attempted_actions": 21238,
+          "successful_path_ratio_count": 1581,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1578,
+          "successful_mean_path_ratio": 1.0005331164723954,
+          "successful_mean_steps": 13.399114484503478,
+          "successful_mean_BFS_steps": 13.392789373814042
+        },
+        "w4a4": {
+          "episodes": 1595,
+          "success_count": 1251,
+          "success_rate": 0.7843260188087774,
+          "outcomes": {
+            "success": 1251,
+            "blocked": 19,
+            "loop": 325,
+            "timeout": 0
+          },
+          "attempted_actions": 18403,
+          "successful_path_ratio_count": 1251,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 1230,
+          "successful_mean_path_ratio": 1.0029127633232584,
+          "successful_mean_steps": 13.082334132693845,
+          "successful_mean_BFS_steps": 13.04396482813749
+        }
+      }
+    },
+    "20+": {
+      "episodes": 479,
+      "layouts": 94,
+      "paired_outcomes": {
+        "episodes": 479,
+        "both_success": 157,
+        "only_8bit_success": 302,
+        "only_4bit_success": 6,
+        "both_fail": 14
+      },
+      "models": {
+        "w8a8": {
+          "episodes": 479,
+          "success_count": 459,
+          "success_rate": 0.9582463465553236,
+          "outcomes": {
+            "success": 459,
+            "blocked": 0,
+            "loop": 20,
+            "timeout": 0
+          },
+          "attempted_actions": 11502,
+          "successful_path_ratio_count": 459,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 459,
+          "successful_mean_path_ratio": 1.0,
+          "successful_mean_steps": 24.70152505446623,
+          "successful_mean_BFS_steps": 24.70152505446623
+        },
+        "w4a4": {
+          "episodes": 479,
+          "success_count": 163,
+          "success_rate": 0.34029227557411273,
+          "outcomes": {
+            "success": 163,
+            "blocked": 16,
+            "loop": 300,
+            "timeout": 0
+          },
+          "attempted_actions": 7111,
+          "successful_path_ratio_count": 163,
+          "successful_zero_step_count": 0,
+          "successful_optimal_count": 162,
+          "successful_mean_path_ratio": 1.0005842827928717,
+          "successful_mean_steps": 23.85276073619632,
+          "successful_mean_BFS_steps": 23.84049079754601
+        }
+      }
+    }
+  },
+  "tradeoffs": {
+    "route_success_drop_percentage_points": 14.916666666666668,
+    "action_accuracy_drop_percentage_points": 2.204253433761627,
+    "packed_parameter_reduction_percent": 48.46082089552239,
+    "cnn_bram_reduction_percent": 44.44444444444444,
+    "cnn_lut_reduction_percent": 17.088607594936708,
+    "per_decision_latency_ratio_w4_over_w8": 1.0
+  },
+  "hardware_build": {
+    "part": "xc7a100tcsg324-1",
+    "clock_period_ns": 10.0,
+    "setup_slack_ns": 0.603,
+    "hold_slack_ns": 0.042,
+    "routed_resources": {
+      "luts": 2176,
+      "registers": 1695,
+      "bram_36k_tiles": 14.5,
+      "ramb36": 12,
+      "ramb18": 5,
+      "dsps": 0
+    },
+    "total_drc_count": 0,
+    "bitstream": {
+      "name": "mazebits_navigation_structured.bit",
+      "bytes": 3825908,
+      "sha256": "3aa08afa503ab2ac9856d48f5c5aa702bbe53fa5b03d158081285be3a606536b",
+      "programmed_on_board": false
+    }
+  },
+  "physical_checks": {
+    "format": "mazebits-board-test-v1",
+    "milestone": 8,
+    "model_set": "structured",
+    "reported_date": "2026-11-19",
+    "date_timezone": "America/New_York",
+    "status": "required_checks_passed",
+    "evidence_type": "User-reported physical observations; expected outcomes are simulation references, not additional observations.",
+    "bitstream": "mazebits_navigation_structured.bit",
+    "bitstream_sha256": "3aa08afa503ab2ac9856d48f5c5aa702bbe53fa5b03d158081285be3a606536b",
+    "tests": [
+      {
+        "name": "open",
+        "walls_hex": "0000000000000000",
+        "start": 0,
+        "goal": 63,
+        "status": "pass",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 14,
+            "displayed_cycles_hex": "02AF420E"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 14,
+            "displayed_cycles_hex": "02AF420E"
+          }
+        },
+        "observed": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 14,
+            "displayed_cycles_hex": "02AF420E"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 14,
+            "displayed_cycles_hex": "02AF420E"
+          }
+        },
+        "user_report": "Both panels match",
+        "evidence_type": "user-reported physical board test",
+        "required_for_step8": true
+      },
+      {
+        "name": "detour",
+        "walls_hex": "0002020202020202",
+        "start": 0,
+        "goal": 7,
+        "status": "pass",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 21,
+            "displayed_cycles_hex": "0406E315"
+          },
+          "w4a4": {
+            "outcome": "LOOP",
+            "attempts": 8,
+            "displayed_cycles_hex": "0188B808"
+          }
+        },
+        "observed": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 21,
+            "displayed_cycles_hex": "0406E315"
+          },
+          "w4a4": {
+            "outcome": "LOOP",
+            "attempts": 8,
+            "displayed_cycles_hex": "0188B808"
+          }
+        },
+        "user_report": "Both results match",
+        "evidence_type": "user-reported physical board test",
+        "required_for_step8": true
+      },
+      {
+        "name": "blocked",
+        "walls_hex": "0202020202020202",
+        "start": 0,
+        "goal": 7,
+        "status": "pending",
+        "expected": {
+          "w8a8": {
+            "outcome": "LOOP",
+            "attempts": 3,
+            "displayed_cycles_hex": "00934503"
+          },
+          "w4a4": {
+            "outcome": "LOOP",
+            "attempts": 5,
+            "displayed_cycles_hex": "00F57305"
+          }
+        },
+        "observed": null,
+        "required_for_step8": false
+      },
+      {
+        "name": "at-goal",
+        "walls_hex": "0000000000000000",
+        "start": 0,
+        "goal": 0,
+        "status": "pending",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          }
+        },
+        "observed": null,
+        "required_for_step8": false
+      },
+      {
+        "name": "precision-reversal-IMG_7179",
+        "walls_hex": "0000020202020202",
+        "start": 0,
+        "goal": 31,
+        "status": "pending",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 16,
+            "displayed_cycles_hex": "03117010"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 16,
+            "displayed_cycles_hex": "03117010"
+          }
+        },
+        "observed": null,
+        "required_for_step8": false
+      },
+      {
+        "name": "long-detour-IMG_7180",
+        "walls_hex": "0002020202027e02",
+        "start": 0,
+        "goal": 2,
+        "status": "pass",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 26,
+            "displayed_cycles_hex": "04FC561A"
+          },
+          "w4a4": {
+            "outcome": "LOOP",
+            "attempts": 4,
+            "displayed_cycles_hex": "00C45C04"
+          }
+        },
+        "observed": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 26,
+            "displayed_cycles_hex": "04FC561A"
+          },
+          "w4a4": {
+            "outcome": "LOOP",
+            "attempts": 4,
+            "displayed_cycles_hex": "00C45C04"
+          }
+        },
+        "user_report": "Both results match",
+        "evidence_type": "user-reported physical board test",
+        "required_for_step8": true
+      },
+      {
+        "name": "precision-loss-latest-photo",
+        "walls_hex": "0008080808087800",
+        "start": 0,
+        "goal": 63,
+        "status": "pending",
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 14,
+            "displayed_cycles_hex": "02AF420E"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 16,
+            "displayed_cycles_hex": "03117010"
+          }
+        },
+        "observed": null,
+        "required_for_step8": false
+      },
+      {
+        "name": "mid-run-restart",
+        "status": "pass",
+        "observed": "Center during movement restarts both trails from the shared start.",
+        "required_for_step8": true,
+        "user_report": "All three pass",
+        "evidence_type": "user-reported physical board test"
+      },
+      {
+        "name": "edit-mode-cancellation",
+        "status": "pass",
+        "observed": "Switching from VIEW to WALL stops navigation and preserves an editable map.",
+        "required_for_step8": true,
+        "user_report": "All three pass",
+        "evidence_type": "user-reported physical board test"
+      },
+      {
+        "name": "start-goal-overlap",
+        "status": "pass",
+        "observed": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          }
+        },
+        "expected": {
+          "w8a8": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          },
+          "w4a4": {
+            "outcome": "GOAL",
+            "attempts": 0,
+            "displayed_cycles_hex": "00000000"
+          }
+        },
+        "scope": "Physical control test with START placed on the current GOAL; not necessarily the empty-map at-goal simulation fixture.",
+        "required_for_step8": true,
+        "user_report": "All three pass",
+        "evidence_type": "user-reported physical board test"
+      }
+    ],
+    "required_checks_passed": 6,
+    "additional_reference_cases_not_physically_tested": [
+      "blocked",
+      "at-goal",
+      "precision-reversal-IMG_7179",
+      "precision-loss-latest-photo"
+    ]
+  },
+  "limitations": [
+    "Validation guided development/model selection; the reserved final test remains unevaluated.",
+    "The 4,800 software episodes are not 4,800 physical board runs. Board observations are user-reported examples and controls.",
+    "Episodes sharing one of the 200 layouts are correlated; no independent-episode confidence interval is claimed.",
+    "Raw deterministic argmax actions are used, with blocked/repeated-position/64-step termination and no BFS repair.",
+    "Own-success path ratios use different denominators; paired-success paths provide an equal-episode comparison.",
+    "Both precisions have equal scheduled cycles per decision. Latency uses the nominal 100 MHz clock and excludes animation pauses.",
+    "Packed parameters, logical activation storage, allocated BRAM and bitstream disk size are different quantities.",
+    "Known photographed mazes are development diagnostics, not an independent generalization test.",
+    "No CPU speedup, power or energy comparison has been measured."
+  ],
+  "source_sha256": {
+    "scripts/prepare_evaluation_report.py": "e74063de5067158a48fe2c8a9974ab81f2e5a1dc7349d51174dfa1c16cdf05e2",
+    "results/navigation-structured/benchmark.json": "8746c4e3e5b7fc2cda2c3ffc7182091ef23b6271a973aec3a0c5c488e2ed3af5",
+    "results/navigation-structured/build/implementation.json": "74dbf1826c8a95472d65041922a7441588b8053783960a9ca59dd41332f7a32c",
+    "results/navigation-structured/final-stager-equivalence.json": "57838a389ee9add7bac487670d279860b0bf2755ccf4ea449b6d0a42711c289d",
+    "results/navigation-structured/cnn/verification.json": "6cd5db497aad7ca1ae0007efe83396ec6b8873853db144bf76b518f796c8f123",
+    "results/policy-improvement/quantization/comparison.json": "74d1f51506969eb225d0bd721017d4d9f6dbdcdcd96c763b5ee5fb610b727c65",
+    "results/navigation-structured/build/utilization_hierarchy.rpt": "b50abea946c4a0a8b403eca390b9af73f4ef577ab85fb3f30c507b06ca994ead",
+    "model/cnn-structured-w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+    "model/cnn-structured-w4a4/manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+    "results/policy-improvement/comparison.json": "f06a5554b1496ff0dd2b1f71cfb133704d6ef1d2a92627427de3b0c4a15c36dc",
+    "data/maze-v2/val.json": "06c3fb176550134dffba07619ac71e3e481bf87288f82e4b0b667d82929c22a8",
+    "results/navigation-structured/board-test.json": "18580656110508251482a5988ff0493791d44a1ab489deba7d9cbe990bf93043",
+    "results/policy-improvement/quantization/w8a8_rollouts.json": "409e0ed9393afdbf2df4ef9158d3b58b1f6e24a45e2ce404416122886828a30e",
+    "results/policy-improvement/quantization/w4a4_rollouts.json": "7ea287d585cc6f69f37de46b4c427a7426f140926f52a1d72c6ed3fa66c3d06a"
+  },
+  "charts": {
+    "comparison.png": {
+      "sha256": "069c7a693665ca355132990c614dcc40d12317567f715e2b7e4ab882b9fac791",
+      "bytes": 176143
+    },
+    "comparison.svg": {
+      "sha256": "13516f578cd23e907d223f11905716ff10e18cd1b0fce3cbb99167240c148f1d",
+      "bytes": 23644
+    }
+  }
+}

@@ -46,3 +46,6 @@ xsim.dir/
 !results/navigation-structured/build/
 !results/navigation-structured/build/build.log
 !results/navigation-structured/build/gui_validation.log
+
+# Local PDF visual-review renders
+/tmp/pdfs/
