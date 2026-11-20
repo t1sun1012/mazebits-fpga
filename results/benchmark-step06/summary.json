@@ -1,0 +1,110 @@
+{
+  "animation_delay_cycles": 20000000,
+  "animation_delay_ms_per_nonterminal_action": 200.0,
+  "bitstream_sha256": "e8645010991193704d6744bd7f47c98850310820ad267b655cdea2e4c269eff4",
+  "clock_hz": 100000000.0,
+  "dataset": {
+    "episodes": 3600,
+    "family": "independent Bernoulli obstacle cells",
+    "layouts": 150,
+    "partition": "validation",
+    "states": 22029,
+    "test_partition_evaluated": false
+  },
+  "format": "mazebits-benchmark-summary-v1",
+  "models": {
+    "w4a4": {
+      "activation_memory_scope": "Two feature banks only; excludes parameters, registers, control, and BRAM allocation overhead",
+      "bias_bytes": 528,
+      "cycles_per_decision": 3217153,
+      "logical_activation_bank_bytes": 1024,
+      "model_manifest_sha256": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+      "nominal_inference_ms": 32.17153,
+      "optimal_action_accuracy": 0.9940078986790141,
+      "outcomes": {
+        "blocked": 10,
+        "loop": 73,
+        "success": 3517,
+        "timeout": 0
+      },
+      "packed_parameter_bytes": 8840,
+      "packed_weight_bytes": 8312,
+      "routed_cnn_resources": {
+        "allocated_bram_bits_including_parity_capacity": 184320,
+        "bram_36k_equivalents": 5.0,
+        "dsps": 0,
+        "luts": 516,
+        "ramb18": 2,
+        "ramb36": 4,
+        "registers": 332
+      },
+      "success_count": 3517,
+      "success_rate": 0.9769444444444444,
+      "successful_mean_path_ratio": 1.0007250497583167
+    },
+    "w8a8": {
+      "activation_memory_scope": "Two feature banks only; excludes parameters, registers, control, and BRAM allocation overhead",
+      "bias_bytes": 528,
+      "cycles_per_decision": 3217153,
+      "logical_activation_bank_bytes": 2048,
+      "model_manifest_sha256": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+      "nominal_inference_ms": 32.17153,
+      "optimal_action_accuracy": 0.9990921058604567,
+      "outcomes": {
+        "blocked": 0,
+        "loop": 2,
+        "success": 3598,
+        "timeout": 0
+      },
+      "packed_parameter_bytes": 17152,
+      "packed_weight_bytes": 16624,
+      "routed_cnn_resources": {
+        "allocated_bram_bits_including_parity_capacity": 331776,
+        "bram_36k_equivalents": 9.0,
+        "dsps": 0,
+        "luts": 656,
+        "ramb18": 2,
+        "ramb36": 8,
+        "registers": 347
+      },
+      "success_count": 3598,
+      "success_rate": 0.9994444444444445,
+      "successful_mean_path_ratio": 1.000236242356865
+    }
+  },
+  "paired_outcomes": {
+    "both_fail": 2,
+    "both_success": 3517,
+    "only_w4_success": 0,
+    "only_w8_success": 81
+  },
+  "part": "xc7a100tcsg324-1",
+  "scope": "Frozen Step 6 model, software validation, and routed dual-engine FPGA build",
+  "source_sha256": {
+    "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+    "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+    "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+    "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "results/dataset/manifest.json": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "results/navigation/implementation.json": "780e21c8c00bb52329a56b90836e64fbfb27ba2abf65ba82e1869665e9e6c113",
+    "results/navigation/published_report_hashes.json": "3ed928f381b1cf4eb34f39598d546c6854dd90199e4f732c204a8e5eb9ee1969",
+    "results/navigation/utilization_hierarchy.rpt": "7bf37ce4c471ac67a28266d9c9eeb11cf233c964b023785723aa2aab49e0d950",
+    "results/navigation/verification.json": "8cc56b99cb440c638ba88d709aa4f60799f83605ed508af661d14e662ae2589d",
+    "results/quantization/comparison.json": "f5aad477b5494c26bf996ffdfa97ea3038e42fb6e2e8782775579f9e61c49566",
+    "results/quantization/paired_comparison.json": "d2d151c7e058b31bd5b3a57c2fb46038013304d9249da25a26fde376601d4591",
+    "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+    "rtl/mazebits_navigation_top.v": "906c5807973d67febc5439546113922537b1785f8d07327814c107c08c1b4c2f"
+  },
+  "timing_evidence": "RTL cycle counts corroborated by photographed board counters; clock from routed constraints, not an independent oscillator measurement",
+  "w4_vs_w8": {
+    "decision_speedup": 1.0,
+    "parameter_byte_reduction_percent": 48.46082089552238,
+    "routed_cnn_bram_reduction_percent": 44.44444444444444,
+    "routed_cnn_lut_reduction_percent": 21.34146341463414,
+    "validation_success_change_percentage_points": -2.2500000000000075
+  }
+}

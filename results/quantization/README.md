@@ -10,7 +10,7 @@ Both integer variants use the unchanged Step 2 checkpoint. Calibration uses 4,09
 | Blocked / loop / timeout | 0 / 2 / 0 | 0 / 2 / 0 | 10 / 73 / 0 |
 | Logical parameter bytes | 67,024 | 17,152 | 8,840 |
 
-The W4A4 parameter payload is 48.46% smaller than W8A8, with a 2.25 percentage-point decrease in validation navigation success. Actual FPGA usage and timing remain to be measured. The test partition remains reserved.
+The W4A4 parameter payload is 48.46% smaller than W8A8, with a 2.25 percentage-point decrease in validation navigation success. The later [combined Step 6 implementation](../navigation/README.md) measures FPGA resources and inference cycles; the [benchmarking guide](../../docs/benchmarking.md) explains the comparison. The test partition remains reserved.
 
 Both modes succeed in 3,517 paired scenarios; only W8A8 succeeds in 81; both fail in two. W8A8 and FP32 have the same success count but different action choices. Multiple shortest-path actions can all be correct.
 

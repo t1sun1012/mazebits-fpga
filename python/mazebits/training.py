@@ -13,7 +13,7 @@ import torch
 
 from .evaluation import evaluate_rollouts
 from .model import ModelConfig, PolicyCNN, augment_batch, optimal_set_loss
-from .model_io import save_model, sha256, write_json
+from .model_io import load_model, save_model, sha256, write_json
 
 
 def configure_cpu(seed: int, threads: int = 1) -> None:
@@ -82,10 +82,26 @@ def source_hashes() -> dict:
     return {path.relative_to(root).as_posix(): sha256(path) for path in paths}
 
 
+def initialize_policy(config: ModelConfig, initial_model: Path | None = None):
+    """Load checked portable weights for fine-tuning, or initialize a new CNN."""
+    if initial_model is None:
+        return PolicyCNN(config), {"method": "random initialization"}
+    model, manifest = load_model(Path(initial_model))
+    if model.config != config:
+        raise ValueError("initial model architecture does not match requested channels/depth")
+    return model, {
+        "method": "fine-tune existing floating-point weights; new Adam optimizer",
+        "weights_sha256": manifest["weights_sha256"],
+        "manifest_sha256": sha256(Path(initial_model) / "manifest.json"),
+        "source_dataset_manifest_sha256": manifest.get("provenance", {}).get("dataset_manifest_sha256"),
+    }
+
+
 def train(
     data_dir: Path, run_dir: Path, *, seed: int = 311, channels: int = 16,
     depth: int = 8, epochs: int = 60, patience: int = 12, batch_size: int = 256,
-    learning_rate: float = 0.001, threads: int = 1, augment: bool = True
+    learning_rate: float = 0.001, threads: int = 1, augment: bool = True,
+    initial_model: Path | None = None
 ) -> dict:
     if epochs < 1 or patience < 1 or batch_size < 1 or learning_rate <= 0:
         raise ValueError("epochs/patience/batch size/learning rate must be positive")
@@ -94,10 +110,10 @@ def train(
     if run_dir.exists() and any(run_dir.iterdir()):
         raise FileExistsError(f"run output must be empty: {run_dir}")
     configure_cpu(seed, threads)
+    model, initialization = initialize_policy(model_config, initial_model)
     train_x, train_y, _ = load_split(data_dir, "train")
     val_x, val_y, val_metadata = load_split(data_dir, "val")
     run_dir.mkdir(parents=True, exist_ok=True)
-    model = PolicyCNN(model_config)
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     shuffle_rng = torch.Generator().manual_seed(seed)
     augmentation_rng = torch.Generator().manual_seed(seed + 1)
@@ -105,6 +121,7 @@ def train(
         "seed": seed, "channels": channels, "depth": depth, "epochs": epochs,
         "patience": patience, "batch_size": batch_size, "learning_rate": learning_rate,
         "optimizer": "Adam", "threads": threads, "augment_d4": augment,
+        "initialization": initialization,
         "loss": "negative log probability mass of all optimal actions",
         "selection": "highest validation rollout success count; then lowest validation loss",
         "rollout": "raw argmax, no action mask, stop on goal/blocked/repeated cell/64 actions",
@@ -123,6 +140,21 @@ def train(
     best_key, best_state, best_epoch, stale = (-1, -float("inf")), None, 0, 0
     history = []
     start_time = time.perf_counter()
+    if initial_model is not None:
+        # Keep the starting weights eligible: fine-tuning must beat their
+        # validation rollout count/loss to replace the selected checkpoint.
+        initial_validation = state_metrics(model, val_x, val_y)
+        initial_rollout = evaluate_rollouts(model, val_metadata)["summary"]
+        best_key = (initial_rollout["success_count"], -initial_validation["optimal_set_loss"])
+        best_state = copy.deepcopy(model.state_dict())
+        torch.save({"state_dict": best_state, "epoch": 0}, run_dir / "best.pt")
+        write_json(run_dir / "initial_metrics.json", {
+            "state_metrics": initial_validation, "rollout_metrics": initial_rollout,
+            "initialization": initialization,
+        })
+        print(json.dumps({"initial": {"success_count": initial_rollout["success_count"],
+                                      "episodes": initial_rollout["episodes"],
+                                      "loss": initial_validation["optimal_set_loss"]}}), flush=True)
     for epoch in range(1, epochs + 1):
         epoch_start = time.perf_counter()
         model.train()

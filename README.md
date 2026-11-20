@@ -131,6 +131,7 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 6](docs/step-06.md): independent neural navigation, path comparison, and new board-test instructions.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
+- [Benchmarking guide](docs/benchmarking.md): inference time, packed storage, routed resources, and paired navigation quality.
 - [W8A8 bundle](model/cnn-w8a8/README.md) and [W4A4 bundle](model/cnn-w4a4/README.md).
 - [W8A8 RTL vectors](test_vectors/cnn-w8a8/README.md) and [W4A4 RTL vectors](test_vectors/cnn-w4a4/README.md).
 

@@ -18,6 +18,7 @@ def main():
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--learning-rate", type=float, default=0.001)
     parser.add_argument("--threads", type=int, default=1)
+    parser.add_argument("--initial-model", type=Path, help="Fine-tune a verified FP32 bundle; retain it as checkpoint zero")
     parser.add_argument("--no-augment", action="store_true")
     args = vars(parser.parse_args())
     args["augment"] = not args.pop("no_augment")
