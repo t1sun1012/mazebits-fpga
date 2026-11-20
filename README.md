@@ -6,7 +6,26 @@ MazeBits is an EC311 project for the Nexys A7-100T. The planned board demonstrat
 
 ## Current status
 
-**Step 4 complete: verified Verilog inference for W8A8 and W4A4.** Both variants match every committed reference value in HDL simulation and meet routed 100 MHz timing on the Nexys A7-100T / Nexys 4 DDR. Bitstreams for the button/LED board test were generated; physical board testing and the VGA editor are still ahead. Both models retain the same Step 3 checkpoint and train-only calibration.
+**Step 5 implemented: switch/button maze editor and VGA display, ready for a board test.** The editor and display pass HDL simulation and routed 100 MHz timing checks. A bitstream is generated locally; physical programming and monitor testing remain to be done. Step 6 will connect both verified CNNs to the edited scenarios.
+
+## Maze editor
+
+![Actual HDL-rendered editor frame](results/editor/baseline_frame.png)
+
+Arrows move the cursor; center applies an edit. SW1:SW0 selects 00=WALL, 01=START, 10=GOAL, or 11=VIEW. Reset restores an empty map. Both panels mirror the edited map; VIEW freezes edits. Neural navigation is the next integration step.
+
+The VGA output is 640x480 at 59.5238 Hz, using a 25 MHz pixel enable in one 100 MHz clock domain. The routed editor/display top uses 557 LUTs, 432 registers, one RAMB18, and zero DSPs; setup and hold timing pass with zero DRC violations.
+
+~~~powershell
+python scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
+python scripts/run_editor_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
+~~~
+
+Read [Step 5 and board-testing instructions](docs/step-05.md), [VGA timing/layout](docs/vga-layout.md), and [editor verification evidence](results/editor/README.md). The image above is an example captured from the actual simulated RGB outputs.
+
+## Learned policy baseline
+
+Both quantized models retain the same Step 3 checkpoint and train-only calibration.
 
 | Validation result | FP32 | W8A8 | W4A4 |
 |---|---:|---:|---:|
@@ -71,7 +90,7 @@ W8A8/W4A4 means signed 8/4-bit weights and unsigned 8/4-bit hidden activations. 
 
 ## Verification
 
-All 93 software tests passed. For each precision:
+All 98 software tests passed. For each precision:
 
 - 133,160 intermediate/output words matched independent scalar arithmetic across eight fixtures.
 - Fresh-process replay matched all 88,116 validation score words and 3,600 trajectories.
@@ -83,7 +102,7 @@ python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir t
 python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
 ~~~
 
-GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, and the board-control tests. A full validation replay additionally needs the generated dataset:
+GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, the board-control tests, and the editor/VGA suites. A full validation replay additionally needs the generated dataset:
 
 ~~~powershell
 python python/prepare_data.py --output-dir data/maze-v1
@@ -99,6 +118,7 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 2](docs/step-02.md): dataset, CNN training, and floating-point results.
 - [Step 3](docs/step-03.md): integer arithmetic, calibration, exports, and comparison.
 - [Step 4](docs/step-04.md): Verilog datapath, interfaces, cycle counts, HDL verification, and routed builds.
+- [Step 5](docs/step-05.md): board controls, editable map, VGA display, and physical test instructions.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
 - [W8A8 bundle](model/cnn-w8a8/README.md) and [W4A4 bundle](model/cnn-w4a4/README.md).
@@ -106,4 +126,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-Step 5 adds the switch/button maze editor and VGA display. Step 6 integrates both navigation policies on identical edited scenarios. Each completed milestone is committed and pushed on its own branch.
+Step 6 integrates both navigation policies on identical edited scenarios and displays their paths, movement counts, and outcomes. Each completed milestone is committed and pushed on its own branch.

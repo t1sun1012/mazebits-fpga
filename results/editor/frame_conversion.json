@@ -1,0 +1,20 @@
+{
+  "baseline_frame": {
+    "dimensions": [
+      640,
+      480
+    ],
+    "ppm_sha256": "3c7cc9419ae95f7e57a3b8ca3e18b7a7fb90b13d0eb59189a3dd72f600eafbf1",
+    "png_sha256": "fb2f1f7968d37ff12abbc55bc261fd1bf5219b65205f32150cd73e1afa74d8e4",
+    "rgb_pixels_identical": true
+  },
+  "edited_frame": {
+    "dimensions": [
+      640,
+      480
+    ],
+    "ppm_sha256": "eb4b55e5f9a85ac9f23ae22a4c80e90194e018f7f2c670e311f353c688a6a4cc",
+    "png_sha256": "7335a154eb7733a0554c492299171affacbb744c9f427512eb78a6fd314dfd64",
+    "rgb_pixels_identical": true
+  }
+}

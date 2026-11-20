@@ -47,3 +47,13 @@ python scripts/run_board_smoke.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.
 Cycle simulation demonstrates functional agreement. Timing closure, device
 resources, and the physical board are checked separately by the Vivado build
 and subsequent board testing.
+
+## Editor and VGA verification
+
+Step 5 adds four testbenches, run with:
+
+~~~powershell
+python scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
+~~~
+
+Use --sim iverilog for Icarus. The editor covers all 64 cells and endpoint safety, the debouncers cover bounce and held inputs, the integrated top checks actual button/switch wiring, and the VGA test checks three complete frames. RGB frame captures are produced directly by the HDL. See [Step 5](../docs/step-05.md) and [VGA layout](../docs/vga-layout.md) for precise coverage and physical-board test instructions.

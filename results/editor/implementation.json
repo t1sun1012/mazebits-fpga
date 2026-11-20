@@ -1,0 +1,66 @@
+{
+  "format": "mazebits-editor-implementation-v1",
+  "status": "pass",
+  "stage": "bitstream",
+  "top": "mazebits_editor_top",
+  "part": "xc7a100tcsg324-1",
+  "clock_period_ns": 10.0,
+  "pixel_clock_enable_hz": 25000000,
+  "video_total": [
+    800,
+    525
+  ],
+  "video_active": [
+    640,
+    480
+  ],
+  "frame_hz": 59.523809523809526,
+  "scope": "Editable maze with mirrored VGA panels; no CNN or navigation controller connected.",
+  "source_sha256": {
+    "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+    "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+    "rtl/maze_vga.v": "131fa45bb69f04b09f8e9db7b8f5a20c247be1b6a8e7ee171edd5d9cbd7f5af5",
+    "rtl/mazebits_editor_top.v": "c19d7697c4f1181df98c0751260456aa4e0e6f5d7f42f86136e7875e1fff3345",
+    "scripts/build_editor.tcl": "8e224b84c5fd8bee5796f189a6faf737113f93351bdb88c8f6bfb2e2fc7f9828",
+    "scripts/run_editor_vivado.py": "cc3b5dcd8bcfe355d7ca6f9ebf2b311bdc9320df2d27172440b1f176f8397d5b",
+    "constraints/mazebits_editor.xdc": "7c2933bbad3afe154cd88243d7c3b7ae938378c1171c831eabbef4697243591c"
+  },
+  "elapsed_wall_seconds": 84.688,
+  "synthesis_resources": {
+    "luts": 560,
+    "registers": 432,
+    "bram_36k_tiles": 0.5,
+    "ramb36": 0,
+    "ramb18": 1,
+    "dsps": 0
+  },
+  "vivado_version": "2024.1",
+  "setup_slack_ns": 1.76,
+  "hold_slack_ns": 0.122,
+  "routed_resources": {
+    "luts": 557,
+    "registers": 432,
+    "bram_36k_tiles": 0.5,
+    "ramb36": 0,
+    "ramb18": 1,
+    "dsps": 0
+  },
+  "critical_or_error_drc_count": 0,
+  "total_drc_count": 0,
+  "warning_drc_count": 0,
+  "memory_async_drc_count": 0,
+  "bitstream": {
+    "name": "mazebits_editor.bit",
+    "bytes": 3825904,
+    "sha256": "ca973d3c0f85c85091818f307d17faaba5be6102fa54687088bd11380fb4881b",
+    "programmed_on_board": false
+  },
+  "report_sha256": {
+    "clock_interaction.rpt": "fa9694eb2a4d0df756e1b7542662eb8cb0822b556f0d881535cdba554ce6b0c4",
+    "drc_route.rpt": "e65c3df6b599a2ac3f2e774e750ea7f6b4de1e5508c74e51b4a0b051012c5f15",
+    "timing_route.rpt": "9a1656e156b04e52207a8f1a139fb7af442540411c711db9cecd03dcdba102a9",
+    "timing_synth.rpt": "f1bf37c11b58d7f6755e4487ae2436177f7272c69b3a797a84406265c9b03c6e",
+    "utilization_route.rpt": "fa88532faeb3ed19a11ee71ec8bc8f658d16b1d21051b65d724d9dbbbc812600",
+    "utilization_synth.rpt": "c2cec0f780236395b7a0c0e9f4c21efa9f99fb9a99aa82561c18aca6996b78a2"
+  }
+}

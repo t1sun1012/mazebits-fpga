@@ -1,0 +1,111 @@
+{
+  "format": "mazebits-editor-verification-v1",
+  "tests": [
+    {
+      "test": "editor",
+      "top": "tb_maze_editor",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_EDITOR checks=619 wall_cells=64 boundaries=8 priorities=4",
+      "coverage": {
+        "checks": "619",
+        "wall_cells": "64",
+        "boundaries": "8",
+        "priorities": "4"
+      },
+      "source_sha256": {
+        "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+        "tb/tb_maze_editor.sv": "2f425a1b9c6849df9b31a5a14c8be65edf613c7785ab151e834fa1d3d5b24a84",
+        "scripts/run_editor.py": "975da1c6a805637e104e19cb2419d24afb910a00c248c861888e536990c36559"
+      },
+      "elapsed_wall_seconds": 6.788,
+      "artifacts": {}
+    },
+    {
+      "test": "buttons",
+      "top": "tb_button_conditioner",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_BUTTONS checks=14 width=5 thresholds=1,4",
+      "coverage": {
+        "checks": "14",
+        "width": "5",
+        "thresholds": "1,4"
+      },
+      "source_sha256": {
+        "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+        "tb/tb_button_conditioner.sv": "dadf1da7ee33ae9e246c040e8ab75fbf5f1ed1884526a626518b74a97805ea7e",
+        "scripts/run_editor.py": "975da1c6a805637e104e19cb2419d24afb910a00c248c861888e536990c36559"
+      },
+      "elapsed_wall_seconds": 6.61,
+      "artifacts": {}
+    },
+    {
+      "test": "vga",
+      "top": "tb_maze_vga",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_VGA frames=3 pixels=1260000 active_pixels=921600",
+      "coverage": {
+        "frames": "3",
+        "pixels": "1260000",
+        "active_pixels": "921600"
+      },
+      "source_sha256": {
+        "rtl/maze_vga.v": "131fa45bb69f04b09f8e9db7b8f5a20c247be1b6a8e7ee171edd5d9cbd7f5af5",
+        "tb/tb_maze_vga.sv": "64de76af5b4c5579786198a142925e4677558152a92ee33b0ea484a76193d40b",
+        "scripts/run_editor.py": "975da1c6a805637e104e19cb2419d24afb910a00c248c861888e536990c36559"
+      },
+      "elapsed_wall_seconds": 13.049,
+      "artifacts": {
+        "baseline_frame.ppm": {
+          "sha256": "3c7cc9419ae95f7e57a3b8ca3e18b7a7fb90b13d0eb59189a3dd72f600eafbf1",
+          "bytes": 3131986
+        },
+        "edited_frame.ppm": {
+          "sha256": "eb4b55e5f9a85ac9f23ae22a4c80e90194e018f7f2c670e311f353c688a6a4cc",
+          "bytes": 3132534
+        }
+      }
+    },
+    {
+      "test": "top",
+      "top": "tb_editor_top",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_EDITOR_TOP reset=1 bounce=1 held_press=1 mode_bus=1 edit=1 endpoint_safety=1 view=1 leds=1",
+      "coverage": {
+        "reset": "1",
+        "bounce": "1",
+        "held_press": "1",
+        "mode_bus": "1",
+        "edit": "1",
+        "endpoint_safety": "1",
+        "view": "1",
+        "leds": "1"
+      },
+      "source_sha256": {
+        "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+        "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+        "rtl/maze_vga.v": "131fa45bb69f04b09f8e9db7b8f5a20c247be1b6a8e7ee171edd5d9cbd7f5af5",
+        "rtl/mazebits_editor_top.v": "c19d7697c4f1181df98c0751260456aa4e0e6f5d7f42f86136e7875e1fff3345",
+        "tb/tb_editor_top.sv": "27912abe19952db3b28d1b72d2c72cd75660769655abc9a0b07577b872ba90b2",
+        "scripts/run_editor.py": "975da1c6a805637e104e19cb2419d24afb910a00c248c861888e536990c36559"
+      },
+      "elapsed_wall_seconds": 7.221,
+      "artifacts": {}
+    }
+  ]
+}

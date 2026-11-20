@@ -1,0 +1,10 @@
+{
+  "note": "Workstation Host line removed and local repo paths replaced by <repo>; raw hashes retained in implementation.json.",
+  "sha256": {
+    "utilization_synth.rpt": "e2171b838d4c4ce1b83ca54cb8f4a0a4bc32611a96f9f639ceb4ff2276bb0f24",
+    "utilization_route.rpt": "dd915d36eae993e1cd6fdb636273a0227531d7ef1ee74f3c9aee327defe8986a",
+    "timing_route.rpt": "f0cc319da8a251f91696bbcf70b8010870cd751f27e0ed27433590db2c064a63",
+    "drc_route.rpt": "374b077fd7589609a9aa2703597a589b95b3e139ce023b8633daa150506eb09b",
+    "clock_interaction.rpt": "9976277436ebbea6ba3817fcff2c4699adc61bd85394d167e8195d8e5cb2fd80"
+  }
+}
