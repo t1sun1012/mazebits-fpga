@@ -55,4 +55,21 @@ class ModelSelectionTests(unittest.TestCase):
                     staging.stage(root/"out","structured")
             self.assertEqual(list((root/"out").iterdir()),[])
 
+    def test_source_changed_after_materialization_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);self.make_sandbox(root)
+            shutil.copytree(ROOT/"model/cnn-structured-fp32",root/"model/cnn-structured-fp32")
+            (root/"scripts").mkdir()
+            script=root/"scripts/stage_navigation.py"
+            shutil.copyfile(Path(staging.__file__),script)
+            original_validate=staging.validate_architecture
+            def mutate(manifest):
+                original_validate(manifest)
+                source=root/"rtl/mazebits_cnn.v"
+                source.write_text(source.read_text()+"\n// changed during validation\n")
+            with patch.object(staging,"ROOT",root), patch.object(staging,"__file__",str(script)), patch.object(staging,"validate_architecture",side_effect=mutate):
+                with self.assertRaisesRegex(RuntimeError,"source changed"):
+                    staging.stage(root/"out","structured")
+            self.assertEqual(list((root/"out").iterdir()),[])
+
 if __name__=="__main__":unittest.main()

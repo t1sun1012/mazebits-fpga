@@ -41,3 +41,8 @@ xsim.dir/
 *.vcd
 *.vvp
 *.pb
+
+# Reviewed Step 8 build evidence (generated bitstreams remain ignored)
+!results/navigation-structured/build/
+!results/navigation-structured/build/build.log
+!results/navigation-structured/build/gui_validation.log

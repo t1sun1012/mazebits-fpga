@@ -1,0 +1,39 @@
+{
+  "format": "mazebits-dual-cnn-stage-v1",
+  "precisions": [
+    8,
+    4
+  ],
+  "model_set": "original",
+  "source_checkpoint": {
+    "source_weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c",
+    "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "calibration_sha256": "e8b68cb5b6286ce2133b84ea8eb3e199af537b2185dfae222987e8f66e5dc991"
+  },
+  "model_directories": {
+    "8": "model/cnn-w8a8",
+    "4": "model/cnn-w4a4"
+  },
+  "source_sha256": {
+    "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+    "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9",
+    "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+    "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+    "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+    "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+    "model/cnn-fp32/manifest.json": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+    "model/cnn-fp32/weights.npz": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+  },
+  "generated_sha256": {
+    "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+    "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+    "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+  }
+}

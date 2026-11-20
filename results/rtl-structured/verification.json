@@ -1,0 +1,284 @@
+{
+  "models": [
+    {
+      "format": "mazebits-rtl-verification-v1",
+      "precision": "W8A8",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "cases": 8,
+      "compared_words": 133160,
+      "repeat_cases": 1,
+      "cycles_per_decision": 3217153,
+      "clock_period_ns": 10,
+      "simulated_latency_ms_at_100mhz": 32.17153,
+      "timing_note": "Cycle simulation at a nominal 100 MHz; not proof of routed timing closure.",
+      "protocol_checks": [
+        "reset abort/restart",
+        "ignore busy start",
+        "snapshot inputs",
+        "ignore start on finish edge",
+        "one-cycle done",
+        "hold busy/idle outputs",
+        "repeat inference"
+      ],
+      "arithmetic_boundary_cases": 13,
+      "argmax_signed_and_tie_cases": 3,
+      "case_results": [
+        {
+          "case": 0,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 1,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 2,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 3,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 4,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 5,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 6,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 7,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 0,
+          "repeated": 1,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        }
+      ],
+      "elapsed_wall_seconds": 31.167,
+      "source_sha256": {
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "tb/tb_mazebits_cnn.sv": "ec8a8e349bd14d474ed953976469b913232b1e21909eb6e8c8f339b779c07d79",
+        "scripts/run_rtl.py": "7508880e3a3655c76f583c8e109424395a5afd9a79aef85eaab1684e58cc9362"
+      },
+      "model_set": "structured",
+      "model_directory": "model/cnn-structured-w8a8",
+      "vectors_directory": "test_vectors/cnn-structured-w8a8",
+      "model_manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+      "vectors_manifest_sha256": "d4354823f242c1459339feec1788ecc85d904c56d52d086c2defc65b7dc15898",
+      "bundle_source_sha256": {
+        "model/cnn-structured-w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+        "test_vectors/cnn-structured-w8a8/manifest.json": "d4354823f242c1459339feec1788ecc85d904c56d52d086c2defc65b7dc15898",
+        "model/cnn-structured-w8a8/biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "model/cnn-structured-w8a8/quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+        "model/cnn-structured-w8a8/weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+        "test_vectors/cnn-structured-w8a8/actions.mem": "86d5cfb37f4e8b333f6fd7ada171001cd4db7362df31f7225bfc2d7d7b9fa6fe",
+        "test_vectors/cnn-structured-w8a8/conv0_acc.mem": "194500aed726536435a494d89249f227bb8d8e80ebee59aaa8a29ee47b12dac4",
+        "test_vectors/cnn-structured-w8a8/conv0_act.mem": "eda2c2b53fa291a296fdf1431b72da56c80b3115eb844815626d7951a4015e08",
+        "test_vectors/cnn-structured-w8a8/conv1_acc.mem": "4b37e018d3b1a7b37bc597b4871622715cf1574c212d8741e41ba8b648d93b1b",
+        "test_vectors/cnn-structured-w8a8/conv1_act.mem": "bba1c8a3ca91c320da726bd7224177725e2ab2a21d24a27f94b93e4c6a16ddab",
+        "test_vectors/cnn-structured-w8a8/conv2_acc.mem": "055e85d459705971f80e4b44ddda83bd08321839f8a46506550860813a04243c",
+        "test_vectors/cnn-structured-w8a8/conv2_act.mem": "af57a65af23445cb425b94f8e899421793fb29a1a3b7549fc7324627dc759f4b",
+        "test_vectors/cnn-structured-w8a8/conv3_acc.mem": "1009fcdf322aaa2da592f8f3aa1903339c384d70003faa007e2e9fc561d5ab9d",
+        "test_vectors/cnn-structured-w8a8/conv3_act.mem": "14075821521ae67ca2559ce1a845b00faefe48d17bb303231760fff322aa24e5",
+        "test_vectors/cnn-structured-w8a8/conv4_acc.mem": "e669c0665c468becc471dc7344b0b9ebed13671a35f6da51186894dfdf601ed5",
+        "test_vectors/cnn-structured-w8a8/conv4_act.mem": "0afd7b7eac4792ef0bf2761d500603c94b977a74589dfc85c0e92fb1b9b37667",
+        "test_vectors/cnn-structured-w8a8/conv5_acc.mem": "25340fb854bcb1edf39b3a4a6d2fa9264705ce97d2a0c6991c4813b929f62d0e",
+        "test_vectors/cnn-structured-w8a8/conv5_act.mem": "f93442c717789cf7bb7ba497f9951f80d083f7e25bc1f12021a9e1927e9223c3",
+        "test_vectors/cnn-structured-w8a8/conv6_acc.mem": "ab0421db3a2a0b31e59b90ce6153f6c28d2470bb85cc166717970c89b5e88468",
+        "test_vectors/cnn-structured-w8a8/conv6_act.mem": "ef0d17a5c2b9b9b46323fa5a1790d6b02d441fb174ac403bea5ee321860a3ec4",
+        "test_vectors/cnn-structured-w8a8/conv7_acc.mem": "4389cc574bd20f2b6e8bfdfded521480453fc6e4bd9e8d3e8e85836a4aa2fbd2",
+        "test_vectors/cnn-structured-w8a8/conv7_act.mem": "13f9c6fe8c26a27d8f91113322ceb1efb311308dbfd9fb491c125172dd821164",
+        "test_vectors/cnn-structured-w8a8/head_acc.mem": "0b27d3eadbaaf7f29f5ab1491b66b0c65a6bf4b6221a9c0097bb97d10a5190b6",
+        "test_vectors/cnn-structured-w8a8/inputs.mem": "fd2c885fc1306de809622df9a658a788eeefa24255a41e11ba7a4072b9170f2c",
+        "test_vectors/cnn-structured-w8a8/scores.mem": "42f2f5c302e9ea6553fc46f035c6debbba26420a4407da735fb409c3ab3948e3"
+      },
+      "staged_sha256": {
+        "actions.mem": "86d5cfb37f4e8b333f6fd7ada171001cd4db7362df31f7225bfc2d7d7b9fa6fe",
+        "biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "expected_acc.mem": "cb1ad425b467443bfc78017de1bfc29aec263413f3ef8fc3f92f24bd9c699030",
+        "expected_act.mem": "d7272cb151d85947a849acc3270e16987622f009bf14ce4465483c17258414b1",
+        "inputs.mem": "fd2c885fc1306de809622df9a658a788eeefa24255a41e11ba7a4072b9170f2c",
+        "quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+        "scores.mem": "42f2f5c302e9ea6553fc46f035c6debbba26420a4407da735fb409c3ab3948e3",
+        "weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+      }
+    },
+    {
+      "format": "mazebits-rtl-verification-v1",
+      "precision": "W4A4",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "cases": 8,
+      "compared_words": 133160,
+      "repeat_cases": 1,
+      "cycles_per_decision": 3217153,
+      "clock_period_ns": 10,
+      "simulated_latency_ms_at_100mhz": 32.17153,
+      "timing_note": "Cycle simulation at a nominal 100 MHz; not proof of routed timing closure.",
+      "protocol_checks": [
+        "reset abort/restart",
+        "ignore busy start",
+        "snapshot inputs",
+        "ignore start on finish edge",
+        "one-cycle done",
+        "hold busy/idle outputs",
+        "repeat inference"
+      ],
+      "arithmetic_boundary_cases": 13,
+      "argmax_signed_and_tie_cases": 3,
+      "case_results": [
+        {
+          "case": 0,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 1,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 2,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 3,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 4,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 5,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 6,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 7,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 0,
+          "repeated": 1,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        }
+      ],
+      "elapsed_wall_seconds": 30.061,
+      "source_sha256": {
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "tb/tb_mazebits_cnn.sv": "ec8a8e349bd14d474ed953976469b913232b1e21909eb6e8c8f339b779c07d79",
+        "scripts/run_rtl.py": "7508880e3a3655c76f583c8e109424395a5afd9a79aef85eaab1684e58cc9362"
+      },
+      "model_set": "structured",
+      "model_directory": "model/cnn-structured-w4a4",
+      "vectors_directory": "test_vectors/cnn-structured-w4a4",
+      "model_manifest_sha256": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+      "vectors_manifest_sha256": "dcb40687007eaeea7e34b7a490f87aadbe1f0760e0307fcba4fc3cbfec57ee1a",
+      "bundle_source_sha256": {
+        "model/cnn-structured-w4a4/manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+        "test_vectors/cnn-structured-w4a4/manifest.json": "dcb40687007eaeea7e34b7a490f87aadbe1f0760e0307fcba4fc3cbfec57ee1a",
+        "model/cnn-structured-w4a4/biases.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "model/cnn-structured-w4a4/quantization.vh": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+        "model/cnn-structured-w4a4/weights.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+        "test_vectors/cnn-structured-w4a4/actions.mem": "00ab2f49619d2ed59827bfe6876f8d81e145d5dd89866d82b1cda926cc8afea7",
+        "test_vectors/cnn-structured-w4a4/conv0_acc.mem": "44f14a5a032f88febaca84bf726e73ff48a72a8f430cdfd180b0dd319f3e6926",
+        "test_vectors/cnn-structured-w4a4/conv0_act.mem": "50e5d80773c9b75105bdfa5d4c132981c11b21ea21f07e6aff5a5e6ca048d0ad",
+        "test_vectors/cnn-structured-w4a4/conv1_acc.mem": "a80ff47ec020872ecd9f6d8f863a94290e9998ce983a15378b508eccd97d0200",
+        "test_vectors/cnn-structured-w4a4/conv1_act.mem": "935ef7a01a0ed04c7a5e03d83cd2ebd17df2cf4e2614b805eba852530c228ebb",
+        "test_vectors/cnn-structured-w4a4/conv2_acc.mem": "ab8d30b0d429adb7f154da043b443c5e6b49348778e07d51d7ecf71b5fef02d8",
+        "test_vectors/cnn-structured-w4a4/conv2_act.mem": "e04de19c4bf299041dde967147114eb7b9843428ebd568728537472125397105",
+        "test_vectors/cnn-structured-w4a4/conv3_acc.mem": "0412555f61a4027d5ac19d826117d67a4bc79dcef2dd18209ddbc06c341ff557",
+        "test_vectors/cnn-structured-w4a4/conv3_act.mem": "3d9aa9129e50a60170f62eb8c8a02a2562ba6da4770452670d5494e56b3e1ca6",
+        "test_vectors/cnn-structured-w4a4/conv4_acc.mem": "4211165c3412737c8109c6837cc733628d5e4e38bdc8330a603b98e07e5f3722",
+        "test_vectors/cnn-structured-w4a4/conv4_act.mem": "c6fa8c90d9d74466625546fd482813dae922e3d5683bb4d91cc7253672028126",
+        "test_vectors/cnn-structured-w4a4/conv5_acc.mem": "8e7a9cc97737a32aef1bb600ae19fad0554195f121201526d9baf3b1fc5f9ad0",
+        "test_vectors/cnn-structured-w4a4/conv5_act.mem": "0f66319d47f442e43b6100e97ea11d52658d410b7e21368b3a1c24470832c2c9",
+        "test_vectors/cnn-structured-w4a4/conv6_acc.mem": "fefcf86a9ba5abea3ceecd68897b3c2b9fe6ea0ced140557a7365a667677c370",
+        "test_vectors/cnn-structured-w4a4/conv6_act.mem": "4126c102ffdb5ab3a3cfdaa252aa1af68b2cb702481fa249a5779936d85dbe9f",
+        "test_vectors/cnn-structured-w4a4/conv7_acc.mem": "ce73da4f910449241e81f413973e1ee936bf27ae25a6034acfda19f33eced162",
+        "test_vectors/cnn-structured-w4a4/conv7_act.mem": "bf83125bcd283f015a164af2cd7d0b5cb81e66b9787f062afa53b70997317fc1",
+        "test_vectors/cnn-structured-w4a4/head_acc.mem": "cf079356d367c560cd7fd4bc865ec045a96b8cacb4e8d047269a2e29fa550f99",
+        "test_vectors/cnn-structured-w4a4/inputs.mem": "fd2c885fc1306de809622df9a658a788eeefa24255a41e11ba7a4072b9170f2c",
+        "test_vectors/cnn-structured-w4a4/scores.mem": "b6dfbefa26279db5425c6033eb9b7432be0aabcfcc0948f36deab8fbca579064"
+      },
+      "staged_sha256": {
+        "actions.mem": "00ab2f49619d2ed59827bfe6876f8d81e145d5dd89866d82b1cda926cc8afea7",
+        "biases.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "expected_acc.mem": "f39527ef9da5bcecfcd564274ff0e7da36816c7856a8d981a28e372428273172",
+        "expected_act.mem": "37084f1391c9984018d1ab1175995272d143f6b44a5ceb9bd17ca01d2f722be8",
+        "inputs.mem": "fd2c885fc1306de809622df9a658a788eeefa24255a41e11ba7a4072b9170f2c",
+        "quantization.vh": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+        "scores.mem": "b6dfbefa26279db5425c6033eb9b7432be0aabcfcc0948f36deab8fbca579064",
+        "weights.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793"
+      }
+    }
+  ]
+}

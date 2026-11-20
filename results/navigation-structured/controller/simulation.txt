@@ -1,0 +1,17 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Nov 19 21:44:00 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_maze_navigation/xsim_script.tcl
+# xsim {tb_maze_navigation} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS_NAVIGATION checks=202 bounds=4 legal_moves=4 wall=1 loop=1 goal=1 start_goal=1 limit=1 snapshot=1 restart=1 stale_done=1 reset=1 pacing=1
+$finish called at time : 4620 ns : File "X:/Desktop/EC_311/Project/tb/tb_maze_navigation.sv" Line 141
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 19 21:44:02 2026...

@@ -1,0 +1,117 @@
+{
+  "format": "mazebits-final-stager-equivalence-v1",
+  "status": "pass",
+  "scope": "Fresh staging after source-byte integrity hardening produced exactly the six HDL/memory inputs already checked by each completed XSim CNN simulation. Historical simulation records are unchanged; this is a byte-equivalence check, not another RTL simulation.",
+  "models": [
+    {
+      "model_set": "structured",
+      "status": "pass",
+      "simulation_record": "results/navigation-structured/cnn/verification.json",
+      "simulation_record_sha256": "6cd5db497aad7ca1ae0007efe83396ec6b8873853db144bf76b518f796c8f123",
+      "simulation_source_commit": "c4968ff0316dca7a4f0b64a68abb8d67e3f4bbcb",
+      "final_stager_source_sha256": "063bdf3586bb7dc1890cc8e9d936ea08afd269cf51ea3ca142ee28ce39194ea1",
+      "identical_generated_sha256": {
+        "mazebits_cnn_w8a8.v": "0331cb5e1fb262c501fad52bd9543282f21214e2a59beb61d46c4a51a38d596d",
+        "weights_w8a8.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+        "biases_w8a8.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "mazebits_cnn_w4a4.v": "9d5ba4e700e9d652d7cd776c708441de84fdbd020abb124977179a8301e8e2e2",
+        "weights_w4a4.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+        "biases_w4a4.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed"
+      },
+      "final_stage_provenance": {
+        "format": "mazebits-dual-cnn-stage-v1",
+        "precisions": [
+          8,
+          4
+        ],
+        "model_set": "structured",
+        "source_checkpoint": {
+          "source_weights_sha256": "386e690a94dfe24f20d84af475829585c1ea81990b22fcca3e46fd3b7b758ec9",
+          "dataset_manifest_sha256": "bb7190b3b0338d7204a03ab159a67e7d5edbc4c84abaabcebcaa36c368ccbe3a",
+          "calibration_sha256": "4eafc65dc39001f8df00caad6b09a25c5ea4a9cf99edcb5c70ad6c8be38ecbcf"
+        },
+        "model_directories": {
+          "8": "model/cnn-structured-w8a8",
+          "4": "model/cnn-structured-w4a4"
+        },
+        "source_sha256": {
+          "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+          "scripts/stage_navigation.py": "063bdf3586bb7dc1890cc8e9d936ea08afd269cf51ea3ca142ee28ce39194ea1",
+          "model/cnn-structured-w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+          "model/cnn-structured-w8a8/weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+          "model/cnn-structured-w8a8/biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+          "model/cnn-structured-w8a8/quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+          "model/cnn-structured-w4a4/manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+          "model/cnn-structured-w4a4/weights.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+          "model/cnn-structured-w4a4/biases.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+          "model/cnn-structured-w4a4/quantization.vh": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+          "model/cnn-structured-fp32/manifest.json": "726482b7676033f92062d7642df7cb58db677308ef27d3fe5852bb6581bd6e82",
+          "model/cnn-structured-fp32/weights.npz": "386e690a94dfe24f20d84af475829585c1ea81990b22fcca3e46fd3b7b758ec9"
+        },
+        "generated_sha256": {
+          "mazebits_cnn_w8a8.v": "0331cb5e1fb262c501fad52bd9543282f21214e2a59beb61d46c4a51a38d596d",
+          "weights_w8a8.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+          "biases_w8a8.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+          "mazebits_cnn_w4a4.v": "9d5ba4e700e9d652d7cd776c708441de84fdbd020abb124977179a8301e8e2e2",
+          "weights_w4a4.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+          "biases_w4a4.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed"
+        }
+      }
+    },
+    {
+      "model_set": "original",
+      "status": "pass",
+      "simulation_record": "results/navigation-structured/original-regression/cnn/verification.json",
+      "simulation_record_sha256": "a525bbb8d33509cfb262404029f73a0c8525d90ac9506ede0afa521bf0b33620",
+      "simulation_source_commit": "c4968ff0316dca7a4f0b64a68abb8d67e3f4bbcb",
+      "final_stager_source_sha256": "063bdf3586bb7dc1890cc8e9d936ea08afd269cf51ea3ca142ee28ce39194ea1",
+      "identical_generated_sha256": {
+        "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+        "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+        "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+        "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+        "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+        "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+      },
+      "final_stage_provenance": {
+        "format": "mazebits-dual-cnn-stage-v1",
+        "precisions": [
+          8,
+          4
+        ],
+        "model_set": "original",
+        "source_checkpoint": {
+          "source_weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c",
+          "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+          "calibration_sha256": "e8b68cb5b6286ce2133b84ea8eb3e199af537b2185dfae222987e8f66e5dc991"
+        },
+        "model_directories": {
+          "8": "model/cnn-w8a8",
+          "4": "model/cnn-w4a4"
+        },
+        "source_sha256": {
+          "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+          "scripts/stage_navigation.py": "063bdf3586bb7dc1890cc8e9d936ea08afd269cf51ea3ca142ee28ce39194ea1",
+          "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+          "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+          "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+          "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+          "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+          "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+          "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+          "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+          "model/cnn-fp32/manifest.json": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+          "model/cnn-fp32/weights.npz": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+        },
+        "generated_sha256": {
+          "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+          "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+          "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+          "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+          "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+          "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+        }
+      }
+    }
+  ]
+}

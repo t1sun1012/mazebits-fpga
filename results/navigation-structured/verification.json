@@ -1,0 +1,185 @@
+{
+  "format": "mazebits-navigation-verification-v1",
+  "tests": [
+    {
+      "test": "controller",
+      "top": "tb_maze_navigation",
+      "status": "pass",
+      "simulator": "xsim",
+      "model_set": "structured",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_NAVIGATION checks=202 bounds=4 legal_moves=4 wall=1 loop=1 goal=1 start_goal=1 limit=1 snapshot=1 restart=1 stale_done=1 reset=1 pacing=1",
+      "coverage": {
+        "checks": "202",
+        "bounds": "4",
+        "legal_moves": "4",
+        "wall": "1",
+        "loop": "1",
+        "goal": "1",
+        "start_goal": "1",
+        "limit": "1",
+        "snapshot": "1",
+        "restart": "1",
+        "stale_done": "1",
+        "reset": "1",
+        "pacing": "1"
+      },
+      "source_sha256": {
+        "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+        "tb/tb_maze_navigation.sv": "276794f9ea40718de3b6113ad1d4f2f8136cdcd0e9d02bfbbb6c6e7925ae208a",
+        "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+        "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+      },
+      "staged_sha256": {},
+      "elapsed_wall_seconds": 7.555,
+      "artifacts": {}
+    },
+    {
+      "test": "top",
+      "top": "tb_navigation_top",
+      "status": "pass",
+      "simulator": "xsim",
+      "model_set": "structured",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_NAVIGATION_TOP checks=34 controls=1 snapshot=1 independent=1 restart=1 held_press=1 cancel=1 overlap=1 reset=1 mode_exit_mask=1",
+      "coverage": {
+        "checks": "34",
+        "controls": "1",
+        "snapshot": "1",
+        "independent": "1",
+        "restart": "1",
+        "held_press": "1",
+        "cancel": "1",
+        "overlap": "1",
+        "reset": "1",
+        "mode_exit_mask": "1"
+      },
+      "source_sha256": {
+        "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+        "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+        "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+        "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+        "rtl/mazebits_navigation_top.v": "906c5807973d67febc5439546113922537b1785f8d07327814c107c08c1b4c2f",
+        "tb/tb_navigation_top.sv": "461fc26f1bd963782218b8bd36f24b9eea1f7031bae7d6fbfed539f10ccda90f",
+        "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+        "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+      },
+      "staged_sha256": {},
+      "elapsed_wall_seconds": 8.306,
+      "artifacts": {}
+    },
+    {
+      "test": "vga",
+      "top": "tb_navigation_vga",
+      "status": "pass",
+      "simulator": "xsim",
+      "model_set": "structured",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_NAVIGATION_VGA frames=3 pixels=1260000 active_pixels=921600 glyph_pixels=11088 snapshots=2",
+      "coverage": {
+        "frames": "3",
+        "pixels": "1260000",
+        "active_pixels": "921600",
+        "glyph_pixels": "11088",
+        "snapshots": "2"
+      },
+      "source_sha256": {
+        "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+        "tb/tb_navigation_vga.sv": "1e30f603926b5fdc37765e46faebb6fc8dc416b69e48b095a6be15bf435a3376",
+        "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+        "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+      },
+      "staged_sha256": {},
+      "elapsed_wall_seconds": 17.499,
+      "artifacts": {
+        "navigation_result.ppm": {
+          "sha256": "72401a29190a93308c94e183fd948492bfcf775e2ebc9715d8e766998be64ec9",
+          "bytes": 3137928
+        },
+        "navigation_running.ppm": {
+          "sha256": "ac962269739465e8ea3798a9c362549eef5a8017182c77a1a2fc670e14b578e9",
+          "bytes": 3134181
+        }
+      }
+    },
+    {
+      "test": "cnn",
+      "top": "tb_navigation_cnn",
+      "status": "pass",
+      "simulator": "xsim",
+      "model_set": "structured",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_NAVIGATION_CNN cases=7 episodes=14 decisions=157 score_words=628 cycles_per_decision=3217153 reset_abort=1 busy_restart=1 snapshot=1 hold_terminal=1",
+      "coverage": {
+        "cases": "7",
+        "episodes": "14",
+        "decisions": "157",
+        "score_words": "628",
+        "cycles_per_decision": "3217153",
+        "reset_abort": "1",
+        "busy_restart": "1",
+        "snapshot": "1",
+        "hold_terminal": "1"
+      },
+      "source_sha256": {
+        "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+        "tb/tb_navigation_cnn.sv": "0f48062b906aeb593ecfbd34f4f54f6dfa9ae27f3b679e02e7b550d37b05f232",
+        "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+        "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9",
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "model/cnn-structured-w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+        "model/cnn-structured-w8a8/weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+        "model/cnn-structured-w8a8/biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "model/cnn-structured-w8a8/quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+        "model/cnn-structured-w4a4/manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+        "model/cnn-structured-w4a4/weights.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+        "model/cnn-structured-w4a4/biases.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "model/cnn-structured-w4a4/quantization.vh": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+        "model/cnn-structured-fp32/manifest.json": "726482b7676033f92062d7642df7cb58db677308ef27d3fe5852bb6581bd6e82",
+        "model/cnn-structured-fp32/weights.npz": "386e690a94dfe24f20d84af475829585c1ea81990b22fcca3e46fd3b7b758ec9",
+        "test_vectors/navigation-structured/events_w4a4.mem": "ac4c0d53e96067fe7bb4abb9fd2531e87aa0de757e11c54c5c07c4695dba068a",
+        "test_vectors/navigation-structured/events_w8a8.mem": "9eeff1fc4c500861f043c9270ddc6899e13e41d227f1a638e9393ee09135e3df",
+        "test_vectors/navigation-structured/final_w4a4.mem": "ca73ef0990318460182fd8ea1bf136747b7b4d63b344c929afc76a4e39c04cd3",
+        "test_vectors/navigation-structured/final_w8a8.mem": "0400926f772c14d03313172a1061de1465b472089ab74251b0ec48a71af6d968",
+        "test_vectors/navigation-structured/goals.mem": "4d33d69eed6c7ce08269cab67f34088b84c7e351a7262e354cbc87d7744d6878",
+        "test_vectors/navigation-structured/starts.mem": "4f850708a5dc1a9f9d3f2ea4f15dab29f2b6f62c2b4435efe3828d1721f857db",
+        "test_vectors/navigation-structured/walls.mem": "b045d641c3b467094a38083d35aef435aba2fec7afa192598e774774ba6eb6a0",
+        "python/export_structured_navigation_vectors.py": "29f424f53d832d5791d56e45d1b01961e17c61f6fada033cb253b5db4a73d0b9",
+        "python/compare_policies.py": "e1b0c7732e15af3db67e3f23c9307de5f4fc96078ccbe4d6327149f64d92a351",
+        "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+        "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+        "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+        "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+        "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+        "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+        "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+        "test_vectors/navigation-structured/manifest.json": "d30a3c9bcab0a60ddc41de2d415310f8494851b9efcdaad0b74b150985aa5b16"
+      },
+      "staged_sha256": {
+        "mazebits_cnn_w8a8.v": "0331cb5e1fb262c501fad52bd9543282f21214e2a59beb61d46c4a51a38d596d",
+        "weights_w8a8.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+        "biases_w8a8.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "mazebits_cnn_w4a4.v": "9d5ba4e700e9d652d7cd776c708441de84fdbd020abb124977179a8301e8e2e2",
+        "weights_w4a4.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+        "biases_w4a4.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "events_w4a4.mem": "ac4c0d53e96067fe7bb4abb9fd2531e87aa0de757e11c54c5c07c4695dba068a",
+        "events_w8a8.mem": "9eeff1fc4c500861f043c9270ddc6899e13e41d227f1a638e9393ee09135e3df",
+        "final_w4a4.mem": "ca73ef0990318460182fd8ea1bf136747b7b4d63b344c929afc76a4e39c04cd3",
+        "final_w8a8.mem": "0400926f772c14d03313172a1061de1465b472089ab74251b0ec48a71af6d968",
+        "goals.mem": "4d33d69eed6c7ce08269cab67f34088b84c7e351a7262e354cbc87d7744d6878",
+        "starts.mem": "4f850708a5dc1a9f9d3f2ea4f15dab29f2b6f62c2b4435efe3828d1721f857db",
+        "walls.mem": "b045d641c3b467094a38083d35aef435aba2fec7afa192598e774774ba6eb6a0"
+      },
+      "elapsed_wall_seconds": 389.751,
+      "artifacts": {}
+    }
+  ]
+}

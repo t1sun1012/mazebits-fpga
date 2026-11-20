@@ -1,0 +1,183 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Nov 19 21:44:35 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_navigation_cnn/xsim_script.tcl
+# xsim {tb_navigation_cnn} -testplusarg CASES_7 -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+NAV_EVENT bits=8 case=0 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=-364,1790,2117,-288
+NAV_EVENT bits=4 case=0 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=-2,9,13,-3
+NAV_EVENT bits=8 case=0 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=-225,3007,4058,-383
+NAV_EVENT bits=4 case=0 attempt=2 action=1 cell=9 status=1 cycles=6434306 scores=1,30,27,-7
+NAV_EVENT bits=8 case=0 attempt=3 action=1 cell=17 status=1 cycles=9651459 scores=362,5154,5143,-804
+NAV_EVENT bits=4 case=0 attempt=3 action=1 cell=10 status=1 cycles=9651459 scores=-5,38,24,0
+NAV_EVENT bits=8 case=0 attempt=4 action=2 cell=25 status=1 cycles=12868612 scores=892,7090,8406,-94
+NAV_EVENT bits=4 case=0 attempt=4 action=2 cell=18 status=1 cycles=12868612 scores=2,38,53,7
+NAV_EVENT bits=8 case=0 attempt=5 action=1 cell=26 status=1 cycles=16085765 scores=748,10006,8557,401
+NAV_EVENT bits=4 case=0 attempt=5 action=2 cell=26 status=1 cycles=16085765 scores=6,58,65,3
+NAV_EVENT bits=8 case=0 attempt=6 action=2 cell=34 status=1 cycles=19302918 scores=-432,9066,11028,-27
+NAV_EVENT bits=4 case=0 attempt=6 action=1 cell=27 status=1 cycles=19302918 scores=2,71,52,-15
+NAV_EVENT bits=8 case=0 attempt=7 action=2 cell=42 status=1 cycles=22520071 scores=54,9139,10994,-612
+NAV_EVENT bits=4 case=0 attempt=7 action=2 cell=35 status=1 cycles=22520071 scores=-1,40,53,2
+NAV_EVENT bits=8 case=0 attempt=8 action=1 cell=43 status=1 cycles=25737224 scores=-386,13793,5913,-3302
+NAV_EVENT bits=4 case=0 attempt=8 action=2 cell=43 status=1 cycles=25737224 scores=5,41,47,-13
+NAV_EVENT bits=8 case=0 attempt=9 action=1 cell=44 status=1 cycles=28954377 scores=429,14466,6792,-3578
+NAV_EVENT bits=4 case=0 attempt=9 action=1 cell=44 status=1 cycles=28954377 scores=4,84,28,-35
+NAV_EVENT bits=8 case=0 attempt=10 action=1 cell=45 status=1 cycles=32171530 scores=587,11899,7543,-2134
+NAV_EVENT bits=4 case=0 attempt=10 action=1 cell=45 status=1 cycles=32171530 scores=2,82,30,-28
+NAV_EVENT bits=8 case=0 attempt=11 action=2 cell=53 status=1 cycles=35388683 scores=205,9737,10837,-657
+NAV_EVENT bits=4 case=0 attempt=11 action=1 cell=46 status=1 cycles=35388683 scores=0,75,56,-15
+NAV_EVENT bits=8 case=0 attempt=12 action=1 cell=54 status=1 cycles=38605836 scores=19,11497,6692,-1836
+NAV_EVENT bits=4 case=0 attempt=12 action=2 cell=54 status=1 cycles=38605836 scores=1,56,75,-6
+NAV_EVENT bits=8 case=0 attempt=13 action=2 cell=62 status=1 cycles=41822989 scores=-102,8729,9510,-354
+NAV_EVENT bits=4 case=0 attempt=13 action=1 cell=55 status=1 cycles=41822989 scores=0,58,34,-18
+NAV_EVENT bits=8 case=0 attempt=14 action=1 cell=63 status=2 cycles=45040142 scores=139,5912,-1627,348
+NAV_EVENT bits=4 case=0 attempt=14 action=2 cell=63 status=2 cycles=45040142 scores=13,17,65,12
+NAV_CASE case=0 steps8=14 status8=2 steps4=14 status4=2
+NAV_EVENT bits=8 case=1 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=1682,-1562,3894,1728
+NAV_EVENT bits=4 case=1 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=16,-5,39,10
+NAV_EVENT bits=8 case=1 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=1887,-1082,5077,1658
+NAV_EVENT bits=4 case=1 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=13,-1,41,4
+NAV_EVENT bits=8 case=1 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=1984,-1056,4235,1268
+NAV_EVENT bits=4 case=1 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=15,-6,33,5
+NAV_EVENT bits=8 case=1 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=1794,-1067,3677,694
+NAV_EVENT bits=4 case=1 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=11,-5,26,5
+NAV_EVENT bits=8 case=1 attempt=5 action=2 cell=40 status=1 cycles=16085765 scores=1334,-517,3415,207
+NAV_EVENT bits=4 case=1 attempt=5 action=2 cell=40 status=1 cycles=16085765 scores=10,-1,16,-4
+NAV_EVENT bits=8 case=1 attempt=6 action=2 cell=48 status=1 cycles=19302918 scores=992,-30,3396,13
+NAV_EVENT bits=4 case=1 attempt=6 action=2 cell=48 status=1 cycles=19302918 scores=10,3,12,-3
+NAV_EVENT bits=8 case=1 attempt=7 action=2 cell=56 status=1 cycles=22520071 scores=590,453,2636,-132
+NAV_EVENT bits=4 case=1 attempt=7 action=2 cell=56 status=1 cycles=22520071 scores=10,3,12,-3
+NAV_EVENT bits=8 case=1 attempt=8 action=1 cell=57 status=1 cycles=25737224 scores=692,2135,-1526,-743
+NAV_EVENT bits=4 case=1 attempt=8 action=0 cell=48 status=4 cycles=25737224 scores=15,9,-15,-7
+NAV_EVENT bits=8 case=1 attempt=9 action=1 cell=58 status=1 cycles=28954377 scores=-254,3022,-2177,-492
+NAV_EVENT bits=8 case=1 attempt=10 action=1 cell=59 status=1 cycles=32171530 scores=2725,2812,-3708,-2219
+NAV_EVENT bits=8 case=1 attempt=11 action=0 cell=51 status=1 cycles=35388683 scores=3880,3686,-5525,-2881
+NAV_EVENT bits=8 case=1 attempt=12 action=1 cell=52 status=1 cycles=38605836 scores=3097,3944,-4627,-2846
+NAV_EVENT bits=8 case=1 attempt=13 action=0 cell=44 status=1 cycles=41822989 scores=3690,2530,-4445,-2792
+NAV_EVENT bits=8 case=1 attempt=14 action=1 cell=45 status=1 cycles=45040142 scores=3003,3045,-4885,-2624
+NAV_EVENT bits=8 case=1 attempt=15 action=0 cell=37 status=1 cycles=48257295 scores=6862,3269,-8080,-6316
+NAV_EVENT bits=8 case=1 attempt=16 action=0 cell=29 status=1 cycles=51474448 scores=6992,4670,-9521,-7037
+NAV_EVENT bits=8 case=1 attempt=17 action=0 cell=21 status=1 cycles=54691601 scores=9802,5250,-10100,-8436
+NAV_EVENT bits=8 case=1 attempt=18 action=1 cell=22 status=1 cycles=57908754 scores=5876,5893,-9095,-6835
+NAV_EVENT bits=8 case=1 attempt=19 action=0 cell=14 status=1 cycles=61125907 scores=8911,1397,-7511,-6004
+NAV_EVENT bits=8 case=1 attempt=20 action=1 cell=15 status=1 cycles=64343060 scores=6387,6529,-9220,-5438
+NAV_EVENT bits=8 case=1 attempt=21 action=0 cell=7 status=2 cycles=67560213 scores=9779,-4316,-5158,1109
+NAV_CASE case=1 steps8=21 status8=2 steps4=8 status4=4
+NAV_EVENT bits=8 case=2 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=1692,-1578,3522,1732
+NAV_EVENT bits=4 case=2 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=15,-6,33,9
+NAV_EVENT bits=8 case=2 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=2014,-1030,4040,2001
+NAV_EVENT bits=4 case=2 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=16,-10,33,10
+NAV_EVENT bits=8 case=2 attempt=3 action=0 cell=8 status=4 cycles=9651459 scores=2411,-757,1937,1615
+NAV_EVENT bits=4 case=2 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=15,-1,21,8
+NAV_EVENT bits=4 case=2 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=13,1,14,-8
+NAV_EVENT bits=4 case=2 attempt=5 action=0 cell=24 status=4 cycles=16085765 scores=12,0,8,-1
+NAV_CASE case=2 steps8=3 status8=4 steps4=5 status4=4
+NAV_CASE case=3 steps8=0 status8=2 steps4=0 status4=2
+NAV_EVENT bits=8 case=4 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=2112,-1529,5290,1480
+NAV_EVENT bits=4 case=4 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=17,-2,48,8
+NAV_EVENT bits=8 case=4 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=2944,-2337,8176,2499
+NAV_EVENT bits=4 case=4 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=15,-4,47,10
+NAV_EVENT bits=8 case=4 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=3346,-2032,9301,2294
+NAV_EVENT bits=4 case=4 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=17,-7,42,8
+NAV_EVENT bits=8 case=4 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=3511,-1086,9516,1330
+NAV_EVENT bits=4 case=4 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=20,0,36,-4
+NAV_EVENT bits=8 case=4 attempt=5 action=2 cell=40 status=1 cycles=16085765 scores=3055,411,7636,332
+NAV_EVENT bits=4 case=4 attempt=5 action=2 cell=40 status=1 cycles=16085765 scores=13,3,46,2
+NAV_EVENT bits=8 case=4 attempt=6 action=2 cell=48 status=1 cycles=19302918 scores=2668,1092,8055,-1030
+NAV_EVENT bits=4 case=4 attempt=6 action=2 cell=48 status=1 cycles=19302918 scores=19,3,45,-3
+NAV_EVENT bits=8 case=4 attempt=7 action=1 cell=49 status=1 cycles=22520071 scores=1545,8723,-4834,-2026
+NAV_EVENT bits=4 case=4 attempt=7 action=1 cell=49 status=1 cycles=22520071 scores=10,56,-28,-13
+NAV_EVENT bits=8 case=4 attempt=8 action=1 cell=50 status=1 cycles=25737224 scores=-1039,9627,-5836,-1998
+NAV_EVENT bits=4 case=4 attempt=8 action=1 cell=50 status=1 cycles=25737224 scores=-10,66,-32,-7
+NAV_EVENT bits=8 case=4 attempt=9 action=1 cell=51 status=1 cycles=28954377 scores=5637,6204,-7560,-6328
+NAV_EVENT bits=4 case=4 attempt=9 action=1 cell=51 status=1 cycles=28954377 scores=39,43,-52,-38
+NAV_EVENT bits=8 case=4 attempt=10 action=0 cell=43 status=1 cycles=32171530 scores=7284,6304,-8800,-7027
+NAV_EVENT bits=4 case=4 attempt=10 action=1 cell=52 status=1 cycles=32171530 scores=21,63,-59,-20
+NAV_EVENT bits=8 case=4 attempt=11 action=1 cell=44 status=1 cycles=35388683 scores=6857,10919,-9481,-9274
+NAV_EVENT bits=4 case=4 attempt=11 action=1 cell=53 status=1 cycles=35388683 scores=44,60,-71,-48
+NAV_EVENT bits=8 case=4 attempt=12 action=1 cell=45 status=1 cycles=38605836 scores=7829,11892,-11075,-9837
+NAV_EVENT bits=4 case=4 attempt=12 action=0 cell=45 status=1 cycles=38605836 scores=61,47,-77,-51
+NAV_EVENT bits=8 case=4 attempt=13 action=0 cell=37 status=1 cycles=41822989 scores=10934,7959,-13499,-10246
+NAV_EVENT bits=4 case=4 attempt=13 action=1 cell=46 status=1 cycles=41822989 scores=45,53,-70,-47
+NAV_EVENT bits=8 case=4 attempt=14 action=1 cell=38 status=1 cycles=45040142 scores=6844,11192,-12699,-9301
+NAV_EVENT bits=4 case=4 attempt=14 action=0 cell=38 status=1 cycles=45040142 scores=64,16,-51,-36
+NAV_EVENT bits=8 case=4 attempt=15 action=0 cell=30 status=1 cycles=48257295 scores=7440,7209,-10413,-6178
+NAV_EVENT bits=4 case=4 attempt=15 action=1 cell=39 status=1 cycles=48257295 scores=19,38,-48,-17
+NAV_EVENT bits=8 case=4 attempt=16 action=1 cell=31 status=2 cycles=51474448 scores=-2214,12801,-2798,817
+NAV_EVENT bits=4 case=4 attempt=16 action=0 cell=31 status=2 cycles=51474448 scores=54,-18,-6,20
+NAV_CASE case=4 steps8=16 status8=2 steps4=16 status4=2
+NAV_EVENT bits=8 case=5 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=1960,-1566,4086,1124
+NAV_EVENT bits=4 case=5 attempt=1 action=2 cell=8 status=1 cycles=3217153 scores=15,-6,33,5
+NAV_EVENT bits=8 case=5 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=2095,-2001,4594,1571
+NAV_EVENT bits=4 case=5 attempt=2 action=2 cell=16 status=1 cycles=6434306 scores=15,-7,30,6
+NAV_EVENT bits=8 case=5 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=1271,-561,2814,44
+NAV_EVENT bits=4 case=5 attempt=3 action=2 cell=24 status=1 cycles=9651459 scores=13,1,24,-4
+NAV_EVENT bits=8 case=5 attempt=4 action=2 cell=32 status=1 cycles=12868612 scores=1227,-702,3008,252
+NAV_EVENT bits=4 case=5 attempt=4 action=0 cell=16 status=4 cycles=12868612 scores=6,-2,6,-1
+NAV_EVENT bits=8 case=5 attempt=5 action=2 cell=40 status=1 cycles=16085765 scores=1188,-759,3373,493
+NAV_EVENT bits=8 case=5 attempt=6 action=2 cell=48 status=1 cycles=19302918 scores=988,-47,2733,-196
+NAV_EVENT bits=8 case=5 attempt=7 action=2 cell=56 status=1 cycles=22520071 scores=913,-75,1878,-214
+NAV_EVENT bits=8 case=5 attempt=8 action=1 cell=57 status=1 cycles=25737224 scores=757,1512,-909,-655
+NAV_EVENT bits=8 case=5 attempt=9 action=1 cell=58 status=1 cycles=28954377 scores=-589,2073,-1247,613
+NAV_EVENT bits=8 case=5 attempt=10 action=0 cell=50 status=1 cycles=32171530 scores=1176,528,-1771,609
+NAV_EVENT bits=8 case=5 attempt=11 action=0 cell=42 status=1 cycles=35388683 scores=1800,1741,453,-2468
+NAV_EVENT bits=8 case=5 attempt=12 action=0 cell=34 status=1 cycles=38605836 scores=2750,2579,-145,-3465
+NAV_EVENT bits=8 case=5 attempt=13 action=1 cell=35 status=1 cycles=41822989 scores=1496,3301,187,-2790
+NAV_EVENT bits=8 case=5 attempt=14 action=1 cell=36 status=1 cycles=45040142 scores=593,2189,-497,-1050
+NAV_EVENT bits=8 case=5 attempt=15 action=1 cell=37 status=1 cycles=48257295 scores=710,1364,-985,-200
+NAV_EVENT bits=8 case=5 attempt=16 action=0 cell=29 status=1 cycles=51474448 scores=1558,1268,-2225,-1479
+NAV_EVENT bits=8 case=5 attempt=17 action=1 cell=30 status=1 cycles=54691601 scores=689,3622,-1966,-2160
+NAV_EVENT bits=8 case=5 attempt=18 action=0 cell=22 status=1 cycles=57908754 scores=3458,793,-2531,-3155
+NAV_EVENT bits=8 case=5 attempt=19 action=1 cell=23 status=1 cycles=61125907 scores=-768,5224,-1543,-1632
+NAV_EVENT bits=8 case=5 attempt=20 action=0 cell=15 status=1 cycles=64343060 scores=6753,-4056,-1803,-386
+NAV_EVENT bits=8 case=5 attempt=21 action=0 cell=7 status=1 cycles=67560213 scores=8098,-4443,-2121,-1367
+NAV_EVENT bits=8 case=5 attempt=22 action=3 cell=6 status=1 cycles=70777366 scores=-1042,-4310,-1591,6793
+NAV_EVENT bits=8 case=5 attempt=23 action=3 cell=5 status=1 cycles=73994519 scores=625,107,-4682,5588
+NAV_EVENT bits=8 case=5 attempt=24 action=3 cell=4 status=1 cycles=77211672 scores=248,1673,-3677,5734
+NAV_EVENT bits=8 case=5 attempt=25 action=3 cell=3 status=1 cycles=80428825 scores=437,581,-2882,6658
+NAV_EVENT bits=8 case=5 attempt=26 action=3 cell=2 status=2 cycles=83645978 scores=1553,650,-2836,5802
+NAV_CASE case=5 steps8=26 status8=2 steps4=4 status4=4
+NAV_EVENT bits=8 case=6 attempt=1 action=1 cell=1 status=1 cycles=3217153 scores=-453,2124,1214,-402
+NAV_EVENT bits=4 case=6 attempt=1 action=1 cell=1 status=1 cycles=3217153 scores=-4,20,9,0
+NAV_EVENT bits=8 case=6 attempt=2 action=1 cell=2 status=1 cycles=6434306 scores=-834,2456,1351,-235
+NAV_EVENT bits=4 case=6 attempt=2 action=2 cell=9 status=1 cycles=6434306 scores=-7,20,24,-1
+NAV_EVENT bits=8 case=6 attempt=3 action=1 cell=3 status=1 cycles=9651459 scores=-634,3200,-291,-1037
+NAV_EVENT bits=4 case=6 attempt=3 action=1 cell=10 status=1 cycles=9651459 scores=4,33,10,-9
+NAV_EVENT bits=8 case=6 attempt=4 action=1 cell=4 status=1 cycles=12868612 scores=130,5002,-1932,465
+NAV_EVENT bits=4 case=6 attempt=4 action=0 cell=2 status=1 cycles=12868612 scores=28,0,25,-1
+NAV_EVENT bits=8 case=6 attempt=5 action=1 cell=5 status=1 cycles=16085765 scores=847,6222,-2713,1435
+NAV_EVENT bits=4 case=6 attempt=5 action=1 cell=3 status=1 cycles=16085765 scores=-4,25,1,-5
+NAV_EVENT bits=8 case=6 attempt=6 action=1 cell=6 status=1 cycles=19302918 scores=854,7545,-2327,1928
+NAV_EVENT bits=4 case=6 attempt=6 action=1 cell=4 status=1 cycles=19302918 scores=2,41,-10,5
+NAV_EVENT bits=8 case=6 attempt=7 action=1 cell=7 status=1 cycles=22520071 scores=-354,6198,892,842
+NAV_EVENT bits=4 case=6 attempt=7 action=1 cell=5 status=1 cycles=22520071 scores=0,48,-7,10
+NAV_EVENT bits=8 case=6 attempt=8 action=2 cell=15 status=1 cycles=25737224 scores=749,351,9097,2993
+NAV_EVENT bits=4 case=6 attempt=8 action=1 cell=6 status=1 cycles=25737224 scores=7,55,-3,7
+NAV_EVENT bits=8 case=6 attempt=9 action=2 cell=23 status=1 cycles=28954377 scores=4727,-1409,13603,1000
+NAV_EVENT bits=4 case=6 attempt=9 action=1 cell=7 status=1 cycles=28954377 scores=-3,34,30,1
+NAV_EVENT bits=8 case=6 attempt=10 action=2 cell=31 status=1 cycles=32171530 scores=1726,-1109,12519,5373
+NAV_EVENT bits=4 case=6 attempt=10 action=2 cell=15 status=1 cycles=32171530 scores=8,5,57,18
+NAV_EVENT bits=8 case=6 attempt=11 action=2 cell=39 status=1 cycles=35388683 scores=1986,-1494,14007,6373
+NAV_EVENT bits=4 case=6 attempt=11 action=2 cell=23 status=1 cycles=35388683 scores=31,0,77,7
+NAV_EVENT bits=8 case=6 attempt=12 action=2 cell=47 status=1 cycles=38605836 scores=1569,-1008,13016,5887
+NAV_EVENT bits=4 case=6 attempt=12 action=2 cell=31 status=1 cycles=38605836 scores=20,-11,65,36
+NAV_EVENT bits=8 case=6 attempt=13 action=2 cell=55 status=1 cycles=41822989 scores=1822,-533,13076,5146
+NAV_EVENT bits=4 case=6 attempt=13 action=2 cell=39 status=1 cycles=41822989 scores=10,-2,68,43
+NAV_EVENT bits=8 case=6 attempt=14 action=2 cell=63 status=2 cycles=45040142 scores=2808,583,12500,2567
+NAV_EVENT bits=4 case=6 attempt=14 action=2 cell=47 status=1 cycles=45040142 scores=4,2,55,37
+NAV_EVENT bits=4 case=6 attempt=15 action=2 cell=55 status=1 cycles=48257295 scores=15,4,60,26
+NAV_EVENT bits=4 case=6 attempt=16 action=2 cell=63 status=2 cycles=51474448 scores=12,21,55,3
+NAV_CASE case=6 steps8=14 status8=2 steps4=16 status4=2
+PASS_NAVIGATION_CNN cases=7 episodes=14 decisions=157 score_words=628 cycles_per_decision=3217153 reset_abort=1 busy_restart=1 snapshot=1 hold_terminal=1
+$finish called at time : 3152816040 ns : File "X:/Desktop/EC_311/Project/tb/tb_navigation_cnn.sv" Line 152
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:06:20 . Memory (MB): peak = 223.383 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 9204 KB (Peak: 9204 KB), Simulation CPU Usage: 379078 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 19 21:50:57 2026...

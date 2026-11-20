@@ -6,11 +6,13 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 ## Current status
 
-**Step 7 improves the base CNN.** With the same architecture and parameter count, structured-maze validation success rises from 76.56% to 99.44% in FP32, from 76.46% to 99.29% at 8 bits, and from 65.75% to 84.38% at 4 bits. Original-layout validation also improves for all three precisions. [Results and known failures](results/policy-improvement/README.md) include paired comparisons and complete traces. [Step 7](docs/step-07.md) explains reproduction. New model bundles are separate software-verified candidates; the board still uses the physically tested Step 6 checkpoint below.
+**Step 8 integrates the improved models into the FPGA.** The seven-scenario real dual-CNN simulation passes 157 decisions and 628 exact score comparisons. The new 8-bit policy solves the previously failed 26-move detour; the 4-bit policy still loops there. [Step 8](docs/step-08.md) provides the separate bitstream/project paths and physical test instructions. [Verification evidence](results/navigation-structured/README.md) distinguishes simulation, implementation, and pending board checks.
+
+**Step 7 improves the base CNN.** With the same architecture and parameter count, structured-maze validation success rises from 76.56% to 99.44% in FP32, from 76.46% to 99.29% at 8 bits, and from 65.75% to 84.38% at 4 bits. Original-layout validation also improves for all three precisions. [Results and known failures](results/policy-improvement/README.md) include paired comparisons and complete traces. [Step 7](docs/step-07.md) explains reproduction. The improved bundles remain separate from the physically tested Step 6 checkpoint below; Step 8 prepares their hardware deployment.
 
 **Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. Restart, cancellation, and zero-step start/goal overlap also passed as reported by the user. [The board-test log](results/navigation/board-test.json) separates physical evidence from simulation.
 
-## Neural maze comparison
+## Original checkpoint: physical maze comparison
 
 ![Physical FPGA detour comparison on the VGA monitor](results/navigation/hardware/detour.jpg)
 
@@ -32,7 +34,7 @@ python scripts/run_navigation.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1
 python scripts/run_navigation_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
 ~~~
 
-Read [Step 6 and board-test instructions](docs/step-06.md), [navigation VGA layout](docs/navigation-vga-layout.md), and [verification/implementation evidence](results/navigation/README.md). The current local bitstream is `runs/vivado/navigation/mazebits_navigation.bit`; the persistent GUI project is `runs/vivado/navigation_gui/mazebits_navigation.xpr`. The editor-only Step 5 version remains available separately.
+Read [Step 6 and board-test instructions](docs/step-06.md), [navigation VGA layout](docs/navigation-vga-layout.md), and [verification/implementation evidence](results/navigation/README.md). The original local bitstream is `runs/vivado/navigation/mazebits_navigation.bit`; its GUI project is `runs/vivado/navigation_gui/mazebits_navigation.xpr`. The improved model uses `runs/vivado/navigation-structured/mazebits_navigation_structured.bit` and `runs/vivado/navigation_structured_gui/mazebits_navigation_structured.xpr`. The editor-only Step 5 version remains available separately.
 
 ## Learned policy baseline
 
@@ -101,7 +103,7 @@ W8A8/W4A4 means signed 8/4-bit weights and unsigned 8/4-bit hidden activations. 
 
 ## Verification
 
-All 107 software tests passed. Step 6 additionally checks 60 complete-loop decisions, 240 signed scores, 202 controller checks, 34 integrated control checks, and three full VGA frames. For the original Step 3/4 numerical verification, for each precision:
+The latest software-test record is in [Step 8 evidence](results/navigation-structured/README.md). Step 6 checks 60 complete-loop decisions, 240 signed scores, 202 controller checks, 34 integrated control checks, and three full VGA frames. For the original Step 3/4 numerical verification, for each precision:
 
 - 133,160 intermediate/output words matched independent scalar arithmetic across eight fixtures.
 - Fresh-process replay matched all 88,116 validation score words and 3,600 trajectories.
@@ -113,7 +115,7 @@ python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir t
 python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
 ~~~
 
-GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, the board-control tests, the editor/VGA suites, and both the navigation-control and real dual-CNN suites. A full validation replay additionally needs the generated dataset:
+GitHub Actions runs the unit tests, Python vector replays and RTL-vector suites for both original and improved checkpoints in Icarus Verilog, the board-control tests, the editor/VGA suites, and the navigation-control and original/improved real dual-CNN suites. A full validation replay additionally needs the generated dataset:
 
 ~~~powershell
 python python/prepare_data.py --output-dir data/maze-v1
@@ -132,6 +134,7 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 5](docs/step-05.md): board-tested controls, editable map, and VGA display.
 - [Step 6](docs/step-06.md): independent neural navigation, path comparison, and board-test instructions.
 - [Step 7](docs/step-07.md): structured-maze training, improved FP32/integer candidates, and fair validation comparisons.
+- [Step 8](docs/step-08.md): improved-weight RTL verification, separate FPGA build, and board checks.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
 - [Benchmarking guide](docs/benchmarking.md): inference time, packed storage, routed resources, and paired navigation quality.
@@ -140,4 +143,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-Step 6's physical checklist is complete. Step 7 trains and verifies improved model candidates in Python. The next hardware checkpoint is to verify the new integer vectors in RTL, rebuild the VGA navigation bitstream, and repeat the board measurements. Each milestone is committed and pushed on its own branch.
+Step 6's physical checklist is complete. Step 8 verifies the improved integer models in RTL and prepares a separate VGA navigation bitstream. Its remaining checkpoint is the physical test of the improved build, including the 26-move detour. Each milestone is committed and pushed on its own branch.

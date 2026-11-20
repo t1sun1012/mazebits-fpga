@@ -1,0 +1,37 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Thu Nov 19 21:54:32 2026
+| Host         : <BUILD_HOST>
+| Command      : report_utilization -hierarchical -hierarchical_depth 3 -file utilization_hierarchy.rpt
+| Design       : mazebits_navigation_top
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------+---------------------+------------+------------+---------+------+------+--------+--------+------------+
+|           Instance          |        Module       | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------------+---------------------+------------+------------+---------+------+------+--------+--------+------------+
+| mazebits_navigation_top     |               (top) |       2176 |       2176 |       0 |    0 | 1695 |     12 |      5 |          0 |
+|   (mazebits_navigation_top) |               (top) |         16 |         16 |       0 |    0 |   65 |      0 |      0 |          0 |
+|   buttons                   |  button_conditioner |         55 |         55 |       0 |    0 |  120 |      0 |      0 |          0 |
+|   cnn4                      |   mazebits_cnn_w4a4 |        524 |        524 |       0 |    0 |  333 |      4 |      2 |          0 |
+|   cnn8                      |   mazebits_cnn_w8a8 |        632 |        632 |       0 |    0 |  347 |      8 |      2 |          0 |
+|   display                   | maze_navigation_vga |        466 |        466 |       0 |    0 |  394 |      0 |      1 |          0 |
+|   editor                    |         maze_editor |        246 |        246 |       0 |    0 |   84 |      0 |      0 |          0 |
+|   nav4                      |     maze_navigation |         97 |         97 |       0 |    0 |  141 |      0 |      0 |          0 |
+|   nav8                      |   maze_navigation_0 |        146 |        146 |       0 |    0 |  211 |      0 |      0 |          0 |
++-----------------------------+---------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

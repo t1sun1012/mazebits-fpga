@@ -1,0 +1,15 @@
+project=mazebits_navigation_structured
+part=xc7a100tcsg324-1
+top=mazebits_navigation_top
+source=<REPO>/rtl/button_conditioner.v
+source=<REPO>/rtl/maze_editor.v
+source=<REPO>/rtl/maze_navigation.v
+source=<REPO>/rtl/maze_navigation_vga.v
+source=<REPO>/runs/vivado/navigation-structured/mazebits_cnn_w4a4.v
+source=<REPO>/runs/vivado/navigation-structured/mazebits_cnn_w8a8.v
+source=<REPO>/rtl/mazebits_navigation_top.v
+source=<REPO>/runs/vivado/navigation-structured/weights_w8a8.mem
+source=<REPO>/runs/vivado/navigation-structured/biases_w8a8.mem
+source=<REPO>/runs/vivado/navigation-structured/weights_w4a4.mem
+source=<REPO>/runs/vivado/navigation-structured/biases_w4a4.mem
+constraint=<REPO>/constraints/mazebits_navigation.xdc

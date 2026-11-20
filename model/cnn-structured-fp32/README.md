@@ -10,4 +10,4 @@ The [manifest](manifest.json) and NPZ weights are hash-verified by the loader. [
 python python/predict.py --model-dir model/cnn-structured-fp32 --maze-file results/navigation/counterexamples/long-detour.txt --trace
 ```
 
-The board continues using the original Step 6 weights until a separate hardware verification/build is performed for this checkpoint.
+[Step 8](../../docs/step-08.md) integrates the integer versions of this checkpoint into a separate verified FPGA build. Its physical-test status is recorded separately from the original Step 6 board results.

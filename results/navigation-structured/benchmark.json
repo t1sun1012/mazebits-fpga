@@ -1,0 +1,81 @@
+{
+  "format": "mazebits-structured-benchmark-v1",
+  "scope": "Step 8 improved checkpoint: routed dual-engine FPGA resources and RTL-cycle latency, paired with Step 7 software validation on maze-v2. This is not a physical clock-frequency or wall-time measurement.",
+  "bitstream": {
+    "name": "mazebits_navigation_structured.bit",
+    "bytes": 3825908,
+    "sha256": "3aa08afa503ab2ac9856d48f5c5aa702bbe53fa5b03d158081285be3a606536b",
+    "programmed_on_board": false
+  },
+  "clock_hz": 100000000.0,
+  "dataset": {
+    "partition": "validation",
+    "layouts": 200,
+    "states": 27084,
+    "episodes": 4800,
+    "reserved_test_evaluated": false
+  },
+  "models": {
+    "w8a8": {
+      "model_manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+      "cycles_per_decision": 3217153,
+      "nominal_inference_ms": 32.17153,
+      "packed_parameter_bytes": 17152,
+      "logical_activation_bank_bytes": 2048,
+      "routed_cnn_resources": {
+        "luts": 632,
+        "registers": 347,
+        "ramb36": 8,
+        "ramb18": 2,
+        "bram_36k_equivalents": 9.0,
+        "dsps": 0,
+        "allocated_bram_bits_including_parity_capacity": 331776
+      },
+      "optimal_action_accuracy": 0.9974892925712597,
+      "success_count": 4766,
+      "success_rate": 0.9929166666666667,
+      "outcomes": {
+        "blocked": 0,
+        "loop": 34,
+        "success": 4766,
+        "timeout": 0
+      },
+      "successful_mean_path_ratio": 1.0001768479107966
+    },
+    "w4a4": {
+      "model_manifest_sha256": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+      "cycles_per_decision": 3217153,
+      "nominal_inference_ms": 32.17153,
+      "packed_parameter_bytes": 8840,
+      "logical_activation_bank_bytes": 1024,
+      "routed_cnn_resources": {
+        "luts": 524,
+        "registers": 333,
+        "ramb36": 4,
+        "ramb18": 2,
+        "bram_36k_equivalents": 5.0,
+        "dsps": 0,
+        "allocated_bram_bits_including_parity_capacity": 184320
+      },
+      "optimal_action_accuracy": 0.9754467582336435,
+      "success_count": 4050,
+      "success_rate": 0.84375,
+      "outcomes": {
+        "blocked": 37,
+        "loop": 713,
+        "success": 4050,
+        "timeout": 0
+      },
+      "successful_mean_path_ratio": 1.0029005040791532
+    }
+  },
+  "source_sha256": {
+    "results/navigation-structured/build/implementation.json": "74dbf1826c8a95472d65041922a7441588b8053783960a9ca59dd41332f7a32c",
+    "results/navigation-structured/final-stager-equivalence.json": "57838a389ee9add7bac487670d279860b0bf2755ccf4ea449b6d0a42711c289d",
+    "results/navigation-structured/cnn/verification.json": "6cd5db497aad7ca1ae0007efe83396ec6b8873853db144bf76b518f796c8f123",
+    "results/policy-improvement/quantization/comparison.json": "74d1f51506969eb225d0bd721017d4d9f6dbdcdcd96c763b5ee5fb610b727c65",
+    "results/navigation-structured/build/utilization_hierarchy.rpt": "b50abea946c4a0a8b403eca390b9af73f4ef577ab85fb3f30c507b06ca994ead",
+    "model/cnn-structured-w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+    "model/cnn-structured-w4a4/manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7"
+  }
+}

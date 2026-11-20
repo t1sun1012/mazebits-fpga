@@ -1,0 +1,36 @@
+{
+  "test": "vga",
+  "top": "tb_navigation_vga",
+  "status": "pass",
+  "simulator": "xsim",
+  "model_set": "structured",
+  "tool_version": [
+    "Vivado Simulator v2024.1"
+  ],
+  "pass_marker": "PASS_NAVIGATION_VGA frames=3 pixels=1260000 active_pixels=921600 glyph_pixels=11088 snapshots=2",
+  "coverage": {
+    "frames": "3",
+    "pixels": "1260000",
+    "active_pixels": "921600",
+    "glyph_pixels": "11088",
+    "snapshots": "2"
+  },
+  "source_sha256": {
+    "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+    "tb/tb_navigation_vga.sv": "1e30f603926b5fdc37765e46faebb6fc8dc416b69e48b095a6be15bf435a3376",
+    "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+    "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+  },
+  "staged_sha256": {},
+  "elapsed_wall_seconds": 17.499,
+  "artifacts": {
+    "navigation_result.ppm": {
+      "sha256": "72401a29190a93308c94e183fd948492bfcf775e2ebc9715d8e766998be64ec9",
+      "bytes": 3137928
+    },
+    "navigation_running.ppm": {
+      "sha256": "ac962269739465e8ea3798a9c362549eef5a8017182c77a1a2fc670e14b578e9",
+      "bytes": 3134181
+    }
+  }
+}

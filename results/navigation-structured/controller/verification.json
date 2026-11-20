@@ -1,0 +1,35 @@
+{
+  "test": "controller",
+  "top": "tb_maze_navigation",
+  "status": "pass",
+  "simulator": "xsim",
+  "model_set": "structured",
+  "tool_version": [
+    "Vivado Simulator v2024.1"
+  ],
+  "pass_marker": "PASS_NAVIGATION checks=202 bounds=4 legal_moves=4 wall=1 loop=1 goal=1 start_goal=1 limit=1 snapshot=1 restart=1 stale_done=1 reset=1 pacing=1",
+  "coverage": {
+    "checks": "202",
+    "bounds": "4",
+    "legal_moves": "4",
+    "wall": "1",
+    "loop": "1",
+    "goal": "1",
+    "start_goal": "1",
+    "limit": "1",
+    "snapshot": "1",
+    "restart": "1",
+    "stale_done": "1",
+    "reset": "1",
+    "pacing": "1"
+  },
+  "source_sha256": {
+    "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+    "tb/tb_maze_navigation.sv": "276794f9ea40718de3b6113ad1d4f2f8136cdcd0e9d02bfbbb6c6e7925ae208a",
+    "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+    "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+  },
+  "staged_sha256": {},
+  "elapsed_wall_seconds": 7.555,
+  "artifacts": {}
+}

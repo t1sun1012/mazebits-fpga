@@ -1,0 +1,189 @@
+{
+  "format": "mazebits-board-test-v1",
+  "milestone": 8,
+  "model_set": "structured",
+  "reported_date": "2026-11-19",
+  "date_timezone": "America/New_York",
+  "status": "in_progress",
+  "evidence_type": "User-reported physical observations; expected outcomes are simulation references, not additional observations.",
+  "bitstream": "mazebits_navigation_structured.bit",
+  "bitstream_sha256": "3aa08afa503ab2ac9856d48f5c5aa702bbe53fa5b03d158081285be3a606536b",
+  "tests": [
+    {
+      "name": "open",
+      "walls_hex": "0000000000000000",
+      "start": 0,
+      "goal": 63,
+      "status": "pass",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "displayed_cycles_hex": "02AF420E"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "displayed_cycles_hex": "02AF420E"
+        }
+      },
+      "observed": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "displayed_cycles_hex": "02AF420E"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "displayed_cycles_hex": "02AF420E"
+        }
+      },
+      "user_report": "Both panels match",
+      "evidence_type": "user-reported physical board test"
+    },
+    {
+      "name": "detour",
+      "walls_hex": "0002020202020202",
+      "start": 0,
+      "goal": 7,
+      "status": "pass",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 21,
+          "displayed_cycles_hex": "0406E315"
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 8,
+          "displayed_cycles_hex": "0188B808"
+        }
+      },
+      "observed": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 21,
+          "displayed_cycles_hex": "0406E315"
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 8,
+          "displayed_cycles_hex": "0188B808"
+        }
+      },
+      "user_report": "Both results match",
+      "evidence_type": "user-reported physical board test"
+    },
+    {
+      "name": "blocked",
+      "walls_hex": "0202020202020202",
+      "start": 0,
+      "goal": 7,
+      "status": "pending",
+      "expected": {
+        "w8a8": {
+          "outcome": "LOOP",
+          "attempts": 3,
+          "displayed_cycles_hex": "00934503"
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 5,
+          "displayed_cycles_hex": "00F57305"
+        }
+      },
+      "observed": null
+    },
+    {
+      "name": "at-goal",
+      "walls_hex": "0000000000000000",
+      "start": 0,
+      "goal": 0,
+      "status": "pending",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        }
+      },
+      "observed": null
+    },
+    {
+      "name": "precision-reversal-IMG_7179",
+      "walls_hex": "0000020202020202",
+      "start": 0,
+      "goal": 31,
+      "status": "pending",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "displayed_cycles_hex": "03117010"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "displayed_cycles_hex": "03117010"
+        }
+      },
+      "observed": null
+    },
+    {
+      "name": "long-detour-IMG_7180",
+      "walls_hex": "0002020202027e02",
+      "start": 0,
+      "goal": 2,
+      "status": "pending",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 26,
+          "displayed_cycles_hex": "04FC561A"
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 4,
+          "displayed_cycles_hex": "00C45C04"
+        }
+      },
+      "observed": null
+    },
+    {
+      "name": "precision-loss-latest-photo",
+      "walls_hex": "0008080808087800",
+      "start": 0,
+      "goal": 63,
+      "status": "pending",
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "displayed_cycles_hex": "02AF420E"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "displayed_cycles_hex": "03117010"
+        }
+      },
+      "observed": null
+    },
+    {
+      "name": "mid-run-restart",
+      "status": "pending",
+      "observed": null
+    },
+    {
+      "name": "edit-mode-cancellation",
+      "status": "pending",
+      "observed": null
+    }
+  ]
+}

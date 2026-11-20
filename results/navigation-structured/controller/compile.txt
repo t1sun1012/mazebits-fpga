@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/maze_navigation.v" into library work
+INFO: [VRFC 10-311] analyzing module maze_navigation
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/tb/tb_maze_navigation.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_maze_navigation

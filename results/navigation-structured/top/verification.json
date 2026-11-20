@@ -1,0 +1,36 @@
+{
+  "test": "top",
+  "top": "tb_navigation_top",
+  "status": "pass",
+  "simulator": "xsim",
+  "model_set": "structured",
+  "tool_version": [
+    "Vivado Simulator v2024.1"
+  ],
+  "pass_marker": "PASS_NAVIGATION_TOP checks=34 controls=1 snapshot=1 independent=1 restart=1 held_press=1 cancel=1 overlap=1 reset=1 mode_exit_mask=1",
+  "coverage": {
+    "checks": "34",
+    "controls": "1",
+    "snapshot": "1",
+    "independent": "1",
+    "restart": "1",
+    "held_press": "1",
+    "cancel": "1",
+    "overlap": "1",
+    "reset": "1",
+    "mode_exit_mask": "1"
+  },
+  "source_sha256": {
+    "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+    "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+    "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+    "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+    "rtl/mazebits_navigation_top.v": "906c5807973d67febc5439546113922537b1785f8d07327814c107c08c1b4c2f",
+    "tb/tb_navigation_top.sv": "461fc26f1bd963782218b8bd36f24b9eea1f7031bae7d6fbfed539f10ccda90f",
+    "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+    "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9"
+  },
+  "staged_sha256": {},
+  "elapsed_wall_seconds": 8.306,
+  "artifacts": {}
+}

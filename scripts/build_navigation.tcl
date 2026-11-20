@@ -1,11 +1,22 @@
-# Step 6 paired fixed-point CNN navigation and VGA implementation.
+# Selected paired fixed-point CNN navigation and VGA implementation.
 # First stage the frozen dual models with scripts/stage_navigation.py or use run_navigation_vivado.py.
 # vivado -mode batch -source scripts/build_navigation.tcl -tclargs bitstream
 set repo [file normalize [file join [file dirname [info script]] ..]]
 set stage route
 if {[llength $argv] > 0} { set stage [lindex $argv 0] }
 if {$stage ni {synth route bitstream}} { error "Stage must be synth, route, or bitstream" }
-set out [file join $repo runs vivado navigation]
+set model_set original
+if {[llength $argv] > 1} { set model_set [lindex $argv 1] }
+if {[llength $argv] > 2 || $model_set ni {original structured}} {
+    error "Usage: build_navigation.tcl stage ?original|structured?"
+}
+set folder navigation
+set bitstream_name mazebits_navigation.bit
+if {$model_set eq "structured"} {
+    set folder navigation-structured
+    set bitstream_name mazebits_navigation_structured.bit
+}
+set out [file join $repo runs vivado $folder]
 file mkdir $out
 cd $out
 create_project -in_memory -part xc7a100tcsg324-1
@@ -60,6 +71,8 @@ if {$stage ne "synth"} {
     }
     set handle [open build_summary.txt w]
     puts $handle "top=mazebits_navigation_top"
+    puts $handle "model_set=$model_set"
+    puts $handle "bitstream_name=$bitstream_name"
     puts $handle "part=xc7a100tcsg324-1"
     puts $handle "clock_period_ns=10.000"
     puts $handle "pixel_clock_enable_hz=25000000"
@@ -76,7 +89,7 @@ if {$stage ne "synth"} {
     if {[llength $bad_drc] > 0 || [llength $memory_async_drc] > 0} {
         error "DRC errors/critical warnings or unsafe asynchronous RAM controls remain"
     }
-    if {$stage eq "bitstream"} { write_bitstream -force mazebits_navigation.bit }
+    if {$stage eq "bitstream"} { write_bitstream -force $bitstream_name }
 }
 puts "MazeBits dual-CNN navigation/VGA $stage complete; reports: $out"
 exit

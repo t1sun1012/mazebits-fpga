@@ -1,0 +1,15 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/button_conditioner.v" into library work
+INFO: [VRFC 10-311] analyzing module button_conditioner
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/maze_editor.v" into library work
+INFO: [VRFC 10-311] analyzing module maze_editor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/maze_navigation.v" into library work
+INFO: [VRFC 10-311] analyzing module maze_navigation
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/maze_navigation_vga.v" into library work
+INFO: [VRFC 10-311] analyzing module maze_navigation_vga
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/mazebits_navigation_top.v" into library work
+INFO: [VRFC 10-311] analyzing module mazebits_navigation_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/tb/tb_navigation_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module navigation_stub_core
+INFO: [VRFC 10-311] analyzing module mazebits_cnn_w8a8
+INFO: [VRFC 10-311] analyzing module mazebits_cnn_w4a4
+INFO: [VRFC 10-311] analyzing module tb_navigation_top

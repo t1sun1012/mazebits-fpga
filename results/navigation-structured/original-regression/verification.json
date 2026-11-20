@@ -1,0 +1,76 @@
+{
+  "format": "mazebits-navigation-verification-v1",
+  "tests": [
+    {
+      "test": "cnn",
+      "top": "tb_navigation_cnn",
+      "status": "pass",
+      "simulator": "xsim",
+      "model_set": "original",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "pass_marker": "PASS_NAVIGATION_CNN cases=4 episodes=8 decisions=60 score_words=240 cycles_per_decision=3217153 reset_abort=1 busy_restart=1 snapshot=1 hold_terminal=1",
+      "coverage": {
+        "cases": "4",
+        "episodes": "8",
+        "decisions": "60",
+        "score_words": "240",
+        "cycles_per_decision": "3217153",
+        "reset_abort": "1",
+        "busy_restart": "1",
+        "snapshot": "1",
+        "hold_terminal": "1"
+      },
+      "source_sha256": {
+        "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+        "tb/tb_navigation_cnn.sv": "0f48062b906aeb593ecfbd34f4f54f6dfa9ae27f3b679e02e7b550d37b05f232",
+        "scripts/run_navigation.py": "56fed12b357cfaa65b2d7f7ea5ead5d82318d16a656dfc8118719c9e65b6a938",
+        "scripts/stage_navigation.py": "b0167763299cd9bbd8ad2f45a17e2296d3fd14d7416d95e34789e948edc433b9",
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+        "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+        "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+        "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+        "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+        "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+        "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+        "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+        "model/cnn-fp32/manifest.json": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+        "model/cnn-fp32/weights.npz": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c",
+        "test_vectors/navigation/events_w4a4.mem": "c109d4152d896d6e358f205d0468a6d161893359a9ec978d89f3f34b1fa60f83",
+        "test_vectors/navigation/events_w8a8.mem": "cba012f9b757c3ced652c85412997a1f024958c5ebd733a2428a7d0b82eed3c2",
+        "test_vectors/navigation/final_w4a4.mem": "d9874b4c846073155f2b38c40f30eee24c08a680ff6f830405baadfb22dfa4cc",
+        "test_vectors/navigation/final_w8a8.mem": "72ecabf2b992a7ecd0a6b41c62acd77c3ed81f8cfaba07be8e1865aef1bfe326",
+        "test_vectors/navigation/goals.mem": "8386efdee20197f220961e905c6463e6d4bdef46607170fc19ef1a41b4e440e0",
+        "test_vectors/navigation/starts.mem": "e7940aec9c9d3d3d5fadf28e64e468468945599c439942219f9ecbc0e2ae241d",
+        "test_vectors/navigation/walls.mem": "fda74aad11a04ea5e2e2846482b4dceb01da64f920c0c405d7905ec93cceb6da",
+        "python/export_navigation_vectors.py": "9f4dc11907f6f5c760274c41b54cd652a4049d077a465c643d244ba65d7a86f7",
+        "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+        "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+        "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+        "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+        "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+        "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+        "test_vectors/navigation/manifest.json": "53f582d7fe232418a8d1e6d240b682ce6c1ef7b64d550ce514580d4cd2f3646b"
+      },
+      "staged_sha256": {
+        "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+        "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+        "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+        "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+        "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+        "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+        "events_w4a4.mem": "c109d4152d896d6e358f205d0468a6d161893359a9ec978d89f3f34b1fa60f83",
+        "events_w8a8.mem": "cba012f9b757c3ced652c85412997a1f024958c5ebd733a2428a7d0b82eed3c2",
+        "final_w4a4.mem": "d9874b4c846073155f2b38c40f30eee24c08a680ff6f830405baadfb22dfa4cc",
+        "final_w8a8.mem": "72ecabf2b992a7ecd0a6b41c62acd77c3ed81f8cfaba07be8e1865aef1bfe326",
+        "goals.mem": "8386efdee20197f220961e905c6463e6d4bdef46607170fc19ef1a41b4e440e0",
+        "starts.mem": "e7940aec9c9d3d3d5fadf28e64e468468945599c439942219f9ecbc0e2ae241d",
+        "walls.mem": "fda74aad11a04ea5e2e2846482b4dceb01da64f920c0c405d7905ec93cceb6da"
+      },
+      "elapsed_wall_seconds": 158.916,
+      "artifacts": {}
+    }
+  ]
+}

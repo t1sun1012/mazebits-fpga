@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/runs/navigation-structured/cnn/mazebits_cnn_w8a8.v" into library work
+INFO: [VRFC 10-311] analyzing module mazebits_cnn_w8a8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/runs/navigation-structured/cnn/mazebits_cnn_w4a4.v" into library work
+INFO: [VRFC 10-311] analyzing module mazebits_cnn_w4a4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/rtl/maze_navigation.v" into library work
+INFO: [VRFC 10-311] analyzing module maze_navigation
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "X:/Desktop/EC_311/Project/tb/tb_navigation_cnn.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_navigation_cnn

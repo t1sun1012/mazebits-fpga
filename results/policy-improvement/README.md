@@ -1,6 +1,6 @@
 # Step 7: Measured policy improvement
 
-The unchanged CNN was fine-tuned on structured obstacles and longer detours. It improves aggregate route success for FP32, W8A8, and W4A4 on both the original and expanded validation distributions. These are validation results; both reserved-test partitions remain unevaluated. The board still runs the original Step 6 weights.
+The unchanged CNN was fine-tuned on structured obstacles and longer detours. It improves aggregate route success for FP32, W8A8, and W4A4 on both the original and expanded validation distributions. These are validation results; both reserved-test partitions remain unevaluated. The separately recorded [Step 8 hardware milestone](../../docs/step-08.md) integrates these weights into the FPGA.
 
 ![Floating-point validation improvement and training history](policy_improvement.png)
 
@@ -39,7 +39,7 @@ These photographs are known development diagnostics, excluded from training/layo
 
 Fine-tuning uses seed 312, Adam at 0.0003, batch 256, D4 augmentation, and four CPU threads. Epoch 35 was selected from 45 epochs by v2 route success, then validation loss; total recorded training time is 342.14 seconds. The initial checkpoint remained eligible. Selection uses v2 validation; v1 validation is checked afterward for regressions.
 
-Packed parameters remain 67,024 bytes FP32, 17,152 bytes W8A8, and 8,840 bytes W4A4. No parameter-count or logical-storage increase was needed. New integer exports use training-only calibration from 4,096 v2 states, seed 312. Actual new-weight FPGA resource usage and timing still require a fresh implementation build; the [benchmarking guide](../../docs/benchmarking.md) identifies the existing Step 6 hardware measurements separately.
+Packed parameters remain 67,024 bytes FP32, 17,152 bytes W8A8, and 8,840 bytes W4A4. No parameter-count or logical-storage increase was needed. New integer exports use training-only calibration from 4,096 v2 states, seed 312. Actual new-weight FPGA resource usage and timing are recorded in the separate [Step 8 hardware evidence](../navigation-structured/README.md); the [benchmarking guide](../../docs/benchmarking.md) distinguishes the two checkpoints.
 
 ## Evidence and reproduction
 
@@ -53,4 +53,4 @@ Packed parameters remain 67,024 bytes FP32, 17,152 bytes W8A8, and 8,840 bytes W
 
 Follow [Step 7](../../docs/step-07.md) to reproduce training, comparisons, calibration, and integer evaluation. The plot is reproduced by `python python/plot_policy_improvement.py --comparison-dir runs/comparison-structured-v2 --training-dir runs/cnn-structured-v2 --output-dir runs/policy-improvement-plot` (use a new output directory).
 
-These new bundles and reference vectors have not yet been run through RTL simulation or programmed onto the board. The next hardware milestone should stage the new weights, verify the cores against these vectors, rebuild, measure resources/timing, and repeat physical tests.
+These artifacts record Step 7 software validation. [Step 8](../../docs/step-08.md) subsequently verifies the new bundles in RTL, rebuilds, and measures resources/timing. Its physical board observations are recorded separately and must not be inferred from software or HDL simulation.

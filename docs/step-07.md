@@ -34,7 +34,7 @@ A new checkpoint must be calibrated from training data, exported, reloaded and e
 
 [The complete comparison](../results/policy-improvement/README.md) reports improvements on both distributions. Original random-layout route success rises to 100% FP32, 100% W8A8, and 98.81% W4A4. On structured validation, the corresponding values are 99.44%, 99.29%, and 84.38%. The original models scored 76.56%, 76.46%, and 65.75% on those same structured routes.
 
-The selected model is published in `model/cnn-structured-fp32`; integer candidates are in `model/cnn-structured-w8a8` and `model/cnn-structured-w4a4`. Existing default bundles and board bitstreams still use the original checkpoint. These candidates have Python/scalar verification, with new-weight RTL and board testing pending.
+The selected model is published in `model/cnn-structured-fp32`; integer candidates are in `model/cnn-structured-w8a8` and `model/cnn-structured-w4a4`. Existing default bundles and board bitstreams still use the original checkpoint. The Python/scalar evidence belongs to this training step. [Step 8](step-08.md) adds new-weight RTL verification and a separate implementation build; physical testing is tracked there.
 
 To reproduce the training-only calibration and v2 integer evaluation:
 

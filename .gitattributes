@@ -21,3 +21,7 @@ constraints/reference/Nexys-4-DDR-Master.xdc -text -whitespace
 *.rpt text eol=lf -whitespace
 .gitattributes text eol=lf
 .gitignore text eol=lf
+
+# Preserve native tool-log formatting while keeping published evidence byte-stable.
+results/navigation-structured/build/*.log text eol=lf -whitespace
+results/navigation-structured/**/elaborate.txt text eol=lf -whitespace

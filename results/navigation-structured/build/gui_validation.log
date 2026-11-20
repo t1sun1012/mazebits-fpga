@@ -1,0 +1,122 @@
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Nov 19 21:55:30 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {<REPO>\runs\vivado\navigation-structured\verify_gui.tcl}
+# set mazebits_model_set structured
+# source {<REPO>/scripts/create_navigation_project.tcl}
+## set mazebits_project_repo [file normalize [file join [file dirname [info script]] ..]]
+## proc mazebits_read_binary {path} {
+##     if {![file isfile $path]} { error "Missing project input: $path" }
+##     set handle [open $path rb]
+##     set bytes [read $handle]
+##     close $handle
+##     return $bytes
+## }
+## proc mazebits_open_navigation_project {model_set} {
+##     global mazebits_project_repo
+##     if {$model_set ni {original structured}} { error "Model set must be original or structured" }
+##     set repo $mazebits_project_repo
+##     set generated_folder navigation
+##     set gui_folder navigation_gui
+##     set project_name mazebits_navigation
+##     set model_prefix cnn-
+##     if {$model_set eq "structured"} {
+##         set generated_folder navigation-structured
+##         set gui_folder navigation_structured_gui
+##         set project_name mazebits_navigation_structured
+##         set model_prefix cnn-structured-
+##     }
+##     set generated [file join $repo runs vivado $generated_folder]
+##     set out [file join $repo runs vivado $gui_folder]
+##     set xpr [file join $out ${project_name}.xpr]
+##     set expected {}
+##     foreach name {button_conditioner.v maze_editor.v maze_navigation.v maze_navigation_vga.v mazebits_navigation_top.v} {
+##         lappend expected [file normalize [file join $repo rtl $name]]
+##     }
+##     # Check staged source and memories against the explicitly selected bundle,
+##     # even when reopening an existing project. Never silently open old weights.
+##     set engine [string map [list "\r\n" "\n"] [mazebits_read_binary [file join $repo rtl mazebits_cnn.v]]]
+##     foreach bits {8 4} {
+##         set model [file join $repo model ${model_prefix}w${bits}a${bits}]
+##         set header [string trimright [string map [list "\r\n" "\n"] [mazebits_read_binary [file join $model quantization.vh]]]]
+##         set specialized [string map [list "module mazebits_cnn #(" "module mazebits_cnn_w${bits}a${bits} #(" {`include "quantization.vh"} $header] $engine]
+##         set generated_source [file join $generated mazebits_cnn_w${bits}a${bits}.v]
+##         if {[string map [list "\r\n" "\n"] [mazebits_read_binary $generated_source]] ne $specialized} {
+##             error "Staged CNN does not match $model_set model; rerun scripts/run_navigation_vivado.py with --model-set $model_set"
+##         }
+##         lappend expected [file normalize $generated_source]
+##         foreach kind {weights biases} {
+##             set staged [file join $generated ${kind}_w${bits}a${bits}.mem]
+##             if {[mazebits_read_binary $staged] ne [mazebits_read_binary [file join $model ${kind}.mem]]} {
+##                 error "Staged $kind do not match $model_set model"
+##             }
+##             lappend expected [file normalize $staged]
+##         }
+##     }
+##     foreach path $expected {
+##         if {![file isfile $path]} { error "Missing project source: $path" }
+##     }
+##     if {[file exists $xpr]} {
+##         open_project $xpr
+##     } else {
+##         create_project $project_name $out -part xc7a100tcsg324-1
+##         add_files $expected
+##         add_files -fileset constrs_1 [file join $repo constraints mazebits_navigation.xdc]
+##         set_property top mazebits_navigation_top [get_filesets sources_1]
+##         set_property target_language Verilog [current_project]
+##         update_compile_order -fileset sources_1
+##     }
+##     set actual {}
+##     foreach source [get_files -of_objects [get_filesets sources_1]] {
+##         lappend actual [file normalize $source]
+##     }
+##     if {[lsort $actual] ne [lsort $expected]} {
+##         error "Existing project source set does not match selected $model_set model"
+##     }
+##     set constraint_files {}
+##     foreach path [get_files -of_objects [get_filesets constrs_1]] {
+##         lappend constraint_files [file normalize $path]
+##     }
+##     if {$constraint_files ne [list [file normalize [file join $repo constraints mazebits_navigation.xdc]]]} {
+##         error "Existing project constraints do not match the verified board pins"
+##     }
+##     if {[get_property PART [current_project]] ne "xc7a100tcsg324-1" ||
+##         [get_property TOP [get_filesets sources_1]] ne "mazebits_navigation_top"} {
+##         error "Existing project part or top does not match the verified design"
+##     }
+##     puts "MazeBits $model_set navigation project ready: $xpr"
+##     return $xpr
+## }
+## if {![info exists mazebits_model_set]} { set mazebits_model_set original }
+## mazebits_open_navigation_project $mazebits_model_set
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '<REPO>/runs/vivado/navigation_structured_gui/mazebits_navigation_structured.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 631.324 ; gain = 199.773
+MazeBits structured navigation project ready: <REPO>/runs/vivado/navigation_structured_gui/mazebits_navigation_structured.xpr
+# report_compile_order -used_in synthesis -file {<REPO>/runs/vivado/navigation-structured/gui_compile_order.rpt}
+INFO: [Vivado 12-3442] The output from report_compile_order is primarily targeted for human readability and ease of use. The 'get_files' command, with the -compile_order and -used_in options, produces this same information in a format that is better suited for automated scripts.
+# set handle [open {<REPO>/runs/vivado/navigation-structured/gui_sources.txt} w]
+# puts $handle "project=[get_property NAME [current_project]]"
+# puts $handle "part=[get_property PART [current_project]]"
+# puts $handle "top=[get_property TOP [get_filesets sources_1]]"
+# foreach path [get_files -of_objects [get_filesets sources_1]] { puts $handle "source=$path" }
+# foreach path [get_files -of_objects [get_filesets constrs_1]] { puts $handle "constraint=$path" }
+# close $handle
+# close_project
+# mazebits_open_navigation_project structured
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '<REPO>/runs/vivado/navigation_structured_gui/mazebits_navigation_structured.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+MazeBits structured navigation project ready: <REPO>/runs/vivado/navigation_structured_gui/mazebits_navigation_structured.xpr
+# puts "MAZEBITS_GUI_PASS model_set=structured source_files=[llength [get_files -of_objects [get_filesets sources_1]]] reopened=1"
+MAZEBITS_GUI_PASS model_set=structured source_files=11 reopened=1
+# close_project
+# exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 19 21:55:41 2026...

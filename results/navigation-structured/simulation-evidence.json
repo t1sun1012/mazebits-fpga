@@ -1,0 +1,254 @@
+{
+  "format": "mazebits-navigation-published-evidence-v1",
+  "simulation_source_commit": "c4968ff0316dca7a4f0b64a68abb8d67e3f4bbcb",
+  "simulator": "Vivado Simulator v2024.1",
+  "status": "pass",
+  "verification_json_transfer": "Byte-for-byte copies of completed-run JSON; historical source and staged hashes are unchanged.",
+  "source_commit_validation": {
+    "status": "pass",
+    "unique_hashed_source_files": 58,
+    "method": "SHA-256 of git show COMMIT:path bytes equals each historical source_sha256 entry."
+  },
+  "coverage": {
+    "structured": {
+      "controller": {
+        "checks": 202,
+        "bounds": 4,
+        "legal_moves": 4,
+        "wall": 1,
+        "loop": 1,
+        "goal": 1,
+        "start_goal": 1,
+        "limit": 1,
+        "snapshot": 1,
+        "restart": 1,
+        "stale_done": 1,
+        "reset": 1,
+        "pacing": 1
+      },
+      "top": {
+        "checks": 34,
+        "controls": 1,
+        "snapshot": 1,
+        "independent": 1,
+        "restart": 1,
+        "held_press": 1,
+        "cancel": 1,
+        "overlap": 1,
+        "reset": 1,
+        "mode_exit_mask": 1
+      },
+      "vga": {
+        "frames": 3,
+        "pixels": 1260000,
+        "active_pixels": 921600,
+        "glyph_pixels": 11088,
+        "snapshots": 2
+      },
+      "cnn": {
+        "cases": 7,
+        "episodes": 14,
+        "decisions": 157,
+        "score_words": 628,
+        "cycles_per_decision": 3217153,
+        "reset_abort": 1,
+        "busy_restart": 1,
+        "snapshot": 1,
+        "hold_terminal": 1
+      }
+    },
+    "original": {
+      "cnn": {
+        "cases": 4,
+        "episodes": 8,
+        "decisions": 60,
+        "score_words": 240,
+        "cycles_per_decision": 3217153,
+        "reset_abort": 1,
+        "busy_restart": 1,
+        "snapshot": 1,
+        "hold_terminal": 1
+      }
+    }
+  },
+  "scope": "Structured controller/top/VGA and complete seven-case real dual-CNN suite; original four-case real dual-CNN regression.",
+  "physical_board_test": "Not performed for these improved weights.",
+  "final_stager_equivalence": "Recorded separately; these reports retain the stager version actually used for simulation.",
+  "vga_raw_frames": "Raw PPM artifacts remain in runs/navigation-structured/vga; their original SHA-256 values remain in vga/verification.json.",
+  "published_files": {
+    "verification.json": {
+      "source": "runs/navigation-structured/verification.json",
+      "sha256": "443183f1b0b37b8add2689aa69d1b9d8139df673f285fbe0aa6291da02f92cd7",
+      "bytes": 10072,
+      "transfer": "byte-for-byte"
+    },
+    "controller/verification.json": {
+      "source": "runs/navigation-structured/controller/verification.json",
+      "sha256": "8d322cb23f1af4d70a03dc29258a0973e0cf3d5de34218a0338b76bfaacabec8",
+      "bytes": 1127,
+      "transfer": "byte-for-byte"
+    },
+    "controller/compile.txt": {
+      "source": "runs/navigation-structured/controller/compile.log",
+      "sha256": "330df4f2a18aa58af587157eb87874327de422960267853677d11e3f7b937f22",
+      "bytes": 348,
+      "transfer": "LF-normalized text"
+    },
+    "controller/elaborate.txt": {
+      "source": "runs/navigation-structured/controller/elaborate.log",
+      "sha256": "f0cc584c5cd24fb5487bcc3bcb50909a570301d621ec404872d701c2420e9ea6",
+      "bytes": 682,
+      "transfer": "LF-normalized text"
+    },
+    "controller/simulation.txt": {
+      "source": "runs/navigation-structured/controller/simulation.log",
+      "sha256": "771f6055ee877ffd4fb51d209ec6007974a20e566602a765bf4d0ef883b73f7a",
+      "bytes": 848,
+      "transfer": "LF-normalized text"
+    },
+    "controller/version.txt": {
+      "source": "runs/navigation-structured/controller/version.log",
+      "sha256": "a3adbc01b571598a4de27558f2cfc42317d1ebfb66e767ddcdab5291d69644ee",
+      "bytes": 25,
+      "transfer": "LF-normalized text"
+    },
+    "top/verification.json": {
+      "source": "runs/navigation-structured/top/verification.json",
+      "sha256": "0e30d7f676b3701c293afeb266c80c0ac958e0c4be052b7a1e527df94aabfa2a",
+      "bytes": 1463,
+      "transfer": "byte-for-byte"
+    },
+    "top/compile.txt": {
+      "source": "runs/navigation-structured/top/compile.log",
+      "sha256": "270f069ae1961fb064fd1d558bb60b22b6a6d6fe17bc733d834cfd03d6784f4d",
+      "bytes": 1220,
+      "transfer": "LF-normalized text"
+    },
+    "top/elaborate.txt": {
+      "source": "runs/navigation-structured/top/elaborate.log",
+      "sha256": "9c2fee85e6653b50c04a4bafc4d284e2e41d6ad351fccd1f5779ae6770c8bb51",
+      "bytes": 1029,
+      "transfer": "LF-normalized text"
+    },
+    "top/simulation.txt": {
+      "source": "runs/navigation-structured/top/simulation.log",
+      "sha256": "ef2c5be22656c55d4687b6d006c504988678f86ddd897a8060849377dbec13b2",
+      "bytes": 836,
+      "transfer": "LF-normalized text"
+    },
+    "top/version.txt": {
+      "source": "runs/navigation-structured/top/version.log",
+      "sha256": "a3adbc01b571598a4de27558f2cfc42317d1ebfb66e767ddcdab5291d69644ee",
+      "bytes": 25,
+      "transfer": "LF-normalized text"
+    },
+    "vga/verification.json": {
+      "source": "runs/navigation-structured/vga/verification.json",
+      "sha256": "be0da87b3136eb15042c2715ab21549ecf3fcb709cca40aa7a04b6ff611e27f5",
+      "bytes": 1238,
+      "transfer": "byte-for-byte"
+    },
+    "vga/compile.txt": {
+      "source": "runs/navigation-structured/vga/compile.log",
+      "sha256": "52ddd8d7702711568f9c3f61a4c1d9eb3583353673d4b41cf2b40c0f47133662",
+      "bytes": 354,
+      "transfer": "LF-normalized text"
+    },
+    "vga/elaborate.txt": {
+      "source": "runs/navigation-structured/vga/elaborate.log",
+      "sha256": "b1e89e158550a765e056874d25be518dd75394e1e5ce14fe7af049c12404a1a0",
+      "bytes": 662,
+      "transfer": "LF-normalized text"
+    },
+    "vga/simulation.txt": {
+      "source": "runs/navigation-structured/vga/simulation.log",
+      "sha256": "e4c8dbe525f80d263702aa52c261850db92b5034013b602eaab503acfc74f39e",
+      "bytes": 898,
+      "transfer": "LF-normalized text"
+    },
+    "vga/version.txt": {
+      "source": "runs/navigation-structured/vga/version.log",
+      "sha256": "a3adbc01b571598a4de27558f2cfc42317d1ebfb66e767ddcdab5291d69644ee",
+      "bytes": 25,
+      "transfer": "LF-normalized text"
+    },
+    "cnn/verification.json": {
+      "source": "runs/navigation-structured/cnn/verification.json",
+      "sha256": "6cd5db497aad7ca1ae0007efe83396ec6b8873853db144bf76b518f796c8f123",
+      "bytes": 5449,
+      "transfer": "byte-for-byte"
+    },
+    "cnn/compile.txt": {
+      "source": "runs/navigation-structured/cnn/compile.log",
+      "sha256": "c1a75bf435181b4e22e4a0e95ff62687202de99942b42ad4f2ca7ca04cd9ca5c",
+      "bytes": 750,
+      "transfer": "LF-normalized text"
+    },
+    "cnn/elaborate.txt": {
+      "source": "runs/navigation-structured/cnn/elaborate.log",
+      "sha256": "83b5d12ddf79cad051b97fe715ede2f78753a4c923d286a1ba1d74349bd6ba14",
+      "bytes": 794,
+      "transfer": "LF-normalized text"
+    },
+    "cnn/simulation.txt": {
+      "source": "runs/navigation-structured/cnn/simulation.log",
+      "sha256": "96bdbbf5f3bc3cb98aa0c47592c33b09e214efbeeaa728e38e3d6f77d1fd5ec3",
+      "bytes": 17163,
+      "transfer": "LF-normalized text"
+    },
+    "cnn/version.txt": {
+      "source": "runs/navigation-structured/cnn/version.log",
+      "sha256": "a3adbc01b571598a4de27558f2cfc42317d1ebfb66e767ddcdab5291d69644ee",
+      "bytes": 25,
+      "transfer": "LF-normalized text"
+    },
+    "cnn/dual_cnn_provenance.json": {
+      "source": "runs/navigation-structured/cnn/dual_cnn_provenance.json",
+      "sha256": "1619d1bdafcb05d76bb9a205fbc4beddeb12abd25e952d7bf5296d3db59463f1",
+      "bytes": 2482,
+      "transfer": "byte-for-byte"
+    },
+    "original-regression/verification.json": {
+      "source": "runs/navigation-original-step08/verification.json",
+      "sha256": "dd5f8c984200e7e6b2e5c83d6475909abb65e0010f92dccc7c93009a5eccf8f7",
+      "bytes": 5385,
+      "transfer": "byte-for-byte"
+    },
+    "original-regression/cnn/verification.json": {
+      "source": "runs/navigation-original-step08/cnn/verification.json",
+      "sha256": "a525bbb8d33509cfb262404029f73a0c8525d90ac9506ede0afa521bf0b33620",
+      "bytes": 5029,
+      "transfer": "byte-for-byte"
+    },
+    "original-regression/cnn/compile.txt": {
+      "source": "runs/navigation-original-step08/cnn/compile.log",
+      "sha256": "b368bd4ad48ba1ba8fb27b8bff808d229673817a080c9f30f7daf57fd54bfc5c",
+      "bytes": 760,
+      "transfer": "LF-normalized text"
+    },
+    "original-regression/cnn/elaborate.txt": {
+      "source": "runs/navigation-original-step08/cnn/elaborate.log",
+      "sha256": "83b5d12ddf79cad051b97fe715ede2f78753a4c923d286a1ba1d74349bd6ba14",
+      "bytes": 794,
+      "transfer": "LF-normalized text"
+    },
+    "original-regression/cnn/simulation.txt": {
+      "source": "runs/navigation-original-step08/cnn/simulation.log",
+      "sha256": "755abf8086de9a3d6a6224d537eb5f340b6b5c9a275df72df4deeccd4d7e5cc6",
+      "bytes": 7261,
+      "transfer": "LF-normalized text"
+    },
+    "original-regression/cnn/version.txt": {
+      "source": "runs/navigation-original-step08/cnn/version.log",
+      "sha256": "a3adbc01b571598a4de27558f2cfc42317d1ebfb66e767ddcdab5291d69644ee",
+      "bytes": 25,
+      "transfer": "LF-normalized text"
+    },
+    "original-regression/cnn/dual_cnn_provenance.json": {
+      "source": "runs/navigation-original-step08/cnn/dual_cnn_provenance.json",
+      "sha256": "09d69e80889208682ff06a1da0698ce6c735425fe347411805a66db754ca6ec0",
+      "bytes": 2348,
+      "transfer": "byte-for-byte"
+    }
+  }
+}

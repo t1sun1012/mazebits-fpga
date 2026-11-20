@@ -1,0 +1,21 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe tb_navigation_top --snapshot tb_navigation_top --timescale 1ns/1ps 
+Multi-threading is on. Using 18 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.button_conditioner(DEBOUNCE_CYCL...
+Compiling module work.maze_editor
+Compiling module work.maze_navigation(STEP_DELAY_CYCLE...
+Compiling module work.navigation_stub_core
+Compiling module work.mazebits_cnn_w8a8(WEIGHTS_FILE="...
+Compiling module work.mazebits_cnn_w4a4(WEIGHTS_FILE="...
+Compiling module work.maze_navigation_vga
+Compiling module work.mazebits_navigation_top(DEBOUNCE...
+Compiling module work.tb_navigation_top
+Built simulation snapshot tb_navigation_top

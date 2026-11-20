@@ -1,0 +1,51 @@
+{
+  "format": "mazebits-navigation-gui-verification-v1",
+  "status": "pass",
+  "model_set": "structured",
+  "opened_and_reopened": true,
+  "project_previously_created": true,
+  "source_file_count": 11,
+  "part": "xc7a100tcsg324-1",
+  "top": "mazebits_navigation_top",
+  "project": "runs/vivado/navigation_structured_gui/mazebits_navigation_structured.xpr",
+  "project_sha256": "55d0794a9b6aa9863482d2255f19cc73f52b0ffb5e9e3175bfc0310a90fbc5f7",
+  "source_sha256": {
+    "scripts/create_navigation_project.tcl": "f46de021bb661a5c711c2b2642aa7dfdffe0280d22c53ccb961a5cafc256ba96",
+    "runs/vivado/navigation-structured/verify_gui.tcl": "b79de03faa500c02bb50a6688379729c587b28cefae9a34d9087d85c5e08c9c9",
+    "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+    "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+    "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+    "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+    "runs/vivado/navigation-structured/mazebits_cnn_w4a4.v": "9d5ba4e700e9d652d7cd776c708441de84fdbd020abb124977179a8301e8e2e2",
+    "runs/vivado/navigation-structured/mazebits_cnn_w8a8.v": "0331cb5e1fb262c501fad52bd9543282f21214e2a59beb61d46c4a51a38d596d",
+    "rtl/mazebits_navigation_top.v": "906c5807973d67febc5439546113922537b1785f8d07327814c107c08c1b4c2f",
+    "runs/vivado/navigation-structured/weights_w8a8.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d",
+    "runs/vivado/navigation-structured/biases_w8a8.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+    "runs/vivado/navigation-structured/weights_w4a4.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793",
+    "runs/vivado/navigation-structured/biases_w4a4.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+    "constraints/mazebits_navigation.xdc": "b2667c1af70bb5c291f0ec428a575026748ba639254af21590dc4eb0b9088f01"
+  },
+  "original_artifact_sha256": {
+    "runs/vivado/navigation/mazebits_navigation.bit": "e8645010991193704d6744bd7f47c98850310820ad267b655cdea2e4c269eff4",
+    "runs/vivado/navigation_gui/mazebits_navigation.xpr": "7c63d390b0d90992ad93a651ef86569aeb39ae7a8a2a027572a67716781addb5"
+  },
+  "original_bitstream_unchanged": true,
+  "original_project_unchanged": true,
+  "programmed_on_board": false,
+  "raw_artifacts_sha256": {
+    "gui_sources.txt": "0f65d774816dd97c6f3a3759a625bb222984bb0bf7a459cd1ac2d5e329328330",
+    "gui_compile_order.rpt": "a32e733ff4fa8dd05cf2b1bc4590e428cc5a1f0f3f0c61d06286f8d0c83689e9",
+    "gui_validation.log": "014acfc7bc433570903d4258276036a0e8713c1d9d5eca5764496a0fa39b09e3"
+  },
+  "published_artifacts_sha256": {
+    "gui_sources.txt": "f55b5bec037802b0f4f12dc5864a6d3635f984270c514ea0b24a667528fe4352",
+    "gui_compile_order.rpt": "2ed21dc8d1b57eec20679107ae5363905e0082e3c2ecae3f01e1a04a1a358d75",
+    "gui_validation.log": "e1a4cbbb72f8aa18cd2cb8103e38375e73ab221ded3236225eaa2855d410d000"
+  },
+  "publication": {
+    "raw_gui_verification_sha256": "c90c3c787168495500528798f541a4408a432dcd4b1f4c86cbf145d2aa5b724f",
+    "hardware_test_status": "pending"
+  },
+  "raw_implementation_sha256": "0abd512102620ce424627c8e54b9205609afd072de7cd153587279472c5bd022",
+  "published_implementation_sha256": "74dbf1826c8a95472d65041922a7441588b8053783960a9ca59dd41332f7a32c"
+}

@@ -1,0 +1,29 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Nov 19 21:52:44 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/maze_tb/xsim_script.tcl
+# xsim {maze_tb} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+RTL_ARITHMETIC_PASS rounding_cases=13 argmax_cases=3
+RTL_CASE case=0 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=1 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=2 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=3 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=4 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=5 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=6 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=7 repeated=0 cycles=3217153 traces=8448 words=16645
+RTL_CASE case=0 repeated=1 cycles=3217153 traces=8448 words=16645
+RTL_PASS cases=8 words=133160 repeat_cases=1 cycles=3217153 reset_abort=1 busy_start_ignored=1
+$finish called at time : 289545186 ns : File "X:/Desktop/EC_311/Project/tb/tb_mazebits_cnn.sv" Line 225
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:22 . Memory (MB): peak = 223.691 ; gain = 0.000
+exit
+INFO: xsimkernel Simulation Memory Usage: 9692 KB (Peak: 9692 KB), Simulation CPU Usage: 22358 ms
+INFO: [Common 17-206] Exiting xsim at Thu Nov 19 21:53:09 2026...

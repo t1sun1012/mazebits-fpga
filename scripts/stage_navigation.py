@@ -8,7 +8,6 @@ import hashlib
 import json
 from pathlib import Path
 import re
-import shutil
 
 ROOT = Path(__file__).absolute().parents[1]
 MODEL_SETS = ("original", "structured")
@@ -56,50 +55,69 @@ def stage(destination: Path, model_set: str = "original") -> dict:
     destination = Path(destination).absolute()
     destination.mkdir(parents=True, exist_ok=True)
     source_path = ROOT / "rtl/mazebits_cnn.v"
-    source = source_path.read_text(encoding="utf-8")
-    sources = [source_path, Path(__file__).absolute()]
+    materialized = {}
+
+    def capture(path: Path) -> bytes:
+        data = path.read_bytes()
+        materialized[path] = hashlib.sha256(data).hexdigest()
+        return data
+
+    def decode(data: bytes) -> str:
+        return data.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")
+
+    source = decode(capture(source_path))
+    capture(Path(__file__).absolute())
     generated = []
-    # Validate every input before writing any model-dependent artifact.
+    # Validate and cache every input before writing any model-dependent artifact.
     models = {}
     identities = []
     for bits in (8, 4):
         model = model_directory(bits, model_set)
         manifest_path = model / "manifest.json"
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest = json.loads(capture(manifest_path))
         if manifest["bits"] != bits or manifest["format"] != "mazebits-fixed-v1":
             raise ValueError("wrong model manifest")
         validate_architecture(manifest)
         identities.append({key: manifest["provenance"].get(key) for key in
                            ("source_weights_sha256", "dataset_manifest_sha256", "calibration_sha256")})
-        sources.append(manifest_path)
+        contents = {}
         for filename in ("weights.mem", "biases.mem", "quantization.vh"):
             path = model / filename
+            data = capture(path)
             record = manifest["files"][filename]
-            if sha(path) != record["sha256"] or path.stat().st_size != record["bytes"]:
+            if materialized[path] != record["sha256"] or len(data) != record["bytes"]:
                 raise ValueError(f"model integrity check failed: {path}")
-            sources.append(path)
-        header = (model / "quantization.vh").read_text(encoding="utf-8")
-        models[bits] = (model, specialize(source, header, bits))
+            contents[filename] = data
+        models[bits] = (contents, specialize(source, decode(contents["quantization.vh"]), bits))
     if identities[0] != identities[1] or any(not isinstance(value, str) or
             not re.fullmatch(r"[0-9a-f]{64}", value) for value in identities[0].values()):
         raise ValueError("paired models must share the same floating-point source, dataset, and calibration")
     float_model = ROOT / "model" / ("cnn-fp32" if model_set == "original" else "cnn-structured-fp32")
-    float_manifest = json.loads((float_model / "manifest.json").read_text(encoding="utf-8"))
-    expected_source = sha(float_model / "weights.npz")
+    float_manifest = json.loads(capture(float_model / "manifest.json"))
+    expected_source = hashlib.sha256(capture(float_model / "weights.npz")).hexdigest()
     if (identities[0]["source_weights_sha256"] != expected_source or
             float_manifest.get("weights_sha256") != expected_source or
             float_manifest.get("config") != {"channels": 16, "depth": 8}):
         raise ValueError("selected integer model set does not match its floating-point checkpoint")
-    sources += [float_model / "manifest.json", float_model / "weights.npz"]
+    sources = list(materialized)
     before = {p.relative_to(ROOT).as_posix(): sha(p) for p in sources}
-    for bits, (model, text) in models.items():
+    if before != {p.relative_to(ROOT).as_posix(): digest for p, digest in materialized.items()}:
+        raise RuntimeError("source changed while staging")
+    expected_generated = {}
+    for bits, (contents, text) in models.items():
         generated_source = destination / f"mazebits_cnn_w{bits}a{bits}.v"
-        generated_source.write_text(text, encoding="utf-8", newline="\n")
+        source_bytes = text.encode("utf-8")
+        generated_source.write_bytes(source_bytes)
         generated.append(generated_source)
+        expected_generated[generated_source.name] = hashlib.sha256(source_bytes).hexdigest()
         for stem in ("weights", "biases"):
             target = destination / f"{stem}_w{bits}a{bits}.mem"
-            shutil.copyfile(model / f"{stem}.mem", target)
+            data = contents[f"{stem}.mem"]
+            target.write_bytes(data)
             generated.append(target)
+            expected_generated[target.name] = hashlib.sha256(data).hexdigest()
+    if expected_generated != {p.name: sha(p) for p in generated}:
+        raise RuntimeError("generated files changed while staging")
     if before != {p.relative_to(ROOT).as_posix(): sha(p) for p in sources}:
         raise RuntimeError("source changed while staging")
     evidence = {"format": "mazebits-dual-cnn-stage-v1", "precisions": [8, 4], "model_set": model_set,

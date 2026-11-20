@@ -2,7 +2,7 @@
 
 The current Step 6 build demonstrates a resource/accuracy tradeoff: W4A4 uses less FPGA memory and logic, while W8A8 succeeds on more of the fixed validation routes. Both engines take the same number of cycles per decision. W8A8 means 8-bit weights and hidden activations; W4A4 means 4-bit weights and hidden activations. Biases and accumulators remain 32-bit.
 
-The numbers below belong to the original trained checkpoint and the routed Step 6 bitstream. A retrained checkpoint needs its own quantization/evaluation records. Its hardware counts must be measured again after implementation, even when its layer dimensions stay the same.
+The first table below belongs to the original trained checkpoint and the routed Step 6 bitstream. The final section reports the improved Step 8 checkpoint separately. A retrained checkpoint needs its own quantization/evaluation records. Its hardware counts must be measured again after implementation, even when its layer dimensions stay the same.
 
 ## Recorded comparison
 
@@ -101,3 +101,27 @@ To reproduce the underlying numerical and hardware checks, follow [Step 3](step-
 A CPU comparison is a separate benchmark. Record the CPU model, library/backend versions, thread count, and numerical precision. Use the same input states and batch size 1 for single-decision latency, load models before timing, warm up the backend, repeat measurements, and report median and tail latency. Keep preprocessing/encoding and any host-to-board transfer time either outside both computation measurements or explicitly reported as separate end-to-end terms. Do not include training time or animation delays in inference latency.
 
 Comparing a slow scalar Python correctness oracle against the FPGA does not establish a speedup over optimized CPU inference. Compare against an optimized implementation too, disclose when CPU and FPGA arithmetic differ, and verify action/score behavior. No FPGA-versus-CPU speedup is claimed by the current report.
+
+## 6. Improved checkpoint: Step 8
+
+The improved checkpoint has its own [matched-model benchmark record](../results/navigation-structured/benchmark.json), [routed hierarchy](../results/navigation-structured/build/utilization_hierarchy.rpt), and [timing/DRC evidence](../results/navigation-structured/build/implementation.json). The measurements below use the same new FP32 source checkpoint for both precisions, with the same 4,800 maze-v2 validation episodes. These are software navigation metrics combined with verified RTL latency and implemented FPGA resources; they are not 4,800 physical board runs.
+
+| Metric | Improved W8A8 | Improved W4A4 |
+|---|---:|---:|
+| Cycles per decision | 3,217,153 | 3,217,153 |
+| Nominal inference time at 100 MHz | 32.17153 ms | 32.17153 ms |
+| Packed parameters, including 32-bit biases | 17,152 bytes | 8,840 bytes |
+| Logical activation banks | 2,048 bytes | 1,024 bytes |
+| Routed CNN BRAM, 36 Kb equivalents | 9 | 5 |
+| Routed CNN LUTs | 632 | 524 |
+| Routed CNN registers | 347 | 333 |
+| Routed CNN DSP blocks | 0 | 0 |
+| Optimal-action accuracy on 27,084 validation states | 99.7489% | 97.5447% |
+| Successful routes | 4,766 / 4,800 | 4,050 / 4,800 |
+| Route success rate | 99.2917% | 84.3750% |
+| Blocked / loop / timeout | 0 / 34 / 0 | 37 / 713 / 0 |
+| Mean successful path length / BFS optimum | 1.00018 | 1.00290 |
+
+The smaller model saves 48.46% of packed parameter bytes, 44.44% of CNN BRAM equivalents, and 17.09% of CNN LUTs in this build. Its structured-validation route success is 14.9167 percentage points lower. Both precisions retain equal per-decision latency. The original and improved checkpoints use different validation distributions in the two hardware tables, so their success percentages must not be compared as a training gain; [Step 7](step-07.md) provides the same-dataset before/after comparison.
+
+The whole improved VGA/navigation design uses 2,176 LUTs, 1,695 registers, 14.5 BRAM36 equivalents, and no DSP blocks. Routed setup/hold slack is +0.603/+0.042 ns at the 10 ns constraint, with zero DRC violations. The extra 0.5 BRAM equivalent beyond the two CNNs belongs to shared surrounding logic. The [physical test log](../results/navigation-structured/board-test.json) records which board examples have actually been observed; the build snapshots retain their build-time `programmed_on_board: false` field.
