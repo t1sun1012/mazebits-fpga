@@ -6,7 +6,7 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 ## Current status
 
-**Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. [The board-test log](results/navigation/board-test.json) separates physical reports from simulation and lists the remaining control checks.
+**Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. Restart, cancellation, and zero-step start/goal overlap also passed as reported by the user. [The board-test log](results/navigation/board-test.json) separates physical evidence from simulation.
 
 ## Neural maze comparison
 
@@ -136,4 +136,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-The open-maze and detour physical checks passed as reported by the user. Remaining physical control checks are restart/cancel and overlapping endpoints; simulation covers both. Each completed implementation milestone is committed and pushed on its own branch.
+The open-maze and detour physical checks passed as reported by the user. The user also confirmed restart/cancel and overlapping endpoints. Step 6's documented physical checklist is complete. Each completed implementation milestone is committed and pushed on its own branch.

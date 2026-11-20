@@ -2,7 +2,7 @@
 
 Step 6 connects the frozen W8A8 and W4A4 CNNs to independent navigation controllers and two VGA panels. Both agents receive the same edited scenario when a comparison starts. They choose their own actions afterward. This is the existing BFS-imitation-trained policy; no reinforcement learning, online training, route search, or illegal-action repair runs on the FPGA.
 
-Step 5's physical editor/display test was reported successful by the user on November 19, 2026. The user also reported that Step 6's open-maze and detour physical tests pass: both panels show GOAL / TRIES 014 on the open maze; the detour produces 8-bit GOAL / TRIES 021 and 4-bit BLOCKED / TRIES 004. [The board-test log](../results/navigation/board-test.json) separates these physical reports from simulator results and lists the remaining checks. Supplied monitor photographs corroborate the [open-maze](../results/navigation/hardware/open-maze.jpg) and [detour](../results/navigation/hardware/detour.jpg) outcomes and cycle-counter values.
+Step 5's physical editor/display test was reported successful by the user on November 19, 2026. The user also reported that Step 6's open-maze and detour physical tests pass: both panels show GOAL / TRIES 014 on the open maze; the detour produces 8-bit GOAL / TRIES 021 and 4-bit BLOCKED / TRIES 004. [The board-test log](../results/navigation/board-test.json) separates these physical reports from simulator results. The user also confirmed restart, edit-mode cancellation, and zero-step start/goal overlap, completing the documented physical checklist. Supplied monitor photographs corroborate the [open-maze](../results/navigation/hardware/open-maze.jpg) and [detour](../results/navigation/hardware/detour.jpg) outcomes and cycle-counter values.
 
 ## Controls
 
@@ -81,3 +81,7 @@ Then use Open Project on `runs/vivado/navigation_gui/mazebits_navigation.xpr`. S
 The [verified detour preview](../results/navigation/detour_demo.png) renders the reference final states through the VGA module; it is not a board photograph. Reproduce it with `python scripts/render_navigation_demo.py`.
 
 See [Step 6 evidence](../results/navigation/README.md) for final simulator coverage, path outcomes, source hashes, FPGA resources, timing, and the identity of the generated bitstream. The held-out dataset partition and frozen trained models are unchanged.
+
+## Interpreting failures on edited maps
+
+A solvable maze can still produce LOOP or BLOCKED because the CNN predicts an action rather than executing a guaranteed path-search algorithm. See the [user-discovered counterexamples](../results/navigation/counterexamples/README.md): the 4-bit policy can outperform 8-bit on one map, and both can fail a long detour that also defeats the original floating-point model. These are useful model-evaluation cases, distinct from whether the FPGA implements the exported arithmetic correctly.

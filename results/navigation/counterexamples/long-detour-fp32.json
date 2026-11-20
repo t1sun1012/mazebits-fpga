@@ -1,0 +1,321 @@
+{
+  "source_photo": "IMG_7180.jpeg",
+  "maze_ascii": "S#G.....\n.######.\n.#......\n.#......\n.#......\n.#......\n.#......\n........",
+  "model_dir": "model/cnn-fp32",
+  "weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c",
+  "manifest_sha256": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+  "source_sha256": {
+    "python/mazebits/model.py": "14a17bdca1da0b026727ee2c253c481d2175aa5842a772bf7a72e7eafb34e293",
+    "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+    "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+    "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+    "python/mazebits/reference.py": "db720e00d61efca9603d7c132289f7b7856a7238bec02bf654215676f6320abc",
+    "python/mazebits/dataset.py": "85411fe9174a695356616593c1f50255e60fe0a0010cca89e7f6417745775e04"
+  },
+  "input_channels": [
+    "walls",
+    "agent",
+    "goal"
+  ],
+  "action_order": [
+    "UP",
+    "RIGHT",
+    "DOWN",
+    "LEFT"
+  ],
+  "arithmetic": "published unquantized FP32 PyTorch model, CPU, one thread",
+  "torch_version": "2.9.1+cpu",
+  "outcome": "loop",
+  "attempts": 6,
+  "path": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "decisions": [
+    {
+      "attempt": 1,
+      "position_before": [
+        0,
+        0
+      ],
+      "action": "DOWN",
+      "action_id": 2,
+      "position_after": [
+        0,
+        1
+      ],
+      "scores": [
+        5.1570820808410645,
+        -4.430490016937256,
+        9.124488830566406,
+        3.6382594108581543
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    },
+    {
+      "attempt": 2,
+      "position_before": [
+        0,
+        1
+      ],
+      "action": "DOWN",
+      "action_id": 2,
+      "position_after": [
+        0,
+        2
+      ],
+      "scores": [
+        5.486447811126709,
+        -3.693478584289551,
+        8.924541473388672,
+        2.9120516777038574
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    },
+    {
+      "attempt": 3,
+      "position_before": [
+        0,
+        2
+      ],
+      "action": "DOWN",
+      "action_id": 2,
+      "position_after": [
+        0,
+        3
+      ],
+      "scores": [
+        3.956153392791748,
+        -0.0804685577750206,
+        6.666996955871582,
+        -0.775607705116272
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    },
+    {
+      "attempt": 4,
+      "position_before": [
+        0,
+        3
+      ],
+      "action": "DOWN",
+      "action_id": 2,
+      "position_after": [
+        0,
+        4
+      ],
+      "scores": [
+        3.9529075622558594,
+        -0.8376451730728149,
+        7.640878200531006,
+        0.35593777894973755
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    },
+    {
+      "attempt": 5,
+      "position_before": [
+        0,
+        4
+      ],
+      "action": "DOWN",
+      "action_id": 2,
+      "position_after": [
+        0,
+        5
+      ],
+      "scores": [
+        4.206425189971924,
+        -1.435829758644104,
+        7.297830104827881,
+        0.47804680466651917
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    },
+    {
+      "attempt": 6,
+      "position_before": [
+        0,
+        5
+      ],
+      "action": "UP",
+      "action_id": 0,
+      "position_after": [
+        0,
+        4
+      ],
+      "scores": [
+        4.513508319854736,
+        -2.573637008666992,
+        4.421390056610107,
+        0.04598240926861763
+      ],
+      "optimal_actions": [
+        "DOWN"
+      ]
+    }
+  ],
+  "bfs_optimal_steps": 26,
+  "bfs_path": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      2,
+      0
+    ]
+  ],
+  "canonical_layout_id": "0002020202027e02",
+  "training_distribution": {
+    "family": "independent Bernoulli obstacle cells",
+    "requested_wall_probabilities": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "training_layouts": 800,
+    "training_states": 117171,
+    "training_distance_max": 24,
+    "validation_distance_max": 19,
+    "canonical_layout_in_training": false,
+    "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11"
+  },
+  "interpretation": "The original FP32 learned policy fails this solvable maze before quantization or hardware execution. Training-distribution coverage is a plausible contributing limitation; this replay does not isolate the effect of data versus architecture."
+}

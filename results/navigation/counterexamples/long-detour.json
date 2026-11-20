@@ -1,0 +1,415 @@
+{
+  "source": "Maze transcribed from user photograph IMG_7180.jpeg",
+  "maze_ascii": "S#G.....\n.######.\n.#......\n.#......\n.#......\n.#......\n.#......\n........",
+  "walls_hex": "0002020202027e02",
+  "start": [
+    0,
+    0
+  ],
+  "goal": [
+    2,
+    0
+  ],
+  "shortest_path_moves": 26,
+  "shortest_path_actions": [
+    "DOWN",
+    "DOWN",
+    "DOWN",
+    "DOWN",
+    "DOWN",
+    "DOWN",
+    "DOWN",
+    "RIGHT",
+    "RIGHT",
+    "UP",
+    "UP",
+    "UP",
+    "UP",
+    "UP",
+    "RIGHT",
+    "RIGHT",
+    "RIGHT",
+    "RIGHT",
+    "RIGHT",
+    "UP",
+    "UP",
+    "LEFT",
+    "LEFT",
+    "LEFT",
+    "LEFT",
+    "LEFT"
+  ],
+  "policies": [
+    {
+      "bits": 8,
+      "outcome": "LOOP",
+      "attempts": 6,
+      "cycles_hex": "01268A06",
+      "path_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "events": [
+        {
+          "attempt": 1,
+          "from": [
+            0,
+            0
+          ],
+          "scores_up_right_down_left": [
+            1271,
+            -1061,
+            2343,
+            889
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "attempt": 2,
+          "from": [
+            0,
+            1
+          ],
+          "scores_up_right_down_left": [
+            1344,
+            -819,
+            2337,
+            719
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "attempt": 3,
+          "from": [
+            0,
+            2
+          ],
+          "scores_up_right_down_left": [
+            1023,
+            -11,
+            1759,
+            -195
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "attempt": 4,
+          "from": [
+            0,
+            3
+          ],
+          "scores_up_right_down_left": [
+            1062,
+            -302,
+            2031,
+            110
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            4
+          ]
+        },
+        {
+          "attempt": 5,
+          "from": [
+            0,
+            4
+          ],
+          "scores_up_right_down_left": [
+            1119,
+            -301,
+            1941,
+            54
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            5
+          ]
+        },
+        {
+          "attempt": 6,
+          "from": [
+            0,
+            5
+          ],
+          "scores_up_right_down_left": [
+            1198,
+            -713,
+            1101,
+            -9
+          ],
+          "action": "UP",
+          "to": [
+            0,
+            4
+          ]
+        }
+      ],
+      "independent_scalar_checked_decisions": 6,
+      "model_sha256": {
+        "manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+        "weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+        "biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6"
+      }
+    },
+    {
+      "bits": 4,
+      "outcome": "LOOP",
+      "attempts": 9,
+      "cycles_hex": "01B9CF09",
+      "path_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "events": [
+        {
+          "attempt": 1,
+          "from": [
+            0,
+            0
+          ],
+          "scores_up_right_down_left": [
+            2,
+            -3,
+            5,
+            5
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "attempt": 2,
+          "from": [
+            0,
+            1
+          ],
+          "scores_up_right_down_left": [
+            5,
+            -3,
+            9,
+            1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "attempt": 3,
+          "from": [
+            0,
+            2
+          ],
+          "scores_up_right_down_left": [
+            1,
+            3,
+            8,
+            -1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "attempt": 4,
+          "from": [
+            0,
+            3
+          ],
+          "scores_up_right_down_left": [
+            5,
+            -3,
+            9,
+            1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            4
+          ]
+        },
+        {
+          "attempt": 5,
+          "from": [
+            0,
+            4
+          ],
+          "scores_up_right_down_left": [
+            4,
+            -1,
+            6,
+            -1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            5
+          ]
+        },
+        {
+          "attempt": 6,
+          "from": [
+            0,
+            5
+          ],
+          "scores_up_right_down_left": [
+            4,
+            1,
+            9,
+            -3
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            6
+          ]
+        },
+        {
+          "attempt": 7,
+          "from": [
+            0,
+            6
+          ],
+          "scores_up_right_down_left": [
+            1,
+            5,
+            10,
+            -1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            7
+          ]
+        },
+        {
+          "attempt": 8,
+          "from": [
+            0,
+            7
+          ],
+          "scores_up_right_down_left": [
+            1,
+            10,
+            -1,
+            -2
+          ],
+          "action": "RIGHT",
+          "to": [
+            1,
+            7
+          ]
+        },
+        {
+          "attempt": 9,
+          "from": [
+            1,
+            7
+          ],
+          "scores_up_right_down_left": [
+            -2,
+            9,
+            -2,
+            13
+          ],
+          "action": "LEFT",
+          "to": [
+            0,
+            7
+          ]
+        }
+      ],
+      "independent_scalar_checked_decisions": 9,
+      "model_sha256": {
+        "manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+        "weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+        "biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+      }
+    }
+  ],
+  "evidence_scope": "Python replay of a map transcribed from the user-supplied board photograph; not an additional full-system RTL simulation case."
+}

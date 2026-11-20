@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "conclusion": "success",
+  "sha": "ee62390c0f0adebfe67c2653af321c3b739662a4",
+  "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271",
+  "completed_updated_at": "2026-11-20T01:56:34Z",
+  "jobs": [
+    {
+      "name": "editor",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692149",
+      "started_at": "2026-11-20T01:39:48Z",
+      "completed_at": "2026-11-20T01:40:56Z"
+    },
+    {
+      "name": "rtl (8)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692356",
+      "started_at": "2026-11-20T01:39:48Z",
+      "completed_at": "2026-11-20T01:42:01Z"
+    },
+    {
+      "name": "navigation-cnn",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692370",
+      "started_at": "2026-11-20T01:39:48Z",
+      "completed_at": "2026-11-20T01:56:34Z"
+    },
+    {
+      "name": "rtl (4)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692468",
+      "started_at": "2026-11-20T01:39:48Z",
+      "completed_at": "2026-11-20T01:42:42Z"
+    },
+    {
+      "name": "reference",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692528",
+      "started_at": "2026-11-20T01:39:47Z",
+      "completed_at": "2026-11-20T01:40:26Z"
+    },
+    {
+      "name": "navigation-controls",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271/job/136019692548",
+      "started_at": "2026-11-20T01:39:47Z",
+      "completed_at": "2026-11-20T01:40:30Z"
+    }
+  ],
+  "scope": "GitHub Actions result for the implementation commit; later documentation and diagnostic evidence are separate."
+}

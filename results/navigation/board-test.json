@@ -52,12 +52,38 @@
       },
       "user_report": "Yes: 8-bit GOAL 021, 4-bit BLOCKED 004",
       "photo": "hardware/detour.jpg"
+    },
+    {
+      "name": "mid-run-restart",
+      "status": "pass",
+      "evidence_type": "user-reported",
+      "observed": "Center during movement restarts both trails from the shared start."
+    },
+    {
+      "name": "edit-mode-cancellation",
+      "status": "pass",
+      "evidence_type": "user-reported",
+      "observed": "Switching to WALL stops navigation and preserves the editable map."
+    },
+    {
+      "name": "start-goal-overlap",
+      "status": "pass",
+      "evidence_type": "user-reported",
+      "w8a8": {
+        "outcome": "GOAL",
+        "attempts": 0,
+        "displayed_cycles_hex": "00000000"
+      },
+      "w4a4": {
+        "outcome": "GOAL",
+        "attempts": 0,
+        "displayed_cycles_hex": "00000000"
+      },
+      "observed": "Both panels immediately report the zero-step success."
     }
   ],
-  "pending": [
-    "restart and edit-mode cancellation",
-    "start/goal overlap"
-  ],
-  "limitations": "Photographs corroborate monitor output and displayed counters. They do not independently measure elapsed time/clock frequency or verify FPGA memory readback. Restart/cancellation and overlap remain untested physically.",
-  "photo_manifest": "hardware/photos.json"
+  "pending": [],
+  "limitations": "The open-maze and detour photographs corroborate monitor output and displayed counters. The final three control checks are user-reported. These tests do not independently measure elapsed time/clock frequency or verify FPGA memory readback.",
+  "photo_manifest": "hardware/photos.json",
+  "status": "pass"
 }

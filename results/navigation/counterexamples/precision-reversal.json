@@ -1,0 +1,507 @@
+{
+  "source": "Maze transcribed from user photograph IMG_7179.jpeg",
+  "walls_hex": "0000020202020202",
+  "start": [
+    0,
+    0
+  ],
+  "goal": [
+    7,
+    3
+  ],
+  "maze_ascii": "S#......\n.#......\n.#......\n.#.....G\n.#......\n.#......\n........\n........",
+  "shortest_path_moves": 16,
+  "policies": [
+    {
+      "bits": 8,
+      "outcome": "LOOP",
+      "attempts": 5,
+      "cycles_hex": "00F57305",
+      "path_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "events": [
+        {
+          "attempt": 1,
+          "from": [
+            0,
+            0
+          ],
+          "scores_up_right_down_left": [
+            795,
+            587,
+            2798,
+            590
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "attempt": 2,
+          "from": [
+            0,
+            1
+          ],
+          "scores_up_right_down_left": [
+            1755,
+            42,
+            4269,
+            504
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "attempt": 3,
+          "from": [
+            0,
+            2
+          ],
+          "scores_up_right_down_left": [
+            1470,
+            484,
+            4291,
+            277
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "attempt": 4,
+          "from": [
+            0,
+            3
+          ],
+          "scores_up_right_down_left": [
+            2008,
+            914,
+            4035,
+            -675
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            4
+          ]
+        },
+        {
+          "attempt": 5,
+          "from": [
+            0,
+            4
+          ],
+          "scores_up_right_down_left": [
+            2765,
+            441,
+            2622,
+            -727
+          ],
+          "action": "UP",
+          "to": [
+            0,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "outcome": "GOAL",
+      "attempts": 16,
+      "cycles_hex": "03117010",
+      "path_xy": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "events": [
+        {
+          "attempt": 1,
+          "from": [
+            0,
+            0
+          ],
+          "scores_up_right_down_left": [
+            5,
+            -3,
+            9,
+            1
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            1
+          ]
+        },
+        {
+          "attempt": 2,
+          "from": [
+            0,
+            1
+          ],
+          "scores_up_right_down_left": [
+            2,
+            6,
+            15,
+            0
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            2
+          ]
+        },
+        {
+          "attempt": 3,
+          "from": [
+            0,
+            2
+          ],
+          "scores_up_right_down_left": [
+            2,
+            6,
+            15,
+            0
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            3
+          ]
+        },
+        {
+          "attempt": 4,
+          "from": [
+            0,
+            3
+          ],
+          "scores_up_right_down_left": [
+            9,
+            6,
+            11,
+            -9
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            4
+          ]
+        },
+        {
+          "attempt": 5,
+          "from": [
+            0,
+            4
+          ],
+          "scores_up_right_down_left": [
+            8,
+            6,
+            14,
+            -6
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            5
+          ]
+        },
+        {
+          "attempt": 6,
+          "from": [
+            0,
+            5
+          ],
+          "scores_up_right_down_left": [
+            7,
+            5,
+            9,
+            -7
+          ],
+          "action": "DOWN",
+          "to": [
+            0,
+            6
+          ]
+        },
+        {
+          "attempt": 7,
+          "from": [
+            0,
+            6
+          ],
+          "scores_up_right_down_left": [
+            7,
+            15,
+            -15,
+            -5
+          ],
+          "action": "RIGHT",
+          "to": [
+            1,
+            6
+          ]
+        },
+        {
+          "attempt": 8,
+          "from": [
+            1,
+            6
+          ],
+          "scores_up_right_down_left": [
+            -3,
+            28,
+            -10,
+            -8
+          ],
+          "action": "RIGHT",
+          "to": [
+            2,
+            6
+          ]
+        },
+        {
+          "attempt": 9,
+          "from": [
+            2,
+            6
+          ],
+          "scores_up_right_down_left": [
+            15,
+            2,
+            -9,
+            -11
+          ],
+          "action": "UP",
+          "to": [
+            2,
+            5
+          ]
+        },
+        {
+          "attempt": 10,
+          "from": [
+            2,
+            5
+          ],
+          "scores_up_right_down_left": [
+            16,
+            34,
+            -26,
+            -27
+          ],
+          "action": "RIGHT",
+          "to": [
+            3,
+            5
+          ]
+        },
+        {
+          "attempt": 11,
+          "from": [
+            3,
+            5
+          ],
+          "scores_up_right_down_left": [
+            20,
+            30,
+            -24,
+            -25
+          ],
+          "action": "RIGHT",
+          "to": [
+            4,
+            5
+          ]
+        },
+        {
+          "attempt": 12,
+          "from": [
+            4,
+            5
+          ],
+          "scores_up_right_down_left": [
+            17,
+            36,
+            -30,
+            -23
+          ],
+          "action": "RIGHT",
+          "to": [
+            5,
+            5
+          ]
+        },
+        {
+          "attempt": 13,
+          "from": [
+            5,
+            5
+          ],
+          "scores_up_right_down_left": [
+            27,
+            38,
+            -43,
+            -31
+          ],
+          "action": "RIGHT",
+          "to": [
+            6,
+            5
+          ]
+        },
+        {
+          "attempt": 14,
+          "from": [
+            6,
+            5
+          ],
+          "scores_up_right_down_left": [
+            60,
+            12,
+            -43,
+            -33
+          ],
+          "action": "UP",
+          "to": [
+            6,
+            4
+          ]
+        },
+        {
+          "attempt": 15,
+          "from": [
+            6,
+            4
+          ],
+          "scores_up_right_down_left": [
+            28,
+            36,
+            -38,
+            -33
+          ],
+          "action": "RIGHT",
+          "to": [
+            7,
+            4
+          ]
+        },
+        {
+          "attempt": 16,
+          "from": [
+            7,
+            4
+          ],
+          "scores_up_right_down_left": [
+            47,
+            -27,
+            -29,
+            7
+          ],
+          "action": "UP",
+          "to": [
+            7,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "evidence_scope": "Python replay of a map transcribed from the user-supplied board photograph; not an additional full-system RTL simulation case."
+}

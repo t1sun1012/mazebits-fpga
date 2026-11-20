@@ -1,6 +1,6 @@
 # Step 6 evidence
 
-The final combined design passes the Python and XSim checks below and routes at 100 MHz with zero DRC violations. The user reported that Step 6 passes both the open-maze board test (GOAL / TRIES 014 on both panels) and the detour test (8-bit GOAL / TRIES 021, 4-bit BLOCKED / TRIES 004); [board-test.json](board-test.json) records that report and the remaining physical checks. The [Step 5 board-test report](../editor/board-test.json) records the user's successful earlier test separately.
+The final combined design passes the Python and XSim checks below and routes at 100 MHz with zero DRC violations. The user reported that Step 6 passes both the open-maze board test (GOAL / TRIES 014 on both panels) and the detour test (8-bit GOAL / TRIES 021, 4-bit BLOCKED / TRIES 004); [board-test.json](board-test.json) records those reports, plus successful restart, cancellation, and zero-step overlap checks. The [Step 5 board-test report](../editor/board-test.json) records the user's successful earlier test separately.
 
 ## Physical board photographs
 
@@ -8,7 +8,7 @@ The final combined design passes the Python and XSim checks below and routes at 
 
 The supplied monitor photographs corroborate both reported outcomes. [The open-maze image](hardware/open-maze.jpg) shows both panels at GOAL / TRIES 014 / CYC HEX 02AF420E. The detour image above shows 8-bit GOAL / TRIES 021 / 0406E315 and 4-bit BLOCKED / TRIES 004 / 00C45C04. Each displayed cycle total equals the attempt count times 3,217,153, matching the reference; these are counter readouts, not an independent timing measurement.
 
-[board-test.json](board-test.json) records the observed values and remaining physical checks. [hardware/photos.json](hardware/photos.json) records metadata removal and pixel equality. The primary JPEG scan data and color profile are preserved; the photographs were not cropped, resized, retouched, or recompressed.
+[board-test.json](board-test.json) records the photographed values and the three additional user-reported control checks. [hardware/photos.json](hardware/photos.json) records metadata removal and pixel equality. The primary JPEG scan data and color profile are preserved; the photographs were not cropped, resized, retouched, or recompressed.
 
 ## Simulation
 
@@ -34,6 +34,12 @@ Both engines elaborate together as physically distinct widths. Staging changes o
 | Start at goal | Goal / 0 | Goal / 0 |
 
 The controller stops at the first blocked action or repeated position, with no route repair. Each completed decision takes 3,217,153 inference cycles, or 32.17153 ms at 100 MHz, for either precision. A 200 ms animation pause is additional and excluded from the displayed CYC HEX total. TRIES counts attempted actions, including a blocked proposal.
+
+## Additional user-discovered failures
+
+[Two photographed counterexamples](counterexamples/README.md) reproduce in Python: one succeeds only at 4 bits, while the longer detour loops at both precisions. The original floating-point model also fails the longer detour, establishing a policy limitation before quantization. These diagnostic cases are separate from the four-case RTL suite above.
+
+[All six GitHub Actions jobs passed](https://github.com/t1sun1012/mazebits-fpga/actions/runs/44655229271) for implementation commit `ee62390c0f0adebfe67c2653af321c3b739662a4`; [ci-verification.json](ci-verification.json) records job identities and conclusions. Subsequent documentation/evidence changes do not alter the tested implementation.
 
 ## Combined implementation
 
