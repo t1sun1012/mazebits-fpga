@@ -1,0 +1,660 @@
+{
+  "accumulator_bounds": [
+    {
+      "lower": [
+        -14,
+        -32,
+        -18,
+        -23,
+        -22,
+        -34,
+        -27,
+        -24,
+        -9,
+        -16,
+        -24,
+        -6,
+        -23,
+        -12,
+        -13,
+        -40
+      ],
+      "max": 49,
+      "min": -40,
+      "name": "conv0",
+      "shift": 0,
+      "upper": [
+        23,
+        16,
+        49,
+        23,
+        22,
+        19,
+        30,
+        35,
+        49,
+        29,
+        23,
+        31,
+        30,
+        41,
+        42,
+        16
+      ]
+    },
+    {
+      "lower": [
+        -2370,
+        -2359,
+        -2364,
+        -2666,
+        -1997,
+        -2505,
+        -3195,
+        -2505,
+        -2764,
+        -2867,
+        -2621,
+        -2004,
+        -2917,
+        -2653,
+        -2511,
+        -1989
+      ],
+      "max": 2736,
+      "min": -3195,
+      "name": "conv1",
+      "shift": 4,
+      "upper": [
+        2010,
+        2231,
+        2736,
+        1864,
+        2458,
+        2685,
+        2175,
+        1860,
+        2036,
+        2233,
+        2374,
+        2181,
+        2063,
+        2492,
+        2124,
+        2136
+      ]
+    },
+    {
+      "lower": [
+        -2537,
+        -3319,
+        -3682,
+        -2062,
+        -2602,
+        -2031,
+        -2581,
+        -2600,
+        -2032,
+        -2816,
+        -2789,
+        -2706,
+        -2104,
+        -1731,
+        -2901,
+        -2128
+      ],
+      "max": 2814,
+      "min": -3682,
+      "name": "conv2",
+      "shift": 5,
+      "upper": [
+        2143,
+        2171,
+        1808,
+        2513,
+        1853,
+        2394,
+        2129,
+        2155,
+        2228,
+        1954,
+        2461,
+        1869,
+        1931,
+        2814,
+        2004,
+        2087
+      ]
+    },
+    {
+      "lower": [
+        -3353,
+        -2328,
+        -1672,
+        -2712,
+        -2506,
+        -2552,
+        -2981,
+        -2816,
+        -2440,
+        -2139,
+        -2294,
+        -2219,
+        -2544,
+        -2727,
+        -2073,
+        -2411
+      ],
+      "max": 2824,
+      "min": -3353,
+      "name": "conv3",
+      "shift": 5,
+      "upper": [
+        2032,
+        1782,
+        2573,
+        2058,
+        2594,
+        2338,
+        2494,
+        2419,
+        2705,
+        2391,
+        2131,
+        2281,
+        2091,
+        2538,
+        2067,
+        2824
+      ]
+    },
+    {
+      "lower": [
+        -2023,
+        -1942,
+        -2508,
+        -2383,
+        -2520,
+        -2396,
+        -3553,
+        -2126,
+        -2894,
+        -2446,
+        -2103,
+        -3690,
+        -2839,
+        -3076,
+        -1704,
+        -2473
+      ],
+      "max": 2809,
+      "min": -3690,
+      "name": "conv4",
+      "shift": 5,
+      "upper": [
+        2327,
+        2528,
+        2247,
+        1952,
+        2625,
+        2269,
+        1277,
+        2809,
+        2086,
+        2069,
+        2037,
+        2100,
+        2531,
+        2324,
+        2706,
+        2447
+      ]
+    },
+    {
+      "lower": [
+        -3135,
+        -2685,
+        -2746,
+        -1933,
+        -2491,
+        -1755,
+        -2566,
+        -1892,
+        -1647,
+        -2010,
+        -2522,
+        -1740,
+        -3650,
+        -2233,
+        -2160,
+        -3585
+      ],
+      "max": 2822,
+      "min": -3650,
+      "name": "conv5",
+      "shift": 5,
+      "upper": [
+        2520,
+        2070,
+        2174,
+        2822,
+        2234,
+        2670,
+        2249,
+        1978,
+        2193,
+        2205,
+        2323,
+        1800,
+        2275,
+        2372,
+        1770,
+        1950
+      ]
+    },
+    {
+      "lower": [
+        -2009,
+        -2624,
+        -3164,
+        -2266,
+        -2671,
+        -1890,
+        -2099,
+        -2819,
+        -2550,
+        -1665,
+        -2698,
+        -2190,
+        -2323,
+        -3089,
+        -2264,
+        -2609
+      ],
+      "max": 3166,
+      "min": -3164,
+      "name": "conv6",
+      "shift": 5,
+      "upper": [
+        2176,
+        1771,
+        1531,
+        1784,
+        2549,
+        2205,
+        3166,
+        2401,
+        2040,
+        1965,
+        2087,
+        2025,
+        2612,
+        2041,
+        2071,
+        1396
+      ]
+    },
+    {
+      "lower": [
+        -2445,
+        -2774,
+        -2324,
+        -1679,
+        -2835,
+        -1499,
+        -2324,
+        -2504,
+        -2684,
+        -1560,
+        -2955,
+        -1109,
+        -1529,
+        -2789,
+        -1950,
+        -1650
+      ],
+      "max": 3391,
+      "min": -2955,
+      "name": "conv7",
+      "shift": 5,
+      "upper": [
+        3255,
+        1651,
+        1996,
+        2791,
+        1755,
+        3391,
+        2446,
+        1606,
+        2101,
+        2610,
+        2130,
+        3166,
+        2596,
+        1531,
+        2070,
+        2520
+      ]
+    },
+    {
+      "lower": [
+        -60,
+        -255,
+        -360,
+        -240
+      ],
+      "max": 390,
+      "min": -360,
+      "name": "head",
+      "shift": null,
+      "upper": [
+        390,
+        345,
+        210,
+        270
+      ]
+    }
+  ],
+  "bits": 4,
+  "contract": {
+    "accumulator_bits": 32,
+    "action_order": [
+      "UP",
+      "RIGHT",
+      "DOWN",
+      "LEFT"
+    ],
+    "activation_signed": false,
+    "argmax_ties": "lowest action index",
+    "bias_bits": 32,
+    "head_output": "signed raw accumulator; no requantization or ReLU",
+    "hidden_output": "ReLU followed by unsigned saturation",
+    "hidden_padding": 0,
+    "input": {
+      "bits": 1,
+      "channels": [
+        "walls",
+        "agent",
+        "goal"
+      ],
+      "first_padding": "walls=1; agent=0; goal=0",
+      "frac": 0,
+      "layout": "CHW",
+      "shape": [
+        3,
+        8,
+        8
+      ]
+    },
+    "requant_temporary_bits": 64,
+    "rounding": "nearest; ties away from zero",
+    "weight_layout": "OIHW; layers concatenated in manifest order"
+  },
+  "files": {
+    "biases.mem": {
+      "bytes": 1188,
+      "sha256": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+      "signed": true,
+      "word_bits": 32,
+      "words": 132
+    },
+    "quantization.vh": {
+      "bytes": 5223,
+      "sha256": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54"
+    },
+    "weights.mem": {
+      "bytes": 33248,
+      "sha256": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+      "signed": true,
+      "word_bits": 4,
+      "words": 16624
+    }
+  },
+  "format": "mazebits-fixed-v1",
+  "layer_count": 9,
+  "layers": [
+    {
+      "accumulator_frac": 3,
+      "bias_count": 16,
+      "bias_offset": 0,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 0,
+      "name": "conv0",
+      "output_frac": 3,
+      "shift": 0,
+      "weight_count": 432,
+      "weight_frac": 3,
+      "weight_offset": 0,
+      "weight_shape": [
+        16,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 7,
+      "bias_count": 16,
+      "bias_offset": 16,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 3,
+      "name": "conv1",
+      "output_frac": 3,
+      "shift": 4,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 432,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 7,
+      "bias_count": 16,
+      "bias_offset": 32,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 3,
+      "name": "conv2",
+      "output_frac": 2,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 2736,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 6,
+      "bias_count": 16,
+      "bias_offset": 48,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 2,
+      "name": "conv3",
+      "output_frac": 1,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 5040,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 5,
+      "bias_count": 16,
+      "bias_offset": 64,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 1,
+      "name": "conv4",
+      "output_frac": 0,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 7344,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 4,
+      "bias_count": 16,
+      "bias_offset": 80,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": 0,
+      "name": "conv5",
+      "output_frac": -1,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 9648,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 3,
+      "bias_count": 16,
+      "bias_offset": 96,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": -1,
+      "name": "conv6",
+      "output_frac": -2,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 11952,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 2,
+      "bias_count": 16,
+      "bias_offset": 112,
+      "bias_shape": [
+        16
+      ],
+      "input_frac": -2,
+      "name": "conv7",
+      "output_frac": -3,
+      "shift": 5,
+      "weight_count": 2304,
+      "weight_frac": 4,
+      "weight_offset": 14256,
+      "weight_shape": [
+        16,
+        16,
+        3,
+        3
+      ]
+    },
+    {
+      "accumulator_frac": 0,
+      "bias_count": 4,
+      "bias_offset": 128,
+      "bias_shape": [
+        4
+      ],
+      "input_frac": -3,
+      "name": "head",
+      "output_frac": null,
+      "shift": null,
+      "weight_count": 64,
+      "weight_frac": 3,
+      "weight_offset": 16560,
+      "weight_shape": [
+        4,
+        16,
+        1,
+        1
+      ]
+    }
+  ],
+  "logical_storage": {
+    "bias_bits": 4224,
+    "bias_bytes": 528,
+    "meaning": "packed parameter payload; excludes metadata and FPGA allocation overhead",
+    "total_bits": 70720,
+    "total_bytes": 8840,
+    "weight_bits": 66496,
+    "weight_bytes": 8312
+  },
+  "provenance": {
+    "calibration_partition": "train",
+    "calibration_samples": 4096,
+    "calibration_seed": 311,
+    "calibration_sha256": "e8b68cb5b6286ce2133b84ea8eb3e199af537b2185dfae222987e8f66e5dc991",
+    "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "method": "post-training quantization; no fine-tuning",
+    "source_sha256": {
+      "python/demo.py": "ff95d2d584403dd04b53b8ef599584fb4062ba137d030be100ce9ff47f401e95",
+      "python/evaluate.py": "36e6338387524c858af24140892af472b03bb4e5cd2dc93a52622f13f7ba3ae9",
+      "python/mazebits/__init__.py": "91d6bf7bfdc85462aeb5872519670f2301f1d77304eeb58b19edf447681694ee",
+      "python/mazebits/calibration.py": "508ff4995b03ca682adf8ae417d145918e11725f35049c13401dac458d5a8222",
+      "python/mazebits/dataset.py": "85411fe9174a695356616593c1f50255e60fe0a0010cca89e7f6417745775e04",
+      "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+      "python/mazebits/evaluation.py": "9d548e4f2c5544219862ef71cb655983f20f706106ab0d5410b2975dae1bb83e",
+      "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+      "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+      "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+      "python/mazebits/model.py": "14a17bdca1da0b026727ee2c253c481d2175aa5842a772bf7a72e7eafb34e293",
+      "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+      "python/mazebits/quantized_evaluation.py": "b57536a383af7d70fb96676ed7034063b42fcdf36ad8a3c7cb91f462fa155e88",
+      "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+      "python/mazebits/reference.py": "db720e00d61efca9603d7c132289f7b7856a7238bec02bf654215676f6320abc",
+      "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+      "python/mazebits/training.py": "2c1c10e09073532662f1cf9586277c49d6130cfe1978f51f315196b1a34dd2c4",
+      "python/plot_training.py": "e24ba4da74fb2bc2e5daf64665ec2a609aff6b7aec89ba58489143fde3af6c29",
+      "python/predict.py": "5f49e644d4e981d8a6b086db7bc1d86a36aa411948947287b69c49cf6ee4e59e",
+      "python/prepare_data.py": "6fce1fc88bce27507da1374f1a170de1f0a801a949d15741cf383e76348584c0",
+      "python/quantize.py": "21735af47ef8bf31cf094183858f4d38c435b432a2a56ea87f036040a244d12f",
+      "python/tests/test_calibration.py": "44b60971e2eae75e00b15d1831f1355d4f66b30a193a4bd2fb516aa7a74c0865",
+      "python/tests/test_dataset.py": "771fc634ec8b2b06dc8f9c3843a8659946cffd7d984830b952ed83c634688053",
+      "python/tests/test_encoding.py": "1c5d6c66c4be56a5fc95fe288ff71c694ff5cbabae22fa90c62dfcf493193a12",
+      "python/tests/test_evaluation.py": "66a996789f992fd50629c5d30b3dd8d939a6ecadd67438bf98d3b9559ffe7098",
+      "python/tests/test_fixed_point.py": "6b0b29507166ec7c2f87f31d9d113ccea1fd6077370ca3a92f735c5aa511cf24",
+      "python/tests/test_maze.py": "976a8a8bbbf574e2dabf1b5415a50b75f4afc6820133ba07eae61d30bf43fe03",
+      "python/tests/test_model.py": "714bd10157bc594b677ab103d85341e12179bfd4e025c40b4a606a9ce0ed9291",
+      "python/tests/test_quantized_io.py": "5984ec0bea494371c3d86a0b05af3e5a57b78c4ce5eee4166f12b67ad7e298bf",
+      "python/tests/test_reference.py": "c5ecae6e5dbf9a17d23ad2fa8ccee081267a70e1ea4e33b2cdcd66b2448055b3",
+      "python/tests/test_training.py": "643d01499564b959d5e69d120bc4bd61894c56ad182bbc7e490f1453a987cb33",
+      "python/train.py": "e40e47760197819487602b19cd0e640e541e88f5d80979eb8ebbf2cad5911e45",
+      "requirements.txt": "6daf56b27ad56322bf38813f6c1773443f2fcea5b4ef65f57f3a95eabb2dc1f7"
+    },
+    "source_weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c",
+    "test_status": "reserved; no test arrays or episodes loaded"
+  }
+}

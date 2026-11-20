@@ -1,0 +1,13 @@
+{
+  "bfs_distance": 21,
+  "maze": "detour",
+  "selection": "hand-written Step 1 detour; checked after scales were fixed",
+  "w4a4": {
+    "attempted_actions": 4,
+    "outcome": "blocked"
+  },
+  "w8a8": {
+    "attempted_actions": 21,
+    "outcome": "success"
+  }
+}

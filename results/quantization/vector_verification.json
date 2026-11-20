@@ -1,0 +1,34 @@
+{
+  "w4a4": {
+    "all_file_hashes_verified": true,
+    "cases": 8,
+    "compared_words": 133160,
+    "input_words": 1536,
+    "method": "memory words versus vector engine and independent scalar loops",
+    "mismatches": 0,
+    "source_model": {
+      "biases_sha256": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+      "header_sha256": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+      "manifest_sha256": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+      "weights_sha256": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d"
+    },
+    "total_cases": 8,
+    "vectors_manifest_sha256": "46a6977dcd7aa871c980fed31cf847ec68b8a44f1e9ed102024987a62178f8bc"
+  },
+  "w8a8": {
+    "all_file_hashes_verified": true,
+    "cases": 8,
+    "compared_words": 133160,
+    "input_words": 1536,
+    "method": "memory words versus vector engine and independent scalar loops",
+    "mismatches": 0,
+    "source_model": {
+      "biases_sha256": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+      "header_sha256": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+      "manifest_sha256": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+      "weights_sha256": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198"
+    },
+    "total_cases": 8,
+    "vectors_manifest_sha256": "1ac66cb6ced6d8d65d14efaaa83f496171b4c8a9ad26a963cd91642a9d9458a0"
+  }
+}

@@ -13,5 +13,6 @@
 
 # Preserve generator formatting in scientific figures.
 results/**/*.svg text eol=lf -whitespace
-# Recorded training-source bytes include terminal blank lines in tests.
-python/tests/*.py whitespace=-blank-at-eof
+# Preserve recorded experiment source bytes, including terminal blank lines.
+python/**/*.py whitespace=-blank-at-eof
+*.vh text eol=lf

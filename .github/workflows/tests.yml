@@ -25,3 +25,7 @@ jobs:
         run: python python/predict.py --maze open
       - name: Run the deterministic reference demo
         run: python python/demo.py --maze detour
+      - name: Verify W8A8 memory and scalar reference vectors
+        run: python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir test_vectors/cnn-w8a8
+      - name: Verify W4A4 memory and scalar reference vectors
+        run: python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4

@@ -1,0 +1,23 @@
+{
+  "calibration_sha256": "e8b68cb5b6286ce2133b84ea8eb3e199af537b2185dfae222987e8f66e5dc991",
+  "dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+  "models": {
+    "w4a4": {
+      "model_manifest_sha256": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+      "score_mismatches": 0,
+      "score_words_compared": 88116,
+      "scores_sha256_int32_little_endian": "fc161405bc0ae9430d47fe4e2897c0954c4c58ffd27732a24f1ece3c624eeca4",
+      "trajectories_compared": 3600,
+      "trajectory_mismatches": 0
+    },
+    "w8a8": {
+      "model_manifest_sha256": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+      "score_mismatches": 0,
+      "score_words_compared": 88116,
+      "scores_sha256_int32_little_endian": "3ebba8edac391ef3a4a1be14a5b14750b300c4df55f84441246f5c6f2cc16cdb",
+      "trajectories_compared": 3600,
+      "trajectory_mismatches": 0
+    }
+  },
+  "test_status": "reserved; no test arrays or episodes loaded"
+}
