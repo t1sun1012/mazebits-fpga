@@ -96,4 +96,4 @@ During a run, also confirm Center restarts both trails, switching back to WALL s
 
 See [runtime, memory, and quality measurement definitions](benchmarking.md). `CYC HEX` counts inference cycles, excluding the intentional animation pauses. A failed route's smaller total is not faster successful navigation.
 
-The improved-build physical open-maze and detour checks passed, as reported by the user. Additional observations and pending checks are tracked in [board-test.json](../results/navigation-structured/board-test.json).
+The improved-build physical open-maze, detour, and 26-move long-detour checks passed, as reported by the user. Restart, cancellation, and zero-step overlap also pass, completing the six required checks. Additional optional reference layouts remain physically untested; observations are tracked in [board-test.json](../results/navigation-structured/board-test.json).

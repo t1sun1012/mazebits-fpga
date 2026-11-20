@@ -4,7 +4,7 @@
   "model_set": "structured",
   "reported_date": "2026-11-19",
   "date_timezone": "America/New_York",
-  "status": "in_progress",
+  "status": "required_checks_passed",
   "evidence_type": "User-reported physical observations; expected outcomes are simulation references, not additional observations.",
   "bitstream": "mazebits_navigation_structured.bit",
   "bitstream_sha256": "3aa08afa503ab2ac9856d48f5c5aa702bbe53fa5b03d158081285be3a606536b",
@@ -40,7 +40,8 @@
         }
       },
       "user_report": "Both panels match",
-      "evidence_type": "user-reported physical board test"
+      "evidence_type": "user-reported physical board test",
+      "required_for_step8": true
     },
     {
       "name": "detour",
@@ -73,7 +74,8 @@
         }
       },
       "user_report": "Both results match",
-      "evidence_type": "user-reported physical board test"
+      "evidence_type": "user-reported physical board test",
+      "required_for_step8": true
     },
     {
       "name": "blocked",
@@ -93,7 +95,8 @@
           "displayed_cycles_hex": "00F57305"
         }
       },
-      "observed": null
+      "observed": null,
+      "required_for_step8": false
     },
     {
       "name": "at-goal",
@@ -113,7 +116,8 @@
           "displayed_cycles_hex": "00000000"
         }
       },
-      "observed": null
+      "observed": null,
+      "required_for_step8": false
     },
     {
       "name": "precision-reversal-IMG_7179",
@@ -133,14 +137,15 @@
           "displayed_cycles_hex": "03117010"
         }
       },
-      "observed": null
+      "observed": null,
+      "required_for_step8": false
     },
     {
       "name": "long-detour-IMG_7180",
       "walls_hex": "0002020202027e02",
       "start": 0,
       "goal": 2,
-      "status": "pending",
+      "status": "pass",
       "expected": {
         "w8a8": {
           "outcome": "GOAL",
@@ -153,7 +158,21 @@
           "displayed_cycles_hex": "00C45C04"
         }
       },
-      "observed": null
+      "observed": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 26,
+          "displayed_cycles_hex": "04FC561A"
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 4,
+          "displayed_cycles_hex": "00C45C04"
+        }
+      },
+      "user_report": "Both results match",
+      "evidence_type": "user-reported physical board test",
+      "required_for_step8": true
     },
     {
       "name": "precision-loss-latest-photo",
@@ -173,17 +192,63 @@
           "displayed_cycles_hex": "03117010"
         }
       },
-      "observed": null
+      "observed": null,
+      "required_for_step8": false
     },
     {
       "name": "mid-run-restart",
-      "status": "pending",
-      "observed": null
+      "status": "pass",
+      "observed": "Center during movement restarts both trails from the shared start.",
+      "required_for_step8": true,
+      "user_report": "All three pass",
+      "evidence_type": "user-reported physical board test"
     },
     {
       "name": "edit-mode-cancellation",
-      "status": "pending",
-      "observed": null
+      "status": "pass",
+      "observed": "Switching from VIEW to WALL stops navigation and preserves an editable map.",
+      "required_for_step8": true,
+      "user_report": "All three pass",
+      "evidence_type": "user-reported physical board test"
+    },
+    {
+      "name": "start-goal-overlap",
+      "status": "pass",
+      "observed": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        }
+      },
+      "expected": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 0,
+          "displayed_cycles_hex": "00000000"
+        }
+      },
+      "scope": "Physical control test with START placed on the current GOAL; not necessarily the empty-map at-goal simulation fixture.",
+      "required_for_step8": true,
+      "user_report": "All three pass",
+      "evidence_type": "user-reported physical board test"
     }
+  ],
+  "required_checks_passed": 6,
+  "additional_reference_cases_not_physically_tested": [
+    "blocked",
+    "at-goal",
+    "precision-reversal-IMG_7179",
+    "precision-loss-latest-photo"
   ]
 }

@@ -6,7 +6,7 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 ## Current status
 
-**Step 8 integrates the improved models into the FPGA.** The seven-scenario real dual-CNN simulation passes 157 decisions and 628 exact score comparisons. The new 8-bit policy solves the previously failed 26-move detour; the 4-bit policy still loops there. [Step 8](docs/step-08.md) provides the separate bitstream/project paths and physical test instructions. [Verification evidence](results/navigation-structured/README.md) distinguishes simulation, implementation, and pending board checks.
+**Step 8 integrates the improved models into the FPGA.** The seven-scenario real dual-CNN simulation passes 157 decisions and 628 exact score comparisons. The user confirmed on the physical board that the new 8-bit policy solves the previously failed 26-move detour; the 4-bit policy still loops there. Open-maze and single-column detour checks also match the new reference; restart, cancellation, and zero-step overlap controls pass. [Step 8](docs/step-08.md) provides the separate bitstream/project paths and physical test instructions. [Verification evidence](results/navigation-structured/README.md) distinguishes simulation, implementation, and physical observations.
 
 **Step 7 improves the base CNN.** With the same architecture and parameter count, structured-maze validation success rises from 76.56% to 99.44% in FP32, from 76.46% to 99.29% at 8 bits, and from 65.75% to 84.38% at 4 bits. Original-layout validation also improves for all three precisions. [Results and known failures](results/policy-improvement/README.md) include paired comparisons and complete traces. [Step 7](docs/step-07.md) explains reproduction. The improved bundles remain separate from the physically tested Step 6 checkpoint below; Step 8 prepares their hardware deployment.
 
@@ -143,4 +143,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-Step 6's physical checklist is complete. Step 8 verifies the improved integer models in RTL and prepares a separate VGA navigation bitstream. Its remaining checkpoint is the physical test of the improved build, including the 26-move detour. Each milestone is committed and pushed on its own branch.
+Step 6's physical checklist is complete. Step 8 verifies the improved integer models in RTL and prepares a separate VGA navigation bitstream. Its three maze board checks and all three final control checks pass, as reported by the user. The improved checkpoint is ready for final held-out evaluation and project reporting; reserved-test results have not yet been measured. Each milestone is committed and pushed on its own branch.
