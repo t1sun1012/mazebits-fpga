@@ -1,0 +1,9 @@
+{
+  "format": "mazebits-python-tests-v1",
+  "status": "pass",
+  "tests": 107,
+  "command": "python -m unittest discover -s python/tests -v",
+  "reported_runtime_seconds": 1.987,
+  "scope": "Existing Python regression suite plus new navigation staging/vector and pin checks.",
+  "executed_on": "2026-11-19"
+}

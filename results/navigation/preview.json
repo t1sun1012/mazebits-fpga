@@ -1,0 +1,83 @@
+{
+  "format": "mazebits-reference-vga-preview-v1",
+  "status": "pass",
+  "description": "VGA rendering of verified reference final states; not a full-system CNN capture or board photograph.",
+  "case": {
+    "name": "detour",
+    "walls_hex": "0002020202020202",
+    "start": 0,
+    "goal": 7
+  },
+  "simulator": "xsim",
+  "tool_version": [
+    "Vivado Simulator v2024.1"
+  ],
+  "episodes": [
+    {
+      "bits": 8,
+      "case": "detour",
+      "outcome": "success",
+      "steps": 21,
+      "final_position": 7,
+      "trail_hex": "07050505057dc181"
+    },
+    {
+      "bits": 4,
+      "case": "detour",
+      "outcome": "blocked",
+      "steps": 4,
+      "final_position": 24,
+      "trail_hex": "0000000001010101"
+    }
+  ],
+  "frame": {
+    "width": 640,
+    "height": 480,
+    "pixel_count": 307200,
+    "rgb_sha256": "183987f5e15e0c1fe66922a321ca62274597d5fdd9fcdb924985fdb86943311d",
+    "png_pixel_identical": true
+  },
+  "source_sha256": {
+    "scripts/render_navigation_demo.py": "ff04d578f4b7f2f3c91d1e518916861eab4afb38c9b272d8cd81f890fce21419",
+    "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+    "scripts/run_navigation.py": "b61f026e994da5d22a10bdef18fafb4402f0c6e2ae4892deaca01a9ba4279fda",
+    "scripts/stage_navigation.py": "25af6ff9f7dd25e4f56a7e3dabc988967265d437c9f3d35546d9b0edc21f9542",
+    "test_vectors/navigation/events_w4a4.mem": "c109d4152d896d6e358f205d0468a6d161893359a9ec978d89f3f34b1fa60f83",
+    "test_vectors/navigation/events_w8a8.mem": "cba012f9b757c3ced652c85412997a1f024958c5ebd733a2428a7d0b82eed3c2",
+    "test_vectors/navigation/final_w4a4.mem": "d9874b4c846073155f2b38c40f30eee24c08a680ff6f830405baadfb22dfa4cc",
+    "test_vectors/navigation/final_w8a8.mem": "72ecabf2b992a7ecd0a6b41c62acd77c3ed81f8cfaba07be8e1865aef1bfe326",
+    "test_vectors/navigation/goals.mem": "8386efdee20197f220961e905c6463e6d4bdef46607170fc19ef1a41b4e440e0",
+    "test_vectors/navigation/starts.mem": "e7940aec9c9d3d3d5fadf28e64e468468945599c439942219f9ecbc0e2ae241d",
+    "test_vectors/navigation/walls.mem": "fda74aad11a04ea5e2e2846482b4dceb01da64f920c0c405d7905ec93cceb6da",
+    "python/export_navigation_vectors.py": "9f4dc11907f6f5c760274c41b54cd652a4049d077a465c643d244ba65d7a86f7",
+    "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+    "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+    "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+    "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+    "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+    "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+    "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+    "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+    "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+    "test_vectors/navigation/manifest.json": "53f582d7fe232418a8d1e6d240b682ce6c1ef7b64d550ce514580d4cd2f3646b"
+  },
+  "artifacts": {
+    "tb_navigation_preview.sv": {
+      "sha256": "279d01b1d84ef88d4db5243f54e6d8e6604b80e266ee30ce6b353915231a91ac",
+      "bytes": 2297
+    },
+    "detour_demo.ppm": {
+      "sha256": "51adebc9eab2356a898c9b87be05b9f029648b3b301609b85e32e517b5d1d31c",
+      "bytes": 3132807
+    },
+    "detour_demo.png": {
+      "sha256": "65d59611f79ed87afa5e8edd2fad996eea4461611106d91d5bf5f4f078c75816",
+      "bytes": 5613
+    }
+  }
+}

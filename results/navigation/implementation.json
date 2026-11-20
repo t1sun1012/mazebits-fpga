@@ -1,0 +1,112 @@
+{
+  "format": "mazebits-navigation-implementation-v1",
+  "status": "pass",
+  "stage": "bitstream",
+  "top": "mazebits_navigation_top",
+  "part": "xc7a100tcsg324-1",
+  "clock_period_ns": 10.0,
+  "pixel_clock_enable_hz": 25000000,
+  "video_total": [
+    800,
+    525
+  ],
+  "video_active": [
+    640,
+    480
+  ],
+  "frame_hz": 59.523809523809526,
+  "scope": "Editable maze, two independently sized W8A8/W4A4 CNN engines, independent navigation controllers, and dual VGA panels.",
+  "source_sha256": {
+    "rtl/button_conditioner.v": "af905e01af1710ebf46761e316c70f65cc5f1d1b09be81d5c32dca9ffd7eb750",
+    "rtl/maze_editor.v": "724377d3af46218d29fdca2d6bd9051a41aa20539eff3452a9c49e20321e1491",
+    "rtl/maze_navigation.v": "10c4445d14f5880affc3feb9869474a205f7eb418977bbf2e4fec39be6b3b397",
+    "rtl/maze_navigation_vga.v": "dc1f4a1036b2069bec61d8c3011ab10fb6b4973d09c8fe1dcb8cd96ad8c06abe",
+    "rtl/mazebits_navigation_top.v": "906c5807973d67febc5439546113922537b1785f8d07327814c107c08c1b4c2f",
+    "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+    "scripts/build_navigation.tcl": "da24a11f00015c02b4a8edcdadd302f0e120d95a7168086684d87e7fcfb9c78c",
+    "scripts/run_navigation_vivado.py": "ee7f9b8651ba9f1897d9e0c5bd3af73582fdbb1f19ca9fbc2b139192fd217e69",
+    "constraints/mazebits_navigation.xdc": "b2667c1af70bb5c291f0ec428a575026748ba639254af21590dc4eb0b9088f01",
+    "scripts/stage_navigation.py": "25af6ff9f7dd25e4f56a7e3dabc988967265d437c9f3d35546d9b0edc21f9542",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+    "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+  },
+  "generated_sha256": {
+    "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+    "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+    "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+  },
+  "model_stage": {
+    "format": "mazebits-dual-cnn-stage-v1",
+    "precisions": [
+      8,
+      4
+    ],
+    "source_sha256": {
+      "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+      "scripts/stage_navigation.py": "25af6ff9f7dd25e4f56a7e3dabc988967265d437c9f3d35546d9b0edc21f9542",
+      "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+      "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+      "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+      "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+      "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+      "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+      "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+      "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54"
+    },
+    "generated_sha256": {
+      "mazebits_cnn_w8a8.v": "ed2417c01fa240b95c44cf2e4d02830c8f7fb21077fc3fa6a18f34af7bd49163",
+      "weights_w8a8.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+      "biases_w8a8.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+      "mazebits_cnn_w4a4.v": "5778a67267478dba375263141f11e73cdefc20317bc61af1a157b5823ad1a73c",
+      "weights_w4a4.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+      "biases_w4a4.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+    }
+  },
+  "elapsed_wall_seconds": 121.397,
+  "synthesis_resources": {
+    "luts": 2206,
+    "registers": 1694,
+    "bram_36k_tiles": 14.5,
+    "ramb36": 12,
+    "ramb18": 5,
+    "dsps": 0
+  },
+  "vivado_version": "2024.1",
+  "setup_slack_ns": 0.657,
+  "hold_slack_ns": 0.09,
+  "routed_resources": {
+    "luts": 2182,
+    "registers": 1694,
+    "bram_36k_tiles": 14.5,
+    "ramb36": 12,
+    "ramb18": 5,
+    "dsps": 0
+  },
+  "critical_or_error_drc_count": 0,
+  "total_drc_count": 0,
+  "warning_drc_count": 0,
+  "memory_async_drc_count": 0,
+  "bitstream": {
+    "name": "mazebits_navigation.bit",
+    "bytes": 3825908,
+    "sha256": "e8645010991193704d6744bd7f47c98850310820ad267b655cdea2e4c269eff4",
+    "programmed_on_board": false
+  },
+  "report_sha256": {
+    "clock_interaction.rpt": "8f4ed1b140924deaf479b62f76f3d4373cefc536c43774771ecb03cebd5e30e5",
+    "drc_route.rpt": "f444ff9de17ac93d479bb38792b2508044c4fa7304a9e4412b3aae837a63c238",
+    "gui_compile_order.rpt": "1a50195e8f971898ba949393b0eb48befca88951a9c3ffefeedb5669515bbe0c",
+    "timing_route.rpt": "2dae8351c71b26db91254269bdd95b8b2b5204432fc46fbd6719c3af7313ab81",
+    "timing_synth.rpt": "1397cd2e439c182626293b23f712d9362a0388706bb5bb8e366773743dcb6e07",
+    "utilization_hierarchy.rpt": "b8acd196788efc0e2b5223dd92a57dd63243bac7f9e2d0d3e96c495f91cc769b",
+    "utilization_route.rpt": "2ced1b5f324e294675051cdd5672dd0c4b12ab1a93db9bc29899726b3da86fc8",
+    "utilization_synth.rpt": "625c783418b775f9f45cc65c544c265ddb44c164193f61866c0bb0c6357bf77f"
+  }
+}

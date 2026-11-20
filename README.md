@@ -2,26 +2,35 @@
 
 Interactive FPGA maze navigation with a learned policy, VGA visualization, and an 8-bit versus 4-bit quantization comparison.
 
-MazeBits is an EC311 project for the Nexys A7-100T. The planned board demonstration lets users edit an 8x8 maze with switches and buttons and compare two quantized neural policies on a VGA display. All three team members collaborate through shared implementation, reviews, and testing.
+MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users edit an 8x8 maze with switches and buttons and compare two quantized neural policies on a VGA display. All three team members collaborate through shared implementation, reviews, and testing.
 
 ## Current status
 
-**Step 5 implemented: switch/button maze editor and VGA display, ready for a board test.** The editor and display pass HDL simulation and routed 100 MHz timing checks. A bitstream is generated locally; physical programming and monitor testing remain to be done. Step 6 will connect both verified CNNs to the edited scenarios.
+**Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test; the new Step 6 bitstream awaits its own board test.
 
-## Maze editor
+## Neural maze comparison
 
-![Actual HDL-rendered editor frame](results/editor/baseline_frame.png)
+![VGA rendering of verified detour final states](results/navigation/detour_demo.png)
 
-Arrows move the cursor; center applies an edit. SW1:SW0 selects 00=WALL, 01=START, 10=GOAL, or 11=VIEW. Reset restores an empty map. Both panels mirror the edited map; VIEW freezes edits. Neural navigation is the next integration step.
+VGA rendering of verified reference final states for the detour maze. The image comes from the simulated renderer, not a board photograph or full-system CNN capture. Real CNN paths are verified separately against scalar-checked integer references.
 
-The VGA output is 640x480 at 59.5238 Hz, using a 25 MHz pixel enable in one 100 MHz clock domain. The routed editor/display top uses 557 LUTs, 432 registers, one RAMB18, and zero DSPs; setup and hold timing pass with zero DRC violations.
+Arrows move the editor cursor; center applies an edit. SW1:SW0 selects 00=WALL, 01=START, 10=GOAL, or 11=VIEW. In VIEW, press Center to start or restart both models from the same edited scenario. Returning to an edit mode stops both agents and preserves the map. CPU RESET clears the map.
+
+Each panel shows its own agent, trail, outcome, attempted actions (TRIES), and accumulated inference cycles (CYC HEX). Both precisions use the same serial schedule. An intentional 200 ms pause makes movement visible and is excluded from the cycle totals.
+
+| Verified scenario | W8A8 | W4A4 |
+|---|---|---|
+| Open maze | Goal, 14 attempts | Goal, 14 attempts |
+| Detour | Goal, 21 attempts | Blocked, 4 attempts |
+| Disconnected goal | Loop, 4 attempts | Loop, 3 attempts |
+| Start equals goal | Goal, 0 attempts | Goal, 0 attempts |
 
 ~~~powershell
-python scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
-python scripts/run_editor_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
+python scripts/run_navigation.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
+python scripts/run_navigation_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
 ~~~
 
-Read [Step 5 and board-testing instructions](docs/step-05.md), [VGA timing/layout](docs/vga-layout.md), and [editor verification evidence](results/editor/README.md). The image above is an example captured from the actual simulated RGB outputs.
+Read [Step 6 and board-test instructions](docs/step-06.md), [navigation VGA layout](docs/navigation-vga-layout.md), and [verification/implementation evidence](results/navigation/README.md). The current local bitstream is `runs/vivado/navigation/mazebits_navigation.bit`; the persistent GUI project is `runs/vivado/navigation_gui/mazebits_navigation.xpr`. The editor-only Step 5 version remains available separately.
 
 ## Learned policy baseline
 
@@ -90,7 +99,7 @@ W8A8/W4A4 means signed 8/4-bit weights and unsigned 8/4-bit hidden activations. 
 
 ## Verification
 
-All 98 software tests passed. For each precision:
+All 107 software tests passed. Step 6 additionally checks 60 complete-loop decisions, 240 signed scores, 202 controller checks, 34 integrated control checks, and three full VGA frames. For the original Step 3/4 numerical verification, for each precision:
 
 - 133,160 intermediate/output words matched independent scalar arithmetic across eight fixtures.
 - Fresh-process replay matched all 88,116 validation score words and 3,600 trajectories.
@@ -102,7 +111,7 @@ python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir t
 python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
 ~~~
 
-GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, the board-control tests, and the editor/VGA suites. A full validation replay additionally needs the generated dataset:
+GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, the board-control tests, the editor/VGA suites, and both the navigation-control and real dual-CNN suites. A full validation replay additionally needs the generated dataset:
 
 ~~~powershell
 python python/prepare_data.py --output-dir data/maze-v1
@@ -118,7 +127,8 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 2](docs/step-02.md): dataset, CNN training, and floating-point results.
 - [Step 3](docs/step-03.md): integer arithmetic, calibration, exports, and comparison.
 - [Step 4](docs/step-04.md): Verilog datapath, interfaces, cycle counts, HDL verification, and routed builds.
-- [Step 5](docs/step-05.md): board controls, editable map, VGA display, and physical test instructions.
+- [Step 5](docs/step-05.md): board-tested controls, editable map, and VGA display.
+- [Step 6](docs/step-06.md): independent neural navigation, path comparison, and new board-test instructions.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
 - [W8A8 bundle](model/cnn-w8a8/README.md) and [W4A4 bundle](model/cnn-w4a4/README.md).
@@ -126,4 +136,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-Step 6 integrates both navigation policies on identical edited scenarios and displays their paths, movement counts, and outcomes. Each completed milestone is committed and pushed on its own branch.
+The next physical check is to program the Step 6 bitstream and run the documented open-maze, detour, restart/cancel, and overlapping-endpoint tests. Each completed implementation milestone is committed and pushed on its own branch.

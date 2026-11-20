@@ -1,0 +1,18 @@
+
+****** xsim v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu Nov 19 20:33:26 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_navigation_vga/xsim_script.tcl
+# xsim {tb_navigation_vga} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+PASS_NAVIGATION_VGA frames=3 pixels=1260000 active_pixels=921600 glyph_pixels=11088 snapshots=2
+$finish called at time : 50400086 ns : File "X:/Desktop/EC_311/Project/tb/tb_navigation_vga.sv" Line 273
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 224.043 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Nov 19 20:33:37 2026...

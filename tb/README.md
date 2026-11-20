@@ -57,3 +57,14 @@ python scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
 ~~~
 
 Use --sim iverilog for Icarus. The editor covers all 64 cells and endpoint safety, the debouncers cover bounce and held inputs, the integrated top checks actual button/switch wiring, and the VGA test checks three complete frames. RGB frame captures are produced directly by the HDL. See [Step 5](../docs/step-05.md) and [VGA layout](../docs/vga-layout.md) for precise coverage and physical-board test instructions.
+
+## Step 6 navigation
+
+Run `python scripts/run_navigation.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin` or use `--sim iverilog`.
+
+- `tb_maze_navigation.sv`: controller boundaries, raw-action failures, looping, completion priority, pacing, snapshots, restart, and reset.
+- `tb_navigation_top.sv`: board inputs with two deliberately different CNN stubs; independent outcomes, held buttons, mode-exit snapshot masking, restart, cancellation, and zero-step overlap.
+- `tb_navigation_vga.sv`: three complete raster frames with separate agent/trail/status/count/cycle state, text pixels, atomic snapshots, and RGB captures.
+- `tb_navigation_cnn.sv`: both real precision engines in one elaboration; all actions, signed scores, positions, trails, totals, outcomes, reset/restart and snapshots match four frozen Python/scalar-checked scenarios.
+
+The real-CNN test uses generated specializations of the unchanged authored engine; the stub test never substitutes for this numerical check. See [Step 6](../docs/step-06.md) and [evidence](../results/navigation/README.md).

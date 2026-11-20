@@ -61,3 +61,29 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y iverilog
       - name: Verify editor controls and complete VGA frames
         run: python scripts/run_editor.py --sim iverilog
+
+  navigation-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install Icarus Verilog
+        run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Verify navigation controls, physical inputs, and VGA frames
+        run: python scripts/run_navigation.py --sim iverilog --tests controller top vga
+
+  navigation-cnn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install Icarus Verilog
+        run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Verify both real CNNs and complete closed-loop paths
+        run: python scripts/run_navigation.py --sim iverilog --tests cnn --timeout 1500

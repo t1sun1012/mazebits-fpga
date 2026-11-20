@@ -1,0 +1,1022 @@
+{
+  "format": "mazebits-navigation-v1",
+  "case_count": 4,
+  "cases": [
+    {
+      "name": "open",
+      "walls_hex": "0000000000000000",
+      "start": 0,
+      "goal": 63
+    },
+    {
+      "name": "detour",
+      "walls_hex": "0002020202020202",
+      "start": 0,
+      "goal": 7
+    },
+    {
+      "name": "blocked",
+      "walls_hex": "0202020202020202",
+      "start": 0,
+      "goal": 7
+    },
+    {
+      "name": "at-goal",
+      "walls_hex": "0000000000000000",
+      "start": 0,
+      "goal": 0
+    }
+  ],
+  "max_steps": 64,
+  "event_stride_words": 11,
+  "cycles_per_decision": 3217153,
+  "event_word_order": [
+    "action",
+    "position",
+    "trail_low",
+    "trail_high",
+    "status",
+    "steps",
+    "total_cycles",
+    "score_up",
+    "score_right",
+    "score_down",
+    "score_left"
+  ],
+  "final_word_order": [
+    "status",
+    "steps",
+    "position",
+    "trail_low",
+    "trail_high",
+    "total_cycles"
+  ],
+  "scalar_checked_decisions": 60,
+  "source_sha256": {
+    "python/export_navigation_vectors.py": "9f4dc11907f6f5c760274c41b54cd652a4049d077a465c643d244ba65d7a86f7",
+    "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+    "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+    "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+    "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+    "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+    "python/mazebits/examples.py": "657ee170a17e9437bc01f2e5684d4a3e951fae7a5c8ce07261841550acc092d4",
+    "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w4a4/manifest.json": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+    "model/cnn-w4a4/quantization.vh": "15d98ce36421a8970096ec06624f126e97ca3311881d8040ef0275f738e5ae54",
+    "model/cnn-w4a4/weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d",
+    "model/cnn-w4a4/biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc"
+  },
+  "files": {
+    "events_w4a4.mem": {
+      "sha256": "c109d4152d896d6e358f205d0468a6d161893359a9ec978d89f3f34b1fa60f83",
+      "bytes": 25344
+    },
+    "events_w8a8.mem": {
+      "sha256": "cba012f9b757c3ced652c85412997a1f024958c5ebd733a2428a7d0b82eed3c2",
+      "bytes": 25344
+    },
+    "final_w4a4.mem": {
+      "sha256": "d9874b4c846073155f2b38c40f30eee24c08a680ff6f830405baadfb22dfa4cc",
+      "bytes": 216
+    },
+    "final_w8a8.mem": {
+      "sha256": "72ecabf2b992a7ecd0a6b41c62acd77c3ed81f8cfaba07be8e1865aef1bfe326",
+      "bytes": 216
+    },
+    "goals.mem": {
+      "sha256": "8386efdee20197f220961e905c6463e6d4bdef46607170fc19ef1a41b4e440e0",
+      "bytes": 12
+    },
+    "starts.mem": {
+      "sha256": "e7940aec9c9d3d3d5fadf28e64e468468945599c439942219f9ecbc0e2ae241d",
+      "bytes": 12
+    },
+    "walls.mem": {
+      "sha256": "fda74aad11a04ea5e2e2846482b4dceb01da64f920c0c405d7905ec93cceb6da",
+      "bytes": 68
+    }
+  },
+  "episodes": [
+    {
+      "bits": 8,
+      "case": "open",
+      "outcome": "success",
+      "steps": 14,
+      "final_position": 63,
+      "trail_hex": "80e03e0202030101",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            -193,
+            1213,
+            1679,
+            94
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            25,
+            2029,
+            2348,
+            -55
+          ]
+        },
+        {
+          "action": 1,
+          "position": 17,
+          "trail_hex": "0000000000030101",
+          "status": 1,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            317,
+            3474,
+            2883,
+            -146
+          ]
+        },
+        {
+          "action": 2,
+          "position": 25,
+          "trail_hex": "0000000002030101",
+          "status": 1,
+          "steps": 4,
+          "total_cycles": 12868612,
+          "scores": [
+            451,
+            4234,
+            5117,
+            194
+          ]
+        },
+        {
+          "action": 2,
+          "position": 33,
+          "trail_hex": "0000000202030101",
+          "status": 1,
+          "steps": 5,
+          "total_cycles": 16085765,
+          "scores": [
+            820,
+            5081,
+            5604,
+            -585
+          ]
+        },
+        {
+          "action": 2,
+          "position": 41,
+          "trail_hex": "0000020202030101",
+          "status": 1,
+          "steps": 6,
+          "total_cycles": 19302918,
+          "scores": [
+            1255,
+            5854,
+            5878,
+            -638
+          ]
+        },
+        {
+          "action": 1,
+          "position": 42,
+          "trail_hex": "0000060202030101",
+          "status": 1,
+          "steps": 7,
+          "total_cycles": 22520071,
+          "scores": [
+            1775,
+            7164,
+            4222,
+            -364
+          ]
+        },
+        {
+          "action": 1,
+          "position": 43,
+          "trail_hex": "00000e0202030101",
+          "status": 1,
+          "steps": 8,
+          "total_cycles": 25737224,
+          "scores": [
+            504,
+            6630,
+            5803,
+            692
+          ]
+        },
+        {
+          "action": 1,
+          "position": 44,
+          "trail_hex": "00001e0202030101",
+          "status": 1,
+          "steps": 9,
+          "total_cycles": 28954377,
+          "scores": [
+            579,
+            7592,
+            6156,
+            -67
+          ]
+        },
+        {
+          "action": 1,
+          "position": 45,
+          "trail_hex": "00003e0202030101",
+          "status": 1,
+          "steps": 10,
+          "total_cycles": 32171530,
+          "scores": [
+            1715,
+            8285,
+            7062,
+            -746
+          ]
+        },
+        {
+          "action": 2,
+          "position": 53,
+          "trail_hex": "00203e0202030101",
+          "status": 1,
+          "steps": 11,
+          "total_cycles": 35388683,
+          "scores": [
+            665,
+            10409,
+            11238,
+            533
+          ]
+        },
+        {
+          "action": 1,
+          "position": 54,
+          "trail_hex": "00603e0202030101",
+          "status": 1,
+          "steps": 12,
+          "total_cycles": 38605836,
+          "scores": [
+            528,
+            10933,
+            4661,
+            -806
+          ]
+        },
+        {
+          "action": 1,
+          "position": 55,
+          "trail_hex": "00e03e0202030101",
+          "status": 1,
+          "steps": 13,
+          "total_cycles": 41822989,
+          "scores": [
+            -416,
+            8138,
+            6334,
+            1002
+          ]
+        },
+        {
+          "action": 2,
+          "position": 63,
+          "trail_hex": "80e03e0202030101",
+          "status": 2,
+          "steps": 14,
+          "total_cycles": 45040142,
+          "scores": [
+            5460,
+            -529,
+            11146,
+            1729
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "case": "detour",
+      "outcome": "success",
+      "steps": 21,
+      "final_position": 7,
+      "trail_hex": "07050505057dc181",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            618,
+            -264,
+            1785,
+            630
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            1492,
+            -693,
+            2367,
+            551
+          ]
+        },
+        {
+          "action": 2,
+          "position": 24,
+          "trail_hex": "0000000001010101",
+          "status": 1,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            1267,
+            -465,
+            2021,
+            463
+          ]
+        },
+        {
+          "action": 2,
+          "position": 32,
+          "trail_hex": "0000000101010101",
+          "status": 1,
+          "steps": 4,
+          "total_cycles": 12868612,
+          "scores": [
+            1416,
+            -332,
+            1548,
+            -115
+          ]
+        },
+        {
+          "action": 2,
+          "position": 40,
+          "trail_hex": "0000010101010101",
+          "status": 1,
+          "steps": 5,
+          "total_cycles": 16085765,
+          "scores": [
+            1347,
+            -171,
+            1536,
+            -326
+          ]
+        },
+        {
+          "action": 2,
+          "position": 48,
+          "trail_hex": "0001010101010101",
+          "status": 1,
+          "steps": 6,
+          "total_cycles": 19302918,
+          "scores": [
+            778,
+            247,
+            954,
+            -424
+          ]
+        },
+        {
+          "action": 2,
+          "position": 56,
+          "trail_hex": "0101010101010101",
+          "status": 1,
+          "steps": 7,
+          "total_cycles": 22520071,
+          "scores": [
+            863,
+            -216,
+            1240,
+            134
+          ]
+        },
+        {
+          "action": 1,
+          "position": 57,
+          "trail_hex": "0301010101010101",
+          "status": 1,
+          "steps": 8,
+          "total_cycles": 25737224,
+          "scores": [
+            1032,
+            1063,
+            -870,
+            -582
+          ]
+        },
+        {
+          "action": 1,
+          "position": 58,
+          "trail_hex": "0701010101010101",
+          "status": 1,
+          "steps": 9,
+          "total_cycles": 28954377,
+          "scores": [
+            -236,
+            2102,
+            -1048,
+            744
+          ]
+        },
+        {
+          "action": 0,
+          "position": 50,
+          "trail_hex": "0705010101010101",
+          "status": 1,
+          "steps": 10,
+          "total_cycles": 32171530,
+          "scores": [
+            1776,
+            1388,
+            -1946,
+            -425
+          ]
+        },
+        {
+          "action": 0,
+          "position": 42,
+          "trail_hex": "0705050101010101",
+          "status": 1,
+          "steps": 11,
+          "total_cycles": 35388683,
+          "scores": [
+            2820,
+            1591,
+            -1917,
+            -3217
+          ]
+        },
+        {
+          "action": 0,
+          "position": 34,
+          "trail_hex": "0705050501010101",
+          "status": 1,
+          "steps": 12,
+          "total_cycles": 38605836,
+          "scores": [
+            2821,
+            2165,
+            -1798,
+            -3470
+          ]
+        },
+        {
+          "action": 0,
+          "position": 26,
+          "trail_hex": "0705050505010101",
+          "status": 1,
+          "steps": 13,
+          "total_cycles": 41822989,
+          "scores": [
+            3142,
+            2428,
+            -528,
+            -3577
+          ]
+        },
+        {
+          "action": 0,
+          "position": 18,
+          "trail_hex": "0705050505050101",
+          "status": 1,
+          "steps": 14,
+          "total_cycles": 45040142,
+          "scores": [
+            4492,
+            3095,
+            -2696,
+            -5044
+          ]
+        },
+        {
+          "action": 1,
+          "position": 19,
+          "trail_hex": "07050505050d0101",
+          "status": 1,
+          "steps": 15,
+          "total_cycles": 48257295,
+          "scores": [
+            3330,
+            6223,
+            -3216,
+            -5438
+          ]
+        },
+        {
+          "action": 1,
+          "position": 20,
+          "trail_hex": "07050505051d0101",
+          "status": 1,
+          "steps": 16,
+          "total_cycles": 51474448,
+          "scores": [
+            4292,
+            7206,
+            -5522,
+            -5717
+          ]
+        },
+        {
+          "action": 1,
+          "position": 21,
+          "trail_hex": "07050505053d0101",
+          "status": 1,
+          "steps": 17,
+          "total_cycles": 54691601,
+          "scores": [
+            3763,
+            7328,
+            -6326,
+            -5600
+          ]
+        },
+        {
+          "action": 1,
+          "position": 22,
+          "trail_hex": "07050505057d0101",
+          "status": 1,
+          "steps": 18,
+          "total_cycles": 57908754,
+          "scores": [
+            4943,
+            7961,
+            -7553,
+            -5692
+          ]
+        },
+        {
+          "action": 0,
+          "position": 14,
+          "trail_hex": "07050505057d4101",
+          "status": 1,
+          "steps": 19,
+          "total_cycles": 61125907,
+          "scores": [
+            9179,
+            2594,
+            -7031,
+            -6592
+          ]
+        },
+        {
+          "action": 1,
+          "position": 15,
+          "trail_hex": "07050505057dc101",
+          "status": 1,
+          "steps": 20,
+          "total_cycles": 64343060,
+          "scores": [
+            4963,
+            6407,
+            -8021,
+            -5872
+          ]
+        },
+        {
+          "action": 0,
+          "position": 7,
+          "trail_hex": "07050505057dc181",
+          "status": 2,
+          "steps": 21,
+          "total_cycles": 67560213,
+          "scores": [
+            11857,
+            -7809,
+            -2366,
+            -220
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "case": "blocked",
+      "outcome": "loop",
+      "steps": 4,
+      "final_position": 16,
+      "trail_hex": "0000000001010101",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            696,
+            -252,
+            1789,
+            654
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            1565,
+            -642,
+            2106,
+            400
+          ]
+        },
+        {
+          "action": 2,
+          "position": 24,
+          "trail_hex": "0000000001010101",
+          "status": 1,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            1250,
+            -269,
+            1342,
+            493
+          ]
+        },
+        {
+          "action": 0,
+          "position": 16,
+          "trail_hex": "0000000001010101",
+          "status": 4,
+          "steps": 4,
+          "total_cycles": 12868612,
+          "scores": [
+            1558,
+            -225,
+            298,
+            -204
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 8,
+      "case": "at-goal",
+      "outcome": "success",
+      "steps": 0,
+      "final_position": 0,
+      "trail_hex": "0000000000000001",
+      "events": []
+    },
+    {
+      "bits": 4,
+      "case": "open",
+      "outcome": "success",
+      "steps": 14,
+      "final_position": 63,
+      "trail_hex": "80f808080f010101",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            1,
+            1,
+            5,
+            1
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            -2,
+            7,
+            9,
+            1
+          ]
+        },
+        {
+          "action": 2,
+          "position": 24,
+          "trail_hex": "0000000001010101",
+          "status": 1,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            -1,
+            10,
+            17,
+            0
+          ]
+        },
+        {
+          "action": 1,
+          "position": 25,
+          "trail_hex": "0000000003010101",
+          "status": 1,
+          "steps": 4,
+          "total_cycles": 12868612,
+          "scores": [
+            0,
+            14,
+            13,
+            2
+          ]
+        },
+        {
+          "action": 1,
+          "position": 26,
+          "trail_hex": "0000000007010101",
+          "status": 1,
+          "steps": 5,
+          "total_cycles": 16085765,
+          "scores": [
+            2,
+            25,
+            20,
+            -6
+          ]
+        },
+        {
+          "action": 1,
+          "position": 27,
+          "trail_hex": "000000000f010101",
+          "status": 1,
+          "steps": 6,
+          "total_cycles": 19302918,
+          "scores": [
+            -1,
+            16,
+            16,
+            -2
+          ]
+        },
+        {
+          "action": 2,
+          "position": 35,
+          "trail_hex": "000000080f010101",
+          "status": 1,
+          "steps": 7,
+          "total_cycles": 22520071,
+          "scores": [
+            2,
+            14,
+            17,
+            -4
+          ]
+        },
+        {
+          "action": 2,
+          "position": 43,
+          "trail_hex": "000008080f010101",
+          "status": 1,
+          "steps": 8,
+          "total_cycles": 25737224,
+          "scores": [
+            -2,
+            17,
+            22,
+            5
+          ]
+        },
+        {
+          "action": 2,
+          "position": 51,
+          "trail_hex": "000808080f010101",
+          "status": 1,
+          "steps": 9,
+          "total_cycles": 28954377,
+          "scores": [
+            4,
+            22,
+            35,
+            -6
+          ]
+        },
+        {
+          "action": 1,
+          "position": 52,
+          "trail_hex": "001808080f010101",
+          "status": 1,
+          "steps": 10,
+          "total_cycles": 32171530,
+          "scores": [
+            0,
+            34,
+            22,
+            -5
+          ]
+        },
+        {
+          "action": 1,
+          "position": 53,
+          "trail_hex": "003808080f010101",
+          "status": 1,
+          "steps": 11,
+          "total_cycles": 35388683,
+          "scores": [
+            2,
+            34,
+            22,
+            1
+          ]
+        },
+        {
+          "action": 1,
+          "position": 54,
+          "trail_hex": "007808080f010101",
+          "status": 1,
+          "steps": 12,
+          "total_cycles": 38605836,
+          "scores": [
+            3,
+            38,
+            15,
+            -4
+          ]
+        },
+        {
+          "action": 1,
+          "position": 55,
+          "trail_hex": "00f808080f010101",
+          "status": 1,
+          "steps": 13,
+          "total_cycles": 41822989,
+          "scores": [
+            -3,
+            28,
+            19,
+            11
+          ]
+        },
+        {
+          "action": 2,
+          "position": 63,
+          "trail_hex": "80f808080f010101",
+          "status": 2,
+          "steps": 14,
+          "total_cycles": 45040142,
+          "scores": [
+            17,
+            0,
+            33,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "case": "detour",
+      "outcome": "blocked",
+      "steps": 4,
+      "final_position": 24,
+      "trail_hex": "0000000001010101",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            1,
+            3,
+            8,
+            -1
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            4,
+            -1,
+            6,
+            -1
+          ]
+        },
+        {
+          "action": 2,
+          "position": 24,
+          "trail_hex": "0000000001010101",
+          "status": 1,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            6,
+            -4,
+            11,
+            4
+          ]
+        },
+        {
+          "action": 1,
+          "position": 24,
+          "trail_hex": "0000000001010101",
+          "status": 3,
+          "steps": 4,
+          "total_cycles": 12868612,
+          "scores": [
+            -1,
+            7,
+            6,
+            -2
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "case": "blocked",
+      "outcome": "loop",
+      "steps": 3,
+      "final_position": 8,
+      "trail_hex": "0000000000010101",
+      "events": [
+        {
+          "action": 2,
+          "position": 8,
+          "trail_hex": "0000000000000101",
+          "status": 1,
+          "steps": 1,
+          "total_cycles": 3217153,
+          "scores": [
+            5,
+            -3,
+            9,
+            1
+          ]
+        },
+        {
+          "action": 2,
+          "position": 16,
+          "trail_hex": "0000000000010101",
+          "status": 1,
+          "steps": 2,
+          "total_cycles": 6434306,
+          "scores": [
+            1,
+            1,
+            5,
+            1
+          ]
+        },
+        {
+          "action": 0,
+          "position": 8,
+          "trail_hex": "0000000000010101",
+          "status": 4,
+          "steps": 3,
+          "total_cycles": 9651459,
+          "scores": [
+            7,
+            1,
+            -3,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "bits": 4,
+      "case": "at-goal",
+      "outcome": "success",
+      "steps": 0,
+      "final_position": 0,
+      "trail_hex": "0000000000000001",
+      "events": []
+    }
+  ]
+}

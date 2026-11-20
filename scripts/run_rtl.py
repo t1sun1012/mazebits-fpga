@@ -103,11 +103,8 @@ def run(command: list[str], cwd: Path, log_name: str, timeout: int) -> str:
 def verify(args, bits: int) -> dict:
     destination = args.output_dir.resolve() / f"w{bits}a{bits}"
     evidence = stage(bits, destination)
-    sources = sorted((ROOT / "rtl").glob("*.v"))
-    if not sources:
-        raise FileNotFoundError("RTL core has not been created")
-    # Only the engine and its helper modules; board top is compiled separately.
-    sources = [p for p in sources if p.stem not in ("mazebits_top", "mazebits_inference_top", "mazebits_smoke_top")]
+    # The legacy core test has one authored engine; unrelated board tops are excluded.
+    sources = [ROOT / "rtl/mazebits_cnn.v"]
     tb = ROOT / "tb/tb_mazebits_cnn.sv"
     provenance_sources = [*sources, tb, Path(__file__).resolve()]
     source_hashes = {

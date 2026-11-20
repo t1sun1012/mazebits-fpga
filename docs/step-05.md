@@ -1,6 +1,6 @@
 # Step 5: Maze editor and VGA display
 
-Step 5 adds an editable 8x8 map, debounced board controls, and two mirrored VGA panels. The implementation passes simulation and routed FPGA checks. Physical programming and monitor checks remain to be performed. The neural engines are connected to navigation in Step 6.
+Step 5 adds an editable 8x8 map, debounced board controls, and two mirrored VGA panels. The implementation passes simulation and routed FPGA checks. The user reported a successful physical board and monitor test on November 19, 2026; see [the separate hardware-test record](../results/editor/board-test.json). The neural engines are connected to navigation in Step 6.
 
 ![Actual HDL-rendered detour frame](../results/editor/baseline_frame.png)
 

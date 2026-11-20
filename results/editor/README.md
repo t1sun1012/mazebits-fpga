@@ -1,6 +1,6 @@
 # Step 5 evidence
 
-The editor, controls, VGA renderer, and integrated top pass Vivado XSim 2024.1. The routed editor/display build meets 100 MHz timing with no DRC violations. The bitstream has been generated locally; physical programming and monitor testing have not been performed.
+The editor, controls, VGA renderer, and integrated top pass Vivado XSim 2024.1. The routed editor/display build meets 100 MHz timing with no DRC violations. The user reported that the documented physical board and VGA monitor test passed on November 19, 2026. [board-test.json](board-test.json) records that report separately from the automated evidence.
 
 ![HDL-rendered detour map](baseline_frame.png)
 

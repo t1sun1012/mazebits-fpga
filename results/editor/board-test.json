@@ -1,0 +1,21 @@
+{
+  "format": "mazebits-board-test-v1",
+  "milestone": 5,
+  "status": "pass",
+  "reported_date": "2026-11-19",
+  "date_timezone": "America/New_York",
+  "evidence_type": "user-reported physical board test",
+  "board_device": "XC7A100T",
+  "bitstream": "mazebits_editor.bit",
+  "bitstream_sha256": "ca973d3c0f85c85091818f307d17faaba5be6102fa54687088bd11380fb4881b",
+  "programming_evidence": "User screenshot shows the Step 5 editor bitstream programmed and startup status HIGH.",
+  "checks_reported_passed": [
+    "VGA two-grid display and reset",
+    "arrow cursor movement",
+    "wall toggle",
+    "start and goal placement",
+    "VIEW editing freeze",
+    "protected endpoint rejection"
+  ],
+  "limitations": "No captured physical VGA image or independent measurement; result reported by user after the documented nine-step test."
+}

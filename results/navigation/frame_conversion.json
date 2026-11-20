@@ -1,0 +1,26 @@
+{
+  "format": "mazebits-navigation-frame-conversion-v1",
+  "scope": "Actual HDL RGB outputs for synthetic renderer verification fixtures; not CNN episode captures or board photographs.",
+  "frames": [
+    {
+      "name": "navigation_running",
+      "size": [
+        640,
+        480
+      ],
+      "ppm_sha256": "ac962269739465e8ea3798a9c362549eef5a8017182c77a1a2fc670e14b578e9",
+      "png_sha256": "56ada038fa173aa1e96625925d60b31cee1e88fb2234986d0bbcc6c9ae1f5ed7",
+      "pixel_identical": true
+    },
+    {
+      "name": "navigation_result",
+      "size": [
+        640,
+        480
+      ],
+      "ppm_sha256": "72401a29190a93308c94e183fd948492bfcf775e2ebc9715d8e766998be64ec9",
+      "png_sha256": "c554f35494943a680acd3a8970ee5da7d7c84282ce8215cdaba248018cada125",
+      "pixel_identical": true
+    }
+  ]
+}

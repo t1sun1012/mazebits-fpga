@@ -1,0 +1,24 @@
+Source compile order for 'synthesis' with fileset 'sources_1' in source management mode 'All':
+Index  File Name                  Used_In      File_Type  Library         Ngc Wrapper  Full Path Name
+-----  -------------------------  -----------  ---------  --------------  -----------  --------------------------------------------------------------------
+1      button_conditioner.v       Synth & Sim  Verilog    xil_defaultlib  No           <repo>/rtl/button_conditioner.v
+2      maze_editor.v              Synth & Sim  Verilog    xil_defaultlib  No           <repo>/rtl/maze_editor.v
+3      maze_navigation.v          Synth & Sim  Verilog    xil_defaultlib  No           <repo>/rtl/maze_navigation.v
+4      maze_navigation_vga.v      Synth & Sim  Verilog    xil_defaultlib  No           <repo>/rtl/maze_navigation_vga.v
+5      mazebits_cnn_w4a4.v        Synth & Sim  Verilog    xil_defaultlib  No           <repo>/runs/vivado/navigation/mazebits_cnn_w4a4.v
+6      mazebits_cnn_w8a8.v        Synth & Sim  Verilog    xil_defaultlib  No           <repo>/runs/vivado/navigation/mazebits_cnn_w8a8.v
+7      mazebits_navigation_top.v  Synth & Sim  Verilog    xil_defaultlib  No           <repo>/rtl/mazebits_navigation_top.v
+
+
+Constraint evaluation order for 'synthesis' with fileset 'sources_1' & with fileset 'constrs_1':
+Index  File Name                Used_In       Scoped_To_Ref  Scoped_To_Cells  Processing_Order  Out_Of_Context  Full Path Name
+-----  -----------------------  ------------  -------------  ---------------  ----------------  --------------  -------------------------------------------------------------
+1      mazebits_navigation.xdc  Synth & Impl                                  NORMAL                            <repo>/constraints/mazebits_navigation.xdc
+
+
+Missing instances for 'synthesis' with fileset 'sources_1':
+Index  Instance Path  File Path  Line
+-----  -------------  ---------  ----
+< empty >
+
+
