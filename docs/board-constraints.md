@@ -76,7 +76,7 @@ The automated pin audit in [python/tests/test_board_constraints.py](../python/te
 The separate [board-control testbench](../tb/tb_mazebits_smoke_top.sv) replaces the CNN with a fixed-latency stub to isolate button debouncing, synchronization, request acceptance, reset abort/restart, fixture capture, and LED status. It does not test CNN arithmetic; the main RTL-vector testbench does that. Both precision configurations passed this control test in Vivado XSim 2024.1.
 
 ~~~powershell
-& '..\.venv\Scripts\python.exe' scripts/run_board_smoke.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
+& 'C:\Users\t1sun\Documents\ChatGPT\EC311_Project\.venv\Scripts\python.exe' scripts/run_board_smoke.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
 ~~~
 
 The same runner supports Icarus Verilog via `--sim iverilog`. It writes a compact result and source hashes to `runs/board-controls/verification.json`. Do not compile this testbench's stub together with the real `mazebits_cnn.v` module.

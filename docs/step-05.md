@@ -25,11 +25,15 @@ CPU_RESETN restores an empty map, start at the upper left, goal at the lower rig
 
 ## Board test
 
+The current working checkout is `X:\Desktop\EC_311\Project`. In Vivado, use **Open Project** to open the locally generated `runs/vivado/editor_gui/mazebits_editor.xpr` inside this checkout. It contains the four editor/VGA RTL files and `constraints/mazebits_editor.xdc`, with `mazebits_editor_top` selected for `xc7a100tcsg324-1`. Generated Vivado projects and bitstreams are local outputs, not tracked Git files.
+
+Programming an existing bitstream only needs **Open Hardware Manager**; opening an RTL project is optional. The existing Python environment remains on `C:` and can run scripts from this checkout. On another computer, use `python` from your own environment.
+
 From this checkout on the current computer:
 
 ~~~powershell
-Set-Location 'C:\Users\t1sun\Documents\ChatGPT\EC311_Project\mazebits-fpga'
-& '..\.venv\Scripts\python.exe' scripts/run_editor_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
+Set-Location 'X:\Desktop\EC_311\Project'
+& 'C:\Users\t1sun\Documents\ChatGPT\EC311_Project\.venv\Scripts\python.exe' scripts/run_editor_vivado.py --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
 ~~~
 
 The generated bitstream is `runs/vivado/editor/mazebits_editor.bit`. Build scripts do not program the board.
@@ -87,7 +91,7 @@ Reset uses synchronous sampling with FPGA initialization values. Only external i
 ## Verification
 
 ~~~powershell
-& '..\.venv\Scripts\python.exe' scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
+& 'C:\Users\t1sun\Documents\ChatGPT\EC311_Project\.venv\Scripts\python.exe' scripts/run_editor.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin
 ~~~
 
 With Icarus Verilog on PATH:
