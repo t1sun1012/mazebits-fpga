@@ -48,27 +48,57 @@ def run(command, directory, log_name, timeout):
         raise RuntimeError(f"Simulation failed; see {directory / log_name}")
     return result.stdout
 
-def verify_vector_bundle(directory):
+def verify_vector_bundle(directory, model_set="original"):
+    directory = Path(directory)
+    if model_set not in ("original", "structured"):
+        raise ValueError("unknown model set")
     manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
-    if (manifest["format"] != "mazebits-navigation-v1" or manifest["case_count"] != 4 or
+    count = 4 if model_set == "original" else 7
+    if (manifest["format"] != "mazebits-navigation-v1" or manifest["case_count"] != count or
+        manifest.get("model_set", "original") != model_set or
         manifest["event_stride_words"] != 11 or manifest["max_steps"] != 64 or
         manifest["cycles_per_decision"] != 3217153):
-        raise ValueError("incompatible navigation vector contract")
+        raise ValueError("incompatible navigation vector contract or model set")
+    cases = manifest["cases"]
+    if len(cases) != count or len({case["name"] for case in cases}) != count:
+        raise ValueError("navigation scenario coverage is incomplete")
+    expected_pairs = {(bits, case["name"]) for bits in (8,4) for case in cases}
+    episodes = manifest["episodes"]
+    if len(episodes) != count*2 or {(e["bits"], e["case"]) for e in episodes} != expected_pairs:
+        raise ValueError("navigation episode coverage is incomplete")
+    if any(e["steps"] != len(e["events"]) or not 0 <= e["steps"] <= 64 for e in episodes):
+        raise ValueError("invalid navigation reference event counts")
+    expected_files = {"walls.mem": (count,16), "starts.mem": (count,2), "goals.mem": (count,2)}
+    for bits in (8,4):
+        expected_files[f"events_w{bits}a{bits}.mem"] = (count*64*11,8)
+        expected_files[f"final_w{bits}a{bits}.mem"] = (count*6,8)
+    if set(manifest["files"]) != set(expected_files):
+        raise ValueError("navigation vector file set is incomplete")
     hashes = {}
     for name, record in manifest["files"].items():
-        if Path(name).name != name:
-            raise ValueError("vector filename must be local")
         path = directory / name
         if sha(path) != record["sha256"] or path.stat().st_size != record["bytes"]:
             raise ValueError(f"navigation vector corruption: {name}")
+        entries = path.read_text(encoding="ascii").split()
+        words, digits = expected_files[name]
+        if len(entries) != words or any(re.fullmatch(r"[0-9a-f]{"+str(digits)+r"}", word) is None for word in entries):
+            raise ValueError(f"invalid navigation vector words: {name}")
         hashes[path.relative_to(ROOT).as_posix()] = sha(path)
+    prefix = "cnn" if model_set == "original" else "cnn-structured"
+    for bits in (8,4):
+        for filename in ("manifest.json", "weights.mem", "biases.mem", "quantization.vh"):
+            name = f"model/{prefix}-w{bits}a{bits}/{filename}"
+            if manifest["source_sha256"].get(name) != sha(ROOT / name):
+                raise ValueError("navigation vectors belong to a different model set")
     for name, expected in manifest["source_sha256"].items():
+        if Path(name).is_absolute() or ".." in Path(name).parts or ":" in name or "\\" in name:
+            raise ValueError("reference source path must stay within the repository")
         path = ROOT / name
         if sha(path) != expected:
             raise ValueError(f"reference source changed; regenerate navigation vectors: {name}")
         hashes[name] = expected
     hashes[(directory / "manifest.json").relative_to(ROOT).as_posix()] = sha(directory / "manifest.json")
-    if manifest["scalar_checked_decisions"] != sum(e["steps"] for e in manifest["episodes"]):
+    if manifest["scalar_checked_decisions"] != sum(e["steps"] for e in episodes):
         raise ValueError("not all frozen decisions were checked with the scalar oracle")
     return manifest, hashes
 
@@ -82,12 +112,12 @@ def verify(args, name):
     generated_hashes = {}
     vectors = None
     if name == "cnn":
-        evidence = stage(directory)
+        evidence = stage(directory, model_set=args.model_set)
         source_hashes.update(evidence["source_sha256"])
         generated_hashes.update(evidence["generated_sha256"])
         hdl_files = [directory / f"mazebits_cnn_w{bits}a{bits}.v" for bits in (8,4)] + hdl_files
-        vector_dir = ROOT / "test_vectors/navigation"
-        vectors, hashes = verify_vector_bundle(vector_dir)
+        vector_dir = ROOT / ("test_vectors/navigation" if args.model_set == "original" else "test_vectors/navigation-structured")
+        vectors, hashes = verify_vector_bundle(vector_dir, args.model_set)
         source_hashes.update(hashes)
         for filename in vectors["files"]:
             shutil.copyfile(vector_dir / filename, directory / filename)
@@ -98,20 +128,26 @@ def verify(args, name):
         version = run([compiler,"-V"],directory,"version.log",60)
         run([compiler,"-g2012","-Wall","-s",top,"-o","test.vvp",*map(str,hdl_files)],
             directory,"compile.log",args.timeout)
-        output = run([runtime,"test.vvp"],directory,"simulation.log",args.timeout)
+        sim_command = [runtime,"test.vvp"]
+        if vectors is not None:
+            sim_command.append(f"+CASES_{vectors['case_count']}")
+        output = run(sim_command,directory,"simulation.log",args.timeout)
     else:
         compiler,elaborator,runtime = (executable(n,args.vivado_bin) for n in ("xvlog","xelab","xsim"))
         version = run([compiler,"-version"],directory,"version.log",60)
         run([compiler,"--sv",*map(str,hdl_files)],directory,"compile.log",args.timeout)
         run([elaborator,top,"--snapshot",top,"--timescale","1ns/1ps"],directory,"elaborate.log",args.timeout)
-        output = run([runtime,top,"--runall"],directory,"simulation.log",args.timeout)
+        sim_command = [runtime,top,"--runall"]
+        if vectors is not None:
+            sim_command.extend(["--testplusarg",f"CASES_{vectors['case_count']}"])
+        output = run(sim_command,directory,"simulation.log",args.timeout)
     matches = re.findall(r"^"+marker+r"(?:\s+[^\r\n]*)?$",output,re.MULTILINE)
     if len(matches) != 1:
         raise RuntimeError(f"Missing or duplicate {marker} marker")
     fields = dict(re.findall(r"(\w+)=([^\s]+)",matches[0]))
     if name == "cnn":
         expected_decisions = sum(e["steps"] for e in vectors["episodes"])
-        expected = {"cases":"4","episodes":"8","decisions":str(expected_decisions),
+        expected = {"cases":str(vectors["case_count"]),"episodes":str(vectors["case_count"]*2),"decisions":str(expected_decisions),
                     "score_words":str(expected_decisions*4),"cycles_per_decision":"3217153",
                     "reset_abort":"1","busy_restart":"1","snapshot":"1","hold_terminal":"1"}
         if any(fields.get(key) != value for key,value in expected.items()):
@@ -135,7 +171,7 @@ def verify(args, name):
         raise RuntimeError("Source changed during verification; rerun")
     if generated_hashes != {name:sha(directory/name) for name in generated_hashes}:
         raise RuntimeError("Staged source, memories, or vectors changed during simulation")
-    report = {"test":name,"top":top,"status":"pass","simulator":args.sim,
+    report = {"test":name,"top":top,"status":"pass","simulator":args.sim,"model_set":args.model_set,
               "tool_version":version.strip().splitlines()[:8],"pass_marker":matches[0],
               "coverage":fields,"source_sha256":source_hashes,"staged_sha256":generated_hashes,
               "elapsed_wall_seconds":round(time.perf_counter()-started,3),
@@ -148,9 +184,12 @@ def main():
     parser.add_argument("--sim","--simulator",dest="sim",choices=("iverilog","xsim"),default="iverilog")
     parser.add_argument("--vivado-bin",type=Path)
     parser.add_argument("--tests",choices=tuple(TESTS),nargs="+",default=list(TESTS))
-    parser.add_argument("--output-dir",type=Path,default=ROOT/"runs/navigation")
+    parser.add_argument("--model-set",choices=("original","structured"),default="original")
+    parser.add_argument("--output-dir",type=Path)
     parser.add_argument("--timeout",type=int,default=1800,help="Timeout seconds per external command")
     args=parser.parse_args()
+    if args.output_dir is None:
+        args.output_dir = ROOT / ("runs/navigation" if args.model_set == "original" else "runs/navigation-structured")
     reports=[verify(args,name) for name in args.tests]
     out=args.output_dir.absolute()/"verification.json"
     out.write_text(json.dumps({"format":"mazebits-navigation-verification-v1","tests":reports},indent=2)+"\n",encoding="utf-8",newline="\n")

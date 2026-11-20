@@ -36,10 +36,12 @@ module tb_navigation_cnn;
         .score_up(up4),.score_right(right4),.score_down(down4),.score_left(left4),
         .trace_valid(),.trace_layer(),.trace_index(),.trace_acc(),.trace_act());
 
-    reg [63:0] expected_walls[0:3];
-    reg [5:0] expected_starts[0:3],expected_goals[0:3];
-    reg [31:0] expected8[0:2815],expected4[0:2815];
-    reg [31:0] final8[0:23],final4[0:23];
+    localparam integer MAX_CASES=7;
+    reg [63:0] expected_walls[0:MAX_CASES-1];
+    reg [5:0] expected_starts[0:MAX_CASES-1],expected_goals[0:MAX_CASES-1];
+    reg [31:0] expected8[0:MAX_CASES*64*11-1],expected4[0:MAX_CASES*64*11-1];
+    reg [31:0] final8[0:MAX_CASES*6-1],final4[0:MAX_CASES*6-1];
+    integer case_count=4,expected_events=0;
     integer current_case=0,seen8=0,seen4=0,total_events=0,score_words=0;
     integer watchdog=0,base8,base4,c;
     reg checking=0;
@@ -122,13 +124,19 @@ module tb_navigation_cnn;
     endtask
 
     initial begin
-        $readmemh("walls.mem",expected_walls);
-        $readmemh("starts.mem",expected_starts);
-        $readmemh("goals.mem",expected_goals);
-        $readmemh("events_w8a8.mem",expected8);
-        $readmemh("events_w4a4.mem",expected4);
-        $readmemh("final_w8a8.mem",final8);
-        $readmemh("final_w4a4.mem",final4);
+        if ($value$plusargs("CASES_%d",case_count)) begin end
+        if (case_count<1 || case_count>MAX_CASES) $fatal(1,"invalid scenario count");
+        $readmemh("walls.mem",expected_walls,0,case_count-1);
+        $readmemh("starts.mem",expected_starts,0,case_count-1);
+        $readmemh("goals.mem",expected_goals,0,case_count-1);
+        $readmemh("events_w8a8.mem",expected8,0,case_count*64*11-1);
+        $readmemh("events_w4a4.mem",expected4,0,case_count*64*11-1);
+        $readmemh("final_w8a8.mem",final8,0,case_count*6-1);
+        $readmemh("final_w4a4.mem",final4,0,case_count*6-1);
+        for(c=0;c<case_count;c=c+1) begin
+            if (final8[c*6+1]>64 || final4[c*6+1]>64) $fatal(1,"invalid reference attempts");
+            expected_events=expected_events+final8[c*6+1]+final4[c*6+1];
+        end
         repeat(4) @(negedge clk);
         rst=0;
         launch_dummy;
@@ -138,9 +146,9 @@ module tb_navigation_cnn;
         rst=0;
         launch_dummy;
         // First golden run restarts BOTH real cores while they are busy.
-        for(c=0;c<4;c=c+1) run_case(c);
-        if (total_events!=60 || score_words!=240) $fatal(1,"incomplete scalar-vector coverage");
-        $display("PASS_NAVIGATION_CNN cases=4 episodes=8 decisions=60 score_words=240 cycles_per_decision=3217153 reset_abort=1 busy_restart=1 snapshot=1 hold_terminal=1");
+        for(c=0;c<case_count;c=c+1) run_case(c);
+        if (total_events!=expected_events || score_words!=expected_events*4) $fatal(1,"incomplete scalar-vector coverage");
+        $display("PASS_NAVIGATION_CNN cases=%0d episodes=%0d decisions=%0d score_words=%0d cycles_per_decision=3217153 reset_abort=1 busy_restart=1 snapshot=1 hold_terminal=1",case_count,case_count*2,total_events,score_words);
         $finish;
     end
 endmodule

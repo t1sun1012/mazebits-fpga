@@ -11,6 +11,29 @@ import re
 import shutil
 
 ROOT = Path(__file__).absolute().parents[1]
+MODEL_SETS = ("original", "structured")
+
+
+def model_directory(bits: int, model_set: str = "original") -> Path:
+    if model_set not in MODEL_SETS:
+        raise ValueError("model_set must be original or structured")
+    if bits not in (4, 8):
+        raise ValueError("precision must be 4 or 8")
+    prefix = "cnn-" if model_set == "original" else "cnn-structured-"
+    return ROOT / "model" / f"{prefix}w{bits}a{bits}"
+
+
+def validate_architecture(manifest: dict) -> None:
+    shapes = [[16, 3, 3, 3]] + [[16, 16, 3, 3]] * 7 + [[4, 16, 1, 1]]
+    layers = manifest.get("layers", [])
+    names = [f"conv{i}" for i in range(8)] + ["head"]
+    if (manifest.get("layer_count") != 9 or len(layers) != 9 or
+            [layer.get("name") for layer in layers] != names or
+            [layer.get("weight_shape") for layer in layers] != shapes or
+            [layer.get("bias_shape") for layer in layers] != [[16]] * 8 + [[4]] or
+            sum(layer.get("weight_count", 0) for layer in layers) != 16624 or
+            sum(layer.get("bias_count", 0) for layer in layers) != 132):
+        raise ValueError("model architecture is incompatible with the fixed CNN RTL")
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -28,7 +51,8 @@ def specialize(source: str, header: str, bits: int) -> str:
             raise ValueError("precision header does not match requested hardware")
     return source.replace(declaration, f"module mazebits_cnn_w{bits}a{bits} #(").replace(include, header.rstrip())
 
-def stage(destination: Path) -> dict:
+def stage(destination: Path, model_set: str = "original") -> dict:
+    model_directory(8, model_set)  # Validate selection before creating outputs.
     destination = Path(destination).absolute()
     destination.mkdir(parents=True, exist_ok=True)
     source_path = ROOT / "rtl/mazebits_cnn.v"
@@ -37,12 +61,16 @@ def stage(destination: Path) -> dict:
     generated = []
     # Validate every input before writing any model-dependent artifact.
     models = {}
+    identities = []
     for bits in (8, 4):
-        model = ROOT / f"model/cnn-w{bits}a{bits}"
+        model = model_directory(bits, model_set)
         manifest_path = model / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         if manifest["bits"] != bits or manifest["format"] != "mazebits-fixed-v1":
             raise ValueError("wrong model manifest")
+        validate_architecture(manifest)
+        identities.append({key: manifest["provenance"].get(key) for key in
+                           ("source_weights_sha256", "dataset_manifest_sha256", "calibration_sha256")})
         sources.append(manifest_path)
         for filename in ("weights.mem", "biases.mem", "quantization.vh"):
             path = model / filename
@@ -52,6 +80,17 @@ def stage(destination: Path) -> dict:
             sources.append(path)
         header = (model / "quantization.vh").read_text(encoding="utf-8")
         models[bits] = (model, specialize(source, header, bits))
+    if identities[0] != identities[1] or any(not isinstance(value, str) or
+            not re.fullmatch(r"[0-9a-f]{64}", value) for value in identities[0].values()):
+        raise ValueError("paired models must share the same floating-point source, dataset, and calibration")
+    float_model = ROOT / "model" / ("cnn-fp32" if model_set == "original" else "cnn-structured-fp32")
+    float_manifest = json.loads((float_model / "manifest.json").read_text(encoding="utf-8"))
+    expected_source = sha(float_model / "weights.npz")
+    if (identities[0]["source_weights_sha256"] != expected_source or
+            float_manifest.get("weights_sha256") != expected_source or
+            float_manifest.get("config") != {"channels": 16, "depth": 8}):
+        raise ValueError("selected integer model set does not match its floating-point checkpoint")
+    sources += [float_model / "manifest.json", float_model / "weights.npz"]
     before = {p.relative_to(ROOT).as_posix(): sha(p) for p in sources}
     for bits, (model, text) in models.items():
         generated_source = destination / f"mazebits_cnn_w{bits}a{bits}.v"
@@ -63,7 +102,9 @@ def stage(destination: Path) -> dict:
             generated.append(target)
     if before != {p.relative_to(ROOT).as_posix(): sha(p) for p in sources}:
         raise RuntimeError("source changed while staging")
-    evidence = {"format": "mazebits-dual-cnn-stage-v1", "precisions": [8, 4],
+    evidence = {"format": "mazebits-dual-cnn-stage-v1", "precisions": [8, 4], "model_set": model_set,
+                "source_checkpoint": identities[0],
+                "model_directories": {str(bits): model_directory(bits, model_set).relative_to(ROOT).as_posix() for bits in (8, 4)},
                 "source_sha256": before,
                 "generated_sha256": {p.name: sha(p) for p in generated}}
     (destination / "dual_cnn_provenance.json").write_text(
@@ -74,5 +115,6 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("destination", type=Path)
+    parser.add_argument("--model-set", choices=MODEL_SETS, default="original")
     args = parser.parse_args()
-    print(json.dumps(stage(args.destination), indent=2))
+    print(json.dumps(stage(args.destination, args.model_set), indent=2))
