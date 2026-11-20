@@ -1,0 +1,54 @@
+{
+  "format": "mazebits-policy-improvement-plot-v1",
+  "datasets": [
+    {
+      "name": "maze-v1",
+      "families": [
+        "bernoulli"
+      ],
+      "family_label": "Random obstacles",
+      "episodes": 3600,
+      "baseline_count": 3598,
+      "candidate_count": 3600,
+      "baseline_percent": 99.94444444444444,
+      "candidate_percent": 100.0
+    },
+    {
+      "name": "maze-v2",
+      "families": [
+        "barrier",
+        "bernoulli",
+        "corridor"
+      ],
+      "family_label": "Mixed maze families",
+      "episodes": 4800,
+      "baseline_count": 3675,
+      "candidate_count": 4773,
+      "baseline_percent": 76.5625,
+      "candidate_percent": 99.4375
+    }
+  ],
+  "selected_epoch": 35,
+  "epochs_completed": 45,
+  "initial_success_percent": 76.5625,
+  "selected_success_percent": 99.4375,
+  "y_axis_limits_percent": [
+    0,
+    100
+  ],
+  "contains_quantization_results": false,
+  "input_sha256": {
+    "runs/comparison-structured-v2/comparison.json": "f06a5554b1496ff0dd2b1f71cfb133704d6ef1d2a92627427de3b0c4a15c36dc",
+    "runs/comparison-structured-v2/diagnostics.json": "dd4199164b5bd1085d74c0f3c3cd82abe6390b58eb685e77ad3ae22b6f0ee0d8",
+    "runs/cnn-structured-v2/history.csv": "044b2310cc8f47956e6b67314bb6cc8bfd3c27335e25b9b6597a64cb0127db90",
+    "runs/cnn-structured-v2/metrics.json": "275beaabc113a07a0ce71b6ff3716bccf2aece5cd0ae73c478af404af8101c0d",
+    "runs/cnn-structured-v2/run.json": "1cec1f101900c46fdc53066bbd030cb0c8cb8e516237780a7d939b91e0194a3d",
+    "runs/cnn-structured-v2/initial_metrics.json": "fe4f0124f589e3b5f0b8a691cc82aa10d42adf74c8959322e3e9bde26c0318f4",
+    "runs/cnn-structured-v2/model/manifest.json": "726482b7676033f92062d7642df7cb58db677308ef27d3fe5852bb6581bd6e82",
+    "X:/Desktop/EC_311/Project/python/plot_policy_improvement.py": "2ce377113c7248ecc6e96f13efe8097982f91b65d4a5d451e96567fd092d2e5a"
+  },
+  "output_sha256": {
+    "policy_improvement.png": "3a2cb1b22e3ab9213d969004d2f9026b2503bc244e83ea5e74e24ec4dfbbef52",
+    "policy_improvement.svg": "23005bb96ee7cb9c4f261221351acaad0a731d3f0e30aac764bf06f5d5a376f6"
+  }
+}

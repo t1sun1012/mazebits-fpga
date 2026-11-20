@@ -136,6 +136,8 @@ def plot(comparison_dir: Path, training_dir: Path, output_dir: Path):
                 metadata={"Software":"MazeBits matplotlib report"})
     fig.savefig(output_dir / names[1], facecolor="white", metadata={"Date":None})
     plt.close(fig)
+    svg = output_dir / names[1]
+    svg.write_text(svg.read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
     input_paths = [comparison_dir / "comparison.json", comparison_dir / "diagnostics.json",
                    training_dir / "history.csv", training_dir / "metrics.json",
                    training_dir / "run.json", training_dir / "initial_metrics.json",

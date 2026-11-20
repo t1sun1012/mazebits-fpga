@@ -1,0 +1,151 @@
+{
+  "format": "mazebits-policy-improvement-summary-v1",
+  "rows": [
+    {
+      "validation": "v1",
+      "precision": "FP32",
+      "episodes": 3600,
+      "original_success_count": 3598,
+      "improved_success_count": 3600,
+      "original_success_rate": 0.9994444444444445,
+      "improved_success_rate": 1.0,
+      "original_outcomes": {
+        "blocked": 0,
+        "loop": 2,
+        "success": 3598,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 0,
+        "loop": 0,
+        "success": 3600,
+        "timeout": 0
+      }
+    },
+    {
+      "validation": "v1",
+      "precision": "W8A8",
+      "episodes": 3600,
+      "original_success_count": 3598,
+      "improved_success_count": 3600,
+      "original_success_rate": 0.9994444444444445,
+      "improved_success_rate": 1.0,
+      "original_outcomes": {
+        "blocked": 0,
+        "loop": 2,
+        "success": 3598,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 0,
+        "loop": 0,
+        "success": 3600,
+        "timeout": 0
+      }
+    },
+    {
+      "validation": "v1",
+      "precision": "W4A4",
+      "episodes": 3600,
+      "original_success_count": 3517,
+      "improved_success_count": 3557,
+      "original_success_rate": 0.9769444444444444,
+      "improved_success_rate": 0.9880555555555556,
+      "original_outcomes": {
+        "blocked": 10,
+        "loop": 73,
+        "success": 3517,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 6,
+        "loop": 37,
+        "success": 3557,
+        "timeout": 0
+      }
+    },
+    {
+      "validation": "v2",
+      "precision": "FP32",
+      "episodes": 4800,
+      "original_success_count": 3675,
+      "improved_success_count": 4773,
+      "original_success_rate": 0.765625,
+      "improved_success_rate": 0.994375,
+      "original_outcomes": {
+        "blocked": 2,
+        "loop": 1123,
+        "success": 3675,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 0,
+        "loop": 27,
+        "success": 4773,
+        "timeout": 0
+      }
+    },
+    {
+      "validation": "v2",
+      "precision": "W8A8",
+      "episodes": 4800,
+      "original_success_count": 3670,
+      "improved_success_count": 4766,
+      "original_success_rate": 0.7645833333333333,
+      "improved_success_rate": 0.9929166666666667,
+      "original_outcomes": {
+        "blocked": 1,
+        "loop": 1129,
+        "success": 3670,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 0,
+        "loop": 34,
+        "success": 4766,
+        "timeout": 0
+      }
+    },
+    {
+      "validation": "v2",
+      "precision": "W4A4",
+      "episodes": 4800,
+      "original_success_count": 3156,
+      "improved_success_count": 4050,
+      "original_success_rate": 0.6575,
+      "improved_success_rate": 0.84375,
+      "original_outcomes": {
+        "blocked": 198,
+        "loop": 1446,
+        "success": 3156,
+        "timeout": 0
+      },
+      "improved_outcomes": {
+        "blocked": 37,
+        "loop": 713,
+        "success": 4050,
+        "timeout": 0
+      }
+    }
+  ],
+  "scope": "CPU FP32 and memory-file integer evaluation on shared validation episodes; no new-weight FPGA timing/resource/board verification",
+  "architecture_changed": false,
+  "parameters": 16756,
+  "packed_parameter_bytes": {
+    "FP32": 67024,
+    "W8A8": 17152,
+    "W4A4": 8840
+  },
+  "test_status": "both reserved-test partitions remain unevaluated",
+  "comparison_runner_revision": "742f8c6 (source hashes captured with all evaluation sources stable; later commit adds automatic source-change rejection)",
+  "sources": {
+    "results/policy-improvement/comparison.json": "f06a5554b1496ff0dd2b1f71cfb133704d6ef1d2a92627427de3b0c4a15c36dc",
+    "results/quantization/comparison.json": "f5aad477b5494c26bf996ffdfa97ea3038e42fb6e2e8782775579f9e61c49566",
+    "results/policy-improvement/quantization/comparison.json": "74d1f51506969eb225d0bd721017d4d9f6dbdcdcd96c763b5ee5fb610b727c65",
+    "results/policy-improvement/cross-validation/original-on-v2/comparison.json": "f01d5f317a779e3c784ced90a4cca16b3bd46a196e8bf69fa3f734f47968b32e",
+    "results/policy-improvement/cross-validation/improved-on-v1/w8a8/metrics.json": "27ee9436a51342837cc1157894dcfe4e4b08939da415fb0025a013d50ef29e03",
+    "results/policy-improvement/cross-validation/improved-on-v1/w4a4/metrics.json": "39b74c6830a8ec74e60222fd27626a9457592cbc6f5a15156ada2cb8b8b891ab",
+    "results/policy-improvement/cross-validation/original-on-v2/w8a8/metrics.json": "a50108e42096831f9a9fe26a8b86042b8a7b3691cf71b395b464969e62f68caa",
+    "results/policy-improvement/cross-validation/original-on-v2/w4a4/metrics.json": "e4bed3f19acaa1d4b93877cb2535ef6360d6f948bd1de1abd6ff51c363c6909c"
+  }
+}

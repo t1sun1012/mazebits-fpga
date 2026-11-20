@@ -1,0 +1,111 @@
+{
+  "initialization": {
+    "manifest_sha256": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+    "method": "fine-tune existing floating-point weights; new Adam optimizer",
+    "source_dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+  },
+  "rollout_metrics": {
+    "attempted_actions": 33341,
+    "blocked_proposal_rate": 5.998620317327015e-05,
+    "blocked_proposals": 2,
+    "by_requested_density": {
+      "0.1": {
+        "attempted_actions": 4351,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 624,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 0,
+          "success": 624,
+          "timeout": 0
+        },
+        "success_count": 624,
+        "success_rate": 1.0,
+        "successful_mean_path_ratio": 1.0,
+        "successful_mean_steps": 6.972756410256411,
+        "successful_optimal_rate": 1.0,
+        "successful_path_ratio_count": 624,
+        "successful_zero_step_count": 0
+      },
+      "0.2": {
+        "attempted_actions": 4262,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 600,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 7,
+          "success": 593,
+          "timeout": 0
+        },
+        "success_count": 593,
+        "success_rate": 0.9883333333333333,
+        "successful_mean_path_ratio": 1.00024090580583,
+        "successful_mean_steps": 7.138279932546374,
+        "successful_optimal_rate": 0.9983136593591906,
+        "successful_path_ratio_count": 593,
+        "successful_zero_step_count": 0
+      },
+      "0.3": {
+        "attempted_actions": 5262,
+        "blocked_proposal_rate": 0.0,
+        "blocked_proposals": 0,
+        "episodes": 696,
+        "outcomes": {
+          "blocked": 0,
+          "loop": 18,
+          "success": 678,
+          "timeout": 0
+        },
+        "success_count": 678,
+        "success_rate": 0.9741379310344828,
+        "successful_mean_path_ratio": 1.0004648252435864,
+        "successful_mean_steps": 7.578171091445427,
+        "successful_optimal_rate": 0.9970501474926253,
+        "successful_path_ratio_count": 678,
+        "successful_zero_step_count": 0
+      },
+      "unknown": {
+        "attempted_actions": 19466,
+        "blocked_proposal_rate": 0.00010274324463166547,
+        "blocked_proposals": 2,
+        "episodes": 2880,
+        "outcomes": {
+          "blocked": 2,
+          "loop": 1098,
+          "success": 1780,
+          "timeout": 0
+        },
+        "success_count": 1780,
+        "success_rate": 0.6180555555555556,
+        "successful_mean_path_ratio": 1.0005328566564522,
+        "successful_mean_steps": 7.247752808988764,
+        "successful_optimal_rate": 0.998314606741573,
+        "successful_path_ratio_count": 1780,
+        "successful_zero_step_count": 0
+      }
+    },
+    "episodes": 4800,
+    "outcomes": {
+      "blocked": 2,
+      "loop": 1123,
+      "success": 3675,
+      "timeout": 0
+    },
+    "success_count": 3675,
+    "success_rate": 0.765625,
+    "successful_mean_path_ratio": 1.000382719321495,
+    "successful_mean_steps": 7.244353741496599,
+    "successful_optimal_rate": 0.9983673469387755,
+    "successful_path_ratio_count": 3675,
+    "successful_zero_step_count": 0
+  },
+  "state_metrics": {
+    "optimal_action_accuracy": 0.9386353566681436,
+    "optimal_action_correct": 25422,
+    "optimal_set_loss": 0.2096018211195624,
+    "states": 27084
+  }
+}

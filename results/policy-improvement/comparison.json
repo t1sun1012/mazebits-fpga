@@ -1,0 +1,967 @@
+{
+  "configuration": {
+    "action_selection": "raw argmax; no action masking or route repair",
+    "batch_size": 512,
+    "distance_groups": [
+      "0-9",
+      "10-19",
+      "20+"
+    ],
+    "max_steps": 64,
+    "seed": 311,
+    "threads": 4
+  },
+  "datasets": [
+    {
+      "directory": "data/maze-v1",
+      "manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+      "models": {
+        "baseline": {
+          "rollouts": {
+            "attempted_actions": 19966,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "by_bfs_distance": {
+              "0-9": {
+                "attempted_actions": 15943,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 3241,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 3241,
+                  "timeout": 0
+                },
+                "success_count": 3241,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.000077136686208,
+                "successful_mean_steps": 4.919160752854057,
+                "successful_optimal_rate": 0.9996914532551682,
+                "successful_path_ratio_count": 3241,
+                "successful_zero_step_count": 0
+              },
+              "10-19": {
+                "attempted_actions": 4023,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 359,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 2,
+                  "success": 357,
+                  "timeout": 0
+                },
+                "success_count": 357,
+                "success_rate": 0.9944289693593314,
+                "successful_mean_path_ratio": 1.0021116138763198,
+                "successful_mean_steps": 11.243697478991596,
+                "successful_optimal_rate": 0.988795518207283,
+                "successful_path_ratio_count": 357,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_family": {
+              "bernoulli": {
+                "attempted_actions": 19966,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 3600,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 2,
+                  "success": 3598,
+                  "timeout": 0
+                },
+                "success_count": 3598,
+                "success_rate": 0.9994444444444445,
+                "successful_mean_path_ratio": 1.0002790011544875,
+                "successful_mean_steps": 5.546692607003891,
+                "successful_optimal_rate": 0.9986103390772652,
+                "successful_path_ratio_count": 3598,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_requested_density": {
+              "0.1": {
+                "attempted_actions": 6332,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1176,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 2,
+                  "success": 1174,
+                  "timeout": 0
+                },
+                "success_count": 1174,
+                "success_rate": 0.9982993197278912,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 5.385860306643952,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 1174,
+                "successful_zero_step_count": 0
+              },
+              "0.2": {
+                "attempted_actions": 7982,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1440,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 1440,
+                  "timeout": 0
+                },
+                "success_count": 1440,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0005235042735043,
+                "successful_mean_steps": 5.543055555555555,
+                "successful_optimal_rate": 0.9972222222222222,
+                "successful_path_ratio_count": 1440,
+                "successful_zero_step_count": 0
+              },
+              "0.3": {
+                "attempted_actions": 5652,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 984,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 984,
+                  "timeout": 0
+                },
+                "success_count": 984,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0002540650406504,
+                "successful_mean_steps": 5.7439024390243905,
+                "successful_optimal_rate": 0.9989837398373984,
+                "successful_path_ratio_count": 984,
+                "successful_zero_step_count": 0
+              }
+            },
+            "episodes": 3600,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 2,
+              "success": 3598,
+              "timeout": 0
+            },
+            "success_count": 3598,
+            "success_rate": 0.9994444444444445,
+            "successful_mean_path_ratio": 1.0002790011544875,
+            "successful_mean_steps": 5.546692607003891,
+            "successful_optimal_rate": 0.9986103390772652,
+            "successful_path_ratio_count": 3598,
+            "successful_zero_step_count": 0
+          },
+          "states": {
+            "by_bfs_distance": {
+              "0-9": {
+                "optimal_action_accuracy": 0.9997973554891332,
+                "optimal_action_correct": 19735,
+                "optimal_set_loss": 0.0003903441301347081,
+                "states": 19739
+              },
+              "10-19": {
+                "optimal_action_accuracy": 0.9943231441048035,
+                "optimal_action_correct": 2277,
+                "optimal_set_loss": 0.011389828665287734,
+                "states": 2290
+              }
+            },
+            "by_family": {
+              "bernoulli": {
+                "optimal_action_accuracy": 0.9992282899813881,
+                "optimal_action_correct": 22012,
+                "optimal_set_loss": 0.0015337832143192116,
+                "states": 22029
+              }
+            },
+            "optimal_action_accuracy": 0.9992282899813881,
+            "optimal_action_correct": 22012,
+            "optimal_set_loss": 0.0015337832143192116,
+            "states": 22029
+          },
+          "trajectory_file": "dataset-1-baseline-rollouts.json",
+          "trajectory_sha256": "3fd99f14779441dcace23620ce84f837c20f3acb0751402d27091e05f6a1cab9"
+        },
+        "candidate": {
+          "rollouts": {
+            "attempted_actions": 19985,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "by_bfs_distance": {
+              "0-9": {
+                "attempted_actions": 15943,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 3241,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 3241,
+                  "timeout": 0
+                },
+                "success_count": 3241,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.000068565943296,
+                "successful_mean_steps": 4.919160752854057,
+                "successful_optimal_rate": 0.9996914532551682,
+                "successful_path_ratio_count": 3241,
+                "successful_zero_step_count": 0
+              },
+              "10-19": {
+                "attempted_actions": 4042,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 359,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 359,
+                  "timeout": 0
+                },
+                "success_count": 359,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0011142061281337,
+                "successful_mean_steps": 11.259052924791087,
+                "successful_optimal_rate": 0.9944289693593314,
+                "successful_path_ratio_count": 359,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_family": {
+              "bernoulli": {
+                "attempted_actions": 19985,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 3600,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 3600,
+                  "timeout": 0
+                },
+                "success_count": 3600,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0001728395061729,
+                "successful_mean_steps": 5.551388888888889,
+                "successful_optimal_rate": 0.9991666666666666,
+                "successful_path_ratio_count": 3600,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_requested_density": {
+              "0.1": {
+                "attempted_actions": 6355,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1176,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 1176,
+                  "timeout": 0
+                },
+                "success_count": 1176,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 5.40391156462585,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 1176,
+                "successful_zero_step_count": 0
+              },
+              "0.2": {
+                "attempted_actions": 7978,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1440,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 1440,
+                  "timeout": 0
+                },
+                "success_count": 1440,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0002777777777778,
+                "successful_mean_steps": 5.540277777777778,
+                "successful_optimal_rate": 0.9986111111111111,
+                "successful_path_ratio_count": 1440,
+                "successful_zero_step_count": 0
+              },
+              "0.3": {
+                "attempted_actions": 5652,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 984,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 984,
+                  "timeout": 0
+                },
+                "success_count": 984,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0002258355916893,
+                "successful_mean_steps": 5.7439024390243905,
+                "successful_optimal_rate": 0.9989837398373984,
+                "successful_path_ratio_count": 984,
+                "successful_zero_step_count": 0
+              }
+            },
+            "episodes": 3600,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 0,
+              "success": 3600,
+              "timeout": 0
+            },
+            "success_count": 3600,
+            "success_rate": 1.0,
+            "successful_mean_path_ratio": 1.0001728395061729,
+            "successful_mean_steps": 5.551388888888889,
+            "successful_optimal_rate": 0.9991666666666666,
+            "successful_path_ratio_count": 3600,
+            "successful_zero_step_count": 0
+          },
+          "states": {
+            "by_bfs_distance": {
+              "0-9": {
+                "optimal_action_accuracy": 0.9996960332336998,
+                "optimal_action_correct": 19733,
+                "optimal_set_loss": 0.0006548690544664513,
+                "states": 19739
+              },
+              "10-19": {
+                "optimal_action_accuracy": 0.9973799126637555,
+                "optimal_action_correct": 2284,
+                "optimal_set_loss": 0.008429436704477369,
+                "states": 2290
+              }
+            },
+            "by_family": {
+              "bernoulli": {
+                "optimal_action_accuracy": 0.999455263516274,
+                "optimal_action_correct": 22017,
+                "optimal_set_loss": 0.0014630655190597146,
+                "states": 22029
+              }
+            },
+            "optimal_action_accuracy": 0.999455263516274,
+            "optimal_action_correct": 22017,
+            "optimal_set_loss": 0.0014630655190597146,
+            "states": 22029
+          },
+          "trajectory_file": "dataset-1-candidate-rollouts.json",
+          "trajectory_sha256": "a5460b6c35c24d5fba6470ebb1e9def1f914c1310d3c4950d006fa9900ab4dfe"
+        }
+      },
+      "paired_outcomes": {
+        "both_failed": 0,
+        "both_success": 3598,
+        "candidate_gained_success": 2,
+        "candidate_lost_success": 0,
+        "episodes": 3600,
+        "net_success_count_change": 2
+      },
+      "split": "val",
+      "val_metadata_sha256": "f3d9af705d80abcc6262b790d92faebb6ab1531005bfdc001d66d982f1897c06",
+      "val_npz_sha256": "3763278e31c7e87fcedbf499f013b13afd5033984faaef676612947f9925c812"
+    },
+    {
+      "directory": "data/maze-v2",
+      "manifest_sha256": "bb7190b3b0338d7204a03ab159a67e7d5edbc4c84abaabcebcaa36c368ccbe3a",
+      "models": {
+        "baseline": {
+          "rollouts": {
+            "attempted_actions": 33341,
+            "blocked_proposal_rate": 5.998620317327015e-05,
+            "blocked_proposals": 2,
+            "by_bfs_distance": {
+              "0-9": {
+                "attempted_actions": 13956,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 2726,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 62,
+                  "success": 2664,
+                  "timeout": 0
+                },
+                "success_count": 2664,
+                "success_rate": 0.9772560528246516,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 5.118993993993994,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 2664,
+                "successful_zero_step_count": 0
+              },
+              "10-19": {
+                "attempted_actions": 15013,
+                "blocked_proposal_rate": 0.000133217877839206,
+                "blocked_proposals": 2,
+                "episodes": 1595,
+                "outcomes": {
+                  "blocked": 2,
+                  "loop": 616,
+                  "success": 977,
+                  "timeout": 0
+                },
+                "success_count": 977,
+                "success_rate": 0.6125391849529781,
+                "successful_mean_path_ratio": 1.0014396044078746,
+                "successful_mean_steps": 12.499488229273286,
+                "successful_optimal_rate": 0.9938587512794268,
+                "successful_path_ratio_count": 977,
+                "successful_zero_step_count": 0
+              },
+              "20+": {
+                "attempted_actions": 4372,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 479,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 445,
+                  "success": 34,
+                  "timeout": 0
+                },
+                "success_count": 34,
+                "success_rate": 0.0709812108559499,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 22.764705882352942,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 34,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_family": {
+              "barrier": {
+                "attempted_actions": 7039,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 960,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 108,
+                  "success": 852,
+                  "timeout": 0
+                },
+                "success_count": 852,
+                "success_rate": 0.8875,
+                "successful_mean_path_ratio": 1.0007042253521128,
+                "successful_mean_steps": 7.596244131455399,
+                "successful_optimal_rate": 0.9988262910798122,
+                "successful_path_ratio_count": 852,
+                "successful_zero_step_count": 0
+              },
+              "bernoulli": {
+                "attempted_actions": 13875,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1920,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 25,
+                  "success": 1895,
+                  "timeout": 0
+                },
+                "success_count": 1895,
+                "success_rate": 0.9869791666666666,
+                "successful_mean_path_ratio": 1.0002416932232236,
+                "successful_mean_steps": 7.241160949868074,
+                "successful_optimal_rate": 0.9984168865435357,
+                "successful_path_ratio_count": 1895,
+                "successful_zero_step_count": 0
+              },
+              "corridor": {
+                "attempted_actions": 12427,
+                "blocked_proposal_rate": 0.0001609398889514766,
+                "blocked_proposals": 2,
+                "episodes": 1920,
+                "outcomes": {
+                  "blocked": 2,
+                  "loop": 990,
+                  "success": 928,
+                  "timeout": 0
+                },
+                "success_count": 928,
+                "success_rate": 0.48333333333333334,
+                "successful_mean_path_ratio": 1.0003755224660398,
+                "successful_mean_steps": 6.927801724137931,
+                "successful_optimal_rate": 0.9978448275862069,
+                "successful_path_ratio_count": 928,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_requested_density": {
+              "0.1": {
+                "attempted_actions": 4351,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 624,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 624,
+                  "timeout": 0
+                },
+                "success_count": 624,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 6.972756410256411,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 624,
+                "successful_zero_step_count": 0
+              },
+              "0.2": {
+                "attempted_actions": 4262,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 600,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 7,
+                  "success": 593,
+                  "timeout": 0
+                },
+                "success_count": 593,
+                "success_rate": 0.9883333333333333,
+                "successful_mean_path_ratio": 1.00024090580583,
+                "successful_mean_steps": 7.138279932546374,
+                "successful_optimal_rate": 0.9983136593591906,
+                "successful_path_ratio_count": 593,
+                "successful_zero_step_count": 0
+              },
+              "0.3": {
+                "attempted_actions": 5262,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 696,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 18,
+                  "success": 678,
+                  "timeout": 0
+                },
+                "success_count": 678,
+                "success_rate": 0.9741379310344828,
+                "successful_mean_path_ratio": 1.0004648252435864,
+                "successful_mean_steps": 7.578171091445427,
+                "successful_optimal_rate": 0.9970501474926253,
+                "successful_path_ratio_count": 678,
+                "successful_zero_step_count": 0
+              },
+              "unknown": {
+                "attempted_actions": 19466,
+                "blocked_proposal_rate": 0.00010274324463166547,
+                "blocked_proposals": 2,
+                "episodes": 2880,
+                "outcomes": {
+                  "blocked": 2,
+                  "loop": 1098,
+                  "success": 1780,
+                  "timeout": 0
+                },
+                "success_count": 1780,
+                "success_rate": 0.6180555555555556,
+                "successful_mean_path_ratio": 1.0005328566564522,
+                "successful_mean_steps": 7.247752808988764,
+                "successful_optimal_rate": 0.998314606741573,
+                "successful_path_ratio_count": 1780,
+                "successful_zero_step_count": 0
+              }
+            },
+            "episodes": 4800,
+            "outcomes": {
+              "blocked": 2,
+              "loop": 1123,
+              "success": 3675,
+              "timeout": 0
+            },
+            "success_count": 3675,
+            "success_rate": 0.765625,
+            "successful_mean_path_ratio": 1.000382719321495,
+            "successful_mean_steps": 7.244353741496599,
+            "successful_optimal_rate": 0.9983673469387755,
+            "successful_path_ratio_count": 3675,
+            "successful_zero_step_count": 0
+          },
+          "states": {
+            "by_bfs_distance": {
+              "0-9": {
+                "optimal_action_accuracy": 0.9901641438334291,
+                "optimal_action_correct": 15503,
+                "optimal_set_loss": 0.04256402624668332,
+                "states": 15657
+              },
+              "10-19": {
+                "optimal_action_accuracy": 0.8557329784874695,
+                "optimal_action_correct": 7717,
+                "optimal_set_loss": 0.49854955467793916,
+                "states": 9018
+              },
+              "20+": {
+                "optimal_action_accuracy": 0.9140722291407223,
+                "optimal_action_correct": 2202,
+                "optimal_set_loss": 0.21357858626364473,
+                "states": 2409
+              }
+            },
+            "by_family": {
+              "barrier": {
+                "optimal_action_accuracy": 0.9646594613141191,
+                "optimal_action_correct": 5623,
+                "optimal_set_loss": 0.12713535532654405,
+                "states": 5829
+              },
+              "bernoulli": {
+                "optimal_action_accuracy": 0.9964279491200557,
+                "optimal_action_correct": 11437,
+                "optimal_set_loss": 0.013364754657459541,
+                "states": 11478
+              },
+              "corridor": {
+                "optimal_action_accuracy": 0.8552725785005626,
+                "optimal_action_correct": 8362,
+                "optimal_set_loss": 0.4891462633918738,
+                "states": 9777
+              }
+            },
+            "optimal_action_accuracy": 0.9386353566681436,
+            "optimal_action_correct": 25422,
+            "optimal_set_loss": 0.20960181868775277,
+            "states": 27084
+          },
+          "trajectory_file": "dataset-2-baseline-rollouts.json",
+          "trajectory_sha256": "cdb9d9097acfa9fa17c3a09e42e0a58a3f8ea36b5e9a4464ce01bb1b2ee34c57"
+        },
+        "candidate": {
+          "rollouts": {
+            "attempted_actions": 46972,
+            "blocked_proposal_rate": 0.0,
+            "blocked_proposals": 0,
+            "by_bfs_distance": {
+              "0-9": {
+                "attempted_actions": 14121,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 2726,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 2726,
+                  "timeout": 0
+                },
+                "success_count": 2726,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 5.1801173881144535,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 2726,
+                "successful_zero_step_count": 0
+              },
+              "10-19": {
+                "attempted_actions": 21262,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1595,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 12,
+                  "success": 1583,
+                  "timeout": 0
+                },
+                "success_count": 1583,
+                "success_rate": 0.9924764890282132,
+                "successful_mean_path_ratio": 1.0006114069127334,
+                "successful_mean_steps": 13.404927353126974,
+                "successful_optimal_rate": 0.9974731522425774,
+                "successful_path_ratio_count": 1583,
+                "successful_zero_step_count": 0
+              },
+              "20+": {
+                "attempted_actions": 11589,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 479,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 15,
+                  "success": 464,
+                  "timeout": 0
+                },
+                "success_count": 464,
+                "success_rate": 0.9686847599164927,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 24.711206896551722,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 464,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_family": {
+              "barrier": {
+                "attempted_actions": 8051,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 960,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 12,
+                  "success": 948,
+                  "timeout": 0
+                },
+                "success_count": 948,
+                "success_rate": 0.9875,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 8.431434599156118,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 948,
+                "successful_zero_step_count": 0
+              },
+              "bernoulli": {
+                "attempted_actions": 14012,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1920,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 1,
+                  "success": 1919,
+                  "timeout": 0
+                },
+                "success_count": 1919,
+                "success_rate": 0.9994791666666667,
+                "successful_mean_path_ratio": 1.000504354946773,
+                "successful_mean_steps": 7.300677436164669,
+                "successful_optimal_rate": 0.9979155810317873,
+                "successful_path_ratio_count": 1919,
+                "successful_zero_step_count": 0
+              },
+              "corridor": {
+                "attempted_actions": 24909,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 1920,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 14,
+                  "success": 1906,
+                  "timeout": 0
+                },
+                "success_count": 1906,
+                "success_rate": 0.9927083333333333,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 13.013641133263379,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 1906,
+                "successful_zero_step_count": 0
+              }
+            },
+            "by_requested_density": {
+              "0.1": {
+                "attempted_actions": 4351,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 624,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 624,
+                  "timeout": 0
+                },
+                "success_count": 624,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 6.972756410256411,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 624,
+                "successful_zero_step_count": 0
+              },
+              "0.2": {
+                "attempted_actions": 4321,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 600,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 1,
+                  "success": 599,
+                  "timeout": 0
+                },
+                "success_count": 599,
+                "success_rate": 0.9983333333333333,
+                "successful_mean_path_ratio": 1.0016157882184593,
+                "successful_mean_steps": 7.210350584307179,
+                "successful_optimal_rate": 0.993322203672788,
+                "successful_path_ratio_count": 599,
+                "successful_zero_step_count": 0
+              },
+              "0.3": {
+                "attempted_actions": 5340,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 696,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 0,
+                  "success": 696,
+                  "timeout": 0
+                },
+                "success_count": 696,
+                "success_rate": 1.0,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 7.672413793103448,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 696,
+                "successful_zero_step_count": 0
+              },
+              "unknown": {
+                "attempted_actions": 32960,
+                "blocked_proposal_rate": 0.0,
+                "blocked_proposals": 0,
+                "episodes": 2880,
+                "outcomes": {
+                  "blocked": 0,
+                  "loop": 26,
+                  "success": 2854,
+                  "timeout": 0
+                },
+                "success_count": 2854,
+                "success_rate": 0.9909722222222223,
+                "successful_mean_path_ratio": 1.0,
+                "successful_mean_steps": 11.491590749824807,
+                "successful_optimal_rate": 1.0,
+                "successful_path_ratio_count": 2854,
+                "successful_zero_step_count": 0
+              }
+            },
+            "episodes": 4800,
+            "outcomes": {
+              "blocked": 0,
+              "loop": 27,
+              "success": 4773,
+              "timeout": 0
+            },
+            "success_count": 4773,
+            "success_rate": 0.994375,
+            "successful_mean_path_ratio": 1.0002027775283588,
+            "successful_mean_steps": 9.806620574062434,
+            "successful_optimal_rate": 0.9991619526503247,
+            "successful_path_ratio_count": 4773,
+            "successful_zero_step_count": 0
+          },
+          "states": {
+            "by_bfs_distance": {
+              "0-9": {
+                "optimal_action_accuracy": 0.9995529156287922,
+                "optimal_action_correct": 15650,
+                "optimal_set_loss": 0.00163357685890936,
+                "states": 15657
+              },
+              "10-19": {
+                "optimal_action_accuracy": 0.9946773120425815,
+                "optimal_action_correct": 8970,
+                "optimal_set_loss": 0.02075066273533391,
+                "states": 9018
+              },
+              "20+": {
+                "optimal_action_accuracy": 0.9970942299709423,
+                "optimal_action_correct": 2402,
+                "optimal_set_loss": 0.00929987425624013,
+                "states": 2409
+              }
+            },
+            "by_family": {
+              "barrier": {
+                "optimal_action_accuracy": 0.9955395436610053,
+                "optimal_action_correct": 5803,
+                "optimal_set_loss": 0.013997113608561365,
+                "states": 5829
+              },
+              "bernoulli": {
+                "optimal_action_accuracy": 0.9978219201951559,
+                "optimal_action_correct": 11453,
+                "optimal_set_loss": 0.01021369788513343,
+                "states": 11478
+              },
+              "corridor": {
+                "optimal_action_accuracy": 0.9988749105042447,
+                "optimal_action_correct": 9766,
+                "optimal_set_loss": 0.0037115461757800763,
+                "states": 9777
+              }
+            },
+            "optimal_action_accuracy": 0.997710825579678,
+            "optimal_action_correct": 27022,
+            "optimal_set_loss": 0.008680763052372897,
+            "states": 27084
+          },
+          "trajectory_file": "dataset-2-candidate-rollouts.json",
+          "trajectory_sha256": "b1bec54d194107916770d1c73d13929523608d920b1fe11dabd49a826e4a651d"
+        }
+      },
+      "paired_outcomes": {
+        "both_failed": 24,
+        "both_success": 3672,
+        "candidate_gained_success": 1101,
+        "candidate_lost_success": 3,
+        "episodes": 4800,
+        "net_success_count_change": 1098
+      },
+      "split": "val",
+      "val_metadata_sha256": "06c3fb176550134dffba07619ac71e3e481bf87288f82e4b0b667d82929c22a8",
+      "val_npz_sha256": "37907ec4d3871ba6dbbc865e6b0765ac480e81c4976272b351b1a83eeb1ccdd8"
+    }
+  ],
+  "diagnostic_status": "known development cases; excluded from aggregate validation metrics",
+  "diagnostics_file": "diagnostics.json",
+  "diagnostics_sha256": "dd4199164b5bd1085d74c0f3c3cd82abe6390b58eb685e77ad3ae22b6f0ee0d8",
+  "elapsed_seconds": 5.423474800307304,
+  "environment": {
+    "device": "cpu",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "torch": "2.9.1+cpu"
+  },
+  "format": "mazebits-fp32-comparison-v1",
+  "inputs_unchanged_during_evaluation": true,
+  "models": {
+    "baseline": {
+      "config": {
+        "channels": 16,
+        "depth": 8
+      },
+      "directory": "model/cnn-fp32",
+      "manifest_sha256": "32986a461791a5cb5a7dab1b27820ac5834e58f8948515c0d336bd19b52ad5fd",
+      "training_dataset_manifest_sha256": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+      "weights_sha256": "32ac632d1da6b88bbf5887ab1a6785004d9888b271ddece7d0e58b3e65be224c"
+    },
+    "candidate": {
+      "config": {
+        "channels": 16,
+        "depth": 8
+      },
+      "directory": "runs/cnn-structured-v2/model",
+      "manifest_sha256": "726482b7676033f92062d7642df7cb58db677308ef27d3fe5852bb6581bd6e82",
+      "training_dataset_manifest_sha256": "bb7190b3b0338d7204a03ab159a67e7d5edbc4c84abaabcebcaa36c368ccbe3a",
+      "weights_sha256": "386e690a94dfe24f20d84af475829585c1ea81990b22fcca3e46fd3b7b758ec9"
+    }
+  },
+  "source_sha256": {
+    "python/compare_policies.py": "e1b0c7732e15af3db67e3f23c9307de5f4fc96078ccbe4d6327149f64d92a351",
+    "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+    "python/mazebits/evaluation.py": "9d548e4f2c5544219862ef71cb655983f20f706106ab0d5410b2975dae1bb83e",
+    "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+    "python/mazebits/model.py": "14a17bdca1da0b026727ee2c253c481d2175aa5842a772bf7a72e7eafb34e293",
+    "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+    "python/mazebits/reference.py": "db720e00d61efca9603d7c132289f7b7856a7238bec02bf654215676f6320abc",
+    "python/mazebits/training.py": "e48e6eaaf6b5ec92603b2cca2a6ed008bcc4af5b5939ed28b9637c1bfdec9113"
+  },
+  "test_status": "reserved; final-test arrays and episode files not loaded"
+}

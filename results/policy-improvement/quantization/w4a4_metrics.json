@@ -1,0 +1,223 @@
+{
+  "actions_sha256_uint8": "a639c156290223c89b4d597e2ad3b29cc616d33dce88a594a1507bd28221d306",
+  "float_action_agreement": 0.9130482941958352,
+  "float_action_differences": 2355,
+  "logical_parameter_bytes": 8840,
+  "max_absolute_logit_error": 68.72447204589844,
+  "mean_absolute_logit_error": 5.233914984786113,
+  "model_manifest_sha256": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+  "optimal_action_accuracy": 0.9754467582336435,
+  "optimal_action_correct": 26419,
+  "precision": "W4A4",
+  "rollout_arithmetic_statistics": {
+    "conv0": {
+      "acc_max": 19,
+      "acc_min": -31,
+      "high_saturations": 296,
+      "values": 40522752
+    },
+    "conv1": {
+      "acc_max": 499,
+      "acc_min": -573,
+      "high_saturations": 41703,
+      "values": 40522752
+    },
+    "conv2": {
+      "acc_max": 798,
+      "acc_min": -919,
+      "high_saturations": 12675,
+      "values": 40522752
+    },
+    "conv3": {
+      "acc_max": 634,
+      "acc_min": -794,
+      "high_saturations": 1660,
+      "values": 40522752
+    },
+    "conv4": {
+      "acc_max": 565,
+      "acc_min": -777,
+      "high_saturations": 104,
+      "values": 40522752
+    },
+    "conv5": {
+      "acc_max": 410,
+      "acc_min": -727,
+      "high_saturations": 17424,
+      "values": 40522752
+    },
+    "conv6": {
+      "acc_max": 726,
+      "acc_min": -1121,
+      "high_saturations": 1439,
+      "values": 40522752
+    },
+    "conv7": {
+      "acc_max": 771,
+      "acc_min": -724,
+      "high_saturations": 12423,
+      "values": 40522752
+    },
+    "head": {
+      "acc_max": 203,
+      "acc_min": -127,
+      "high_saturations": 0,
+      "values": 10130688
+    }
+  },
+  "rollouts": {
+    "attempted_actions": 39573,
+    "blocked_proposal_rate": 0.0009349809213352538,
+    "blocked_proposals": 37,
+    "by_requested_density": {
+      "0.1": {
+        "attempted_actions": 4325,
+        "blocked_proposal_rate": 0.00046242774566473987,
+        "blocked_proposals": 2,
+        "episodes": 624,
+        "outcomes": {
+          "blocked": 2,
+          "loop": 1,
+          "success": 621,
+          "timeout": 0
+        },
+        "success_count": 621,
+        "success_rate": 0.9951923076923077,
+        "successful_mean_path_ratio": 1.0014492753623188,
+        "successful_mean_steps": 6.956521739130435,
+        "successful_optimal_rate": 0.9951690821256038,
+        "successful_path_ratio_count": 621,
+        "successful_zero_step_count": 0
+      },
+      "0.2": {
+        "attempted_actions": 4125,
+        "blocked_proposal_rate": 0.00024242424242424242,
+        "blocked_proposals": 1,
+        "episodes": 600,
+        "outcomes": {
+          "blocked": 1,
+          "loop": 24,
+          "success": 575,
+          "timeout": 0
+        },
+        "success_count": 575,
+        "success_rate": 0.9583333333333334,
+        "successful_mean_path_ratio": 1.002192546583851,
+        "successful_mean_steps": 7.001739130434783,
+        "successful_optimal_rate": 0.991304347826087,
+        "successful_path_ratio_count": 575,
+        "successful_zero_step_count": 0
+      },
+      "0.3": {
+        "attempted_actions": 5217,
+        "blocked_proposal_rate": 0.0013417672992141077,
+        "blocked_proposals": 7,
+        "episodes": 696,
+        "outcomes": {
+          "blocked": 7,
+          "loop": 43,
+          "success": 646,
+          "timeout": 0
+        },
+        "success_count": 646,
+        "success_rate": 0.9281609195402298,
+        "successful_mean_path_ratio": 1.0059918066110016,
+        "successful_mean_steps": 7.473684210526316,
+        "successful_optimal_rate": 0.9860681114551083,
+        "successful_path_ratio_count": 646,
+        "successful_zero_step_count": 0
+      },
+      "unknown": {
+        "attempted_actions": 25906,
+        "blocked_proposal_rate": 0.0010422295993206207,
+        "blocked_proposals": 27,
+        "episodes": 2880,
+        "outcomes": {
+          "blocked": 27,
+          "loop": 645,
+          "success": 2208,
+          "timeout": 0
+        },
+        "success_count": 2208,
+        "success_rate": 0.7666666666666667,
+        "successful_mean_path_ratio": 1.0025885960888359,
+        "successful_mean_steps": 9.372282608695652,
+        "successful_optimal_rate": 0.9891304347826086,
+        "successful_path_ratio_count": 2208,
+        "successful_zero_step_count": 0
+      }
+    },
+    "episodes": 4800,
+    "outcomes": {
+      "blocked": 37,
+      "loop": 713,
+      "success": 4050,
+      "timeout": 0
+    },
+    "success_count": 4050,
+    "success_rate": 0.84375,
+    "successful_mean_path_ratio": 1.0029005040791532,
+    "successful_mean_steps": 8.362469135802469,
+    "successful_optimal_rate": 0.9898765432098765,
+    "successful_path_ratio_count": 4050,
+    "successful_zero_step_count": 0
+  },
+  "scores_sha256_int32_little_endian": "0135837d1356e750bec14db5c7d6aa4f8dc14bc3853beb821489762fc26bd866",
+  "state_arithmetic_statistics": {
+    "conv0": {
+      "acc_max": 19,
+      "acc_min": -31,
+      "high_saturations": 231,
+      "values": 27734016
+    },
+    "conv1": {
+      "acc_max": 499,
+      "acc_min": -583,
+      "high_saturations": 22870,
+      "values": 27734016
+    },
+    "conv2": {
+      "acc_max": 806,
+      "acc_min": -919,
+      "high_saturations": 6625,
+      "values": 27734016
+    },
+    "conv3": {
+      "acc_max": 658,
+      "acc_min": -794,
+      "high_saturations": 1095,
+      "values": 27734016
+    },
+    "conv4": {
+      "acc_max": 565,
+      "acc_min": -777,
+      "high_saturations": 90,
+      "values": 27734016
+    },
+    "conv5": {
+      "acc_max": 410,
+      "acc_min": -727,
+      "high_saturations": 13997,
+      "values": 27734016
+    },
+    "conv6": {
+      "acc_max": 726,
+      "acc_min": -1125,
+      "high_saturations": 1692,
+      "values": 27734016
+    },
+    "conv7": {
+      "acc_max": 771,
+      "acc_min": -724,
+      "high_saturations": 10928,
+      "values": 27734016
+    },
+    "head": {
+      "acc_max": 231,
+      "acc_min": -137,
+      "high_saturations": 0,
+      "values": 6933504
+    }
+  },
+  "states": 27084
+}

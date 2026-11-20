@@ -29,6 +29,12 @@ jobs:
         run: python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir test_vectors/cnn-w8a8
       - name: Verify W4A4 memory and scalar reference vectors
         run: python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
+      - name: Verify improved W8A8 reference bundle
+        run: python python/verify_fixed_vectors.py --model-dir model/cnn-structured-w8a8 --vectors-dir test_vectors/cnn-structured-w8a8
+      - name: Verify improved W4A4 reference bundle
+        run: python python/verify_fixed_vectors.py --model-dir model/cnn-structured-w4a4 --vectors-dir test_vectors/cnn-structured-w4a4
+      - name: Replay improved floating-point detour
+        run: python python/predict.py --model-dir model/cnn-structured-fp32 --maze-file results/navigation/counterexamples/long-detour.txt
 
   rtl:
     runs-on: ubuntu-latest

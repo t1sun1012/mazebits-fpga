@@ -6,6 +6,8 @@ MazeBits is an EC311 project for the Nexys A7-100T. The board design lets users 
 
 ## Current status
 
+**Step 7 improves the base CNN.** With the same architecture and parameter count, structured-maze validation success rises from 76.56% to 99.44% in FP32, from 76.46% to 99.29% at 8 bits, and from 65.75% to 84.38% at 4 bits. Original-layout validation also improves for all three precisions. [Results and known failures](results/policy-improvement/README.md) include paired comparisons and complete traces. [Step 7](docs/step-07.md) explains reproduction. New model bundles are separate software-verified candidates; the board still uses the physically tested Step 6 checkpoint below.
+
 **Step 6 implemented: paired neural navigation and VGA comparison.** Both real CNNs match the Python fixed-point reference over complete maze episodes. The integrated controller and display pass simulation, and a combined FPGA bitstream is generated locally. The user reported that Step 5 passed its physical board test. Step 6 also passes the open-maze and detour board checks: both models reach the open goal in 14 attempts; on the detour, 8-bit reaches the goal in 21 attempts while 4-bit stops blocked after 4. Restart, cancellation, and zero-step start/goal overlap also passed as reported by the user. [The board-test log](results/navigation/board-test.json) separates physical evidence from simulation.
 
 ## Neural maze comparison
@@ -79,7 +81,7 @@ python python/predict_fixed.py --bits 8 --maze detour --trace
 python python/predict_fixed.py --bits 4 --maze detour --trace
 ~~~
 
-The committed memory bundles run immediately; dataset generation and retraining are unnecessary for this demo. On the hand-written detour, W8A8 reaches the goal in 21 moves, while W4A4 hits a wall on attempt four. These are CPU integer references; the board demonstration is a later milestone.
+The committed memory bundles run immediately; dataset generation and retraining are unnecessary for this demo. On the hand-written detour, W8A8 reaches the goal in 21 moves, while W4A4 hits a wall on attempt four. These commands run CPU integer references for the original checkpoint, whose board demonstration is shown above.
 
 The floating-point baseline remains available:
 
@@ -128,7 +130,8 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 3](docs/step-03.md): integer arithmetic, calibration, exports, and comparison.
 - [Step 4](docs/step-04.md): Verilog datapath, interfaces, cycle counts, HDL verification, and routed builds.
 - [Step 5](docs/step-05.md): board-tested controls, editable map, and VGA display.
-- [Step 6](docs/step-06.md): independent neural navigation, path comparison, and new board-test instructions.
+- [Step 6](docs/step-06.md): independent neural navigation, path comparison, and board-test instructions.
+- [Step 7](docs/step-07.md): structured-maze training, improved FP32/integer candidates, and fair validation comparisons.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
 - [Benchmarking guide](docs/benchmarking.md): inference time, packed storage, routed resources, and paired navigation quality.
@@ -137,4 +140,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-The open-maze and detour physical checks passed as reported by the user. The user also confirmed restart/cancel and overlapping endpoints. Step 6's documented physical checklist is complete. Each completed implementation milestone is committed and pushed on its own branch.
+Step 6's physical checklist is complete. Step 7 trains and verifies improved model candidates in Python. The next hardware checkpoint is to verify the new integer vectors in RTL, rebuild the VGA navigation bitstream, and repeat the board measurements. Each milestone is committed and pushed on its own branch.

@@ -1,0 +1,44 @@
+{
+  "calibration_changed": false,
+  "dataset_directory": "data/maze-v1",
+  "elapsed_seconds": 31.717530000023544,
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "threads": 1,
+    "torch": "2.9.1+cpu"
+  },
+  "float_source_directory": "model/cnn-structured-fp32",
+  "format": "mazebits-integer-evaluation-v1",
+  "input_sha256": {
+    "data/maze-v1/manifest.json": "84a719e5f4c80009cf6c9076e671a0280c7b7b91858445e1819454597e0a4b11",
+    "data/maze-v1/val.json": "f3d9af705d80abcc6262b790d92faebb6ab1531005bfdc001d66d982f1897c06",
+    "data/maze-v1/val.npz": "3763278e31c7e87fcedbf499f013b13afd5033984faaef676612947f9925c812",
+    "model/cnn-structured-fp32/manifest.json": "726482b7676033f92062d7642df7cb58db677308ef27d3fe5852bb6581bd6e82",
+    "model/cnn-structured-fp32/weights.npz": "386e690a94dfe24f20d84af475829585c1ea81990b22fcca3e46fd3b7b758ec9",
+    "runs/quantization-structured-v2/w8a8/biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+    "runs/quantization-structured-v2/w8a8/manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+    "runs/quantization-structured-v2/w8a8/quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+    "runs/quantization-structured-v2/w8a8/weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+  },
+  "model_directory": "runs/quantization-structured-v2/w8a8",
+  "outputs": {
+    "metrics.json": "27ee9436a51342837cc1157894dcfe4e4b08939da415fb0025a013d50ef29e03",
+    "rollouts.json": "c24ed5b645e8c5772f43ad42f888756c04420c25e8520141da90b4206e5e97c3",
+    "state_predictions.npz": "6ee9afe23bb622b8c0d4c0f4d89a0fc8db2b4dfd60dd02b064fc98df36a3c157"
+  },
+  "precision": "W8A8",
+  "source_sha256": {
+    "python/compare_policies.py": "e1b0c7732e15af3db67e3f23c9307de5f4fc96078ccbe4d6327149f64d92a351",
+    "python/evaluate_integer_bundle.py": "22ebdc1c023b2022c234617ebae51d624a9930b5b16a22274ea147a3e6977f24",
+    "python/mazebits/evaluation.py": "9d548e4f2c5544219862ef71cb655983f20f706106ab0d5410b2975dae1bb83e",
+    "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+    "python/mazebits/model.py": "14a17bdca1da0b026727ee2c253c481d2175aa5842a772bf7a72e7eafb34e293",
+    "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f",
+    "python/mazebits/quantized_evaluation.py": "b57536a383af7d70fb96676ed7034063b42fcdf36ad8a3c7cb91f462fa155e88",
+    "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+    "python/mazebits/training.py": "e48e6eaaf6b5ec92603b2cca2a6ed008bcc4af5b5939ed28b9637c1bfdec9113"
+  },
+  "split": "val",
+  "test_status": "reserved; final-test arrays and episodes not loaded"
+}

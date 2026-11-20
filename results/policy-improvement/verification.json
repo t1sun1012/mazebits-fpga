@@ -1,0 +1,74 @@
+{
+  "format": "mazebits-step07-verification-v1",
+  "status": "pass",
+  "python_tests": 128,
+  "python_command": "python -m unittest discover -s python/tests -v",
+  "python_log_sha256": "1de7a8f169b110235ac5d88b0b85fdd20d98b9e0bf26f1164e029d9d6f946f9b",
+  "candidate_vector_replays": {
+    "w8a8": {
+      "cases": 8,
+      "total_cases": 8,
+      "compared_words": 133160,
+      "input_words": 1536,
+      "mismatches": 0,
+      "all_file_hashes_verified": true,
+      "source_model": {
+        "biases_sha256": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "header_sha256": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+        "manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+        "weights_sha256": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+      },
+      "vectors_manifest_sha256": "d4354823f242c1459339feec1788ecc85d904c56d52d086c2defc65b7dc15898",
+      "method": "memory words versus vector engine and independent scalar loops"
+    },
+    "w4a4": {
+      "cases": 8,
+      "total_cases": 8,
+      "compared_words": 133160,
+      "input_words": 1536,
+      "mismatches": 0,
+      "all_file_hashes_verified": true,
+      "source_model": {
+        "biases_sha256": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "header_sha256": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+        "manifest_sha256": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+        "weights_sha256": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793"
+      },
+      "vectors_manifest_sha256": "dcb40687007eaeea7e34b7a490f87aadbe1f0760e0307fcba4fc3cbfec57ee1a",
+      "method": "memory words versus vector engine and independent scalar loops"
+    }
+  },
+  "source_sha256": {
+    "python/mazebits/training.py": "e48e6eaaf6b5ec92603b2cca2a6ed008bcc4af5b5939ed28b9637c1bfdec9113",
+    "python/train.py": "f2b4dd0af5299d3c1a520d01b88feeb2fdfb37ac96ebe1b2fea33b354f046597",
+    "python/mazebits/structured_dataset.py": "4030418d1eb795de5840aa37992f38ef792bf01c52a0a9082f31390574f53610",
+    "python/prepare_structured_data.py": "4ad506cec0c58c9cfb960d3f8b9b12dbf0c04137c463f0cba1b345d75d583cc2",
+    "python/compare_policies.py": "e1b0c7732e15af3db67e3f23c9307de5f4fc96078ccbe4d6327149f64d92a351",
+    "python/evaluate_integer_bundle.py": "11999d715c22f202bf64d3ddf7bd5c92fc52c91057217656cd8bd7c9db43b816",
+    "scripts/summarize_benchmarks.py": "a88bf796c9c0a6aa6c3d26ac81486e1b3abca506dc8d1fb7a9c87cb1a413db6b",
+    "python/plot_policy_improvement.py": "2ce377113c7248ecc6e96f13efe8097982f91b65d4a5d451e96567fd092d2e5a",
+    ".github/workflows/tests.yml": "fb74963922d31315ab8956c40b0ea04f99d8c001d035476a60cf8d069121c9db",
+    "python/tests/test_benchmark_summary.py": "679cdd9af7b46816325b762638c4e8c3e065342ccdb19056f9954df06ee380c9",
+    "python/tests/test_board_constraints.py": "4377259b54e92ab0104a86285035e2ba50c2a1068b98b6c9f84a6ae250f87294",
+    "python/tests/test_calibration.py": "44b60971e2eae75e00b15d1831f1355d4f66b30a193a4bd2fb516aa7a74c0865",
+    "python/tests/test_compare_policies.py": "727012bdc198a746bed2d02f983b72db04c244727c1a45de1ffa9c2df713f7fe",
+    "python/tests/test_dataset.py": "771fc634ec8b2b06dc8f9c3843a8659946cffd7d984830b952ed83c634688053",
+    "python/tests/test_editor_constraints.py": "bc1bb2b42c56c8af0e290141ff9cbc3acd0f6b715fa38680cb2bb6fb6046f236",
+    "python/tests/test_encoding.py": "1c5d6c66c4be56a5fc95fe288ff71c694ff5cbabae22fa90c62dfcf493193a12",
+    "python/tests/test_evaluation.py": "66a996789f992fd50629c5d30b3dd8d939a6ecadd67438bf98d3b9559ffe7098",
+    "python/tests/test_fixed_point.py": "6b0b29507166ec7c2f87f31d9d113ccea1fd6077370ca3a92f735c5aa511cf24",
+    "python/tests/test_fixed_vectors.py": "8477b9f34b51f6a3369bbb58c449334153405ad850709d2d21fd92bda2a97bcb",
+    "python/tests/test_integer_evaluator.py": "0f20efd4ac9773076a618fc05fb32904f21447afd171ebe54ae4f4b081a09ef0",
+    "python/tests/test_maze.py": "976a8a8bbbf574e2dabf1b5415a50b75f4afc6820133ba07eae61d30bf43fe03",
+    "python/tests/test_model.py": "714bd10157bc594b677ab103d85341e12179bfd4e025c40b4a606a9ce0ed9291",
+    "python/tests/test_navigation_constraints.py": "12b6665a5d10ed96c059132257d2524407087052b0fe2795599a0def90619dfd",
+    "python/tests/test_navigation_vectors.py": "13e6733942c816bb1640e5679046b681e2b0d84a7e87bf8c3e16331a5ee879b7",
+    "python/tests/test_quantized_io.py": "5984ec0bea494371c3d86a0b05af3e5a57b78c4ce5eee4166f12b67ad7e298bf",
+    "python/tests/test_reference.py": "c5ecae6e5dbf9a17d23ad2fa8ccee081267a70e1ea4e33b2cdcd66b2448055b3",
+    "python/tests/test_structured_dataset.py": "9433482ce0deaf6ca384636adaa6cfddbe4a2825e601929894a583baf8e3101c",
+    "python/tests/test_training.py": "643d01499564b959d5e69d120bc4bd61894c56ad182bbc7e490f1453a987cb33",
+    "python/tests/test_warm_start.py": "68955dfbefeffae487ae3c928dc7f118b321629ffd5c0cbbd08f4021fdec4f4a"
+  },
+  "hardware_scope": "Existing RTL, original model bundles, constraints, and board bitstream unchanged; new candidate weights have not been verified in RTL or on board.",
+  "plot_verification": "Re-rendered with LF-normalized SVG; PNG bytes match the visually inspected figure exactly."
+}

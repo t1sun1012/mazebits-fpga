@@ -30,6 +30,10 @@ def evaluate_bundle(model_dir, float_model_dir, data_dir, output_dir):
              *(float_model_dir / name for name in ("manifest.json", "weights.npz")),
              *(data_dir / name for name in ("manifest.json", "val.npz", "val.json"))]
     watched = {path: sha256(path) for path in paths}
+    root = Path(__file__).absolute().parents[1]
+    source_paths = [Path(__file__).absolute(), root / "python/compare_policies.py", *[root / "python/mazebits" / n for n in
+                    ("model.py", "model_io.py", "quantized_io.py", "fixed_point.py", "quantized_evaluation.py", "training.py", "evaluation.py", "maze.py", "encoding.py")]]
+    source_hashes = {p.relative_to(root).as_posix(): sha256(p) for p in source_paths}
     started = time.perf_counter()
     inputs, targets, metadata = load_split(data_dir, "val")
     scores = float_scores(model, inputs)
@@ -39,20 +43,20 @@ def evaluate_bundle(model_dir, float_model_dir, data_dir, output_dir):
     metrics["model_manifest_sha256"] = watched[model_dir / "manifest.json"]
     if any(sha256(path) != digest for path, digest in watched.items()):
         raise RuntimeError("model or dataset changed during evaluation")
+    if any(sha256(root / name) != digest for name, digest in source_hashes.items()):
+        raise RuntimeError("evaluation source changed during computation")
     output_dir.mkdir(parents=True, exist_ok=True)
     write_json(output_dir / "metrics.json", metrics)
     write_json(output_dir / "rollouts.json", rollouts)
     np.savez_compressed(output_dir / "state_predictions.npz", scores=integer_scores,
                         float_actions=scores.argmax(axis=1).astype(np.uint8))
-    root = Path(__file__).absolute().parents[1]
-    source_paths = [Path(__file__).absolute(), root / "python/compare_policies.py", *[root / "python/mazebits" / n for n in
-                    ("model.py", "model_io.py", "quantized_io.py", "fixed_point.py", "quantized_evaluation.py", "training.py", "evaluation.py")]]
     record = {"format": "mazebits-integer-evaluation-v1", "precision": metrics["precision"],
               "model_directory": model_dir.as_posix(), "float_source_directory": float_model_dir.as_posix(),
               "dataset_directory": data_dir.as_posix(), "split": "val", "calibration_changed": False,
               "test_status": "reserved; final-test arrays and episodes not loaded",
               "input_sha256": {p.as_posix(): value for p, value in watched.items()},
-              "source_sha256": {p.relative_to(root).as_posix(): sha256(p) for p in source_paths},
+              "source_sha256": source_hashes,
+              "inputs_and_sources_unchanged_during_evaluation": True,
               "environment": {"python": platform.python_version(), "torch": str(torch.__version__), "numpy": np.__version__, "threads": torch.get_num_threads()},
               "elapsed_seconds": time.perf_counter() - started,
               "outputs": {p.name: sha256(p) for p in output_dir.iterdir() if p.is_file()}}

@@ -1,0 +1,356 @@
+{
+  "bits": 8,
+  "case_count": 8,
+  "cases": [
+    {
+      "maze_ascii": "S.......\n........\n........\n........\n........\n........\n........\n.......G",
+      "name": "open"
+    },
+    {
+      "maze_ascii": "........\n........\n........\n...SG...\n........\n........\n........\n........",
+      "name": "adjacent-goal"
+    },
+    {
+      "maze_ascii": "S#.....G\n.#......\n.#......\n.#......\n.#......\n.#......\n.#......\n........",
+      "name": "detour"
+    },
+    {
+      "maze_ascii": "S#.....G\n.#......\n.#......\n.#......\n.#......\n.#......\n.#......\n.#......",
+      "name": "blocked"
+    },
+    {
+      "maze_ascii": "..#.....\n...#G...\n...#....\n..#.....\n...#....\nS.#.##..\n.......#\n#.#.....",
+      "name": "validation-loop"
+    },
+    {
+      "maze_ascii": "B.......\n........\n........\n........\n........\n........\n........\n........",
+      "name": "at-goal"
+    },
+    {
+      "maze_ascii": "SG######\n########\n########\n########\n########\n########\n########\n########",
+      "name": "two-free-cells"
+    },
+    {
+      "maze_ascii": "#...#G.#\n#..##S..\n.##..#.#\n#..#...#\n.##.#.##\n#.#...#.\n.......#\n..##..##",
+      "name": "training-first"
+    }
+  ],
+  "files": {
+    "actions.mem": {
+      "bits": 2,
+      "bytes": 16,
+      "sha256": "86d5cfb37f4e8b333f6fd7ada171001cd4db7362df31f7225bfc2d7d7b9fa6fe",
+      "shape": [
+        8
+      ],
+      "signed": false,
+      "trace": "actions",
+      "words": 8,
+      "words_per_case": 1
+    },
+    "conv0_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "194500aed726536435a494d89249f227bb8d8e80ebee59aaa8a29ee47b12dac4",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv0.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv0_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "eda2c2b53fa291a296fdf1431b72da56c80b3115eb844815626d7951a4015e08",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv0.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv1_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "4b37e018d3b1a7b37bc597b4871622715cf1574c212d8741e41ba8b648d93b1b",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv1.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv1_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "bba1c8a3ca91c320da726bd7224177725e2ab2a21d24a27f94b93e4c6a16ddab",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv1.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv2_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "055e85d459705971f80e4b44ddda83bd08321839f8a46506550860813a04243c",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv2.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv2_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "af57a65af23445cb425b94f8e899421793fb29a1a3b7549fc7324627dc759f4b",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv2.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv3_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "1009fcdf322aaa2da592f8f3aa1903339c384d70003faa007e2e9fc561d5ab9d",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv3.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv3_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "14075821521ae67ca2559ce1a845b00faefe48d17bb303231760fff322aa24e5",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv3.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv4_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "e669c0665c468becc471dc7344b0b9ebed13671a35f6da51186894dfdf601ed5",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv4.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv4_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "0afd7b7eac4792ef0bf2761d500603c94b977a74589dfc85c0e92fb1b9b37667",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv4.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv5_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "25340fb854bcb1edf39b3a4a6d2fa9264705ce97d2a0c6991c4813b929f62d0e",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv5.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv5_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "f93442c717789cf7bb7ba497f9951f80d083f7e25bc1f12021a9e1927e9223c3",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv5.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv6_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "ab0421db3a2a0b31e59b90ce6153f6c28d2470bb85cc166717970c89b5e88468",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv6.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv6_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "ef0d17a5c2b9b9b46323fa5a1790d6b02d441fb174ac403bea5ee321860a3ec4",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv6.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv7_acc.mem": {
+      "bits": 32,
+      "bytes": 73728,
+      "sha256": "4389cc574bd20f2b6e8bfdfded521480453fc6e4bd9e8d3e8e85836a4aa2fbd2",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "conv7.acc",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "conv7_act.mem": {
+      "bits": 8,
+      "bytes": 24576,
+      "sha256": "13f9c6fe8c26a27d8f91113322ceb1efb311308dbfd9fb491c125172dd821164",
+      "shape": [
+        8,
+        16,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "conv7.act",
+      "words": 8192,
+      "words_per_case": 1024
+    },
+    "head_acc.mem": {
+      "bits": 32,
+      "bytes": 18432,
+      "sha256": "0b27d3eadbaaf7f29f5ab1491b66b0c65a6bf4b6221a9c0097bb97d10a5190b6",
+      "shape": [
+        8,
+        4,
+        8,
+        8
+      ],
+      "signed": true,
+      "trace": "head.acc",
+      "words": 2048,
+      "words_per_case": 256
+    },
+    "inputs.mem": {
+      "bits": 1,
+      "bytes": 3072,
+      "sha256": "fd2c885fc1306de809622df9a658a788eeefa24255a41e11ba7a4072b9170f2c",
+      "shape": [
+        8,
+        3,
+        8,
+        8
+      ],
+      "signed": false,
+      "trace": "inputs",
+      "words": 1536,
+      "words_per_case": 192
+    },
+    "scores.mem": {
+      "bits": 32,
+      "bytes": 288,
+      "sha256": "42f2f5c302e9ea6553fc46f035c6debbba26420a4407da735fb409c3ab3948e3",
+      "shape": [
+        8,
+        4
+      ],
+      "signed": true,
+      "trace": "scores",
+      "words": 32,
+      "words_per_case": 4
+    }
+  },
+  "fixture_sources": {
+    "selection_note": "one retained validation diagnostic; no test examples",
+    "training_episode_index": 0,
+    "training_metadata_sha256": "3e08e0c21bc4b7bfa8e9969cb860913688f135e0940da318054d1b4ce356ffa8",
+    "validation_loop_fixture_sha256": "578e5de1fdcdd94ec0aceb85aead23912aa23f9d1e63107332b89e4dc1cfb648"
+  },
+  "format": "mazebits-fixed-vectors-v1",
+  "layout": "case-major; NCHW tensors, case/action scores, then one action per case",
+  "source_model": {
+    "biases_sha256": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+    "header_sha256": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+    "manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+    "weights_sha256": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+  },
+  "verification": {
+    "cases": 8,
+    "compared_words": 133160,
+    "input_words": 1536,
+    "method": "all intermediate words matched independent scalar loops",
+    "mismatches": 0
+  }
+}

@@ -1,0 +1,2268 @@
+{
+  "format": "mazebits-integer-diagnostic-replay-v1",
+  "scope": "Python vector and independent scalar inference; new model weights have not been tested in RTL or on the FPGA by this replay",
+  "diagnostic_status": "Known development cases; excluded from aggregate validation metrics",
+  "test_status": "Reserved final-test arrays and episode files not loaded",
+  "source_sha256": {
+    "python/compare_policies.py": "e1b0c7732e15af3db67e3f23c9307de5f4fc96078ccbe4d6327149f64d92a351",
+    "python/mazebits/encoding.py": "5d81935f0bfe2f6a755617973c2f9a9a3d444d8879d076adf48b2cb714932542",
+    "python/mazebits/maze.py": "caf74ea0d1a3b5de9c7357f2fcde88d1386a9a8e0d662f32745fd2160c01f034",
+    "python/mazebits/reference.py": "db720e00d61efca9603d7c132289f7b7856a7238bec02bf654215676f6320abc",
+    "python/mazebits/quantized_io.py": "51524d3a265004235b0eb45f2bd05b6deec6b1907cc9d3f3fb52a80a3ff33e59",
+    "python/mazebits/fixed_point.py": "f9591cebe2b0e27f34b381b7f916418a12dac7cd47280e72dc7f7992e967a32e",
+    "python/mazebits/scalar_fixed.py": "5fcec78426939bc195b511e8e3af53feedd54d1c9eb300baaece6f5fa7878854",
+    "python/mazebits/model_io.py": "d07847bb0485d35540d0a960f9b9a247085a475e56122238e3a388b008652c5f"
+  },
+  "models": {
+    "w8a8": {
+      "directory": "runs/quantization-structured-v2/w8a8",
+      "files_sha256": {
+        "biases.mem": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+        "manifest.json": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+        "quantization.vh": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+        "weights.mem": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+      }
+    },
+    "w4a4": {
+      "directory": "runs/quantization-structured-v2/w4a4",
+      "files_sha256": {
+        "biases.mem": "4894c116bc86253a11d260560f96ab36ae46798b1cb2431bde0c27999907d8ed",
+        "manifest.json": "79ca27da35e41a0cdb7ddc3f6ca754a21dc3aa6a9c632fc2f1460d1376fe14c7",
+        "quantization.vh": "4b64ffc3dbdb910e0331927db57f486143bf73a365e5e0fffbe7bb410d5d12e6",
+        "weights.mem": "390d508db8370a48a1d9bfdb52d62ba4377b571a09b086b3d1757196ab565793"
+      }
+    }
+  },
+  "cases": {
+    "precision-reversal-IMG_7179": {
+      "maze_ascii": "S#......\n.#......\n.#......\n.#.....G\n.#......\n.#......\n........\n........",
+      "shortest_path_moves": 16,
+      "models": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                2112,
+                -1529,
+                5290,
+                1480
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                0,
+                1
+              ],
+              "scores_up_right_down_left": [
+                2944,
+                -2337,
+                8176,
+                2499
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                0,
+                2
+              ],
+              "scores_up_right_down_left": [
+                3346,
+                -2032,
+                9301,
+                2294
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                0,
+                3
+              ],
+              "scores_up_right_down_left": [
+                3511,
+                -1086,
+                9516,
+                1330
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 5,
+              "from": [
+                0,
+                4
+              ],
+              "scores_up_right_down_left": [
+                3055,
+                411,
+                7636,
+                332
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 6,
+              "from": [
+                0,
+                5
+              ],
+              "scores_up_right_down_left": [
+                2668,
+                1092,
+                8055,
+                -1030
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 7,
+              "from": [
+                0,
+                6
+              ],
+              "scores_up_right_down_left": [
+                1545,
+                8723,
+                -4834,
+                -2026
+              ],
+              "action": "RIGHT",
+              "to": [
+                1,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 8,
+              "from": [
+                1,
+                6
+              ],
+              "scores_up_right_down_left": [
+                -1039,
+                9627,
+                -5836,
+                -1998
+              ],
+              "action": "RIGHT",
+              "to": [
+                2,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 9,
+              "from": [
+                2,
+                6
+              ],
+              "scores_up_right_down_left": [
+                5637,
+                6204,
+                -7560,
+                -6328
+              ],
+              "action": "RIGHT",
+              "to": [
+                3,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 10,
+              "from": [
+                3,
+                6
+              ],
+              "scores_up_right_down_left": [
+                7284,
+                6304,
+                -8800,
+                -7027
+              ],
+              "action": "UP",
+              "to": [
+                3,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 11,
+              "from": [
+                3,
+                5
+              ],
+              "scores_up_right_down_left": [
+                6857,
+                10919,
+                -9481,
+                -9274
+              ],
+              "action": "RIGHT",
+              "to": [
+                4,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 12,
+              "from": [
+                4,
+                5
+              ],
+              "scores_up_right_down_left": [
+                7829,
+                11892,
+                -11075,
+                -9837
+              ],
+              "action": "RIGHT",
+              "to": [
+                5,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 13,
+              "from": [
+                5,
+                5
+              ],
+              "scores_up_right_down_left": [
+                10934,
+                7959,
+                -13499,
+                -10246
+              ],
+              "action": "UP",
+              "to": [
+                5,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 14,
+              "from": [
+                5,
+                4
+              ],
+              "scores_up_right_down_left": [
+                6844,
+                11192,
+                -12699,
+                -9301
+              ],
+              "action": "RIGHT",
+              "to": [
+                6,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 15,
+              "from": [
+                6,
+                4
+              ],
+              "scores_up_right_down_left": [
+                7440,
+                7209,
+                -10413,
+                -6178
+              ],
+              "action": "UP",
+              "to": [
+                6,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 16,
+              "from": [
+                6,
+                3
+              ],
+              "scores_up_right_down_left": [
+                -2214,
+                12801,
+                -2798,
+                817
+              ],
+              "action": "RIGHT",
+              "to": [
+                7,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 16,
+          "compared_intermediate_words": 266320,
+          "mismatches": 0
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              3
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                17,
+                -2,
+                48,
+                8
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                0,
+                1
+              ],
+              "scores_up_right_down_left": [
+                15,
+                -4,
+                47,
+                10
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                0,
+                2
+              ],
+              "scores_up_right_down_left": [
+                17,
+                -7,
+                42,
+                8
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                0,
+                3
+              ],
+              "scores_up_right_down_left": [
+                20,
+                0,
+                36,
+                -4
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 5,
+              "from": [
+                0,
+                4
+              ],
+              "scores_up_right_down_left": [
+                13,
+                3,
+                46,
+                2
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 6,
+              "from": [
+                0,
+                5
+              ],
+              "scores_up_right_down_left": [
+                19,
+                3,
+                45,
+                -3
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 7,
+              "from": [
+                0,
+                6
+              ],
+              "scores_up_right_down_left": [
+                10,
+                56,
+                -28,
+                -13
+              ],
+              "action": "RIGHT",
+              "to": [
+                1,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 8,
+              "from": [
+                1,
+                6
+              ],
+              "scores_up_right_down_left": [
+                -10,
+                66,
+                -32,
+                -7
+              ],
+              "action": "RIGHT",
+              "to": [
+                2,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 9,
+              "from": [
+                2,
+                6
+              ],
+              "scores_up_right_down_left": [
+                39,
+                43,
+                -52,
+                -38
+              ],
+              "action": "RIGHT",
+              "to": [
+                3,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 10,
+              "from": [
+                3,
+                6
+              ],
+              "scores_up_right_down_left": [
+                21,
+                63,
+                -59,
+                -20
+              ],
+              "action": "RIGHT",
+              "to": [
+                4,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 11,
+              "from": [
+                4,
+                6
+              ],
+              "scores_up_right_down_left": [
+                44,
+                60,
+                -71,
+                -48
+              ],
+              "action": "RIGHT",
+              "to": [
+                5,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 12,
+              "from": [
+                5,
+                6
+              ],
+              "scores_up_right_down_left": [
+                61,
+                47,
+                -77,
+                -51
+              ],
+              "action": "UP",
+              "to": [
+                5,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 13,
+              "from": [
+                5,
+                5
+              ],
+              "scores_up_right_down_left": [
+                45,
+                53,
+                -70,
+                -47
+              ],
+              "action": "RIGHT",
+              "to": [
+                6,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 14,
+              "from": [
+                6,
+                5
+              ],
+              "scores_up_right_down_left": [
+                64,
+                16,
+                -51,
+                -36
+              ],
+              "action": "UP",
+              "to": [
+                6,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 15,
+              "from": [
+                6,
+                4
+              ],
+              "scores_up_right_down_left": [
+                19,
+                38,
+                -48,
+                -17
+              ],
+              "action": "RIGHT",
+              "to": [
+                7,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 16,
+              "from": [
+                7,
+                4
+              ],
+              "scores_up_right_down_left": [
+                54,
+                -18,
+                -6,
+                20
+              ],
+              "action": "UP",
+              "to": [
+                7,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 16,
+          "compared_intermediate_words": 266320,
+          "mismatches": 0
+        }
+      }
+    },
+    "long-detour-IMG_7180": {
+      "maze_ascii": "S#G.....\n.######.\n.#......\n.#......\n.#......\n.#......\n.#......\n........",
+      "shortest_path_moves": 26,
+      "models": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 26,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                1960,
+                -1566,
+                4086,
+                1124
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                0,
+                1
+              ],
+              "scores_up_right_down_left": [
+                2095,
+                -2001,
+                4594,
+                1571
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                0,
+                2
+              ],
+              "scores_up_right_down_left": [
+                1271,
+                -561,
+                2814,
+                44
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                0,
+                3
+              ],
+              "scores_up_right_down_left": [
+                1227,
+                -702,
+                3008,
+                252
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 5,
+              "from": [
+                0,
+                4
+              ],
+              "scores_up_right_down_left": [
+                1188,
+                -759,
+                3373,
+                493
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 6,
+              "from": [
+                0,
+                5
+              ],
+              "scores_up_right_down_left": [
+                988,
+                -47,
+                2733,
+                -196
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 7,
+              "from": [
+                0,
+                6
+              ],
+              "scores_up_right_down_left": [
+                913,
+                -75,
+                1878,
+                -214
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                7
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 8,
+              "from": [
+                0,
+                7
+              ],
+              "scores_up_right_down_left": [
+                757,
+                1512,
+                -909,
+                -655
+              ],
+              "action": "RIGHT",
+              "to": [
+                1,
+                7
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 9,
+              "from": [
+                1,
+                7
+              ],
+              "scores_up_right_down_left": [
+                -589,
+                2073,
+                -1247,
+                613
+              ],
+              "action": "RIGHT",
+              "to": [
+                2,
+                7
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 10,
+              "from": [
+                2,
+                7
+              ],
+              "scores_up_right_down_left": [
+                1176,
+                528,
+                -1771,
+                609
+              ],
+              "action": "UP",
+              "to": [
+                2,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 11,
+              "from": [
+                2,
+                6
+              ],
+              "scores_up_right_down_left": [
+                1800,
+                1741,
+                453,
+                -2468
+              ],
+              "action": "UP",
+              "to": [
+                2,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 12,
+              "from": [
+                2,
+                5
+              ],
+              "scores_up_right_down_left": [
+                2750,
+                2579,
+                -145,
+                -3465
+              ],
+              "action": "UP",
+              "to": [
+                2,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 13,
+              "from": [
+                2,
+                4
+              ],
+              "scores_up_right_down_left": [
+                1496,
+                3301,
+                187,
+                -2790
+              ],
+              "action": "RIGHT",
+              "to": [
+                3,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 14,
+              "from": [
+                3,
+                4
+              ],
+              "scores_up_right_down_left": [
+                593,
+                2189,
+                -497,
+                -1050
+              ],
+              "action": "RIGHT",
+              "to": [
+                4,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 15,
+              "from": [
+                4,
+                4
+              ],
+              "scores_up_right_down_left": [
+                710,
+                1364,
+                -985,
+                -200
+              ],
+              "action": "RIGHT",
+              "to": [
+                5,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 16,
+              "from": [
+                5,
+                4
+              ],
+              "scores_up_right_down_left": [
+                1558,
+                1268,
+                -2225,
+                -1479
+              ],
+              "action": "UP",
+              "to": [
+                5,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 17,
+              "from": [
+                5,
+                3
+              ],
+              "scores_up_right_down_left": [
+                689,
+                3622,
+                -1966,
+                -2160
+              ],
+              "action": "RIGHT",
+              "to": [
+                6,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 18,
+              "from": [
+                6,
+                3
+              ],
+              "scores_up_right_down_left": [
+                3458,
+                793,
+                -2531,
+                -3155
+              ],
+              "action": "UP",
+              "to": [
+                6,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 19,
+              "from": [
+                6,
+                2
+              ],
+              "scores_up_right_down_left": [
+                -768,
+                5224,
+                -1543,
+                -1632
+              ],
+              "action": "RIGHT",
+              "to": [
+                7,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 20,
+              "from": [
+                7,
+                2
+              ],
+              "scores_up_right_down_left": [
+                6753,
+                -4056,
+                -1803,
+                -386
+              ],
+              "action": "UP",
+              "to": [
+                7,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 21,
+              "from": [
+                7,
+                1
+              ],
+              "scores_up_right_down_left": [
+                8098,
+                -4443,
+                -2121,
+                -1367
+              ],
+              "action": "UP",
+              "to": [
+                7,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 22,
+              "from": [
+                7,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -1042,
+                -4310,
+                -1591,
+                6793
+              ],
+              "action": "LEFT",
+              "to": [
+                6,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 23,
+              "from": [
+                6,
+                0
+              ],
+              "scores_up_right_down_left": [
+                625,
+                107,
+                -4682,
+                5588
+              ],
+              "action": "LEFT",
+              "to": [
+                5,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 24,
+              "from": [
+                5,
+                0
+              ],
+              "scores_up_right_down_left": [
+                248,
+                1673,
+                -3677,
+                5734
+              ],
+              "action": "LEFT",
+              "to": [
+                4,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 25,
+              "from": [
+                4,
+                0
+              ],
+              "scores_up_right_down_left": [
+                437,
+                581,
+                -2882,
+                6658
+              ],
+              "action": "LEFT",
+              "to": [
+                3,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 26,
+              "from": [
+                3,
+                0
+              ],
+              "scores_up_right_down_left": [
+                1553,
+                650,
+                -2836,
+                5802
+              ],
+              "action": "LEFT",
+              "to": [
+                2,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 26,
+          "compared_intermediate_words": 432770,
+          "mismatches": 0
+        },
+        "w4a4": {
+          "outcome": "LOOP",
+          "attempts": 4,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                15,
+                -6,
+                33,
+                5
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                0,
+                1
+              ],
+              "scores_up_right_down_left": [
+                15,
+                -7,
+                30,
+                6
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                0,
+                2
+              ],
+              "scores_up_right_down_left": [
+                13,
+                1,
+                24,
+                -4
+              ],
+              "action": "DOWN",
+              "to": [
+                0,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                0,
+                3
+              ],
+              "scores_up_right_down_left": [
+                6,
+                -2,
+                6,
+                -1
+              ],
+              "action": "UP",
+              "to": [
+                0,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 4,
+          "compared_intermediate_words": 66580,
+          "mismatches": 0
+        }
+      }
+    },
+    "precision-loss-latest-photo": {
+      "maze_ascii": "S.......\n...####.\n...#....\n...#....\n...#....\n...#....\n...#....\n.......G",
+      "shortest_path_moves": 14,
+      "models": {
+        "w8a8": {
+          "outcome": "GOAL",
+          "attempts": 14,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              7
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -453,
+                2124,
+                1214,
+                -402
+              ],
+              "action": "RIGHT",
+              "to": [
+                1,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                1,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -834,
+                2456,
+                1351,
+                -235
+              ],
+              "action": "RIGHT",
+              "to": [
+                2,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                2,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -634,
+                3200,
+                -291,
+                -1037
+              ],
+              "action": "RIGHT",
+              "to": [
+                3,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                3,
+                0
+              ],
+              "scores_up_right_down_left": [
+                130,
+                5002,
+                -1932,
+                465
+              ],
+              "action": "RIGHT",
+              "to": [
+                4,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 5,
+              "from": [
+                4,
+                0
+              ],
+              "scores_up_right_down_left": [
+                847,
+                6222,
+                -2713,
+                1435
+              ],
+              "action": "RIGHT",
+              "to": [
+                5,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 6,
+              "from": [
+                5,
+                0
+              ],
+              "scores_up_right_down_left": [
+                854,
+                7545,
+                -2327,
+                1928
+              ],
+              "action": "RIGHT",
+              "to": [
+                6,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 7,
+              "from": [
+                6,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -354,
+                6198,
+                892,
+                842
+              ],
+              "action": "RIGHT",
+              "to": [
+                7,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 8,
+              "from": [
+                7,
+                0
+              ],
+              "scores_up_right_down_left": [
+                749,
+                351,
+                9097,
+                2993
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 9,
+              "from": [
+                7,
+                1
+              ],
+              "scores_up_right_down_left": [
+                4727,
+                -1409,
+                13603,
+                1000
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 10,
+              "from": [
+                7,
+                2
+              ],
+              "scores_up_right_down_left": [
+                1726,
+                -1109,
+                12519,
+                5373
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 11,
+              "from": [
+                7,
+                3
+              ],
+              "scores_up_right_down_left": [
+                1986,
+                -1494,
+                14007,
+                6373
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 12,
+              "from": [
+                7,
+                4
+              ],
+              "scores_up_right_down_left": [
+                1569,
+                -1008,
+                13016,
+                5887
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 13,
+              "from": [
+                7,
+                5
+              ],
+              "scores_up_right_down_left": [
+                1822,
+                -533,
+                13076,
+                5146
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 14,
+              "from": [
+                7,
+                6
+              ],
+              "scores_up_right_down_left": [
+                2808,
+                583,
+                12500,
+                2567
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                7
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 14,
+          "compared_intermediate_words": 233030,
+          "mismatches": 0
+        },
+        "w4a4": {
+          "outcome": "GOAL",
+          "attempts": 16,
+          "path_xy": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              7,
+              7
+            ]
+          ],
+          "events": [
+            {
+              "attempt": 1,
+              "from": [
+                0,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -4,
+                20,
+                9,
+                0
+              ],
+              "action": "RIGHT",
+              "to": [
+                1,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 2,
+              "from": [
+                1,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -7,
+                20,
+                24,
+                -1
+              ],
+              "action": "DOWN",
+              "to": [
+                1,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 3,
+              "from": [
+                1,
+                1
+              ],
+              "scores_up_right_down_left": [
+                4,
+                33,
+                10,
+                -9
+              ],
+              "action": "RIGHT",
+              "to": [
+                2,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 4,
+              "from": [
+                2,
+                1
+              ],
+              "scores_up_right_down_left": [
+                28,
+                0,
+                25,
+                -1
+              ],
+              "action": "UP",
+              "to": [
+                2,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 5,
+              "from": [
+                2,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -4,
+                25,
+                1,
+                -5
+              ],
+              "action": "RIGHT",
+              "to": [
+                3,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 6,
+              "from": [
+                3,
+                0
+              ],
+              "scores_up_right_down_left": [
+                2,
+                41,
+                -10,
+                5
+              ],
+              "action": "RIGHT",
+              "to": [
+                4,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 7,
+              "from": [
+                4,
+                0
+              ],
+              "scores_up_right_down_left": [
+                0,
+                48,
+                -7,
+                10
+              ],
+              "action": "RIGHT",
+              "to": [
+                5,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 8,
+              "from": [
+                5,
+                0
+              ],
+              "scores_up_right_down_left": [
+                7,
+                55,
+                -3,
+                7
+              ],
+              "action": "RIGHT",
+              "to": [
+                6,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 9,
+              "from": [
+                6,
+                0
+              ],
+              "scores_up_right_down_left": [
+                -3,
+                34,
+                30,
+                1
+              ],
+              "action": "RIGHT",
+              "to": [
+                7,
+                0
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 10,
+              "from": [
+                7,
+                0
+              ],
+              "scores_up_right_down_left": [
+                8,
+                5,
+                57,
+                18
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                1
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 11,
+              "from": [
+                7,
+                1
+              ],
+              "scores_up_right_down_left": [
+                31,
+                0,
+                77,
+                7
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                2
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 12,
+              "from": [
+                7,
+                2
+              ],
+              "scores_up_right_down_left": [
+                20,
+                -11,
+                65,
+                36
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                3
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 13,
+              "from": [
+                7,
+                3
+              ],
+              "scores_up_right_down_left": [
+                10,
+                -2,
+                68,
+                43
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                4
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 14,
+              "from": [
+                7,
+                4
+              ],
+              "scores_up_right_down_left": [
+                4,
+                2,
+                55,
+                37
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                5
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 15,
+              "from": [
+                7,
+                5
+              ],
+              "scores_up_right_down_left": [
+                15,
+                4,
+                60,
+                26
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                6
+              ],
+              "scalar_compared_intermediate_words": 16645
+            },
+            {
+              "attempt": 16,
+              "from": [
+                7,
+                6
+              ],
+              "scores_up_right_down_left": [
+                12,
+                21,
+                55,
+                3
+              ],
+              "action": "DOWN",
+              "to": [
+                7,
+                7
+              ],
+              "scalar_compared_intermediate_words": 16645
+            }
+          ],
+          "independent_scalar_checked_decisions": 16,
+          "compared_intermediate_words": 266320,
+          "mismatches": 0
+        }
+      }
+    }
+  },
+  "verification": {
+    "checked_decisions": 92,
+    "compared_intermediate_words": 1531340,
+    "mismatches": 0
+  },
+  "inputs_unchanged_during_evaluation": true
+}

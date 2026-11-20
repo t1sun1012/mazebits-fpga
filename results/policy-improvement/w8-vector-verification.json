@@ -1,0 +1,16 @@
+{
+  "cases": 8,
+  "total_cases": 8,
+  "compared_words": 133160,
+  "input_words": 1536,
+  "mismatches": 0,
+  "all_file_hashes_verified": true,
+  "source_model": {
+    "biases_sha256": "cc0ad811e89bd1777741f2b11898beb6780d177a7e6b8ed7315e3f0b17d2136c",
+    "header_sha256": "94c9101c82d4950e74d268647eb8d7e59740c53f1ad976ea8c1dd9207d0a3f1c",
+    "manifest_sha256": "6e5deb7f68370b6fe28f47f1d03c7d6c0a9260340bebc91f70ddb9f836e9da70",
+    "weights_sha256": "02f099e65203afe7505eea297f51d4b9f221038a4929e96674b77d862bfb6a0d"
+  },
+  "vectors_manifest_sha256": "d4354823f242c1459339feec1788ecc85d904c56d52d086c2defc65b7dc15898",
+  "method": "memory words versus vector engine and independent scalar loops"
+}
