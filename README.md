@@ -6,7 +6,7 @@ MazeBits is an EC311 project for the Nexys A7-100T. The planned board demonstrat
 
 ## Current status
 
-**Step 3 complete: verified W8A8 and W4A4 integer CNNs.** Both variants were calibrated from the same floating-point checkpoint, using training states only and no fine-tuning. FPGA memory files and exact intermediate reference vectors are committed.
+**Step 4 complete: verified Verilog inference for W8A8 and W4A4.** Both variants match every committed reference value in HDL simulation and meet routed 100 MHz timing on the Nexys A7-100T / Nexys 4 DDR. Bitstreams for the button/LED board test were generated; physical board testing and the VGA editor are still ahead. Both models retain the same Step 3 checkpoint and train-only calibration.
 
 | Validation result | FP32 | W8A8 | W4A4 |
 |---|---:|---:|---:|
@@ -14,9 +14,32 @@ MazeBits is an EC311 project for the Nexys A7-100T. The planned board demonstrat
 | Navigation success | 99.9444% | 99.9444% | 97.6944% |
 | Logical parameter bytes | 67,024 | 17,152 | 8,840 |
 
-W4A4 reduces the packed parameter payload by 48.46% relative to W8A8, with a 2.25 percentage-point reduction in navigation success. Actual FPGA resources and timing remain to be measured. The test partition is reserved.
+W4A4 reduces the packed parameter payload by 48.46% relative to W8A8, with a 2.25 percentage-point reduction in navigation success. Routed resource and timing measurements for the minimal board test are below. The test partition is reserved.
 
 ![Precision comparison](results/quantization/comparison.png)
+
+## Verilog inference
+
+| Routed board-test metric | W8A8 | W4A4 |
+|---|---:|---:|
+| LUTs | 496 | 366 |
+| Registers | 273 | 258 |
+| 36 Kb BRAM tile equivalents | 9 | 5 |
+| DSP blocks | 0 | 0 |
+| Setup slack (ns) | 1.497 | 1.757 |
+| Hold slack (ns) | 0.122 | 0.073 |
+| DRC violations | 0 | 0 |
+| Cycles per decision | 3,217,153 | 3,217,153 |
+| Latency at 100 MHz | 32.17153 ms | 32.17153 ms |
+
+These are measurements for the button/LED wrapper with two fixed fixtures, not the final editable/VGA system. Both builds have zero DRC violations. The serial schedule gives both widths the same latency; this is not a CPU speed comparison.
+
+~~~powershell
+python scripts/run_rtl.py --sim xsim --vivado-bin C:/Xilinx/Vivado/2024.1/bin --bits 8 4
+python scripts/run_vivado.py --bits 8 4 --stage bitstream --vivado C:/Xilinx/Vivado/2024.1/bin/vivado.bat
+~~~
+
+The HDL runners need only standard-library Python. Icarus Verilog is also supported with --sim iverilog. Read [Step 4](docs/step-04.md), [board controls and constraints](docs/board-constraints.md), and [implementation evidence](results/rtl/README.md).
 
 ## Try the precision comparison
 
@@ -48,7 +71,7 @@ W8A8/W4A4 means signed 8/4-bit weights and unsigned 8/4-bit hidden activations. 
 
 ## Verification
 
-All 88 software tests passed. For each precision:
+All 93 software tests passed. For each precision:
 
 - 133,160 intermediate/output words matched independent scalar arithmetic across eight fixtures.
 - Fresh-process replay matched all 88,116 validation score words and 3,600 trajectories.
@@ -60,7 +83,7 @@ python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir t
 python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
 ~~~
 
-GitHub Actions runs the unit tests and both full vector replays. A full validation replay additionally needs the generated dataset:
+GitHub Actions runs the unit tests, both full Python vector replays, both full RTL-vector suites in Icarus Verilog, and the board-control tests. A full validation replay additionally needs the generated dataset:
 
 ~~~powershell
 python python/prepare_data.py --output-dir data/maze-v1
@@ -75,6 +98,7 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 - [Step 1](docs/step-01.md): maze movement, BFS, and input encoding.
 - [Step 2](docs/step-02.md): dataset, CNN training, and floating-point results.
 - [Step 3](docs/step-03.md): integer arithmetic, calibration, exports, and comparison.
+- [Step 4](docs/step-04.md): Verilog datapath, interfaces, cycle counts, HDL verification, and routed builds.
 - [Dataset audit](results/dataset/README.md) and [training evidence](results/cnn-baseline/README.md).
 - [Quantization evidence](results/quantization/README.md).
 - [W8A8 bundle](model/cnn-w8a8/README.md) and [W4A4 bundle](model/cnn-w4a4/README.md).
@@ -82,4 +106,4 @@ Reuse an existing dataset. Generated output directories must be new or empty.
 
 ## Next checkpoint
 
-Step 4 will implement the Verilog inference datapath and controller, verify intermediate values against these vectors, and measure synthesis resources and timing. Each completed milestone is committed and pushed on its own branch.
+Step 5 adds the switch/button maze editor and VGA display. Step 6 integrates both navigation policies on identical edited scenarios. Each completed milestone is committed and pushed on its own branch.

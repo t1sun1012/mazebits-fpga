@@ -1,0 +1,10 @@
+{
+  "note": "Host line omitted and any local repository path replaced by <repo>; raw report hashes remain in implementation JSON.",
+  "sha256": {
+    "utilization_synth.rpt": "b726cb041196d9e1a7941f41b1b1c4f1605659e4486698c8bb6a44c9bb5f4c87",
+    "utilization_route.rpt": "73a39b426d84f9c3266311674c7bb2d037c3848a2cc7316e8d886ee6a4d4d779",
+    "timing_route.rpt": "a6d70a6151c48457ec91d898bc9a68b001d77f1587b25c2abe0f7f477a27cb60",
+    "drc_route.rpt": "949033d7b239e3ddb19028d77dea34736b14949c24b5b73c4c54151687e56d92",
+    "clock_interaction.rpt": "67d6b25e3f8da785918ee8af22422cf2b0c0a0836a4c79a6e8b19d3f2ce5414b"
+  }
+}

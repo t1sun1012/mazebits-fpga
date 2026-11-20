@@ -1,4 +1,4 @@
-name: Python reference tests
+name: MazeBits verification
 
 on:
   push:
@@ -29,3 +29,22 @@ jobs:
         run: python python/verify_fixed_vectors.py --model-dir model/cnn-w8a8 --vectors-dir test_vectors/cnn-w8a8
       - name: Verify W4A4 memory and scalar reference vectors
         run: python python/verify_fixed_vectors.py --model-dir model/cnn-w4a4 --vectors-dir test_vectors/cnn-w4a4
+
+  rtl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        bits: [8, 4]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install Icarus Verilog
+        run: sudo apt-get update && sudo apt-get install -y iverilog
+      - name: Verify RTL against all reference vectors
+        run: python scripts/run_rtl.py --simulator iverilog --bits ${{ matrix.bits }}
+      - name: Verify button and reset control logic
+        run: python scripts/run_board_smoke.py --sim iverilog --bits ${{ matrix.bits }}

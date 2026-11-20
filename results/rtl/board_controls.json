@@ -1,0 +1,19 @@
+{
+  "scope": "board controls with a stub CNN, not numerical inference",
+  "models": {
+    "w8a8": {
+      "status": "passed",
+      "accepted_requests": 3,
+      "simulator": "xsim"
+    },
+    "w4a4": {
+      "status": "passed",
+      "accepted_requests": 3,
+      "simulator": "xsim"
+    }
+  },
+  "source_sha256": {
+    "tb\\tb_mazebits_smoke_top.sv": "eb61fd2c2808b35b6c4922de1241674da354e10d38d75bd564d6354cca05b62d",
+    "rtl\\mazebits_smoke_top.v": "e0a560711f344479b0e78edc5e6968489a3edb2746b0b696725ae0985528ea72"
+  }
+}

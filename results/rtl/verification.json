@@ -1,0 +1,222 @@
+{
+  "models": [
+    {
+      "format": "mazebits-rtl-verification-v1",
+      "precision": "W8A8",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "cases": 8,
+      "compared_words": 133160,
+      "repeat_cases": 1,
+      "cycles_per_decision": 3217153,
+      "clock_period_ns": 10,
+      "simulated_latency_ms_at_100mhz": 32.17153,
+      "timing_note": "Cycle simulation at a nominal 100 MHz; not proof of routed timing closure.",
+      "protocol_checks": [
+        "reset abort/restart",
+        "ignore busy start",
+        "snapshot inputs",
+        "ignore start on finish edge",
+        "one-cycle done",
+        "hold busy/idle outputs",
+        "repeat inference"
+      ],
+      "arithmetic_boundary_cases": 13,
+      "argmax_signed_and_tie_cases": 3,
+      "case_results": [
+        {
+          "case": 0,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 1,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 2,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 3,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 4,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 5,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 6,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 7,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 0,
+          "repeated": 1,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        }
+      ],
+      "elapsed_wall_seconds": 29.033,
+      "source_sha256": {
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "tb/tb_mazebits_cnn.sv": "ec8a8e349bd14d474ed953976469b913232b1e21909eb6e8c8f339b779c07d79",
+        "scripts/run_rtl.py": "135ba8c39e0ec5b443a47e5914c02c077d26293501d6eecd33ed93ffde220a31"
+      },
+      "model_manifest_sha256": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+      "vectors_manifest_sha256": "1ac66cb6ced6d8d65d14efaaa83f496171b4c8a9ad26a963cd91642a9d9458a0",
+      "staged_sha256": {
+        "actions.mem": "26c1a287c49655754dc8869114eeb3fafa22271695073a6b5c9787bc4494f432",
+        "biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+        "expected_acc.mem": "47e64402ace82f4e5218af3ef7dc6cb2b58259e6bf4c7b9bf6aa1a3d51a82b85",
+        "expected_act.mem": "77976afc909099ae9808b40d0a5e3a02302aec8ac6dead008a28f14d7fdc5018",
+        "inputs.mem": "247e7a0bd43437b992c83f627cdefe376a317c2b582e1c02553da80ddbc7391b",
+        "scores.mem": "adfa947c2211a3a589ad1f315766097cc17125f096f62a17c2a0fd67c7bd6086",
+        "weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198"
+      }
+    },
+    {
+      "format": "mazebits-rtl-verification-v1",
+      "precision": "W4A4",
+      "status": "pass",
+      "simulator": "xsim",
+      "tool_version": [
+        "Vivado Simulator v2024.1"
+      ],
+      "cases": 8,
+      "compared_words": 133160,
+      "repeat_cases": 1,
+      "cycles_per_decision": 3217153,
+      "clock_period_ns": 10,
+      "simulated_latency_ms_at_100mhz": 32.17153,
+      "timing_note": "Cycle simulation at a nominal 100 MHz; not proof of routed timing closure.",
+      "protocol_checks": [
+        "reset abort/restart",
+        "ignore busy start",
+        "snapshot inputs",
+        "ignore start on finish edge",
+        "one-cycle done",
+        "hold busy/idle outputs",
+        "repeat inference"
+      ],
+      "arithmetic_boundary_cases": 13,
+      "argmax_signed_and_tie_cases": 3,
+      "case_results": [
+        {
+          "case": 0,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 1,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 2,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 3,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 4,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 5,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 6,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 7,
+          "repeated": 0,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        },
+        {
+          "case": 0,
+          "repeated": 1,
+          "cycles": 3217153,
+          "traces": 8448,
+          "words": 16645
+        }
+      ],
+      "elapsed_wall_seconds": 28.157,
+      "source_sha256": {
+        "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+        "tb/tb_mazebits_cnn.sv": "ec8a8e349bd14d474ed953976469b913232b1e21909eb6e8c8f339b779c07d79",
+        "scripts/run_rtl.py": "135ba8c39e0ec5b443a47e5914c02c077d26293501d6eecd33ed93ffde220a31"
+      },
+      "model_manifest_sha256": "96e852da0414d351d6ceae1324ba28fbf0f2d164fd29823b7a7de7ac2b8b6e57",
+      "vectors_manifest_sha256": "46a6977dcd7aa871c980fed31cf847ec68b8a44f1e9ed102024987a62178f8bc",
+      "staged_sha256": {
+        "actions.mem": "1d61cf405ec8c5778ac33e1faadc37e0da7a8cf1d98904130ffb389f9788f587",
+        "biases.mem": "076bee290af38acc3c5d2a0291ea650387b21bb8afb36d67c0fdbed476ebbdcc",
+        "expected_acc.mem": "5ba5d3fe6f6d51bf5c02c2229e688382be825c806f43c224b9f1382f39b7385d",
+        "expected_act.mem": "7c680694074b18cfa24aed735255f0f24fecd44256b2c9782b5651caf20246c2",
+        "inputs.mem": "247e7a0bd43437b992c83f627cdefe376a317c2b582e1c02553da80ddbc7391b",
+        "scores.mem": "1922b347fff4de1de0fa0f97980e800f42c6f0107167cd15220995cc161b9b3c",
+        "weights.mem": "18f5ade537a7bae62b65cd681024faba6a785505126875e318fd690d1a0e431d"
+      }
+    }
+  ]
+}

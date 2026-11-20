@@ -1,0 +1,58 @@
+{
+  "format": "mazebits-vivado-implementation-v1",
+  "precision": "W8A8",
+  "status": "pass",
+  "stage": "bitstream",
+  "part": "xc7a100tcsg324-1",
+  "top": "mazebits_smoke_top",
+  "clock_period_ns": 10.0,
+  "scope": "Button/LED top with two selectable fixed fixtures; includes wrapper and synthesis pruning. Full editable/VGA system will require new measurements.",
+  "source_sha256": {
+    "rtl/mazebits_cnn.v": "a76444b4b531f7599f008b72aca192c088241fc9727730e248ae57593102cc41",
+    "rtl/mazebits_smoke_top.v": "e0a560711f344479b0e78edc5e6968489a3edb2746b0b696725ae0985528ea72",
+    "scripts/build_vivado.tcl": "805cc5f2f9d0a12e3c4c48fa56439842adc3c2e386f6d05cc62b7786de222228",
+    "scripts/run_vivado.py": "a4fea29ce3922a37b224d744cb99a87108f19419ab8d49f191ed617847ea3c4f",
+    "constraints/mazebits_smoke.xdc": "5e0e3361fabef4a11350d13dc1752332b250af909918ec911b0cb324beb4f466",
+    "model/cnn-w8a8/manifest.json": "a9a3bdab94ed7fa1f6360a6b91c79457d2601f9c1032f894f472238bad2de2d6",
+    "model/cnn-w8a8/weights.mem": "4b6207ffc58d169a823f82e6078db62f756bf7bc672783f8823cc2fae321c198",
+    "model/cnn-w8a8/biases.mem": "a3c6c0639955a5794ead208ce34ab61e136fc02af96584453379d0e274e242a6",
+    "model/cnn-w8a8/quantization.vh": "7dc04d260b2bf31438de531dcb11b8eb667e5b6bab70245e576ab5f1a8f90df2"
+  },
+  "elapsed_wall_seconds": 82.312,
+  "synthesis_resources": {
+    "luts": 502,
+    "registers": 273,
+    "bram_36k_tiles": 9,
+    "ramb36": 8,
+    "ramb18": 2,
+    "dsps": 0
+  },
+  "vivado_version": "2024.1",
+  "setup_slack_ns": 1.497,
+  "hold_slack_ns": 0.122,
+  "critical_or_error_drc_count": 0,
+  "total_drc_count": 0,
+  "warning_drc_count": 0,
+  "routed_resources": {
+    "luts": 496,
+    "registers": 273,
+    "bram_36k_tiles": 9,
+    "ramb36": 8,
+    "ramb18": 2,
+    "dsps": 0
+  },
+  "bitstream": {
+    "name": "mazebits_smoke_w8a8.bit",
+    "bytes": 3825903,
+    "sha256": "9f865baea6dbc7bc81a06d58c160318db69807e6d6830e30070fd198037ab3ce",
+    "programmed_on_board": false
+  },
+  "report_sha256": {
+    "clock_interaction.rpt": "0424ae119422d7dd8a23bcc2bb17dbab271a3ee3a90ac33e5517eeb58167adf1",
+    "drc_route.rpt": "9881116eb7a7181a04fee4b0ff922bddd9921b4b52d730e8c48d7b81d4f2641c",
+    "timing_route.rpt": "efa8d09259e46309826661a096be2fba4a0a087ff502e9f628f26c07d505bc5a",
+    "timing_synth.rpt": "36d87bbf17ac1cb88882b28c9eba75d17c3ecb995c47beba656d23e0387ec248",
+    "utilization_route.rpt": "b8eeeaf47d80325c22ec677b013b54e46a53557d3a1d4e5e057c59c5bd84ecdf",
+    "utilization_synth.rpt": "96aa856efe415c6c6d339df50c7a22eeca0138d73bc6d6470004aca0bcd6e4fe"
+  }
+}

@@ -16,3 +16,8 @@ results/**/*.svg text eol=lf -whitespace
 # Preserve recorded experiment source bytes, including terminal blank lines.
 python/**/*.py whitespace=-blank-at-eof
 *.vh text eol=lf
+*.tcl text eol=lf
+constraints/reference/Nexys-4-DDR-Master.xdc -text -whitespace
+*.rpt text eol=lf -whitespace
+.gitattributes text eol=lf
+.gitignore text eol=lf

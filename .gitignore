@@ -34,3 +34,10 @@ local/
 .idea/
 .DS_Store
 Thumbs.db
+
+# HDL simulation and non-project implementation outputs
+build/
+xsim.dir/
+*.vcd
+*.vvp
+*.pb
